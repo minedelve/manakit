@@ -2,5 +2,5 @@
 </script>
 
 <div {...$$props}>
-	<slot /> demo
+	<slot /> obiwan
 </div>

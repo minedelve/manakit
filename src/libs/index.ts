@@ -1,8 +1,3 @@
-export function manakit() {
-	return {
-		name: 'manakit-css-vite',
-		async configResolved() {
-			console.log('manakit Resolved');
-		}
-	};
+export function endWorld() {
+	console.log('Mario !!!');
 }
