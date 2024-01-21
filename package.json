@@ -1,6 +1,6 @@
 {
 	"name": "manakit",
-	"version": "0.4.5",
+	"version": "0.4.6",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
@@ -17,12 +17,12 @@
 	},
 	"exports": {
 		".": {
-			"types": "./dist/components/index.ts",
-			"svelte": "./dist/components/index.ts"
+			"types": "./src/components/index.ts",
+			"svelte": "./src/components/index.ts"
 		},
 		"./components": {
-			"types": "./dist/components/index.ts",
-			"svelte": "./dist/components/index.ts"
+			"types": "./src/components/index.ts",
+			"svelte": "./src/components/index.ts"
 		},
 		"./libs": {
 			"types": "./dist/libs/index.d.ts",
