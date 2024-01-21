@@ -1,0 +1,27 @@
+# humans.txt
+
+> We Are People, Not Machines
+
+Because the code is not (yet) made by machines but by humans, it is important to thank the people behind a project.
+
+_TEAM_
+
+My role on this project: **Creator & Developer JS**
+Name: **Nycolaide**
+Email: **laurent.grimaldi@minedelve.com**
+Github: **https://github.com/Nycolaide**
+Location: **Massy (91), France**
+
+_THANKS_
+
+- **Dona Sarkar** ( for inspiration )
+- **Simone De Sousa Fernandes** ( for support ! ❤️)
+- **Gabriel Henry** ( for support ! ❤️)
+
+_SITE_
+
+- First publication: **2022/06/12**
+- Last update: **2024/01/20**
+- Standards: **HTML5, CSS3, NodeNext**
+- Components: **Svelte, Vite.js, Babel, Playwright, Jest, EsLint, Prettier, Husky, Typescript.**
+- Software: **Git, VS Code, Node**
