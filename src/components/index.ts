@@ -1,6 +1,4 @@
 // Reexport your entry components here
-export function helloWorld() {
-	console.log("hello it's me");
-}
-
-export { default as App } from './app.svelte';
+export { default as App } from './app/app.svelte';
+export { default as Button } from './button/button.svelte';
+export { default as Modal } from './modal/modal.svelte';
