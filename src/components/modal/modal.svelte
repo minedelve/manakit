@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { classMap, styleMap } from '../../libs/helpers';
+
 	export let open: boolean;
 	let modal: HTMLDialogElement;
 	let isModalOpen: boolean;
@@ -26,9 +28,25 @@
 </script>
 
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-<dialog bind:this={modal} class="modal" on:keydown={handleKeyDown}>
-	<div class="modal-box">
-		<h3 class="font-bold text-lg">Obiwan!</h3>
+<dialog
+	bind:this={modal}
+	id={$$props.id}
+	class={classMap({
+		component: 'modal',
+		default: $$props.class
+	})}
+	on:keydown={handleKeyDown}
+>
+	<div
+		class={classMap({
+			component: 'modal-container'
+		})}
+		style={styleMap({
+			default: $$props.style,
+			background: $$props.background,
+			color: $$props.color
+		})}
+	>
 		<slot />
 	</div>
 	{#if $$props.clickOutside}
@@ -41,6 +59,10 @@
 
 <style>
 	dialog {
+		--dialog-background: white;
+		--dialog-background-backdrop: #0006;
+
+		border: 0;
 		pointer-events: none;
 		position: fixed;
 		inset: 0;
@@ -76,23 +98,18 @@
 		align-items: center;
 	}
 
-	.modal-box {
+	.modal-container {
 		max-height: calc(100vh - 5em);
 		grid-column-start: 1;
 		grid-row-start: 1;
 		width: 91.666667%;
 		max-width: 32rem;
-
-		border-bottom-right-radius: var(--rounded-box, 1rem);
-		border-bottom-left-radius: var(--rounded-box, 1rem);
-		border-top-left-radius: var(--rounded-box, 1rem);
-		border-top-right-radius: var(--rounded-box, 1rem);
-		background-color: white;
+		border-radius: 1rem;
+		background-color: var(--dialog-background);
 		padding: 1.5rem;
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 		transition-duration: 0.2s;
-		box-shadow: #00000040 0 25px 50px -12px;
 		overflow-y: auto;
 		overscroll-behavior: contain;
 	}
@@ -111,11 +128,14 @@
 		cursor: pointer;
 		background-color: transparent;
 		background-image: none;
+		border: 0;
 	}
 
 	.modal:not(dialog:not(.modal-open)),
 	.modal::backdrop {
-		background-color: #0006;
+		--dialog-background-backdrop: #0006;
+
+		background-color: var(--dialog-background-backdrop);
 		animation: modal-pop 0.2s ease-out;
 	}
 </style>
