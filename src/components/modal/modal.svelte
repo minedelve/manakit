@@ -17,7 +17,12 @@
 
 	function handleKeyDown(event: any) {
 		if (event.key === 'Escape') {
-			event.preventDefault();
+			if ($$props?.closewithEsc) {
+				modal.close();
+				open = false;
+			} else {
+				event.preventDefault();
+			}
 		}
 	}
 
@@ -59,9 +64,6 @@
 
 <style>
 	dialog {
-		--dialog-background: white;
-		--dialog-background-backdrop: #0006;
-
 		border: 0;
 		pointer-events: none;
 		position: fixed;
@@ -103,7 +105,7 @@
 		grid-column-start: 1;
 		grid-row-start: 1;
 		border-radius: 1rem;
-		background-color: var(--dialog-background);
+		background-color: var(--color-surface);
 		padding: 1.5rem;
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
