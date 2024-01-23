@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import propertie from './createPropertieCss';
+import propertie from './createPropertieCss.js';
 
 const createClass = ({ parentClassName, className, properties, important, screen }: any) => {
 	let css = '';

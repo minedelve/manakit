@@ -1,4 +1,4 @@
-import { createRoot } from '../../helpers';
+import createRoot from '../../helpers/styles/createRoot.js';
 
 export const initialFamily = {
 	title: 'Roboto,sans-serif',

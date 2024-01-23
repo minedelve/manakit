@@ -1,5 +1,5 @@
-import { heightClass } from './height';
-import { widthClass } from './width';
+import { heightClass } from './height.js';
+import { widthClass } from './width.js';
 
 export const sizingClass = ({ screen }: { screen: string }) => {
 	let css = '';

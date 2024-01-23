@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { createClass } from '../../helpers';
+import createClass from '../../helpers/styles/createClass.js';
 
 // class
 export const colorsClass = ({ themes }: { themes: any }) => {

@@ -1,5 +1,5 @@
-import { normalizeGlobal } from './global';
-import { normalizeHTML } from './html';
+import { normalizeGlobal } from './global.js';
+import { normalizeHTML } from './html.js';
 
 export const normalize = () => {
 	let css = '';

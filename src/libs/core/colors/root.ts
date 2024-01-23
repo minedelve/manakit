@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { createRoot } from '../../helpers';
+import createRoot from '../../helpers/styles/createRoot.js';
 
 export const colorsRoot = ({ themes, dark }: { themes: any; dark: boolean }) => {
 	let css = '';

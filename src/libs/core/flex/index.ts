@@ -1,10 +1,10 @@
-import { alignContentClass } from './alignContent';
-import { alignSelfClass } from './alignSelf';
-import { directionClass } from './direction';
-import { justifyClass } from './justify';
-import { shortlandClass } from './shortland';
-import { growShrinkClass } from './growShrink';
-import { wrapClass } from './wrap';
+import { alignContentClass } from './alignContent.js';
+import { alignSelfClass } from './alignSelf.js';
+import { directionClass } from './direction.js';
+import { justifyClass } from './justify.js';
+import { shortlandClass } from './shortland.js';
+import { growShrinkClass } from './growShrink.js';
+import { wrapClass } from './wrap.js';
 
 export const flexClass = ({ screen }: { screen: string }) => {
 	let css = '';

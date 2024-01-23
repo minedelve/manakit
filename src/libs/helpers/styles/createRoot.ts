@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import rootVar from './createRootVar';
+import rootVar from './createRootVar.js';
 
 const createRoot = ({ name, variables, className, scheme }: any) => {
 	let css = '';

@@ -1,8 +1,8 @@
-import { family } from './family';
-import { alignClass } from './align';
-import { decorationClass } from './decoration';
-import { opacityClass } from './opacity';
-import { transformClass } from './transform';
+import { family } from './family.js';
+import { alignClass } from './align.js';
+import { decorationClass } from './decoration.js';
+import { opacityClass } from './opacity.js';
+import { transformClass } from './transform.js';
 
 export const fonts = () => {
 	const css = '';

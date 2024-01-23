@@ -3,7 +3,8 @@
 	"version": "0.4.6",
 	"scripts": {
 		"dev": "vite dev",
-		"build": "vite build && npm run package",
+		"build": "vite build && npm run package && npm run config",
+		"config": "cp src/libs/preset/default.js dist/.manakit.cjs",
 		"preview": "vite preview",
 		"package": "svelte-kit sync && svelte-package && publint",
 		"prepublishOnly": "npm run package",
@@ -29,9 +30,10 @@
 			"default": "./dist/libs/index.js"
 		},
 		"./vite": {
-			"types": "./dist/plugins/index.d.ts",
-			"default": "./dist/plugins/index.js"
-		}
+			"types": "./dist/plugins/vite/index.d.ts",
+			"default": "./dist/plugins/vite/index.js"
+		},
+		"./style": "./dist/app.css"
 	},
 	"typesVersions": {
 		"*": {
@@ -58,8 +60,8 @@
 				"default": "./dist/libs/index.js"
 			},
 			"./vite": {
-				"types": "./dist/plugins/index.d.ts",
-				"default": "./dist/plugins/index.js"
+				"types": "./dist/plugins/vite/index.d.ts",
+				"default": "./dist/plugins/vite/index.js"
 			}
 		},
 		"typesVersions": {

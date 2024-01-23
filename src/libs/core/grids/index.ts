@@ -1,10 +1,10 @@
-import { gridsAutoColumnClass } from './gridsAutoColumn';
-import { gridsAutoFlowClass } from './gridsAutoFlow';
-import { gridsAutoRowClass } from './gridsAutoRow';
-import { gridsColsClass } from './gridsCols';
-import { gridsColsStartEndClass } from './gridsColsStartEnd';
-import { gridsRowsClass } from './gridsRows';
-import { gridsRowsStartEndClass } from './gridsRowsStartEnd';
+import { gridsAutoColumnClass } from './gridsAutoColumn.js';
+import { gridsAutoFlowClass } from './gridsAutoFlow.js';
+import { gridsAutoRowClass } from './gridsAutoRow.js';
+import { gridsColsClass } from './gridsCols.js';
+import { gridsColsStartEndClass } from './gridsColsStartEnd.js';
+import { gridsRowsClass } from './gridsRows.js';
+import { gridsRowsStartEndClass } from './gridsRowsStartEnd.js';
 
 export const gridsClass = ({ screen }: { screen: string }) => {
 	let css = '';

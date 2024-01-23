@@ -1,6 +1,6 @@
-import { columnClass } from './column';
-import { orderClass } from './order';
-import { rowClass } from './row';
+import { columnClass } from './column.js';
+import { orderClass } from './order.js';
+import { rowClass } from './row.js';
 
 export const gridsFlexStaticClass = () => {
 	let css = '';

@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
-import { colorsClass } from './class';
-import { colorsRoot } from './root';
+import { colorsClass } from './class.js';
+import { colorsRoot } from './root.js';
 
 export const colorRoot = ({ themes, dark }: { themes: any; dark: boolean }) => {
 	let css = '';

@@ -1,4 +1,4 @@
-import { createClass } from '../../helpers';
+import createClass from '../../helpers/styles/createClass.js';
 
 export const normalizeGlobal = () => {
 	let css = '';

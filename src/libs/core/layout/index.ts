@@ -1,5 +1,5 @@
-import { displayClass } from './display';
-import { positionClass } from './position';
+import { displayClass } from './display.js';
+import { positionClass } from './position.js';
 
 export const layoutClass = ({ screen }: { screen: string }) => {
 	let css = '';
