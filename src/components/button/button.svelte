@@ -104,18 +104,10 @@
 <style>
 	.btn {
 		--btn-color: #1f2837;
-		--btn-bacground: #f2f2f2;
+		--btn-background: #f2f2f2;
 		--btn-background-hover: #d2d2d2;
 		--btn-background-disabled: #d9dadc;
 		--btn-color-disabled: #b9babe;
-		--btn-error: #f95862;
-		--btn-on-error: #1f2837;
-		--btn-warning: #fcbe00;
-		--btn-on-warning: #1f2837;
-		--btn-success: #2ba96e;
-		--btn-on-success: #1f2837;
-		--btn-info: #2db6ff;
-		--btn-on-info: #1f2837;
 
 		display: inline-flex;
 		height: 3rem;
@@ -141,7 +133,7 @@
 		transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 		border-width: 1px;
 		color: var(--btn-color);
-		background-color: var(--btn-bacground);
+		background-color: var(--btn-background);
 	}
 
 	.btn:focus-visible {
@@ -247,51 +239,51 @@
 
 	/** Colors */
 	.btn-error {
-		background-color: var(--btn-error);
-		color: var(--btn-on-error);
+		background-color: var(--color-error);
+		color: var(--color-on-error);
 	}
 	.btn-outline.btn-error {
 		background-color: transparent;
-		color: var(--btn-error);
+		color: var(--color-error);
 	}
 	.btn-text.btn-error {
 		background-color: transparent;
-		color: var(--btn-error);
+		color: var(--color-error);
 	}
 	.btn-warning {
-		background-color: var(--btn-warning);
-		color: var(--btn-on-warning);
+		background-color: var(--color-warning);
+		color: var(--color-on-warning);
 	}
 	.btn-outline.btn-warning {
 		background-color: transparent;
-		color: var(--btn-warning);
+		color: var(--color-warning);
 	}
 	.btn-text.btn-warning {
 		background-color: transparent;
-		color: var(--btn-warning);
+		color: var(--color-warning);
 	}
 	.btn-success {
-		background-color: var(--btn-success);
-		color: var(--btn-on-success);
+		background-color: var(--color-success);
+		color: var(--color-on-success);
 	}
 	.btn-outline.btn-success {
 		background-color: transparent;
-		color: var(--btn-success);
+		color: var(--color-success);
 	}
 	.btn-text.btn-success {
 		background-color: transparent;
-		color: var(--btn-success);
+		color: var(--color-success);
 	}
 	.btn-info {
-		background-color: var(--btn-info);
-		color: var(--btn-on-info);
+		background-color: var(--color-info);
+		color: var(--color-on-info);
 	}
 	.btn-outline.btn-info {
 		background-color: transparent;
-		color: var(--btn-info);
+		color: var(--color-info);
 	}
 	.btn-text.btn-info {
 		background-color: transparent;
-		color: var(--btn-info);
+		color: var(--color-info);
 	}
 </style>

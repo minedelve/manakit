@@ -32,14 +32,14 @@
 	bind:this={modal}
 	id={$$props.id}
 	class={classMap({
-		component: 'modal',
-		default: $$props.class
+		component: 'modal'
 	})}
 	on:keydown={handleKeyDown}
 >
 	<div
 		class={classMap({
-			component: 'modal-container'
+			component: 'modal-container',
+			default: $$props.class
 		})}
 		style={styleMap({
 			default: $$props.style,
@@ -102,8 +102,6 @@
 		max-height: calc(100vh - 5em);
 		grid-column-start: 1;
 		grid-row-start: 1;
-		width: 91.666667%;
-		max-width: 32rem;
 		border-radius: 1rem;
 		background-color: var(--dialog-background);
 		padding: 1.5rem;

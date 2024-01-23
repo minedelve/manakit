@@ -23,8 +23,6 @@
 	};
 </script>
 
-<svelte:window bind:innerWidth bind:innerHeight />
-
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <!-- svelte-ignore a11y-click-events-have-key-events -->
 <!-- svelte-ignore a11y-no-noninteractive-tabindex -->
@@ -44,8 +42,7 @@
 	style={styleMap({
 		default: $$props.style,
 		background: $$props.background,
-		color: $$props.color,
-		sizing: [$$props, [innerWidth, innerHeight]]
+		color: $$props.color
 	})}
 	role={$$props.role}
 	tabindex={$$props.tabindex}
