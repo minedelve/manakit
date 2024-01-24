@@ -16,7 +16,7 @@
 	div {
 		position: relative;
 		display: grid;
-		grid-auto-columns: max-content;
+		/* grid-auto-columns: max-content; */
 		width: 100%;
 	}
 </style>

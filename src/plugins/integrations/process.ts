@@ -8,7 +8,7 @@ import { normalize } from '../../libs/core/normalize/index.js';
 import { gridsFlexClass, gridsFlexStaticClass } from '../../libs/core/gridsFlex/index.js';
 import { radiusClass } from '../../libs/core/radius/index.js';
 import { shadowClass } from '../../libs/core/shadow/index.js';
-import { fontsClass, fontsStaticClass } from '../../libs/core/fonts/index.js';
+import { fontsClass, fontsRoot, fontsStaticClass } from '../../libs/core/fonts/index.js';
 import { sizingClass } from '$lib/libs/core/sizing/index.js';
 import { spacingClass } from '$lib/libs/core/spacing/index.js';
 import { layoutClass } from '$lib/libs/core/layout/index.js';
@@ -29,6 +29,7 @@ export const buildCSS = ({
 
 	// root
 	cssString += colorRoot({ themes, dark });
+	cssString += fontsRoot();
 	// class
 	cssString += normalize();
 	cssString += colorClass({ themes });
