@@ -2,7 +2,7 @@
 	import { classMap, styleMap } from '../../libs/helpers';
 </script>
 
-{#if $$props.is === 'a' || $$props.is === 'anchor'}
+{#if $$props.href}
 	<a
 		id={$$props.id}
 		class={classMap({
