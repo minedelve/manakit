@@ -4,11 +4,7 @@ import { decorationClass } from './decoration.js';
 import { opacityClass } from './opacity.js';
 import { transformClass } from './transform.js';
 import { sizeClass } from './size.js';
-
-export const fonts = () => {
-	const css = '';
-	return css;
-};
+import { weightClass } from './weight.js';
 
 export const fontsRoot = () => {
 	let css = '';
@@ -24,6 +20,7 @@ export const fontsStaticClass = () => {
 	// class
 	css += transformClass();
 	css += familyClass();
+	css += weightClass();
 	return css;
 };
 

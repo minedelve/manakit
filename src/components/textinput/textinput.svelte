@@ -1,9 +1,16 @@
 <script lang="ts">
 	import { classMap, styleMap } from '../../libs/helpers';
+
+	export let value = '';
+
+	const handleInput = (e: any) => {
+		value = e?.target?.value;
+	};
 </script>
 
 <input
 	id={$$props.id}
+	name={$$props.name}
 	class={classMap({
 		component: 'input',
 		default: $$props.class,
@@ -15,8 +22,9 @@
 	style={styleMap({
 		default: $$props.style
 	})}
-	type={$$props.type || 'text'}
 	placeholder={$$props.placeholder}
+	{value}
+	on:input={(e) => handleInput(e)}
 	{...$$props}
 />
 

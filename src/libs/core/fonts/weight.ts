@@ -40,7 +40,7 @@ const properties = [
 ];
 
 // class
-export const familyClass = () => {
+export const weightClass = () => {
 	let css = '';
 
 	properties.forEach((item) => {
