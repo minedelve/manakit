@@ -1,6 +1,6 @@
 {
 	"name": "manakit",
-	"version": "0.4.14",
+	"version": "0.4.15",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package && npm run config",
