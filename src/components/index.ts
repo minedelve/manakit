@@ -15,3 +15,4 @@ export { default as MenuTitle } from './menu/menu.title.svelte';
 export { default as Spacer } from './spacer/spacer.svelte';
 export { default as TextInput } from './textinput/textinput.svelte';
 export { default as Toolbar } from './toolbar/toolbar.svelte';
+export { default as Footer } from './footer/footer.svelte';

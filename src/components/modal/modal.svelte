@@ -101,12 +101,12 @@
 	}
 
 	.modal-container {
-		max-height: calc(100vh - 5em);
+		/* max-height: calc(100vh - 5em); */
 		grid-column-start: 1;
 		grid-row-start: 1;
-		border-radius: 1rem;
+		/* border-radius: 1rem;
 		background-color: var(--color-surface);
-		padding: 1.5rem;
+		padding: 1.5rem; */
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 		transition-duration: 0.2s;
