@@ -4,48 +4,42 @@ const properties = [
 	{
 		className: 'start',
 		properties: {
-			'justify-content': 'flex-start'
+			'align-items': 'flex-start'
 		}
 	},
 	{
 		className: 'end',
 		properties: {
-			'justify-content': 'flex-end'
+			'align-items': 'flex-end'
 		}
 	},
 	{
 		className: 'center',
 		properties: {
-			'justify-content': 'center'
+			'align-items': 'center'
 		}
 	},
 	{
-		className: 'space-between',
+		className: 'baseline',
 		properties: {
-			'justify-content': 'space-between'
+			'align-items': 'baseline'
 		}
 	},
 	{
-		className: 'space-around',
+		className: 'stretch',
 		properties: {
-			'justify-content': 'space-around'
-		}
-	},
-	{
-		className: 'space-evenly',
-		properties: {
-			'justify-content': 'space-evenly'
+			'align-items': 'stretch'
 		}
 	}
 ];
 
 // class
-export const justifyClass = ({ screen }: { screen: string }) => {
+export const alignItemsClass = ({ screen }: { screen: string }) => {
 	let css = '';
 
 	properties.forEach((item) => {
 		css += createClass({
-			className: '.justify-' + item.className,
+			className: '.align-items-' + item.className,
 			properties: item.properties,
 			screen,
 			important: true

@@ -10,68 +10,140 @@ const properties = [
 		value: 0
 	},
 	{
-		size: '1',
+		size: 'px',
 		value: '1px'
 	},
 	{
+		size: '0.5',
+		value: '0.125rem'
+	},
+	{
+		size: '1',
+		value: '0.25rem'
+	},
+	{
+		size: '1.5',
+		value: '0.375rem'
+	},
+	{
 		size: '2',
-		value: '2px'
+		value: '0.5rem'
+	},
+	{
+		size: '2.5',
+		value: '0.625rem'
 	},
 	{
 		size: '3',
-		value: '3px'
+		value: '0.75rem'
+	},
+	{
+		size: '3.5',
+		value: '0.875rem'
 	},
 	{
 		size: '4',
-		value: '4px'
+		value: '1rem'
 	},
 	{
 		size: '5',
-		value: '5px'
+		value: '1.25rem'
 	},
 	{
 		size: '6',
-		value: '6px'
+		value: '1.5rem'
 	},
 	{
 		size: '7',
-		value: '7px'
+		value: '1.75rem'
 	},
 	{
 		size: '8',
-		value: '8px'
+		value: '2rem'
 	},
 	{
 		size: '9',
-		value: '9px'
+		value: '2.25rem'
 	},
 	{
 		size: '10',
-		value: '10px'
+		value: '2.5rem'
 	},
 	{
 		size: '11',
-		value: '11px'
+		value: '2.75rem'
 	},
 	{
 		size: '12',
-		value: '12px'
-	},
-	{
-		size: '13',
-		value: '13px'
+		value: '3rem'
 	},
 	{
 		size: '14',
-		value: '14px'
-	},
-	{
-		size: '15',
-		value: '15px'
+		value: '3.5rem'
 	},
 	{
 		size: '16',
-		value: '16px'
+		value: '4rem'
+	},
+	{
+		size: '20',
+		value: '5rem'
+	},
+	{
+		size: '24',
+		value: '6rem'
+	},
+	{
+		size: '28',
+		value: '7rem'
+	},
+	{
+		size: '32',
+		value: '8rem'
+	},
+	{
+		size: '36',
+		value: '9rem'
+	},
+	{
+		size: '40',
+		value: '10rem'
+	},
+	{
+		size: '44',
+		value: '11rem'
+	},
+	{
+		size: '48',
+		value: '12rem'
+	},
+	{
+		size: '52',
+		value: '13rem'
+	},
+	{
+		size: '56',
+		value: '14rem'
+	},
+	{
+		size: '60',
+		value: '15rem'
+	},
+	{
+		size: '64',
+		value: '16rem'
+	},
+	{
+		size: '72',
+		value: '18rem'
+	},
+	{
+		size: '80',
+		value: '20rem'
+	},
+	{
+		size: '96',
+		value: '24rem'
 	}
 ];
 

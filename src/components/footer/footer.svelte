@@ -6,7 +6,8 @@
 	id={$$props.id}
 	class={classMap({
 		component: 'footer',
-		default: $$props.class
+		default: $$props.class,
+		'footer-center': $$props.center
 	})}
 	style={styleMap({
 		default: $$props.style,
@@ -33,5 +34,15 @@
 		display: grid;
 		place-items: start;
 		gap: 0.5rem;
+	}
+
+	.footer-center {
+		grid-auto-flow: row dense;
+		place-items: center;
+		text-align: center;
+	}
+
+	.footer-center > :global(*) {
+		place-items: center;
 	}
 </style>

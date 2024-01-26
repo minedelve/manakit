@@ -12,7 +12,7 @@
 	id={$$props.id}
 	name={$$props.name}
 	class={classMap({
-		component: 'input',
+		component: 'field',
 		default: $$props.class,
 		'input-is-info': $$props.info,
 		'input-is-success': $$props.success,
@@ -29,7 +29,7 @@
 />
 
 <style>
-	input.input {
+	.field {
 		flex-shrink: 1;
 		appearance: none;
 		height: 3rem;
@@ -40,16 +40,16 @@
 		line-height: 1.5rem;
 		border-radius: 0.5rem;
 		border-width: 1px;
-		border-color: transparent;
+		border-color: #d8d8db;
 		background-color: var(--color-background);
 	}
 
-	.input:focus {
+	.field:focus {
 		border-color: var(--color-text);
 		outline-color: var(--color-text);
 	}
 
-	.input:focus,
+	.field:focus,
 	.input-is-info,
 	.input-is-success,
 	.input-is-warning,

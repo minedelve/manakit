@@ -37,19 +37,19 @@
 	bind:this={modal}
 	id={$$props.id}
 	class={classMap({
-		component: 'modal'
+		component: 'modal',
+		default: $$props.class
+	})}
+	style={styleMap({
+		default: $$props.style,
+		background: $$props.background,
+		color: $$props.color
 	})}
 	on:keydown={handleKeyDown}
 >
 	<div
 		class={classMap({
-			component: 'modal-container',
-			default: $$props.class
-		})}
-		style={styleMap({
-			default: $$props.style,
-			background: $$props.background,
-			color: $$props.color
+			component: 'modal-container'
 		})}
 	>
 		<slot />
@@ -96,9 +96,9 @@
 		opacity: 1;
 	}
 
-	:where(.modal) {
+	/* :where(.modal) {
 		align-items: center;
-	}
+	} */
 
 	.modal-container {
 		/* max-height: calc(100vh - 5em); */

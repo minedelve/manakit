@@ -137,7 +137,8 @@ export const displayClass = ({ screen }: { screen: string }) => {
 		css += createClass({
 			className: item.className,
 			properties: item.properties,
-			screen
+			screen,
+			important: true
 		});
 	});
 

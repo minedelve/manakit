@@ -153,21 +153,24 @@ export const gridsGapClass = ({ screen }: { screen: string }) => {
 			properties: {
 				gap: item.value
 			},
-			screen
+			screen,
+			important: true
 		});
 		css += createClass({
 			className: '.gap-x-' + item.className,
 			properties: {
 				'column-gap': item.value
 			},
-			screen
+			screen,
+			important: true
 		});
 		css += createClass({
 			className: '.gap-y-' + item.className,
 			properties: {
 				'row-gap': item.value
 			},
-			screen
+			screen,
+			important: true
 		});
 	});
 

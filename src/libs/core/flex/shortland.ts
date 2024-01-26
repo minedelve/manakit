@@ -65,7 +65,8 @@ export const shortlandClass = ({ screen }: { screen: string }) => {
 		css += createClass({
 			className: '.flex-' + item.className,
 			properties: item.properties,
-			screen
+			screen,
+			important: true
 		});
 	});
 
