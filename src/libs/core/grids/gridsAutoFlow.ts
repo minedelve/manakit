@@ -41,7 +41,8 @@ export const gridsAutoFlowClass = ({ screen }: { screen: string }) => {
 		css += createClass({
 			className: '.grid-flow-' + item.className,
 			properties: item.properties,
-			screen
+			screen,
+			important: true
 		});
 	});
 

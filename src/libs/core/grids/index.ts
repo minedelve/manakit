@@ -1,3 +1,4 @@
+import { gridsGapClass } from './gap.js';
 import { gridsAutoColumnClass } from './gridsAutoColumn.js';
 import { gridsAutoFlowClass } from './gridsAutoFlow.js';
 import { gridsAutoRowClass } from './gridsAutoRow.js';
@@ -16,5 +17,6 @@ export const gridsClass = ({ screen }: { screen: string }) => {
 	css += gridsAutoFlowClass({ screen });
 	css += gridsAutoColumnClass({ screen });
 	css += gridsAutoRowClass({ screen });
+	css += gridsGapClass({ screen });
 	return css;
 };

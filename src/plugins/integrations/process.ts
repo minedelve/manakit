@@ -15,6 +15,7 @@ import { layoutClass } from '$lib/libs/core/layout/index.js';
 import { gridsClass } from '$lib/libs/core/grids/index.js';
 import { floatClass } from '$lib/libs/core/float/index.js';
 import { flexClass } from '$lib/libs/core/flex/index.js';
+import { footerStaticClass } from '$lib/libs/modules/footer/footer.js';
 
 export const buildCSS = ({
 	dark,
@@ -37,6 +38,8 @@ export const buildCSS = ({
 	cssString += radiusClass();
 	cssString += shadowClass();
 	cssString += fontsStaticClass();
+	// components
+	cssString += footerStaticClass();
 
 	for (const [screen, value] of Object.entries(responsive)) {
 		if (screen !== 'none') cssString += `@media screen and (min-width: ${value}) {\n`;
