@@ -19,3 +19,4 @@ export { default as Footer } from './footer/footer.svelte';
 export { default as FooterTitle } from './footer/footer.title.svelte';
 export { default as Link } from './link/link.svelte';
 export { default as Chip } from './chip/chip.svelte';
+export { default as Grid } from './grid/grid.svelte';
