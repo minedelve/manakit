@@ -20,3 +20,5 @@ export { default as FooterTitle } from './footer/footer.title.svelte';
 export { default as Link } from './link/link.svelte';
 export { default as Chip } from './chip/chip.svelte';
 export { default as Grid } from './grid/grid.svelte';
+export { default as Tooltip } from './tooltip/tooltip.svelte';
+export { default as Kbd } from './kbd/kbd.svelte';
