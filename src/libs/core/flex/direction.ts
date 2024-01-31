@@ -20,7 +20,7 @@ const properties = [
 		}
 	},
 	{
-		className: 'column',
+		className: 'column-reverse',
 		properties: {
 			'flex-direction': 'column-reverse'
 		}
