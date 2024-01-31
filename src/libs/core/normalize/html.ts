@@ -6,6 +6,13 @@ export const normalizeHTML = () => {
 	css += createClass({
 		className: 'html',
 		properties: {
+			'overflow-x': 'hidden'
+		}
+	});
+
+	css += createClass({
+		className: 'html',
+		properties: {
 			'line-height': 1.5,
 			'tab-size': 4,
 			'font-family': 'var(--font-body)',
