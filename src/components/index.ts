@@ -24,3 +24,4 @@ export { default as Tooltip } from './tooltip/tooltip.svelte';
 export { default as Kbd } from './kbd/kbd.svelte';
 export { default as Code } from './code/code.svelte';
 export { default as Toggle } from './toggle/toggle.svelte';
+export { default as Dropdown } from './dropdown/dropdown.svelte';
