@@ -29,3 +29,7 @@ export { default as Collapse } from './collapse/collapse.svelte';
 export { default as Tabs } from './tab/tabs.svelte';
 export { default as Tab } from './tab/tab.svelte';
 export { default as TabContent } from './tab/tabcontent.svelte';
+export { default as Checkbox } from './checkbox/checkbox.svelte';
+export { default as Toast } from './toast/toast.svelte';
+export { default as Skeleton } from './skeleton/skeleton.svelte';
+export { default as Table } from './table/table.svelte';

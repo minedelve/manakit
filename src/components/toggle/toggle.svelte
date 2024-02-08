@@ -51,6 +51,7 @@
 			color: $$props.color
 		})}
 		type="checkbox"
+		disabled={$$props.disabled}
 		{checked}
 		on:change={(e) => handleChange(e)}
 		{...$$props}
