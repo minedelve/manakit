@@ -26,3 +26,6 @@ export { default as Code } from './code/code.svelte';
 export { default as Toggle } from './toggle/toggle.svelte';
 export { default as Dropdown } from './dropdown/dropdown.svelte';
 export { default as Collapse } from './collapse/collapse.svelte';
+export { default as Tabs } from './tab/tabs.svelte';
+export { default as Tab } from './tab/tab.svelte';
+export { default as TabContent } from './tab/tabcontent.svelte';

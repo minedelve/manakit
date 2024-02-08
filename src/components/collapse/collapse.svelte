@@ -30,13 +30,13 @@
 >
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div class="collapse-title" on:click|stopPropagation={handleMenuOpen}>
+	<div class="collapse-header" on:click|stopPropagation={handleMenuOpen}>
 		<slot name="title" />
 	</div>
 
 	<div
 		class={classMap({
-			component: 'collapse-content'
+			component: 'collapse-body'
 		})}
 		style={styleMap({
 			default: $$props.style,
@@ -53,17 +53,15 @@
 		position: relative;
 		display: grid;
 		overflow: hidden;
-		/* grid-template-rows: auto 0fr; */
-		/* transition: grid-template-rows 0.2s; */
 		width: 100%;
 		border-radius: 1rem;
 	}
 
-	.collapse:not(.collapse-open):not(.collapse-close) > .collapse-title {
+	.collapse:not(.collapse-open):not(.collapse-close) > .collapse-header {
 		cursor: pointer;
 	}
 
-	.collapse-content {
+	.collapse-body {
 		visibility: hidden;
 		grid-column-start: 1;
 		grid-row-start: 2;
@@ -77,7 +75,8 @@
 		cursor: unset;
 	}
 
-	.collapse-title {
+	.collapse-header {
+		cursor: pointer;
 		width: 100%;
 		padding: 1rem;
 		padding-inline-end: 3rem;
@@ -89,7 +88,7 @@
 		grid-row-start: 1;
 	}
 
-	.collapse-open .collapse-content {
+	.collapse-open .collapse-body {
 		padding-bottom: 1rem;
 		transition:
 			padding 0.2s ease-out,
@@ -97,9 +96,5 @@
 		visibility: visible;
 		min-height: -moz-fit-content;
 		min-height: fit-content;
-	}
-
-	.collapse-open {
-		/* grid-template-rows: auto 1fr; */
 	}
 </style>
