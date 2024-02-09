@@ -33,3 +33,8 @@ export { default as Checkbox } from './checkbox/checkbox.svelte';
 export { default as Toast } from './toast/toast.svelte';
 export { default as Skeleton } from './skeleton/skeleton.svelte';
 export { default as Table } from './table/table.svelte';
+export { default as Loader } from './loader/loader.svelte';
+export { default as Join } from './join/join.svelte';
+export { default as Fieldarea } from './fieldarea/fieldarea.svelte';
+export { default as Select } from './select/select.svelte';
+export { default as Radio } from './radio/radio.svelte';
