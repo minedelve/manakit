@@ -6,7 +6,9 @@ export const normalizeHTML = () => {
 	css += createClass({
 		className: 'html',
 		properties: {
-			'overflow-x': 'hidden'
+			'overflow-x': 'hidden',
+			'scroll-padding-top': '5rem',
+			'scroll-behavior': 'smooth'
 		}
 	});
 
