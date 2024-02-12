@@ -56,5 +56,12 @@ export const normalizeGlobal = () => {
 		}
 	});
 
+	css += createClass({
+		className: ':root:has(:is(.drawer-open,.drawer-toggle:checked+.drawer))',
+		properties: {
+			overflow: 'hidden'
+		}
+	});
+
 	return css;
 };
