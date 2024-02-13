@@ -36,7 +36,7 @@
 	<div
 		class={classMap({
 			component: 'drawer-side',
-			default: $$props.classSide
+			default: $$props.classAside
 		})}
 	>
 		<div
@@ -64,6 +64,12 @@
 </div>
 
 <style>
+	:root {
+		--mk-drawer-surface: var(--color-surface);
+		--mk-drawer-overlay: var(--color-shadow);
+		--mk-drawer-overlay-opacity: 0.42;
+	}
+
 	.drawer {
 		position: relative;
 		display: grid;
@@ -92,8 +98,8 @@
 	}
 
 	.drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
-		background-color: var(--color-shadow);
-		opacity: 0.42;
+		background-color: var(--mk-drawer-overlay);
+		opacity: var(--mk-drawer-overlay-opacity);
 	}
 
 	.drawer-toggle:checked ~ .drawer-side > *:not(.drawer-overlay) {
@@ -131,7 +137,7 @@
 
 	.drawer-side > aside {
 		min-height: 100%;
-		background: var(--color-surface);
+		background: var(--mk-drawer-surface);
 	}
 
 	.drawer-side > .drawer-overlay {
