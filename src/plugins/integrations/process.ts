@@ -16,6 +16,9 @@ import { gridsClass } from '$lib/libs/core/grids/index.js';
 import { floatClass } from '$lib/libs/core/float/index.js';
 import { flexClass } from '$lib/libs/core/flex/index.js';
 
+// components
+import { drawerResponsiveClass } from '$lib/components/drawer/drawer.style.js';
+
 export const buildCSS = ({
 	dark,
 	themes,
@@ -50,6 +53,9 @@ export const buildCSS = ({
 		cssString += flexClass({ screen });
 		cssString += gridsFlexClass({ screen });
 		cssString += fontsClass({ screen });
+
+		// class components
+		cssString += drawerResponsiveClass({ screen });
 
 		if (screen !== 'none') cssString += '}\n\n';
 	}

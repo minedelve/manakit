@@ -1,27 +1,47 @@
 <script lang="ts">
 	import { classMap, styleMap } from '../../libs/helpers';
+	import Button from '../button/button.svelte';
+	import closeSVG from './close.svg';
+
+	export let open: boolean | undefined = undefined;
+
+	$: {
+		if (open) {
+			setTimeout(() => {
+				open = false;
+			}, $$props.timeout || 5000);
+		}
+	}
 </script>
 
-<div
-	id={$$props.id}
-	class={classMap({
-		component: 'alert',
-		default: $$props.class,
-		'alert-is-block': $$props.block,
-		'alert-is-info': $$props.info,
-		'alert-is-success': $$props.success,
-		'alert-is-warning': $$props.warning,
-		'alert-is-error': $$props.error
-	})}
-	style={styleMap({
-		default: $$props.style,
-		background: $$props.background,
-		color: $$props.color
-	})}
-	role={$$props.role || 'alert'}
->
-	<slot />
-</div>
+{#if open || open === undefined}
+	<div
+		id={$$props.id}
+		class={classMap({
+			component: 'alert',
+			default: $$props.class,
+			'alert-is-block': $$props.block,
+			'alert-is-info': $$props.info,
+			'alert-is-success': $$props.success,
+			'alert-is-warning': $$props.warning,
+			'alert-is-error': $$props.error
+		})}
+		style={styleMap({
+			default: $$props.style,
+			background: $$props.background,
+			color: $$props.color
+		})}
+		role={$$props.role || 'alert'}
+	>
+		<slot />
+
+		{#if $$props.closable}
+			<Button size="sm" on:click={() => (open = false)} square>
+				<img src={closeSVG} alt="close" />
+			</Button>
+		{/if}
+	</div>
+{/if}
 
 <style>
 	.alert {

@@ -30,7 +30,7 @@ export const normalizeGlobal = () => {
 	});
 
 	css += createClass({
-		className: 'img, svg, video, canvas, audio, iframe, embed, object ',
+		className: 'img, svg, video, canvas, audio, iframe, embed, object',
 		properties: {
 			display: 'block',
 			'vertical-align': 'middle'
@@ -38,8 +38,26 @@ export const normalizeGlobal = () => {
 	});
 
 	css += createClass({
+		className: 'code, kbd, samp, pre',
+		properties: {
+			'font-family':
+				' ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Vazirmatn,Courier New,monospace',
+			'font-feature-settings': 'normal',
+			'font-variation-settings': 'normal',
+			'font-size': '1em'
+		}
+	});
+
+	css += createClass({
 		className:
 			':root:has(:is(.modal-open,.modal:target,.modal-toggle:checked+.modal,.modal[open]))',
+		properties: {
+			overflow: 'hidden'
+		}
+	});
+
+	css += createClass({
+		className: ':root:has(:is(.drawer-open,.drawer-toggle:checked+.drawer))',
 		properties: {
 			overflow: 'hidden'
 		}

@@ -1,13 +1,29 @@
 <script lang="ts">
 	import { classMap, styleMap } from '../../libs/helpers';
+
+	export let open: boolean = false;
+
+	$: innerWidth = 0;
+	let width = 0;
+
+	const handleClose = () => (open = false);
+	const handleKeyDown = (event: KeyboardEvent) => event.key === 'Escape' && handleClose();
+
+	$: {
+		if (innerWidth !== width) handleClose();
+		width = innerWidth;
+	}
 </script>
+
+<svelte:window bind:innerWidth />
 
 <div
 	id={$$props.id}
 	class={classMap({
 		component: 'drawer',
-		'drawer-is-open': $$props.open,
-		'drawer-is-end': $$props.end
+		default: $$props.class,
+		'drawer-open': open,
+		'drawer-end': $$props.end
 	})}
 	style={styleMap({
 		default: $$props.style,
@@ -15,45 +31,80 @@
 		color: $$props.color
 	})}
 >
-	<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<!-- svelte-ignore a11y-click-events-have-key-events -->
-	<!-- svelte-ignore a11y-no-static-element-interactions -->
+	<input type="checkbox" class="drawer-toggle" checked={open} />
+
 	<div
 		class={classMap({
 			component: 'drawer-side',
-			default: $$props.class
+			default: $$props.classSide
 		})}
-		on:click={() => console.log('drawer-overlay')}
 	>
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-		<label
-			for="my-drawer"
+		<div
+			role="button"
+			on:click={handleClose}
+			on:keydown={handleKeyDown}
+			tabindex="-1"
 			aria-label="close sidebar"
 			class="drawer-overlay"
-			on:click={$$props.onclose}
-		></label>
-		<!-- <ul class="menu" on:click={() => console.log('drawer-overlay')}>
-			<slot />
-		</ul> -->
+		/>
+		<aside>
+			<slot name="aside" />
+		</aside>
+	</div>
 
-		<div class="drawer-content">
-			<slot />
-		</div>
+	<div
+		class={classMap({
+			component: 'drawer-content',
+			default: $$props.classContent
+		})}
+		inert={open}
+	>
+		<slot />
 	</div>
 </div>
 
 <style>
 	.drawer {
+		position: relative;
 		display: grid;
 		grid-auto-columns: max-content auto;
 		width: 100%;
-		overflow: hidden;
-		z-index: 99999;
 	}
 
-	.drawer .drawer-side {
+	.drawer-toggle {
+		position: fixed;
+		height: 0;
+		width: 0;
+		appearance: none;
+		opacity: 0;
+	}
+
+	.drawer-content {
+		grid-column-start: 2;
+		grid-row-start: 1;
+		min-width: 0;
+	}
+
+	.drawer-toggle:checked ~ .drawer-side {
+		pointer-events: auto;
+		visibility: visible;
+	}
+
+	.drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
+		background-color: var(--color-shadow);
+		opacity: 0.42;
+	}
+
+	.drawer-toggle:checked ~ .drawer-side > *:not(.drawer-overlay) {
+		transform: translate(0);
+	}
+
+	.drawer-side {
+		scroll-behavior: smooth;
+		scroll-padding-top: 5rem;
+	}
+
+	.drawer-side {
 		pointer-events: none;
 		position: fixed;
 		inset-inline-start: 0;
@@ -72,6 +123,16 @@
 		height: 100dvh;
 	}
 
+	.drawer-side > * {
+		grid-column-start: 1;
+		grid-row-start: 1;
+	}
+
+	.drawer-side > aside {
+		min-height: 100%;
+		background: var(--color-surface);
+	}
+
 	.drawer-side > .drawer-overlay {
 		position: sticky;
 		top: 0;
@@ -84,58 +145,33 @@
 		transition-duration: 0.2s;
 	}
 
-	.drawer-side > * {
-		grid-column-start: 1;
-		grid-row-start: 1;
-	}
-
-	.drawer-side > .drawer-content {
-		flex: 0 1 auto;
-		height: 100%;
-		max-width: 100%;
-		overflow-x: hidden;
-		overflow-y: auto;
-		background: var(--color-surface);
-	}
-
-	.drawer-side > .menu {
-		display: flex;
-		flex-direction: column;
-		flex-wrap: wrap;
-		font-size: 0.875rem;
-		line-height: 1.25rem;
-		padding: 0.5rem;
-		min-height: 100%;
-		background-color: var(--color-surface);
-	}
-
-	.drawer-side > .menu,
-	.drawer-side > .drawer-content {
+	.drawer-side > *:not(.drawer-overlay) {
+		transition-property: transform;
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		transition-duration: 0.3s;
+		will-change: transform;
 		transform: translate(-100%);
 	}
 
-	.drawer-is-end .drawer-side {
+	.drawer-end .drawer-toggle ~ .drawer-side {
 		grid-column-start: 2;
 		justify-items: end;
 	}
 
-	.drawer-is-end .drawer-side > .menu,
-	.drawer-is-end .drawer-side > .drawer-content {
+	.drawer-end {
+		grid-auto-columns: auto max-content;
+	}
+
+	.drawer-end .drawer-side > *:not(.drawer-overlay) {
 		transform: translate(100%);
 	}
 
-	.drawer-is-open .drawer-side {
-		pointer-events: auto;
-		visibility: visible;
-	}
-
-	.drawer-is-open .drawer-side > .drawer-overlay {
-		background: var(--color-shadow);
-		opacity: 0.42;
-	}
-
-	.drawer-is-open .drawer-side > .menu,
-	.drawer-is-open .drawer-side > .drawer-content {
+	.drawer-toggle:checked ~ .drawer-side > *:not(.drawer-overlay) {
 		transform: translate(0);
+	}
+
+	.drawer-end .drawer-toggle ~ .drawer-content {
+		grid-column-start: 1;
 	}
 </style>
