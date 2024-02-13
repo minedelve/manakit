@@ -25,11 +25,6 @@
 		'drawer-open': open,
 		'drawer-end': $$props.end
 	})}
-	style={styleMap({
-		default: $$props.style,
-		background: $$props.background,
-		color: $$props.color
-	})}
 >
 	<input type="checkbox" class="drawer-toggle" checked={open} />
 
@@ -47,7 +42,12 @@
 			aria-label="close sidebar"
 			class="drawer-overlay"
 		/>
-		<aside>
+		<aside
+			style={styleMap({
+				background: $$props.background,
+				color: $$props.color
+			})}
+		>
 			<slot name="aside" />
 		</aside>
 	</div>
