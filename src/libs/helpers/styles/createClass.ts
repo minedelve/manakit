@@ -7,7 +7,7 @@ const createClass = ({ parentClassName, className, properties, important, screen
 
 	if (properties) {
 		if (haveDot) {
-			const classNameClearDot = className.slice(1);
+			const classNameClearDot = formatClassWithNumberDot(className).slice(1);
 			css +=
 				screen && screen !== 'none'
 					? parentClassName
@@ -17,7 +17,9 @@ const createClass = ({ parentClassName, className, properties, important, screen
 						? `${parentClassName}.${classNameClearDot} {\n`
 						: `.${classNameClearDot} {\n`;
 		} else {
-			css += parentClassName ? `${parentClassName}${className} {\n` : `${className} {\n`;
+			css += parentClassName
+				? `${parentClassName}${formatClassWithNumberDot(className)} {\n`
+				: `${className} {\n`;
 		}
 
 		for (const [key, value] of Object.entries(properties)) {
@@ -30,3 +32,8 @@ const createClass = ({ parentClassName, className, properties, important, screen
 };
 
 export default createClass;
+
+function formatClassWithNumberDot(className: string) {
+	const regex = /(\d)\.(\d)/g;
+	return className.replace(regex, '$1\\.$2');
+}
