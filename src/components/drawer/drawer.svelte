@@ -88,6 +88,7 @@
 	.drawer-toggle:checked ~ .drawer-side {
 		pointer-events: auto;
 		visibility: visible;
+		overflow-y: auto;
 	}
 
 	.drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
@@ -139,7 +140,8 @@
 		place-self: stretch;
 		cursor: pointer;
 		background-color: transparent;
-		transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+		transition-property: color, background-color, border-color, opacity, text-decoration-color, fill,
+			stroke;
 		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 		transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 		transition-duration: 0.2s;
