@@ -5,7 +5,7 @@
 <details
 	id={$$props.id}
 	class={classMap({
-		component: 'menu-item',
+		component: 'menu-item groups',
 		default: $$props.class,
 		'menu-item--disabled': $$props.disabled
 	})}
@@ -16,7 +16,9 @@
 	})}
 	open={$$props.open}
 >
-	<summary><span>Parent</span></summary>
+	<summary>
+		<slot name="section" />
+	</summary>
 	<slot />
 </details>
 
@@ -24,7 +26,7 @@
 	summary::after {
 		justify-self: end;
 		display: block;
-		margin-top: -0.5rem rem;
+		margin-top: -0.5rem;
 		height: 0.5rem;
 		width: 0.5rem;
 		transform: rotate(45deg);
@@ -36,14 +38,6 @@
 		box-shadow: 2px 2px;
 		pointer-events: none;
 		align-self: center;
-	}
-
-	details {
-		--btn-color: #1f2837;
-		--btn-background: #f2f2f2;
-		--btn-background-hover: #d2d2d2;
-		--btn-background-disabled: #d9dadc;
-		--btn-color-disabled: #b9babe;
 	}
 
 	details[open] > summary::after {
@@ -65,13 +59,17 @@
 		inset-inline-start: 0;
 		top: 0.75rem;
 		width: 1px;
-		background-color: #1f2c32;
+		background-color: var(--menu-color-line);
 		opacity: 0.1;
 		content: '';
 	}
 
 	summary {
 		display: list-item;
+		border-radius: 0.5rem;
+		padding: 0.5rem 1rem;
+		font-size: 0.875rem;
+		line-height: 1.25rem;
 	}
 
 	summary {
@@ -88,12 +86,12 @@
 		transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 		transition-duration: 0.2s;
 		text-wrap: balance;
-		color: var(--btn-color);
-		background-color: var(--btn-background);
+		color: var(--menu-color);
+		background-color: var(--menu-background);
 		cursor: pointer;
 	}
 
 	summary:hover {
-		background-color: var(--btn-background-hover);
+		background-color: var(--menu-background-hover);
 	}
 </style>

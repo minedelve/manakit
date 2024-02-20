@@ -36,12 +36,6 @@
 
 <style>
 	li {
-		--btn-color: #1f2837;
-		--btn-background: #f2f2f2;
-		--btn-background-hover: #d2d2d2;
-		--btn-background-disabled: #d9dadc;
-		--btn-color-disabled: #b9babe;
-
 		position: relative;
 		display: flex;
 		flex-shrink: 0;
@@ -70,21 +64,28 @@
 		transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 		transition-duration: 0.2s;
 		text-wrap: balance;
-		color: var(--btn-color);
-		background-color: var(--btn-background);
+		color: var(--menu-color);
+		background-color: var(--menu-background);
 		cursor: pointer;
 		font-size: 100%;
+	}
+
+	a,
+	button {
+		border-radius: 0.5rem;
+		padding: 0.5rem 1rem;
+		font-size: 0.875rem;
+		line-height: 1.25rem;
 	}
 
 	.menu-item--disabled a,
 	.menu-item--disabled button[disabled] {
 		pointer-events: none;
-		background-color: var(--btn-background-disabled);
-		color: var(--btn-color-disabled);
+		color: var(--menu-color-disabled);
 	}
 
 	a:hover,
 	button:hover {
-		background-color: var(--btn-background-hover);
+		background-color: var(--menu-background-hover);
 	}
 </style>

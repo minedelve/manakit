@@ -2,29 +2,52 @@
 	import { classMap, styleMap } from '../../libs/helpers';
 </script>
 
-<span
-	id={$$props.id}
-	class={classMap({
-		component: 'badge',
-		default: $$props.class,
-		'badge-outline': $$props.outline,
-		badge: $$props.size,
-		'badge-error': $$props.error,
-		'badge-warning': $$props.warning,
-		'badge-success': $$props.success,
-		'badge-info': $$props.info
-	})}
-	style={styleMap({
-		default: $$props.style,
-		background: $$props.background,
-		color: $$props.color
-	})}
->
-	<slot />
-</span>
+{#if $$props.is === 'div'}
+	<div
+		id={$$props.id}
+		class={classMap({
+			component: 'badge',
+			default: $$props.class,
+			'badge-outline': $$props.outline,
+			badge: $$props.size,
+			'badge-error': $$props.error,
+			'badge-warning': $$props.warning,
+			'badge-success': $$props.success,
+			'badge-info': $$props.info
+		})}
+		style={styleMap({
+			default: $$props.style,
+			background: $$props.background,
+			color: $$props.color
+		})}
+	>
+		<slot />
+	</div>
+{:else}
+	<span
+		id={$$props.id}
+		class={classMap({
+			component: 'badge',
+			default: $$props.class,
+			'badge-outline': $$props.outline,
+			badge: $$props.size,
+			'badge-error': $$props.error,
+			'badge-warning': $$props.warning,
+			'badge-success': $$props.success,
+			'badge-info': $$props.info
+		})}
+		style={styleMap({
+			default: $$props.style,
+			background: $$props.background,
+			color: $$props.color
+		})}
+	>
+		<slot />
+	</span>
+{/if}
 
 <style>
-	span {
+	.badge {
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -40,7 +63,7 @@
 		border-width: 1px;
 	}
 
-	span {
+	.badge {
 		height: 1rem;
 		font-size: 0.75rem;
 		line-height: 1rem;
@@ -52,38 +75,6 @@
 		border-color: currentColor;
 		background-color: transparent;
 		color: currentColor;
-	}
-
-	.badge-lg {
-		height: 1.5rem;
-		font-size: 1rem;
-		line-height: 1.5rem;
-		padding-left: 0.688rem;
-		padding-right: 0.688rem;
-	}
-
-	.badge-md {
-		height: 1.25rem;
-		font-size: 0.875rem;
-		line-height: 1.25rem;
-		padding-left: 0.563rem;
-		padding-right: 0.563rem;
-	}
-
-	.badge-sm {
-		height: 1rem;
-		font-size: 0.75rem;
-		line-height: 1rem;
-		padding-left: 0.438rem;
-		padding-right: 0.438rem;
-	}
-
-	.badge-xs {
-		height: 0.75rem;
-		font-size: 0.75rem;
-		line-height: 0.75rem;
-		padding-left: 0.313rem;
-		padding-right: 0.313rem;
 	}
 
 	/** Colors */

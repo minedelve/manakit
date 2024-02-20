@@ -64,13 +64,11 @@
 </div>
 
 <style>
-	:root {
-		--mk-drawer-surface: var(--color-surface);
-		--mk-drawer-overlay: var(--color-shadow);
-		--mk-drawer-overlay-opacity: 0.42;
-	}
-
 	.drawer {
+		--drawer-surface: var(--color-surface);
+		--drawer-overlay: var(--color-shadow);
+		--drawer-overlay-opacity: 0.42;
+
 		position: relative;
 		display: grid;
 		grid-auto-columns: max-content auto;
@@ -98,8 +96,8 @@
 	}
 
 	.drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
-		background-color: var(--mk-drawer-overlay);
-		opacity: var(--mk-drawer-overlay-opacity);
+		background-color: var(--drawer-overlay);
+		opacity: var(--drawer-overlay-opacity);
 	}
 
 	.drawer-toggle:checked ~ .drawer-side > *:not(.drawer-overlay) {
@@ -128,6 +126,7 @@
 		overscroll-behavior: contain;
 		height: 100vh;
 		height: 100dvh;
+		z-index: 999;
 	}
 
 	.drawer-side > * {
@@ -137,7 +136,7 @@
 
 	.drawer-side > aside {
 		min-height: 100%;
-		background: var(--mk-drawer-surface);
+		background: var(--drawer-surface);
 	}
 
 	.drawer-side > .drawer-overlay {

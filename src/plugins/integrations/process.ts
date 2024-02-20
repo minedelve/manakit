@@ -18,6 +18,8 @@ import { flexClass } from '$lib/libs/core/flex/index.js';
 
 // components
 import { drawerResponsiveClass } from '$lib/components/drawer/drawer.style.js';
+import { menuResponsiveClass } from '$lib/components/menu/menu.style.js';
+import { badgeResponsiveClass } from '$lib/components/badge/badge.style.js';
 
 export const buildCSS = ({
 	dark,
@@ -56,6 +58,8 @@ export const buildCSS = ({
 
 		// class components
 		cssString += drawerResponsiveClass({ screen });
+		cssString += menuResponsiveClass({ screen });
+		cssString += badgeResponsiveClass({ screen });
 
 		if (screen !== 'none') cssString += '}\n\n';
 	}

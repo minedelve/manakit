@@ -42,6 +42,9 @@
 		border-width: 1px;
 		border-color: #d8d8db;
 		background-color: var(--color-background);
+
+		width: 100%;
+		max-width: 100%;
 	}
 
 	.field:focus {

@@ -19,7 +19,7 @@ data=[{name: 'default', default: 'undefined', 'desc': 'the default Svelte slot' 
 
 #### Variables CSS
 
-data=[{variable: '--mk-drawer-surface', default: '--color-surface', 'desc': 'background color for sidebar' },{variable: '--mk-drawer-overlay', default: '--color-shadow', 'desc': 'The slot used for display content in sidebar' }, {variable: '--mk-drawer-overlay-opacity', default: '0.42', 'desc': 'opacity for overlay color' } ]
+data=[{variable: '--drawer-surface', default: '--color-surface', 'desc': 'background color for sidebar' },{variable: '--drawer-overlay', default: '--color-shadow', 'desc': 'The slot used for display content in sidebar' }, {variable: '--drawer-overlay-opacity', default: '0.42', 'desc': 'opacity for overlay color' } ]
 
 #### Class
 

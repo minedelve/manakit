@@ -7,8 +7,9 @@
 	class={classMap({
 		component: 'menu',
 		default: $$props.class,
-		'menu-is-horizontal': $$props.horizontal,
-		'menu-is-vertical': $$props.vertical
+		menu: $$props.size,
+		'menu-horizontal': $$props.horizontal,
+		'menu-vertical': $$props.vertical
 	})}
 	style={styleMap({
 		default: $$props.style,
@@ -29,6 +30,12 @@
 	}
 
 	.menu {
+		--menu-color: #1f2837;
+		--menu-background: #f2f2f2;
+		--menu-background-hover: #e0e0e1;
+		--menu-color-disabled: #c0c3c5;
+		--menu-color-line: #1f2c32;
+
 		display: flex;
 		flex-direction: column;
 		flex-wrap: wrap;
