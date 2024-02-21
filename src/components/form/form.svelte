@@ -1,13 +1,28 @@
 <script lang="ts">
+	import { classMap, styleMap } from '../../libs/helpers';
 	import { onMount } from 'svelte';
 	export let validator: any;
+	export let isValid: boolean;
 	// PRE PRE ALPHA
 
 	onMount(() => {
 		handleChange();
 	});
 
-	let formData = {};
+	$: formData = {};
+
+	$: {
+		isValid = hasError(formData);
+	}
+
+	function hasError(obj: any) {
+		for (let key in obj) {
+			if (obj[key].hasError) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 	function handleChange() {
 		formData = {};
@@ -53,9 +68,23 @@
 				(formData as any)[name] = { value: value, hasError: error };
 			}
 		}
+
+		console.log('LABS: [FORM]', formData);
 	}
 </script>
 
-<form on:input={handleChange}>
+<form
+	id={$$props.id}
+	class={classMap({
+		component: 'forms',
+		default: $$props.class
+	})}
+	style={styleMap({
+		default: $$props.style,
+		background: $$props.background,
+		color: $$props.color
+	})}
+	on:input={handleChange}
+>
 	<slot />
 </form>

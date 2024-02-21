@@ -42,3 +42,4 @@ export { default as Select } from './select/select.svelte';
 export { default as Radio } from './radio/radio.svelte';
 export { default as Badge } from './badge/badge.svelte';
 export { default as Form } from './form/form.svelte';
+export { default as FieldEvol } from './field/field2.svelte';
