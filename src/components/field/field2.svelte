@@ -4,11 +4,20 @@
 	export let value: any = undefined;
 	export let type: any = 'text';
 
+	let isFocused = false;
+
+	function handleFocus() {
+		isFocused = true;
+	}
+
+	function handleBlur() {
+		isFocused = false;
+	}
 	const typeWorkaround = (node: { type: any }) => (node.type = type);
 </script>
 
 {#if $$slots.append || $$slots.prepend || $$slots.iconAppend || $$slots.iconPrepend}
-	<label class="form-data" for={$$props.name}>
+	<label class="form-data">
 		{#if $$slots.append}
 			<div class="label">
 				<slot name="append" />
@@ -24,7 +33,8 @@
 				'field-warning': $$props.warning,
 				'field-error': $$props.error,
 				'field-disabled': $$props.disabled,
-				field: $$props.size
+				field: $$props.size,
+				'field-focus': isFocused
 			})}
 			style={styleMap({
 				default: $$props.style,
@@ -43,6 +53,8 @@
 				autocomplete={$$props.autocomplete}
 				spellcheck={$$props.spellcheck}
 				disabled={$$props.disabled}
+				on:focus={handleFocus}
+				on:blur={handleBlur}
 				use:typeWorkaround
 				bind:value
 			/>
@@ -148,7 +160,8 @@
 		color: #cdced1;
 	}
 
-	.field:focus {
+	.field:focus,
+	.field-focus {
 		box-shadow: none;
 		outline-style: solid;
 		outline-width: 2px;
