@@ -6,13 +6,8 @@
 
 	let isFocused = false;
 
-	function handleFocus() {
-		isFocused = true;
-	}
-
-	function handleBlur() {
-		isFocused = false;
-	}
+	const handleFocus = () => (isFocused = true);
+	const handleBlur = () => (isFocused = false);
 	const typeWorkaround = (node: { type: any }) => (node.type = type);
 </script>
 
@@ -131,6 +126,14 @@
 	}
 
 	.field {
+		--field-background: var(--color-background);
+		--field-border-color: #d8d8db;
+		--field-focus-outline-color: var(--color-text);
+		--field-focus-border-color: var(--color-text);
+		--field-disabled-background: #f2f2f2;
+		--field-disabled-border-color: #f2f2f2;
+		--field-disabled-color: #cdced1;
+
 		flex-shrink: 1;
 		appearance: none;
 		height: 3rem;
@@ -141,24 +144,24 @@
 		line-height: 1.5rem;
 		border-radius: 0.5rem;
 		border-width: 1px;
-		border-color: #d8d8db;
-		background-color: var(--color-background);
+		border-color: var(--field-border-color);
+		background-color: var(--field-background);
 		width: 100%;
 		max-width: 100%;
 	}
 
 	.field:focus,
 	.field-focus {
-		border-color: var(--color-text);
-		outline-color: var(--color-text);
+		border-color: var(--field-focus-border-color);
+		outline-color: var(--field-focus-outline-color);
 	}
 
 	.field-disabled,
 	input[disabled] {
 		cursor: not-allowed;
-		border-color: #f2f2f2;
-		background-color: #f2f2f2;
-		color: #cdced1;
+		border-color: var(--field-disabled-border-color);
+		background-color: var(--field-disabled-background);
+		color: var(--field-disabled-color);
 	}
 
 	.field:focus,
