@@ -1,13 +1,27 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	export let validator: any;
+	export let isValid: boolean;
 	// PRE PRE ALPHA
 
 	onMount(() => {
 		handleChange();
 	});
 
-	let formData = {};
+	$: formData = {};
+
+	$: {
+		isValid = hasError(formData);
+	}
+
+	function hasError(obj: any) {
+		for (let key in obj) {
+			if (obj[key].hasError) {
+				return false;
+			}
+		}
+		return true;
+	}
 
 	function handleChange() {
 		formData = {};
@@ -53,6 +67,8 @@
 				(formData as any)[name] = { value: value, hasError: error };
 			}
 		}
+
+		console.log('LABS: [FORM]', formData);
 	}
 </script>
 
