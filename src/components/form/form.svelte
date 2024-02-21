@@ -68,8 +68,6 @@
 				(formData as any)[name] = { value: value, hasError: error };
 			}
 		}
-
-		console.log('LABS: [FORM]', formData);
 	}
 </script>
 
