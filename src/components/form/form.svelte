@@ -1,4 +1,5 @@
 <script lang="ts">
+	import { classMap, styleMap } from '../../libs/helpers';
 	import { onMount } from 'svelte';
 	export let validator: any;
 	export let isValid: boolean;
@@ -72,6 +73,18 @@
 	}
 </script>
 
-<form on:input={handleChange}>
+<form
+	id={$$props.id}
+	class={classMap({
+		component: 'forms',
+		default: $$props.class
+	})}
+	style={styleMap({
+		default: $$props.style,
+		background: $$props.background,
+		color: $$props.color
+	})}
+	on:input={handleChange}
+>
 	<slot />
 </form>
