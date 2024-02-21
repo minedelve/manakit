@@ -147,7 +147,8 @@
 		max-width: 100%;
 	}
 
-	.field:focus {
+	.field:focus,
+	.field-focus {
 		border-color: var(--color-text);
 		outline-color: var(--color-text);
 	}
@@ -161,7 +162,11 @@
 	}
 
 	.field:focus,
-	.field-focus {
+	.field-focus,
+	.field-error,
+	.field-info,
+	.field-success,
+	.field-warning {
 		box-shadow: none;
 		outline-style: solid;
 		outline-width: 2px;
