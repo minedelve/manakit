@@ -39,7 +39,7 @@ export const floatClass = ({ screen }: { screen: string }) => {
 
 	properties.forEach((item) => {
 		css += createClass({
-			className: 'float-' + item.className,
+			className: '.float-' + item.className,
 			properties: item.properties,
 			screen
 		});
