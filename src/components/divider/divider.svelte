@@ -7,9 +7,10 @@
 	class={classMap({
 		component: 'divider',
 		default: $$props.class,
-		'divider-is-horizontal': $$props.horizontal,
-		'divider-is-start': $$props.start,
-		'divider-is-end': $$props.end
+		'divider-vertical': $$props.vertical,
+		'divider-inset': $$props.inset,
+		'divider-start': $$props.start,
+		'divider-end': $$props.end
 	})}
 	style={styleMap({
 		default: $$props.style,
@@ -22,6 +23,7 @@
 
 <style>
 	.divider {
+		--divider-color: #1f2c32;
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -36,27 +38,22 @@
 		gap: 1rem;
 	}
 
-	.divider:not(.divider-is-start):before,
-	.divider:not(.divider-is-end):after {
+	.divider-inset:not(.divider-vertical) {
+		width: 80%;
+		margin: 0 auto;
+	}
+
+	.divider:not(.divider-start):before,
+	.divider:not(.divider-end):after {
 		height: 0.125rem;
 		width: 100%;
 		flex-grow: 1;
 		content: '';
-		background-color: var(--color-divider);
+		background-color: var(--divider-color);
 	}
 
-	.divider-is-horizontal {
-		margin-left: 1rem;
-		margin-right: 1rem;
-		margin-top: 0;
-		margin-bottom: 0;
-		height: auto;
-		width: 1rem;
-		flex-direction: column;
-	}
-
-	.divider-is-horizontal:not(.divider-is-start):before,
-	.divider-is-horizontal:not(.divider-is-end):after {
+	.divider-vertical:not(.divider-start):before,
+	.divider-vertical:not(.divider-end):after {
 		height: 100%;
 		width: 0.125rem;
 	}

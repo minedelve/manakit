@@ -1,26 +1,58 @@
 <script lang="ts">
+	import { onMount } from 'svelte';
 	import { classMap, styleMap } from '../../libs/helpers';
+
+	export let open: boolean = false;
+
+	$: openDetails = false;
+
+	onMount(() => {
+		openDetails = open;
+	});
+
+	const handleOpen = () => {
+		open = open ? false : true;
+		openDetails = open ? false : true;
+	};
 </script>
 
-<details
-	id={$$props.id}
-	class={classMap({
-		component: 'menu-item groups',
-		default: $$props.class,
-		'menu-item--disabled': $$props.disabled
-	})}
-	style={styleMap({
-		default: $$props.style,
-		background: $$props.background,
-		color: $$props.color
-	})}
-	open={$$props.open}
->
-	<summary>
-		<slot name="section" />
-	</summary>
-	<slot />
-</details>
+{#if $$slots.summary}
+	<details
+		id={$$props.id}
+		class={classMap({
+			component: 'menu-item groups',
+			default: $$props.class,
+			'menu-item--disabled': $$props.disabled
+		})}
+		style={styleMap({
+			default: $$props.style,
+			background: $$props.background,
+			color: $$props.color
+		})}
+		open={openDetails}
+	>
+		<summary on:click={() => handleOpen()}>
+			<slot name="summary" />
+		</summary>
+		<slot />
+	</details>
+{:else}
+	<div
+		id={$$props.id}
+		class={classMap({
+			component: 'menu-item groups',
+			default: $$props.class,
+			'menu-item--disabled': $$props.disabled
+		})}
+		style={styleMap({
+			default: $$props.style,
+			background: $$props.background,
+			color: $$props.color
+		})}
+	>
+		<slot />
+	</div>
+{/if}
 
 <style>
 	summary::after {
@@ -45,7 +77,8 @@
 		margin-top: 0;
 	}
 
-	details > :global(ul.menu) {
+	details > :global(ul.menu),
+	.menu-item.groups > :global(ul.menu) {
 		padding: 0;
 		position: relative;
 		white-space: nowrap;
@@ -53,7 +86,8 @@
 		padding-inline-start: 0.5rem;
 	}
 
-	details > :global(.menu:before) {
+	details > :global(.menu:before),
+	.menu-item.groups > :global(.menu:before) {
 		position: absolute;
 		bottom: 0.75rem;
 		inset-inline-start: 0;
@@ -66,10 +100,6 @@
 
 	summary {
 		display: list-item;
-		border-radius: 0.5rem;
-		padding: 0.5rem 1rem;
-		font-size: 0.875rem;
-		line-height: 1.25rem;
 	}
 
 	summary {
@@ -93,5 +123,14 @@
 
 	summary:hover {
 		background-color: var(--menu-background-hover);
+	}
+
+	details,
+	div {
+		--menu-color: #1f2837;
+		--menu-background: #f2f2f2;
+		--menu-background-hover: #e0e0e1;
+		--menu-color-disabled: #c0c3c5;
+		--menu-color-line: #1f2c32;
 	}
 </style>

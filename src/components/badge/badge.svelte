@@ -63,14 +63,6 @@
 		border-width: 1px;
 	}
 
-	.badge {
-		height: 1rem;
-		font-size: 0.75rem;
-		line-height: 1rem;
-		padding-left: 0.438rem;
-		padding-right: 0.438rem;
-	}
-
 	.badge-outline {
 		border-color: currentColor;
 		background-color: transparent;

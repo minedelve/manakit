@@ -14,9 +14,9 @@
 
 <style>
 	div {
-		position: relative;
-		display: grid;
+		/* position: relative;
+		display: grid; */
 		/* grid-auto-columns: max-content; */
-		width: 100%;
+		/* width: 100%; */
 	}
 </style>

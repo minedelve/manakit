@@ -157,7 +157,7 @@ export const paddingClass = ({ screen }: { screen: string }) => {
 			screen
 		});
 		css += createClass({
-			className: '.mb-' + item.size,
+			className: '.pb-' + item.size,
 			properties: {
 				'margin-bottom': `${item?.value}`
 			},
