@@ -165,11 +165,7 @@
 	}
 
 	.field:focus,
-	.field-focus,
-	.field-error,
-	.field-info,
-	.field-success,
-	.field-warning {
+	.field-focus {
 		box-shadow: none;
 		outline-style: solid;
 		outline-width: 2px;
@@ -177,18 +173,38 @@
 	}
 
 	.field-info {
-		outline-color: var(--color-info);
+		border-color: var(--color-info) !important;
+	}
+	.field-info.field:focus,
+	.field-info.field-focus {
+		border-color: var(--color-info) !important;
+		outline-color: var(--color-info) !important;
 	}
 
 	.field-success {
-		outline-color: var(--color-success);
+		border-color: var(--color-success) !important;
+	}
+	.field-success.field:focus,
+	.field-success.field-focus {
+		border-color: var(--color-success) !important;
+		outline-color: var(--color-success) !important;
 	}
 
 	.field-warning {
-		outline-color: var(--color-warning);
+		border-color: var(--color-warning) !important;
+	}
+	.field-warning.field:focus,
+	.field-warning.field-focus {
+		border-color: var(--color-warning) !important;
+		outline-color: var(--color-warning) !important;
 	}
 
 	.field-error {
-		outline-color: var(--color-error);
+		border-color: var(--color-error) !important;
+	}
+	.field-error.field:focus,
+	.field-error.field-focus {
+		border-color: var(--color-error) !important;
+		outline-color: var(--color-error) !important;
 	}
 </style>

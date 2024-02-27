@@ -10,6 +10,7 @@
 
 <select
 	id={$$props.id}
+	name={$$props.name}
 	class={classMap({
 		component: 'select',
 		default: $$props.class,
