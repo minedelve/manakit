@@ -9,5 +9,7 @@
 	on:change
 	on:input
 >
+	<!-- slot: default -->
 	<slot />
+	<!-- /slot: default -->
 </button>

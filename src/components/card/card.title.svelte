@@ -12,6 +12,7 @@
 >
 	<!-- slot: default -->
 	<slot />
+	<!-- /slot: default -->
 </h2>
 
 <style>

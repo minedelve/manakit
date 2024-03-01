@@ -12,6 +12,7 @@
 >
 	<!-- slot: default -->
 	<slot />
+	<!-- /slot: default -->
 </div>
 
 <style>
@@ -19,7 +20,11 @@
 		display: flex;
 		flex: 1 1 auto;
 		flex-direction: column;
-		padding: var(--padding-card, 2rem);
+		padding: 2rem;
 		gap: 0.5rem;
+	}
+
+	.card-body :global(:where(p)) {
+		flex-grow: 1;
 	}
 </style>

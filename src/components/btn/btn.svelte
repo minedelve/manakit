@@ -45,15 +45,17 @@
 	{...props}
 	{...$$restProps}
 >
+	<!-- slot: default -->
 	<slot />
+	<!-- /slot: default -->
 </svelte:component>
 
 <style>
 	:global(.btn) {
-		--btn-color: #1f2837;
-		--btn-background: #f2f2f2;
-		--btn-background-disabled: #d9dadc;
-		--btn-color-disabled: #b9babe;
+		--btn-color: var(--color-surface-on-container);
+		--btn-background: var(--color-surface-container);
+		--btn-background-disabled: var(--color-surface-container-disabled);
+		--btn-color-disabled: var(--color-surface-on-container-disabled);
 
 		display: inline-flex;
 		height: 3rem;

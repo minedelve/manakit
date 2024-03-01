@@ -37,7 +37,7 @@ export const colorsClass = ({ themes }: { themes: any }) => {
 		});
 
 		css += createClass({
-			className: `.${key}:not(.btn)`,
+			className: `.${key}:not(.btn):not(.card)`,
 			properties: {
 				'background-color': `var(--color-${key}) !important`,
 				color: `var(--color-on-${key}, --color-on-surface) !important`
@@ -49,6 +49,14 @@ export const colorsClass = ({ themes }: { themes: any }) => {
 			properties: {
 				'--btn-background': `var(--color-${key}) !important`,
 				'--btn-color': `var(--color-on-${key}) !important`
+			}
+		});
+
+		css += createClass({
+			className: `.${key}.card`,
+			properties: {
+				'--card-background': `var(--color-${key}) !important`,
+				'--card-color': `var(--color-on-${key}) !important`
 			}
 		});
 	});

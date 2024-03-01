@@ -6,5 +6,7 @@
 	target={$$props.target}
 	role={$$props.role}
 >
+	<!-- slot: default -->
 	<slot />
+	<!-- /slot: default -->
 </a>

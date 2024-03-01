@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { classMap, styleMap } from '../../libs/helpers';
-	import Button from '../button/button.svelte';
+	// import Button from '../button/button.svelte';
 	import closeSVG from './close.svg';
 
 	export let open: boolean | undefined = undefined;
@@ -36,9 +36,9 @@
 		<slot />
 
 		{#if $$props.closable}
-			<Button size="sm" on:click={() => (open = false)} square>
+			<!-- <Button size="sm" on:click={() => (open = false)} square>
 				<img src={closeSVG} alt="close" />
-			</Button>
+			</Button> -->
 		{/if}
 	</div>
 {/if}

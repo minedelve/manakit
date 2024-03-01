@@ -6,12 +6,16 @@
 	id={$$props.id}
 	class={classMap({
 		component: 'card-actions',
-		default: $$props.class
+		default: $$props.class,
+		'justify-start': $$props.start,
+		'justify-center': $$props.center,
+		'justify-end': $$props.end
 	})}
 	style={styleMap({ default: $$props.style })}
 >
 	<!-- slot: default -->
 	<slot />
+	<!-- /slot: default -->
 </div>
 
 <style>
