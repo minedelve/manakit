@@ -136,6 +136,11 @@
 		background-color: var(--btn-background);
 	}
 
+	.btn :global(svg) {
+		width: 2rem;
+		height: 2rem;
+	}
+
 	.btn:focus-visible {
 		outline-style: solid;
 		outline-width: 2px;

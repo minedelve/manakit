@@ -35,6 +35,22 @@ export const colorsClass = ({ themes }: { themes: any }) => {
 				'border-color': `var(--color-${key})!important`
 			}
 		});
+
+		css += createClass({
+			className: `.${key}:not(.btn)`,
+			properties: {
+				'background-color': `var(--color-${key}) !important`,
+				color: `var(--color-on-${key}, --color-on-surface) !important`
+			}
+		});
+
+		css += createClass({
+			className: `.${key}.btn`,
+			properties: {
+				'--btn-background': `var(--color-${key}) !important`,
+				'--btn-color': `var(--color-on-${key}) !important`
+			}
+		});
 	});
 
 	return css;

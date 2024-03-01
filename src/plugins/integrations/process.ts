@@ -22,6 +22,7 @@ import { menuResponsiveClass } from '$lib/components/menu/menu.style.js';
 import { badgeResponsiveClass } from '$lib/components/badge/badge.style.js';
 import { fieldResponsiveClass } from '$lib/components/field/field.style.js';
 import { dividerResponsiveClass } from '$lib/components/divider/divider.style.js';
+import { btnResponsiveClass } from '$lib/components/btn/btn.style.js';
 
 export const buildCSS = ({
 	dark,
@@ -64,6 +65,7 @@ export const buildCSS = ({
 		cssString += badgeResponsiveClass({ screen });
 		cssString += fieldResponsiveClass({ screen });
 		cssString += dividerResponsiveClass({ screen });
+		cssString += btnResponsiveClass({ screen });
 
 		if (screen !== 'none') cssString += '}\n\n';
 	}
