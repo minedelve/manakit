@@ -23,7 +23,7 @@
 
 <style>
 	.divider {
-		--divider-color: #1f2c32;
+		--divider-color: var(--color-on-surface);
 		display: flex;
 		flex-direction: row;
 		align-items: center;
@@ -49,7 +49,7 @@
 		width: 100%;
 		flex-grow: 1;
 		content: '';
-		background-color: var(--divider-color);
+		background-color: color-mix(in oklab, var(--divider-color) 40%, transparent);
 	}
 
 	.divider-vertical:not(.divider-start):before,

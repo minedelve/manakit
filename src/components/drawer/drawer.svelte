@@ -67,7 +67,6 @@
 	.drawer {
 		--drawer-surface: var(--color-surface);
 		--drawer-overlay: var(--color-shadow);
-		--drawer-overlay-opacity: 0.42;
 
 		position: relative;
 		display: grid;
@@ -97,7 +96,7 @@
 
 	.drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
 		background-color: var(--drawer-overlay);
-		opacity: var(--drawer-overlay-opacity);
+		opacity: 0.42;
 	}
 
 	.drawer-toggle:checked ~ .drawer-side > *:not(.drawer-overlay) {

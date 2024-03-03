@@ -53,6 +53,21 @@ export const colorsClass = ({ themes }: { themes: any }) => {
 		});
 
 		css += createClass({
+			className: `.${key}.chip`,
+			properties: {
+				'--chip-background': `var(--color-${key}) !important`,
+				'--chip-color': `var(--color-on-${key}) !important`
+			}
+		});
+
+		css += createClass({
+			className: `.${key}.divider`,
+			properties: {
+				'--divider-color': `var(--color-${key}) !important`
+			}
+		});
+
+		css += createClass({
 			className: `.${key}.card`,
 			properties: {
 				'--card-background': `var(--color-${key}) !important`,

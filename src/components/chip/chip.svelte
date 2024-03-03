@@ -1,91 +1,55 @@
 <script lang="ts">
 	import { classMap, styleMap } from '../../libs/helpers';
+
+	// modules
+	import ChipAnchor from './chip.anchor.svelte';
+	import ChipButton from './chip.button.svelte';
+	import ChipDiv from './chip.div.svelte';
+
+	let props: any;
+	let display = $$props.href ? ChipAnchor : $$props.value ? ChipButton : ChipDiv;
+
+	$: className = classMap({
+		component: 'chip',
+		default: $$props.class,
+		chip: $$props.size,
+		'chip-text': $$props.text,
+		'chip-outline': $$props.outline,
+		'chip-error': $$props.error,
+		'chip-warning': $$props.warning,
+		'chip-success': $$props.success,
+		'chip-info': $$props.info
+	});
+
+	$: styleProps = styleMap({
+		default: $$props.style,
+		background: $$props.background,
+		color: $$props.color
+	});
 </script>
 
-{#if $$props.value !== undefined}
-	<button
-		id={$$props.id}
-		class={classMap({
-			component: 'chip',
-			default: $$props.class,
-			'chip-text': $$props.text,
-			'chip-outline': $$props.outline,
-			'chip-error': $$props.error,
-			'chip-warning': $$props.warning,
-			'chip-success': $$props.success,
-			'chip-info': $$props.info,
-			chip: $$props.size
-		})}
-		style={styleMap({
-			default: $$props.style,
-			background: $$props.background,
-			color: $$props.color
-		})}
-		disabled={$$props.disabled}
-		type={$$props.type}
-		on:click
-		on:blur
-		on:change
-	>
-		<slot />
-	</button>
-{:else if $$props.href}
-	<a
-		id={$$props.id}
-		class={classMap({
-			component: 'chip',
-			default: $$props.class,
-			chip: $$props.size,
-			'chip-disabled': $$props.disabled,
-			'chip-text': $$props.text,
-			'chip-outline': $$props.outline,
-			'chip-error': $$props.error,
-			'chip-warning': $$props.warning,
-			'chip-success': $$props.success,
-			'chip-info': $$props.info
-		})}
-		style={styleMap({
-			default: $$props.style,
-			background: $$props.background,
-			color: $$props.color
-		})}
-		href={$$props.href}
-		target={$$props.target}
-		role={$$props.role}
-	>
-		<slot />
-	</a>
-{:else}
-	<div
-		id={$$props.id}
-		class={classMap({
-			component: 'chip',
-			default: $$props.class,
-			chip: $$props.size,
-			'chip-text': $$props.text,
-			'chip-outline': $$props.outline,
-			'chip-error': $$props.error,
-			'chip-warning': $$props.warning,
-			'chip-success': $$props.success,
-			'chip-info': $$props.info
-		})}
-		style={styleMap({
-			default: $$props.style,
-			background: $$props.background,
-			color: $$props.color
-		})}
-	>
-		<slot />
-	</div>
-{/if}
+<svelte:component
+	this={display}
+	{className}
+	{styleProps}
+	on:click
+	on:blur
+	on:change
+	on:input
+	{...props}
+	{...$$restProps}
+>
+	<!-- slot: default -->
+	<slot />
+	<!-- /slot: default -->
+</svelte:component>
 
 <style>
-	.chip {
-		--chip-color: #1f2837;
-		--chip-background: #f2f2f2;
-		--chip-background-hover: #d2d2d2;
-		--chip-background-disabled: #d9dadc;
-		--chip-color-disabled: #b9babe;
+	:global(.chip) {
+		--chip-color: var(--color-surface-on-container);
+		--chip-background: var(--color-surface-container);
+		--chip-background-disabled: var(--color-surface-container-disabled);
+		--chip-color-disabled: var(--color-surface-on-container-disabled);
 
 		display: inline-flex;
 		align-items: center;
@@ -102,117 +66,69 @@
 		border-radius: 1.9rem;
 		border-width: 1px;
 		border-color: transparent;
-		background-color: var(--color-surface);
-		color: var(--color-on-surface);
+		background-color: var(--chip-background);
+		color: var(--chip-color);
 	}
 
-	a {
-		text-decoration: none;
+	:global(.chip) :global(svg) {
+		width: 0.875rem;
+		height: 0.875rem;
 	}
 
-	.btn-disabled,
-	.btn[disabled] {
-		pointer-events: none;
-		background-color: var(--chip-background-disabled);
-		color: var(--chip-color-disabled);
+	:global(.chip-info) {
+		--chip-color: var(--color-on-info);
+		--chip-background: var(--color-info);
+	}
+	:global(.chip-success) {
+		--chip-color: var(--color-on-success);
+		--chip-background: var(--color-success);
+	}
+	:global(.chip-warning) {
+		--chip-color: var(--color-on-warning);
+		--chip-background: var(--color-warning);
+	}
+	:global(.chip-error) {
+		--chip-color: var(--color-on-error);
+		--chip-background: var(--color-error);
 	}
 
-	.chip-lg {
-		height: 1.5rem;
-		font-size: 1rem;
-		line-height: 1.5rem;
-		padding-left: 0.688rem;
-		padding-right: 0.688rem;
-	}
-
-	.chip-md {
-		height: 1.25rem;
-		font-size: 0.875rem;
-		line-height: 1.25rem;
-		padding-left: 0.563rem;
-		padding-right: 0.563rem;
-	}
-
-	.chip-sm {
-		height: 1rem;
-		font-size: 0.75rem;
-		line-height: 1rem;
-		padding-left: 0.438rem;
-		padding-right: 0.438rem;
-	}
-
-	.chip-xs {
-		height: 0.75rem;
-		font-size: 0.75rem;
-		line-height: 0.75rem;
-		padding-left: 0.313rem;
-		padding-right: 0.313rem;
-	}
-
-	.chip-outline {
-		border-color: currentColor;
+	:global(.chip-outline) {
 		background-color: transparent;
-		border-style: solid;
+		color: var(--chip-background);
+		border-color: var(--chip-background);
+	}
+	:global(.chip-outline:hover) {
+		color: var(--chip-color);
 	}
 
-	a.chip:focus-visible,
-	button.chip:focus-visible {
+	:global(.chip-text) {
+		background-color: transparent;
+		color: var(--chip-background);
+	}
+	:global(a.chip-text:hover),
+	:global(button.chip-text:hover) {
+		background-color: color-mix(in oklab, var(--chip-background) 10%, transparent);
+	}
+
+	:global(a.chip:focus-visible),
+	:global(button.chip:focus-visible) {
 		outline-style: solid;
 		outline-width: 2px;
 		outline-offset: 2px;
+		outline-color: var(--chip-background);
 	}
 
-	.chip:hover:not(div) {
-		background-color: var(--chip-background-hover);
+	:global(a.chip:hover),
+	:global(button.chip:hover) {
+		background-color: color-mix(in oklab, var(--chip-background) 90%, black);
+		border-color: color-mix(in oklab, var(--chip-background) 90%, black);
+		cursor: pointer;
 	}
 
-	/** Colors */
-	.chip-error {
-		background-color: var(--color-error);
-		color: var(--color-on-error);
-	}
-	.chip-outline.chip-error {
-		background-color: transparent;
-		color: var(--color-error);
-	}
-	.chip-text.chip-error {
-		background-color: transparent;
-		color: var(--color-error);
-	}
-	.chip-warning {
-		background-color: var(--color-warning);
-		color: var(--color-on-warning);
-	}
-	.chip-outline.chip-warning {
-		background-color: transparent;
-		color: var(--color-warning);
-	}
-	.chip-text.chip-warning {
-		background-color: transparent;
-		color: var(--color-warning);
-	}
-	.chip-success {
-		background-color: var(--color-success);
-		color: var(--color-on-success);
-	}
-	.chip-outline.chip-success {
-		background-color: transparent;
-		color: var(--color-success);
-	}
-	.chip-text.chip-success {
-		background-color: transparent;
-		color: var(--color-success);
-	}
-	.chip-info {
-		background-color: var(--color-info);
-		color: var(--color-on-info);
-	}
-	.chip-outline.chip-info {
-		background-color: transparent;
-		color: var(--color-info);
-	}
-	.chip-text.chip-info {
-		background-color: transparent;
-		color: var(--color-info);
+	:global(.chip-disabled),
+	:global(.chip[disabled]) {
+		pointer-events: none;
+		background-color: var(--chip-background-disabled);
+		color: var(--chip-color-disabled);
 	}
 </style>

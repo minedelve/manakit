@@ -2,7 +2,7 @@ import createClass from '../../libs/helpers/styles/createClass.js';
 
 const properties = [
 	{
-		className: '.badge-xs',
+		className: '.chip-xs',
 		properties: {
 			height: '0.75rem',
 			'font-size': '0.75rem',
@@ -12,7 +12,7 @@ const properties = [
 		}
 	},
 	{
-		className: '.badge-sm',
+		className: '.chip-sm',
 		properties: {
 			height: '1rem',
 			'font-size': '0.75rem',
@@ -22,7 +22,7 @@ const properties = [
 		}
 	},
 	{
-		className: '.badge-md',
+		className: '.chip-md',
 		properties: {
 			height: '1.25rem',
 			'font-size': '0.875rem',
@@ -32,7 +32,7 @@ const properties = [
 		}
 	},
 	{
-		className: '.badge-lg',
+		className: '.chip-lg',
 		properties: {
 			height: '1.5rem',
 			'font-size': '1rem',
@@ -43,11 +43,51 @@ const properties = [
 	}
 ];
 
+const propertiesIcon = [
+	{
+		className: '.chip-xs svg',
+		properties: {
+			width: '0.75rem',
+			height: '0.75rem'
+		}
+	},
+	{
+		className: '.chip-sm svg',
+		properties: {
+			width: '0.75rem',
+			height: '0.75rem'
+		}
+	},
+	{
+		className: '.chip-md svg',
+		properties: {
+			width: '0.875rem',
+			height: '0.875rem'
+		}
+	},
+	{
+		className: '.chip-lg svg',
+		properties: {
+			width: '1rem',
+			height: '1rem'
+		}
+	}
+];
+
 // class
-export const badgeResponsiveClass = ({ screen }: { screen: string }) => {
+export const chipResponsiveClass = ({ screen }: { screen: string }) => {
 	let css = '';
 
 	properties.forEach((item) => {
+		css += createClass({
+			className: item.className,
+			properties: item.properties,
+			screen,
+			important: true
+		});
+	});
+
+	propertiesIcon.forEach((item) => {
 		css += createClass({
 			className: item.className,
 			properties: item.properties,
