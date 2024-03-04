@@ -72,6 +72,10 @@
 		align-self: center;
 	}
 
+	summary::-webkit-details-marker {
+		display: none;
+	}
+
 	details[open] > summary::after {
 		transform: rotate(225deg);
 		margin-top: 0;

@@ -1,7 +1,7 @@
 export default {
 	dark: false,
 	normalize: true,
-	theme: {},
+	themes: {},
 	screens: {},
 	exclude: []
 };

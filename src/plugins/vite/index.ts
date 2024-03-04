@@ -10,7 +10,7 @@ export function manakit() {
 		async configResolved() {
 			const value = await initialize();
 
-			const themes = mergeThemes(initialTheme, value?.theme);
+			const themes = mergeThemes(initialTheme, value?.themes);
 			const responsive = value?.screens
 				? { ...initialResponsive, ...value?.screens }
 				: initialResponsive;

@@ -31,7 +31,7 @@ export const colorsRoot = ({ themes, dark }: { themes: any; dark: boolean }) => 
 					name: 'color',
 					variables: darkMode,
 					scheme: 'light',
-					className: '.theme-dark'
+					className: '.dark'
 				});
 			if (dark) css += '}\n\n';
 
@@ -43,7 +43,7 @@ export const colorsRoot = ({ themes, dark }: { themes: any; dark: boolean }) => 
 					name: 'color',
 					variables: lightMode,
 					scheme: 'dark',
-					className: '.theme-light'
+					className: '.light'
 				});
 				css += '}\n\n';
 			}
@@ -61,7 +61,7 @@ export const colorsRoot = ({ themes, dark }: { themes: any; dark: boolean }) => 
 					name: 'color',
 					variables: darkMode,
 					scheme: 'light',
-					className: `[manakit-theme=${theme}].theme-dark`
+					className: `[manakit-theme=${theme}].dark`
 				});
 			if (dark) css += '}\n\n';
 
@@ -78,7 +78,7 @@ export const colorsRoot = ({ themes, dark }: { themes: any; dark: boolean }) => 
 					name: 'color',
 					variables: lightMode,
 					scheme: 'dark',
-					className: `[manakit-theme=${theme}].theme-light`
+					className: `[manakit-theme=${theme}].light`
 				});
 				css += '}\n\n';
 			}
