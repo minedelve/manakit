@@ -1,8 +1,22 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import createRoot from '../../helpers/styles/createRoot.js';
 
+import { colors } from './color.js';
+
+interface ColorScheme {
+	light: string;
+	dark: string;
+}
+
 export const colorsRoot = ({ themes, dark }: { themes: any; dark: boolean }) => {
 	let css = '';
+
+	for (const [key, list] of Object.entries(colors)) {
+		css += createRoot({
+			name: key,
+			variables: list
+		});
+	}
 
 	for (const [theme, colors] of Object.entries(themes)) {
 		const lightMode: { [key: string]: string } = {};
@@ -12,9 +26,10 @@ export const colorsRoot = ({ themes, dark }: { themes: any; dark: boolean }) => 
 			if (typeof color === 'string') {
 				lightMode[scheme] = color;
 				if (dark) darkMode[scheme] = color;
-			} else {
-				if (color && (('light' in color) as any)) lightMode[scheme] = color.light;
-				if (dark && color && (('dark' in color) as any)) darkMode[scheme] = color.dark;
+			} else if (typeof color === 'object' && color !== null) {
+				if (color && (('light' in color) as any)) lightMode[scheme] = (color as ColorScheme).light;
+				if (dark && color && (('dark' in color) as any))
+					darkMode[scheme] = (color as ColorScheme).dark;
 			}
 		}
 
