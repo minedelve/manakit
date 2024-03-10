@@ -29,7 +29,7 @@ export const initialTheme: any = {
 		onInfo: { light: '#FFFFFF', dark: '#601410' },
 		infoContainer: { light: '#e7f3fd', dark: '#21313f' },
 		onInfoContainer: { light: '#2196f3', dark: '#2196f3' },
-		surface: { light: '#FEF7FF', dark: '#F2B8B5' },
+		surface: { light: '#f7f7f7', dark: '#F2B8B5' },
 		onSurface: { light: '#1D1B20', dark: '#601410' },
 		surfaceVariant: { light: '#E7E0EC', dark: '#8C1D18' },
 		onSurfaceVariant: { light: '#49454F', dark: '#F9DEDC' },

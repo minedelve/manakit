@@ -50,6 +50,7 @@
 				disabled={$$props.disabled}
 				on:focus={handleFocus}
 				on:blur={handleBlur}
+				on:change
 				use:typeWorkaround
 				bind:value
 			/>
@@ -87,6 +88,7 @@
 		autocomplete={$$props.autocomplete}
 		spellcheck={$$props.spellcheck}
 		disabled={$$props.disabled}
+		on:change
 		use:typeWorkaround
 		bind:value
 	/>

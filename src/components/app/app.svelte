@@ -19,7 +19,7 @@
 
 		position: relative;
 		display: grid;
-		grid-auto-columns: max-content;
+		/* grid-auto-columns: max-content; */
 		width: 100%;
 		color: var(--app-color);
 		background-color: var(--app-background);

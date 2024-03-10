@@ -1,0 +1,80 @@
+{
+	"package": {
+		"name": "Manakit",
+		"github": "https://google.com",
+		"npm": "https://google.com",
+		"logo": "logo_manakit.jpg",
+		"color": "#eeecce",
+		"icon": "home",
+		"sectionStart": "introduction"
+	},
+	"path": [
+		{
+			"name": "Introduction",
+			"publish": true,
+			"_path": {
+				"route": "/",
+				"file": "index.md"
+			},
+			"_styles": {
+				"icon": "majesticons:rocket-3-start"
+			},
+			"_pages": []
+		},
+		{
+			"name": "Components",
+			"publish": true,
+			"_path": {
+				"route": "/",
+				"file": "index.md"
+			},
+			"_styles": {
+				"icon": "bxs:component",
+				"color": "red"
+			},
+			"_categories": [
+				{
+					"name": "action",
+					"modules": ["button", "menu"],
+					"_styles": {
+						"icon": "mdi:interaction-tap",
+						"color": "#eeecce"
+					}
+				},
+				{
+					"name": "layout",
+					"modules": ["drawer"],
+					"_styles": {
+						"icon": "uis:grids"
+					}
+				}
+			],
+			"_pages": [
+				{
+					"name": "Drawer",
+					"publish": true,
+					"_path": {
+						"route": "/drawer",
+						"file": "drawer.md"
+					}
+				},
+				{
+					"name": "Button",
+					"publish": true,
+					"_path": {
+						"route": "/button",
+						"file": "button.md"
+					}
+				},
+				{
+					"name": "Menu",
+					"publish": true,
+					"_path": {
+						"route": "/menu",
+						"file": "menu.md"
+					}
+				}
+			]
+		}
+	]
+}
