@@ -13,7 +13,7 @@ tags: ''
 <script>
   import ExternalLink from '$lib/components/ExternalLink.svelte';
   import Link from '$lib/components/Link.svelte';
-  import Counter from "$lib/components/Counter.svelte";
+  import Counter from "$lib/components/counter.svelte";
 </script>
 
 ## Manakit
