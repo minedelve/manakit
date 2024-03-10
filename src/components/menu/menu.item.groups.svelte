@@ -104,6 +104,9 @@
 
 	summary {
 		display: list-item;
+		display: flex;
+		gap: 1rem;
+		align-items: center;
 	}
 
 	summary {

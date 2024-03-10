@@ -26,4 +26,10 @@
 		color: var(--color-on-surface);
 		opacity: 0.6;
 	}
+
+	.menu-title {
+		display: flex;
+		gap: 1rem;
+		align-items: center;
+	}
 </style>
