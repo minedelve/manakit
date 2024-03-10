@@ -1,53 +1,44 @@
 <script lang="ts">
 	import { classMap, styleMap } from '../../libs/helpers';
+
+	// modules
+	import BadgeDiv from './badge.div.svelte';
+	import BadgeSpan from './badge.span.svelte';
+
+	let props: any;
+	let display = $$props.div ? BadgeDiv : BadgeSpan;
+
+	$: className = classMap({
+		component: 'badge',
+		default: $$props.class,
+		badge: $$props.size,
+		'badge-outline': $$props.outline,
+		'badge-error': $$props.error,
+		'badge-warning': $$props.warning,
+		'badge-success': $$props.success,
+		'badge-info': $$props.info
+	});
+
+	$: styleProps = styleMap({
+		default: $$props.style,
+		background: $$props.background,
+		color: $$props.color
+	});
 </script>
 
-{#if $$props.is === 'div'}
-	<div
-		id={$$props.id}
-		class={classMap({
-			component: 'badge',
-			default: $$props.class,
-			'badge-outline': $$props.outline,
-			badge: $$props.size,
-			'badge-error': $$props.error,
-			'badge-warning': $$props.warning,
-			'badge-success': $$props.success,
-			'badge-info': $$props.info
-		})}
-		style={styleMap({
-			default: $$props.style,
-			background: $$props.background,
-			color: $$props.color
-		})}
-	>
-		<slot />
-	</div>
-{:else}
-	<span
-		id={$$props.id}
-		class={classMap({
-			component: 'badge',
-			default: $$props.class,
-			'badge-outline': $$props.outline,
-			badge: $$props.size,
-			'badge-error': $$props.error,
-			'badge-warning': $$props.warning,
-			'badge-success': $$props.success,
-			'badge-info': $$props.info
-		})}
-		style={styleMap({
-			default: $$props.style,
-			background: $$props.background,
-			color: $$props.color
-		})}
-	>
-		<slot />
-	</span>
-{/if}
+<svelte:component this={display} {className} {styleProps} {...props} {...$$restProps}>
+	<!-- slot: default -->
+	<slot />
+	<!-- /slot: default -->
+</svelte:component>
 
 <style>
-	.badge {
+	:global(.badge) {
+		--badge-color: var(--color-surface-on-container);
+		--badge-background: var(--color-surface-container);
+		--badge-background-disabled: var(--color-surface-container-disabled);
+		--badge-color-disabled: var(--color-surface-on-container-disabled);
+
 		display: inline-flex;
 		align-items: center;
 		justify-content: center;
@@ -61,45 +52,30 @@
 		padding-right: 0.563rem;
 		border-radius: 1.9rem;
 		border-width: 1px;
+		color: var(--badge-color);
+		background-color: var(--badge-background);
 	}
 
-	.badge-outline {
+	:global(.badge-outline) {
 		border-color: currentColor;
 		background-color: transparent;
 		color: currentColor;
 	}
 
-	/** Colors */
-	.badge-error {
-		background-color: var(--color-error);
-		color: var(--color-on-error);
+	:global(.badge-info) {
+		--badge-color: var(--color-on-info);
+		--badge-background: var(--color-info);
 	}
-	.badge-outline.badge-error {
-		background-color: transparent;
-		color: var(--color-error);
+	:global(.badge-success) {
+		--badge-color: var(--color-on-success);
+		--badge-background: var(--color-success);
 	}
-	.badge-warning {
-		background-color: var(--color-warning);
-		color: var(--color-on-warning);
+	:global(.badge-warning) {
+		--badge-color: var(--color-on-warning);
+		--badge-background: var(--color-warning);
 	}
-	.badge-outline.badge-warning {
-		background-color: transparent;
-		color: var(--color-warning);
-	}
-	.badge-success {
-		background-color: var(--color-success);
-		color: var(--color-on-success);
-	}
-	.badge-outline.badge-success {
-		background-color: transparent;
-		color: var(--color-success);
-	}
-	.badge-info {
-		background-color: var(--color-info);
-		color: var(--color-on-info);
-	}
-	.badge-outline.badge-info {
-		background-color: transparent;
-		color: var(--color-info);
+	:global(.badge-error) {
+		--badge-color: var(--color-on-error);
+		--badge-background: var(--color-error);
 	}
 </style>

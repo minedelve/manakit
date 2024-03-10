@@ -42,3 +42,4 @@ export { default as Radio } from './radio/radio.svelte';
 export { default as Badge } from './badge/badge.svelte';
 export { default as Form } from './form/form.svelte';
 export { default as Btn } from './btn/btn.svelte';
+export { default as Breadcrumbs } from './breadcrumbs/breadcrumbs.svelte';
