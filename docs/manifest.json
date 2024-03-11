@@ -6,11 +6,11 @@
 		"logo": "logo_manakit.jpg",
 		"color": "#eeecce",
 		"icon": "home",
-		"sectionStart": "introduction"
+		"sectionStart": "documentation"
 	},
 	"path": [
 		{
-			"name": "Introduction",
+			"name": "docs",
 			"publish": true,
 			"_path": {
 				"route": "/",
@@ -19,7 +19,32 @@
 			"_styles": {
 				"icon": "majesticons:rocket-3-start"
 			},
-			"_pages": []
+			"_pages": [
+				{
+					"name": "Config",
+					"publish": true,
+					"_path": {
+						"route": "/config",
+						"file": "config.md"
+					}
+				},
+				{
+					"name": "Install",
+					"publish": true,
+					"_path": {
+						"route": "/install",
+						"file": "install.md"
+					}
+				},
+				{
+					"name": "Themes",
+					"publish": true,
+					"_path": {
+						"route": "/themes",
+						"file": "themes.md"
+					}
+				}
+			]
 		},
 		{
 			"name": "Components",
@@ -72,6 +97,46 @@
 					"_path": {
 						"route": "/menu",
 						"file": "menu.md"
+					}
+				}
+			]
+		},
+		{
+			"name": "styles",
+			"publish": true,
+			"_path": {
+				"route": "/",
+				"file": "index.md"
+			},
+			"_styles": {
+				"icon": "bxs:component",
+				"color": "red"
+			},
+			"_categories": [
+				{
+					"name": "fonts",
+					"modules": ["fonts size", "fonts weight"],
+					"_styles": {
+						"icon": "mdi:interaction-tap",
+						"color": "#eeecce"
+					}
+				}
+			],
+			"_pages": [
+				{
+					"name": "fonts size",
+					"publish": true,
+					"_path": {
+						"route": "/fonts-size",
+						"file": "fonts-size.md"
+					}
+				},
+				{
+					"name": "fonts weight",
+					"publish": true,
+					"_path": {
+						"route": "/fonts-weight",
+						"file": "fonts-weight.md"
 					}
 				}
 			]
