@@ -1,4 +1,6 @@
 <script lang="ts">
+	import { classMap, styleMap } from '../../libs/helpers';
+
 	export let items: Array<string> | Props[] = [];
 	export let divider: string = '/';
 
@@ -14,7 +16,18 @@
 	}
 </script>
 
-<ul class="breadcrumbs">
+<ul
+	id={$$props.id}
+	class={classMap({
+		component: 'breadcrumbs',
+		default: $$props.class
+	})}
+	style={styleMap({
+		default: $$props.style,
+		background: $$props.background,
+		color: $$props.color
+	})}
+>
 	{#each items as item, index}
 		{#if typeof item === 'string'}
 			<li class="item">{item}</li>
