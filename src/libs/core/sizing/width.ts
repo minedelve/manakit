@@ -8,6 +8,12 @@ const properties = [
 		}
 	},
 	{
+		className: 'screen',
+		properties: {
+			width: '100dvw'
+		}
+	},
+	{
 		className: '0',
 		properties: {
 			width: 0
@@ -33,6 +39,12 @@ const properties = [
 	},
 	{
 		className: '100',
+		properties: {
+			width: '100%'
+		}
+	},
+	{
+		className: 'full',
 		properties: {
 			width: '100%'
 		}
