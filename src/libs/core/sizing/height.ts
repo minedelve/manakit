@@ -42,6 +42,12 @@ const properties = [
 		properties: {
 			height: '100%'
 		}
+	},
+	{
+		className: 'full',
+		properties: {
+			height: '100%'
+		}
 	}
 ];
 
