@@ -45,7 +45,7 @@ export const weightClass = () => {
 
 	properties.forEach((item) => {
 		css += createClass({
-			className: '.font-' + item.className,
+			className: '.text-' + item.className,
 			properties: {
 				'font-weight': item.value
 			},
