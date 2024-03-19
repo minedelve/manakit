@@ -22,7 +22,7 @@ const properties = [
 		value: '0.5rem'
 	},
 	{
-		className: 'xxl',
+		className: '2xl',
 		value: '0.75rem'
 	},
 	{
@@ -99,6 +99,26 @@ export const radiusClass = () => {
 			className: item.className === 'null' ? '.rounded-b' : '.rounded-b-' + item.className,
 			properties: {
 				'border-bottom-left-radius': item.value,
+				'border-bottom-right-radius': item.value
+			}
+		});
+	});
+
+	properties.forEach((item) => {
+		css += createClass({
+			className: item.className === 'null' ? '.rounded-l' : '.rounded-l-' + item.className,
+			properties: {
+				'border-top-left-radius': item.value,
+				'border-bottom-left-radius': item.value
+			}
+		});
+	});
+
+	properties.forEach((item) => {
+		css += createClass({
+			className: item.className === 'null' ? '.rounded-r' : '.rounded-r-' + item.className,
+			properties: {
+				'border-top-right-radius': item.value,
 				'border-bottom-right-radius': item.value
 			}
 		});
