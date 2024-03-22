@@ -1,78 +1,83 @@
 <script lang="ts">
 	import { classMap, styleMap } from '../../libs/helpers';
 
-	export let items: Array<string> | Props[] = [];
+	// module
+	import Breadcrumbs from './breadcrumbs.module.svelte';
+
+	let props: any;
 	export let divider: string = '/';
+	let component = Breadcrumbs;
 
-	let nbItems = 0;
-	$: {
-		nbItems = items ? items.length - 1 : 0;
-	}
-
-	interface Props {
-		title: string;
-		disabled?: boolean;
-		href?: string;
-	}
-</script>
-
-<ul
-	id={$$props.id}
-	class={classMap({
+	$: className = classMap({
 		component: 'breadcrumbs',
-		default: $$props.class
-	})}
-	style={styleMap({
+		default: $$props.class,
+		breadcrumbs: $$props.size
+	});
+
+	$: styleProps = styleMap({
 		default: $$props.style,
 		background: $$props.background,
 		color: $$props.color
-	})}
->
-	{#each items as item, index}
-		{#if typeof item === 'string'}
-			<li class="item">{item}</li>
-		{:else if item.title}
-			{#if item.href && !item.disabled}
-				<li class="item">
-					<a href={item.href}>{item.title}</a>
-				</li>
-			{:else}
-				<li class="item">{item.title}</li>
-			{/if}
-		{/if}
+	});
 
-		{#if index < nbItems}
-			<li class="divider">
-				{#if $$slots.divider}
-					<slot name="divider" />
-				{:else}
-					{divider}
-				{/if}
-			</li>
+	console.log($$slots);
+</script>
+
+<svelte:component this={component} {className} {styleProps} {...props} {...$$restProps}>
+	<!-- slot: custom -->
+	<svelte:fragment slot="custom" let:item>
+		{#if $$slots.custom}
+			<slot name="custom" {item} />
 		{/if}
-	{/each}
-</ul>
+	</svelte:fragment>
+	<!-- /slot: custom -->
+	<!-- slot: divider -->
+	<svelte:fragment slot="divider">
+		{#if $$slots.divider}
+			<slot name="divider" />
+		{:else}
+			{divider}
+		{/if}
+	</svelte:fragment>
+	<!-- /slot: divider -->
+</svelte:component>
 
 <style>
-	.breadcrumbs {
+	:global(.breadcrumbs) {
+		--breadcrumbs-color: var(--color-surface-on-container);
+		--breadcrumbs-color-divider: var(--color-surface-container-disabled);
+		max-width: 100%;
+		overflow-x: auto;
+		padding-top: 0.5rem;
+		padding-bottom: 0.5rem;
+	}
+
+	:global(.breadcrumbs > ul) {
 		display: flex;
 		align-items: center;
-		line-height: 1.375rem;
-		padding: 16px 12px;
+		white-space: nowrap;
+		min-height: min-content;
 	}
 
-	.breadcrumbs .item {
+	:global(.breadcrumbs > ul > li) {
+		display: flex;
 		align-items: center;
-		color: inherit;
-		display: inline-flex;
-		padding: 0 4px;
-		text-decoration: none;
-		vertical-align: middle;
 	}
 
-	.breadcrumbs .divider {
-		display: inline-block;
+	:global(.breadcrumbs > ul > li span) {
+		display: inline-flex;
+		align-items: center;
+		gap: 0.5rem;
+		color: var(--breadcrumbs-color);
+	}
+
+	:global(.breadcrumbs > ul > li > a:hover span) {
+		text-decoration: underline;
+	}
+
+	:global(.breadcrumbs) :global(.divider) {
 		padding: 0 8px;
 		vertical-align: middle;
+		color: var(--breadcrumbs-color-divider);
 	}
 </style>

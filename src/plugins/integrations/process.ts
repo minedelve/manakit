@@ -24,6 +24,7 @@ import { fieldResponsiveClass } from '$lib/components/field/field.style.js';
 import { dividerResponsiveClass } from '$lib/components/divider/divider.style.js';
 import { btnResponsiveClass } from '$lib/components/btn/btn.style.js';
 import { chipResponsiveClass } from '$lib/components/chip/chip.style.js';
+import { breadcrumbsResponsiveClass } from '$lib/components/breadcrumbs/breadcrumbs.style.js';
 
 export const buildCSS = ({
 	dark,
@@ -68,6 +69,7 @@ export const buildCSS = ({
 		cssString += dividerResponsiveClass({ screen });
 		cssString += btnResponsiveClass({ screen });
 		cssString += chipResponsiveClass({ screen });
+		cssString += breadcrumbsResponsiveClass({ screen });
 
 		if (screen !== 'none') cssString += '}\n\n';
 	}
