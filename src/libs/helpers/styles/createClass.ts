@@ -3,21 +3,27 @@ import propertie from './createPropertieCss.js';
 
 const createClass = ({ parentClassName, className, properties, important, screen }: any) => {
 	let css = '';
-	const haveDot = /^\./.test(className);
+	// const startByDot = /^\./.test(className);
+	const regex = /(\d)\./g;
+	const startByDot = className.startsWith('.');
 
 	if (properties) {
-		if (haveDot) {
+		if (startByDot) {
 			const classNameClearDot = className.slice(1);
+			const formatClassName = classNameClearDot.replace(regex, '$1\\.');
 			css +=
 				screen && screen !== 'none'
 					? parentClassName
-						? `${parentClassName}.${screen}\\:${classNameClearDot} {\n`
-						: `.${screen}\\:${classNameClearDot} {\n`
+						? `${parentClassName}.${screen}\\:${formatClassName} {\n`
+						: `.${screen}\\:${formatClassName} {\n`
 					: parentClassName
-						? `${parentClassName}.${classNameClearDot} {\n`
-						: `.${classNameClearDot} {\n`;
+						? `${parentClassName}.${formatClassName} {\n`
+						: `.${formatClassName} {\n`;
 		} else {
-			css += parentClassName ? `${parentClassName}${className} {\n` : `${className} {\n`;
+			const formatClassName = className.replace(regex, '\\.');
+			css += parentClassName
+				? `${parentClassName}${formatClassName} {\n`
+				: `${formatClassName} {\n`;
 		}
 
 		for (const [key, value] of Object.entries(properties)) {
