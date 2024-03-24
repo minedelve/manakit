@@ -3,7 +3,6 @@ import propertie from './createPropertieCss.js';
 
 const createClass = ({ parentClassName, className, properties, important, screen }: any) => {
 	let css = '';
-	// const startByDot = /^\./.test(className);
 	const regex = /(\d)\./g;
 	const startByDot = className.startsWith('.');
 
