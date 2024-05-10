@@ -2,6 +2,7 @@ import path from 'path';
 const nodePath = 'node_modules/manakit/dist/assets/scss';
 const nodePathLibs = 'node_modules/manakit/dist/assets/scss/libs';
 const nodePathColors = 'node_modules/manakit/dist/assets/scss/colors';
+const nodePathModules = 'node_modules/manakit/dist/modules';
 
 // Files SCSS
 export const headSCSS = [
@@ -48,3 +49,5 @@ export const contentSCSS = [
 	path.resolve(`${nodePathLibs}`, 'width.scss'),
 	path.resolve(`${nodePathLibs}`, 'wrap.scss')
 ];
+
+export const modulesSCSS = [path.resolve(`${nodePathModules}/app`, 'app.scss')];
