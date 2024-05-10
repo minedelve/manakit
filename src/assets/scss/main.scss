@@ -1,4 +1,18 @@
 $breakpoints: map.merge($breakpoints-initial, $breakpoints-custom);
 
-@include generate-root($fonts-custom);
+@include generate-root('font', $fonts-custom);
 @include generate-theme($themes-custom);
+
+body {
+	font-family: var(--font-body);
+	font-size: 1rem;
+	line-height: 1.4705882353;
+	font-weight: 400;
+	letter-spacing: -0.022em;
+	font-style: normal;
+	word-wrap: break-word;
+}
+
+.no-scroll {
+	overflow: hidden !important;
+}

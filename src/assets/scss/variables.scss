@@ -6,7 +6,9 @@ $fonts-initial: (
 	body: "'Ubuntu', sans-serif",
 	code: "'monospace', sans-serif"
 );
-$fonts-custom: () !default;
+$fonts-custom: (
+	default: $fonts-initial
+) !default;
 
 // breakpoints
 $breakpoints-initial: (
@@ -20,6 +22,7 @@ $breakpoints-initial: (
 $breakpoints-custom: () !default;
 
 // themes
+$theme-mode: 'light' !default;
 $theme-light: (
 	primary: var(--lime-500, #84cc16),
 	onPrimary: var(--gray-800, #1f2937),
@@ -69,4 +72,9 @@ $theme-dark: (
 	scrim: var(--neutral-950, #0a0a0a),
 	shadow: var(--neutral-950, #0a0a0a)
 );
-$themes-custom: () !default;
+$themes-custom: (
+	default: (
+		light: $theme-light,
+		dark: $theme-dark
+	)
+) !default;
