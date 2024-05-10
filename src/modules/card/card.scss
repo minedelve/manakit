@@ -1,0 +1,66 @@
+a.mk-card {
+	text-decoration: none;
+}
+
+.mk-card {
+	--card-background: var(--surface);
+	--card-color: var(--on-surface);
+	--card-overlay: var(--scrim);
+	--card-border-radius: 1rem;
+
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	border-radius: var(--card-border-radius);
+	border-color: transparent;
+	border-width: 1px;
+	border-style: solid;
+	color: var(--card-color);
+	background-color: var(--card-background);
+
+	&:hover:not(div) {
+		background-color: color-mix(in oklab, var(--card-background) 90%, black);
+	}
+
+	&:focus:not(div) {
+		background-color: color-mix(in oklab, var(--card-background) 95%, black);
+	}
+
+	&:active:not(div),
+	&.card-active {
+		background-color: color-mix(in oklab, var(--card-background) 95%, black);
+	}
+
+	&:not(div) {
+		cursor: pointer;
+	}
+
+	&.card-outline {
+		background: transparent;
+		border-color: var(--card-color);
+	}
+
+	&.card-text {
+		background: transparent;
+	}
+
+	&.card-disabled,
+	&[disabled],
+	&:disabled {
+		pointer-events: none;
+		user-select: none;
+		color: color-mix(in oklab, var(--scrim) 25%, transparent);
+
+		&::before {
+			content: '';
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+			background-color: color-mix(in oklab, var(--scrim) 8%, transparent);
+			z-index: 100;
+			border-radius: var(--card-border-radius);
+		}
+	}
+}

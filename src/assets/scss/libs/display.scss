@@ -24,11 +24,11 @@ $display-list: (
 @mixin display($key, $value, $breakpoint) {
 	@if $breakpoint != 'default' {
 		.#{$breakpoint}\:#{$key} {
-			display: #{$value};
+			display: #{$value} !important;
 		}
 	} @else {
 		.#{$key} {
-			display: #{$value};
+			display: #{$value} !important;
 		}
 	}
 }

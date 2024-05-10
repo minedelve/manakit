@@ -1,0 +1,230 @@
+.mk-drawer {
+	--drawer-background: var(--surface);
+	--drawer-color: var(--on-surface);
+	--drawer-overlay: var(--scrim);
+
+	position: relative;
+	display: grid;
+	grid-auto-columns: max-content auto;
+	width: 100%;
+
+	> input {
+		position: fixed;
+		height: 0;
+		width: 0;
+		appearance: none;
+		opacity: 0;
+
+		&:checked {
+			~ .drawer-aside {
+				pointer-events: auto;
+				visibility: visible;
+				overflow-y: auto;
+
+				> .drawer-overlay {
+					background-color: color-mix(in oklab, var(--drawer-overlay) 30%, transparent);
+				}
+
+				> *:not(.drawer-overlay) {
+					transform: translate(0);
+				}
+			}
+		}
+	}
+
+	.drawer-aside {
+		pointer-events: none;
+		position: fixed;
+		inset-inline-start: 0;
+		top: 0;
+		grid-column-start: 1;
+		grid-row-start: 1;
+		display: grid;
+		width: 100%;
+		grid-template-columns: repeat(1, minmax(0, 1fr));
+		grid-template-rows: repeat(1, minmax(0, 1fr));
+		align-items: flex-start;
+		justify-items: start;
+		overflow-y: auto;
+		overscroll-behavior: contain;
+		height: 100vh;
+		z-index: 999;
+		scroll-behavior: smooth;
+		scroll-padding-top: 5rem;
+
+		> * {
+			grid-column-start: 1;
+			grid-row-start: 1;
+		}
+
+		> aside {
+			min-height: 100%;
+			background-color: var(--drawer-background);
+			color: var(--drawer-color);
+			overflow: auto;
+		}
+
+		> .drawer-overlay {
+			position: sticky;
+			top: 0;
+			place-self: stretch;
+			cursor: pointer;
+			background-color: transparent;
+			transition-property: color, background-color, border-color, opacity, text-decoration-color,
+				fill, stroke;
+			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+			transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+			transition-duration: 0.2s;
+		}
+
+		> *:not(.drawer-overlay) {
+			transition-property: transform;
+			transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+			transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+			transition-duration: 0.3s;
+			will-change: transform;
+			transform: translate(-100%);
+		}
+	}
+
+	.drawer-content {
+		grid-column-start: 2;
+		grid-row-start: 1;
+		min-width: 0;
+	}
+
+	&.drawer-right {
+		grid-auto-columns: auto max-content;
+
+		.drawer-aside > *:not(.drawer-overlay) {
+			transform: translate(100%);
+		}
+
+		> input ~ .drawer-content {
+			grid-column-start: 1;
+		}
+
+		> input ~ .drawer-aside {
+			grid-column-start: 2;
+			justify-items: end;
+		}
+	}
+
+	@mixin drawerOpen() {
+		& > .drawer-aside {
+			pointer-events: auto;
+			visibility: visible;
+			position: sticky;
+			display: block;
+			width: auto;
+			overscroll-behavior: auto;
+
+			> *:not(.drawer-overlay) {
+				transform: translate(0);
+			}
+		}
+	}
+
+	@mixin drawerPositionLeft() {
+		grid-auto-columns: max-content auto;
+
+		> input ~ .drawer-content {
+			grid-column-start: 2;
+		}
+
+		> input ~ .drawer-aside {
+			grid-column-start: 1;
+			justify-items: start;
+
+			> *:not(.drawer-overlay) {
+				transform: translate(0);
+			}
+		}
+	}
+
+	@mixin drawerPositionRight() {
+		grid-auto-columns: auto max-content;
+
+		> input ~ .drawer-content {
+			grid-column-start: 1;
+		}
+
+		> input ~ .drawer-aside {
+			grid-column-start: 2;
+			justify-items: end;
+
+			> *:not(.drawer-overlay) {
+				transform: translate(0);
+			}
+		}
+	}
+
+	@mixin drawerPositionTop() {
+		.drawer-aside {
+			> aside {
+				min-width: 100%;
+				min-height: initial;
+			}
+
+			> *:not(.drawer-overlay) {
+				transform: translateY(-100%);
+			}
+		}
+
+		> input:checked > *:not(.drawer-overlay) {
+			transform: translateY(0%);
+		}
+	}
+
+	@mixin drawerPositionBottom() {
+		.drawer-aside {
+			> * {
+				grid-column-start: initial;
+				grid-row-start: initial;
+			}
+			> aside {
+				min-width: 100%;
+				min-height: initial;
+			}
+
+			> *:not(.drawer-overlay) {
+				transform: translateY(100%);
+			}
+		}
+
+		> input:checked > *:not(.drawer-overlay) {
+			transform: translateY(0%);
+		}
+	}
+
+	@each $breakpoint, $size in $breakpoints {
+		@if $breakpoint == 'default' {
+			// position
+			&.drawer-top {
+				@include drawerPositionTop();
+			}
+			&.drawer-bottom {
+				@include drawerPositionBottom();
+			}
+		} @else {
+			@media screen and (min-width: $size) {
+				&.#{$breakpoint}\:drawer-open {
+					@include drawerOpen();
+				}
+				// position
+				&.#{$breakpoint}\:drawer-left {
+					@include drawerPositionLeft();
+				}
+				&.#{$breakpoint}\:drawer-right {
+					@include drawerPositionRight();
+				}
+				&.#{$breakpoint}\:drawer-top {
+					@include drawerPositionTop();
+				}
+				&.#{$breakpoint}\:drawer-bottom {
+					@include drawerPositionBottom();
+				}
+			}
+		}
+	}
+}

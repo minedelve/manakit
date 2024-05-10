@@ -1,0 +1,18 @@
+.mk-container {
+	width: 100%;
+	padding: 1rem;
+	margin-right: auto;
+	margin-left: auto;
+
+	@each $breakpoint, $size in $breakpoints {
+		@if $breakpoint != 'default' {
+			@if map.has-key($container-size, $breakpoint) {
+				@media screen and (min-width: $size) {
+					&.mk-container:not(.container-fluid) {
+						width: map.get($container-size, $breakpoint);
+					}
+				}
+			}
+		}
+	}
+}
