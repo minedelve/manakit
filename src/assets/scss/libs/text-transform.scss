@@ -1,0 +1,58 @@
+$text-transform-list: (
+	'lowercase': lowercase,
+	'uppercase': uppercase,
+	'capitalize': capitalize,
+	'none': none
+);
+
+@mixin text-transform($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:text-#{$key} {
+			text-transform: #{$value};
+		}
+	} @else {
+		.text-#{$key} {
+			text-transform: #{$value};
+		}
+	}
+}
+
+@each $breakpoint, $size in $breakpoints {
+	@if $breakpoint == 'default' {
+		@each $key, $value in $text-transform-list {
+			@include text-transform($key, $value, $breakpoint);
+		}
+
+		.text-break {
+			overflow-wrap: break-word;
+			word-break: break-word;
+		}
+		.text-no-break {
+			white-space: nowrap;
+		}
+		.text-overflow {
+			white-space: nowrap;
+			overflow: hidden;
+			text-overflow: ellipsis;
+		}
+	} @else {
+		@media screen and (min-width: $size) {
+			@each $key, $value in $text-transform-list {
+				@include text-transform($key, $value, $breakpoint);
+			}
+
+			.#{$breakpoint}\:text-break {
+				overflow-wrap: break-word;
+				word-break: break-word;
+			}
+			.#{$breakpoint}\:text-no-break {
+				white-space: nowrap;
+			}
+			.#{$breakpoint}\:text-overflow {
+				white-space: nowrap;
+				overflow: hidden;
+				text-overflow: ellipsis;
+			}
+		}
+	}
+}

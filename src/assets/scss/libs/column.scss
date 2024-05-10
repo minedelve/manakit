@@ -1,0 +1,90 @@
+$column-list: (
+	'1': (
+		'flex': 0 0 calc((100% / 12) * 1),
+		'max-width': calc((100% / 12) * 1)
+	),
+	'2': (
+		'flex': 0 0 calc((100% / 12) * 2),
+		'max-width': calc((100% / 12) * 2)
+	),
+	'3': (
+		'flex': 0 0 calc((100% / 12) * 3),
+		'max-width': calc((100% / 12) * 3)
+	),
+	'4': (
+		'flex': 0 0 calc((100% / 12) * 4),
+		'max-width': calc((100% / 12) * 4)
+	),
+	'5': (
+		'flex': 0 0 calc((100% / 12) * 5),
+		'max-width': calc((100% / 12) * 5)
+	),
+	'6': (
+		'flex': 0 0 calc((100% / 12) * 6),
+		'max-width': calc((100% / 12) * 6)
+	),
+	'7': (
+		'flex': 0 0 calc((100% / 12) * 7),
+		'max-width': calc((100% / 12) * 7)
+	),
+	'8': (
+		'flex': 0 0 calc((100% / 12) * 8),
+		'max-width': calc((100% / 12) * 8)
+	),
+	'9': (
+		'flex': 0 0 calc((100% / 12) * 9),
+		'max-width': calc((100% / 12) * 9)
+	),
+	'10': (
+		'flex': 0 0 calc((100% / 12) * 10),
+		'max-width': calc((100% / 12) * 10)
+	),
+	'11': (
+		'flex': 0 0 calc((100% / 12) * 11),
+		'max-width': calc((100% / 12) * 11)
+	),
+	'12': (
+		'flex': 0 0 calc((100% / 12) * 12),
+		'max-width': calc((100% / 12) * 12)
+	)
+);
+
+@mixin column($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:column-#{$key} {
+			@each $keyParam, $valueParam in $value {
+				#{$keyParam}: #{$valueParam};
+			}
+		}
+	} @else {
+		.column-#{$key} {
+			@each $keyParam, $valueParam in $value {
+				#{$keyParam}: #{$valueParam};
+			}
+		}
+	}
+}
+
+@each $breakpoint, $size in $breakpoints {
+	@if $breakpoint == 'default' {
+		.columns {
+			width: 100%;
+			padding: 12px;
+		}
+
+		@each $key, $value in $column-list {
+			@include column($key, $value, $breakpoint);
+		}
+	} @else {
+		@media screen and (min-width: $size) {
+			.#{$breakpoint}\:columns {
+				width: 100%;
+				padding: 12px;
+			}
+
+			@each $key, $value in $column-list {
+				@include column($key, $value, $breakpoint);
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+@each $breakpoint, $size in $breakpoints {
+	@if $breakpoint == 'default' {
+		.ms-auto {
+			margin-inline-start: auto;
+		}
+		.me-auto {
+			margin-inline-end: auto;
+		}
+		.ms-auto {
+			margin-inline-start: auto;
+		}
+		.me-auto {
+			margin-inline-end: auto;
+		}
+	} @else {
+		@media screen and (min-width: $size) {
+			.#{$breakpoint}\:ms-auto {
+				margin-inline-start: auto;
+			}
+			.#{$breakpoint}\:me-auto {
+				margin-inline-end: auto;
+			}
+			.#{$breakpoint}\:ms-auto {
+				margin-inline-start: auto;
+			}
+			.#{$breakpoint}\:me-auto {
+				margin-inline-end: auto;
+			}
+		}
+	}
+}

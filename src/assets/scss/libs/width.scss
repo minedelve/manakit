@@ -1,0 +1,36 @@
+$width-list: (
+	'auto': auto,
+	'screen': 100dvw,
+	'0': 0,
+	'25': 25%,
+	'50': 50%,
+	'75': 75%,
+	'100': 100%,
+	'full': 100%
+);
+
+@mixin width($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:w-#{$key} {
+			width: #{$value};
+		}
+	} @else {
+		.w-#{$key} {
+			width: #{$value};
+		}
+	}
+}
+
+@each $breakpoint, $size in $breakpoints {
+	@if $breakpoint == 'default' {
+		@each $key, $value in $width-list {
+			@include width($key, $value, $breakpoint);
+		}
+	} @else {
+		@media screen and (min-width: $size) {
+			@each $key, $value in $width-list {
+				@include width($key, $value, $breakpoint);
+			}
+		}
+	}
+}

@@ -1,0 +1,272 @@
+$rounded-list: (
+	'none': 0,
+	'sm': 0.125rem,
+	'md': 0.25rem,
+	'lg': 0.375rem,
+	'xl': 0.5rem,
+	'2xl': 0.75rem,
+	'full': 9999px,
+	'circle': 50%
+);
+
+@mixin rounded($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		@if $key == 'md' {
+			.#{$breakpoint}\:rounded {
+				border-radius: #{$value};
+			}
+		} @else {
+			.#{$breakpoint}\:rounded-#{$key} {
+				border-radius: #{$value};
+			}
+		}
+	} @else {
+		@if $key == 'md' {
+			.rounded {
+				border-radius: #{$value};
+			}
+		} @else {
+			.rounded-#{$key} {
+				border-radius: #{$value};
+			}
+		}
+	}
+}
+
+@mixin rounded-tl($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		@if $key == 'md' {
+			.#{$breakpoint}\:rounded-tl {
+				border-top-left-radius: #{$value};
+			}
+		} @else {
+			.#{$breakpoint}\:rounded-tl-#{$key} {
+				border-top-left-radius: #{$value};
+			}
+		}
+	} @else {
+		@if $key == 'md' {
+			.rounded-tl {
+				border-top-left-radius: #{$value};
+			}
+		} @else {
+			.rounded-tl-#{$key} {
+				border-top-left-radius: #{$value};
+			}
+		}
+	}
+}
+
+@mixin rounded-tr($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		@if $key == 'md' {
+			.#{$breakpoint}\:rounded-tr {
+				border-top-right-radius: #{$value};
+			}
+		} @else {
+			.#{$breakpoint}\:rounded-tr-#{$key} {
+				border-top-right-radius: #{$value};
+			}
+		}
+	} @else {
+		@if $key == 'md' {
+			.rounded-tr {
+				border-top-right-radius: #{$value};
+			}
+		} @else {
+			.rounded-tr-#{$key} {
+				border-top-right-radius: #{$value};
+			}
+		}
+	}
+}
+
+@mixin rounded-br($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		@if $key == 'md' {
+			.#{$breakpoint}\:rounded-br {
+				border-bottom-right-radius: #{$value};
+			}
+		} @else {
+			.#{$breakpoint}\:rounded-br-#{$key} {
+				border-bottom-right-radius: #{$value};
+			}
+		}
+	} @else {
+		@if $key == 'md' {
+			.rounded-br {
+				border-bottom-right-radius: #{$value};
+			}
+		} @else {
+			.rounded-br-#{$key} {
+				border-bottom-right-radius: #{$value};
+			}
+		}
+	}
+}
+
+@mixin rounded-bl($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		@if $key == 'md' {
+			.#{$breakpoint}\:rounded-bl {
+				border-bottom-right-radius: #{$value};
+			}
+		} @else {
+			.#{$breakpoint}\:rounded-bl-#{$key} {
+				border-bottom-right-radius: #{$value};
+			}
+		}
+	} @else {
+		@if $key == 'md' {
+			.rounded-bl {
+				border-bottom-right-radius: #{$value};
+			}
+		} @else {
+			.rounded-bl-#{$key} {
+				border-bottom-right-radius: #{$value};
+			}
+		}
+	}
+}
+
+@mixin rounded-t($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		@if $key == 'md' {
+			.#{$breakpoint}\:rounded-t {
+				border-top-left-radius: #{$value};
+				border-top-right-radius: #{$value};
+			}
+		} @else {
+			.#{$breakpoint}\:rounded-t-#{$key} {
+				border-top-left-radius: #{$value};
+				border-top-right-radius: #{$value};
+			}
+		}
+	} @else {
+		@if $key == 'md' {
+			.rounded-t {
+				border-top-left-radius: #{$value};
+				border-top-right-radius: #{$value};
+			}
+		} @else {
+			.rounded-t-#{$key} {
+				border-top-left-radius: #{$value};
+				border-top-right-radius: #{$value};
+			}
+		}
+	}
+}
+
+@mixin rounded-b($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		@if $key == 'md' {
+			.#{$breakpoint}\:rounded-b {
+				border-bottom-left-radius: #{$value};
+				border-bottom-right-radius: #{$value};
+			}
+		} @else {
+			.#{$breakpoint}\:rounded-b-#{$key} {
+				border-bottom-left-radius: #{$value};
+				border-bottom-right-radius: #{$value};
+			}
+		}
+	} @else {
+		@if $key == 'md' {
+			.rounded-b {
+				border-bottom-left-radius: #{$value};
+				border-bottom-right-radius: #{$value};
+			}
+		} @else {
+			.rounded-b-#{$key} {
+				border-bottom-left-radius: #{$value};
+				border-bottom-right-radius: #{$value};
+			}
+		}
+	}
+}
+
+@mixin rounded-l($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		@if $key == 'md' {
+			.#{$breakpoint}\:rounded-l {
+				border-top-left-radius: #{$value};
+				border-bottom-left-radius: #{$value};
+			}
+		} @else {
+			.#{$breakpoint}\:rounded-l-#{$key} {
+				border-top-left-radius: #{$value};
+				border-bottom-left-radius: #{$value};
+			}
+		}
+	} @else {
+		@if $key == 'md' {
+			.rounded-l {
+				border-top-left-radius: #{$value};
+				border-bottom-left-radius: #{$value};
+			}
+		} @else {
+			.rounded-l-#{$key} {
+				border-top-left-radius: #{$value};
+				border-bottom-left-radius: #{$value};
+			}
+		}
+	}
+}
+
+@mixin rounded-r($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		@if $key == 'md' {
+			.#{$breakpoint}\:rounded-r {
+				border-top-right-radius: #{$value};
+				border-bottom-right-radius: #{$value};
+			}
+		} @else {
+			.#{$breakpoint}\:rounded-r-#{$key} {
+				border-top-right-radius: #{$value};
+				border-bottom-right-radius: #{$value};
+			}
+		}
+	} @else {
+		@if $key == 'md' {
+			.rounded-r {
+				border-top-right-radius: #{$value};
+				border-bottom-right-radius: #{$value};
+			}
+		} @else {
+			.rounded-r-#{$key} {
+				border-top-right-radius: #{$value};
+				border-bottom-right-radius: #{$value};
+			}
+		}
+	}
+}
+
+@each $breakpoint, $size in $breakpoints {
+	@if $breakpoint == 'default' {
+		@each $key, $value in $rounded-list {
+			@include rounded($key, $value, $breakpoint);
+			@include rounded-tr($key, $value, $breakpoint);
+			@include rounded-tl($key, $value, $breakpoint);
+			@include rounded-br($key, $value, $breakpoint);
+			@include rounded-bl($key, $value, $breakpoint);
+			@include rounded-t($key, $value, $breakpoint);
+			@include rounded-b($key, $value, $breakpoint);
+			@include rounded-l($key, $value, $breakpoint);
+			@include rounded-r($key, $value, $breakpoint);
+		}
+	} @else {
+		@media screen and (min-width: $size) {
+			@each $key, $value in $rounded-list {
+				@include rounded($key, $value, $breakpoint);
+				@include rounded-tr($key, $value, $breakpoint);
+				@include rounded-tl($key, $value, $breakpoint);
+				@include rounded-br($key, $value, $breakpoint);
+				@include rounded-bl($key, $value, $breakpoint);
+				@include rounded-t($key, $value, $breakpoint);
+				@include rounded-b($key, $value, $breakpoint);
+				@include rounded-l($key, $value, $breakpoint);
+				@include rounded-r($key, $value, $breakpoint);
+			}
+		}
+	}
+}
