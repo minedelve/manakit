@@ -1,4 +1,2 @@
 // exports components
-export function helloWorld() {
-	console.log('manakit');
-}
+export { default as App } from './modules/app/app.svelte';

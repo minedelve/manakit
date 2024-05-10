@@ -3,7 +3,7 @@ import path from 'path';
 import fs from 'fs';
 import fsPromises from 'fs/promises';
 import chalk from 'chalk';
-import { contentSCSS, headSCSS, paletteSCSS } from './utils/path-scss.js';
+import { contentSCSS, headSCSS, modulesSCSS, paletteSCSS } from './utils/path-scss.js';
 import { convertJStoSCSS } from './utils/convert-js-to-scss.js';
 
 const directory = process.cwd();
@@ -42,6 +42,7 @@ export async function makeManakitImporterConfig() {
 
 	css += convertJStoSCSS(config);
 	contentSCSS.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
+	modulesSCSS.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
 
 	fsPromises.writeFile(
 		path.resolve(`node_modules/manakit/dist`, 'style.css'),
