@@ -6,7 +6,8 @@ const nodePathColors = 'node_modules/manakit/dist/assets/scss/colors';
 // Files SCSS
 export const headSCSS = [
 	path.resolve(`${nodePath}`, 'variables.scss'),
-	path.resolve(`${nodePath}`, 'mixins.scss')
+	path.resolve(`${nodePath}`, 'mixins.scss'),
+	path.resolve(`${nodePath}`, 'normalize.scss')
 ];
 
 export const paletteSCSS = {
@@ -16,6 +17,7 @@ export const paletteSCSS = {
 
 export const contentSCSS = [
 	path.resolve(`${nodePath}`, 'main.scss'),
+	path.resolve(`${nodePathLibs}`, 'prose.scss'),
 	path.resolve(`${nodePathLibs}`, 'align-content.scss'),
 	path.resolve(`${nodePathLibs}`, 'align-item.scss'),
 	path.resolve(`${nodePathLibs}`, 'align-self.scss'),

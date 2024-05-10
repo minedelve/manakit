@@ -1,17 +1,17 @@
-@mixin generate-root($data) {
+@mixin generate-root($key, $data) {
 	@each $var, $list in $data {
 		@if ($var == 'default') {
 			$valuesMerged: map.merge($fonts-initial, $list);
 			:root {
 				@each $name, $color in $valuesMerged {
-					--#{$name}: #{$color};
+					--#{$key}-#{$name}: #{$color};
 				}
 			}
 		} @else {
 			.#{$var} {
 				:root {
 					@each $name, $color in $list {
-						--#{$name}: #{$color};
+						--#{$key}-#{$name}: #{$color};
 					}
 				}
 			}
@@ -25,39 +25,107 @@
 			@if ($theme == 'default') {
 				@if $nuance == 'light' {
 					$valuesMerged: map.merge($theme-light, $colors);
-					.light {
+					@if $theme-mode == 'light' {
 						:root {
 							@each $name, $color in $valuesMerged {
 								--#{$name}: #{$color};
+							}
+						}
+					} @else {
+						@media (prefers-color-scheme: light) {
+							:root {
+								@each $name, $color in $valuesMerged {
+									--#{$name}: #{$color};
+								}
+							}
+						}
+						.light {
+							:root {
+								@each $name, $color in $valuesMerged {
+									--#{$name}: #{$color};
+								}
 							}
 						}
 					}
 				}
 				@if $nuance == 'dark' {
 					$valuesMerged: map.merge($theme-dark, $colors);
-					.dark {
+					@if $theme-mode == 'dark' {
 						:root {
 							@each $name, $color in $valuesMerged {
 								--#{$name}: #{$color};
+							}
+						}
+					} @else {
+						@media (prefers-color-scheme: dark) {
+							:root {
+								@each $name, $color in $valuesMerged {
+									--#{$name}: #{$color};
+								}
+							}
+						}
+						.dark {
+							:root {
+								@each $name, $color in $valuesMerged {
+									--#{$name}: #{$color};
+								}
 							}
 						}
 					}
 				}
 			} @else {
 				@if $nuance == 'light' {
-					.#{$theme}.light {
-						:root {
-							@each $name, $color in $colors {
-								--#{$name}: #{$color};
+					@if $theme-mode == 'light' {
+						.#{$theme} {
+							:root {
+								@each $name, $color in $valuesMerged {
+									--#{$name}: #{$color};
+								}
+							}
+						}
+					} @else {
+						@media (prefers-color-scheme: light) {
+							.#{$theme} {
+								:root {
+									@each $name, $color in $valuesMerged {
+										--#{$name}: #{$color};
+									}
+								}
+							}
+						}
+						.#{$theme}.light {
+							:root {
+								@each $name, $color in $valuesMerged {
+									--#{$name}: #{$color};
+								}
 							}
 						}
 					}
 				}
 				@if $nuance == 'dark' {
-					.#{$theme}.dark {
-						:root {
-							@each $name, $color in $colors {
-								--#{$name}: #{$color};
+					@if $theme-mode == 'dark' {
+						.#{$theme} {
+							:root {
+								@each $name, $color in $valuesMerged {
+									--#{$name}: #{$color};
+								}
+							}
+						}
+					} @else {
+						@media (prefers-color-scheme: dark) {
+							.#{$theme} {
+								:root {
+									@each $name, $color in $valuesMerged {
+										--#{$name}: #{$color};
+									}
+								}
+							}
+						}
+						.#{$theme}.dark {
+							:root {
+								@each $name, $color in $valuesMerged {
+									--#{$name}: #{$color};
+								}
 							}
 						}
 					}

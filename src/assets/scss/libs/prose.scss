@@ -1,0 +1,172 @@
+abbr,
+blockquote,
+body,
+button,
+dd,
+dl,
+dt,
+fieldset,
+figure,
+form,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hgroup,
+input,
+legend,
+li,
+ol,
+p,
+pre,
+ul {
+	margin: 0;
+	padding: 0;
+}
+
+ol,
+ul {
+	margin-left: 1.18em;
+}
+
+ol,
+ol li:not(:first-child),
+ul,
+ul li:not(:first-child) {
+	margin-top: 0.8em;
+}
+
+h1 + h1,
+h1 + h2,
+h1 + h3,
+h1 + h4,
+h1 + h5,
+h1 + h6,
+h2 + h1,
+h2 + h2,
+h2 + h3,
+h2 + h4,
+h2 + h5,
+h2 + h6,
+h3 + h1,
+h3 + h2,
+h3 + h3,
+h3 + h4,
+h3 + h5,
+h3 + h6,
+h4 + h1,
+h4 + h2,
+h4 + h3,
+h4 + h4,
+h4 + h5,
+h4 + h6,
+h5 + h1,
+h5 + h2,
+h5 + h3,
+h5 + h4,
+h5 + h5,
+h5 + h6,
+h6 + h1,
+h6 + h2,
+h6 + h3,
+h6 + h4,
+h6 + h5,
+h6 + h6 {
+	margin-top: 0.4em;
+}
+
+code {
+	font-family: var(--font-code);
+	font-weight: inherit;
+	letter-spacing: 0;
+}
+
+* + figure {
+	margin-top: 1.6em;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+main,
+nav,
+section,
+summary {
+	display: block;
+}
+
+address,
+caption,
+code,
+figcaption,
+pre,
+th {
+	font-size: 1em;
+	font-weight: 400;
+	font-style: normal;
+}
+
+pre {
+	overflow: auto;
+	-webkit-overflow-scrolling: auto;
+	white-space: pre;
+	word-wrap: normal;
+}
+
+a {
+	color: var(--blue-500, #2563eb);
+	text-decoration: underline;
+	text-underline-position: under;
+
+	&:focus {
+		outline: 4px solid var(--blue-300, #93c5fd);
+		outline-offset: 1px;
+	}
+
+	&:active {
+		text-decoration: none;
+	}
+}
+
+h1 + *,
+h2 + *,
+h3 + *,
+h4 + *,
+h5 + *,
+h6 + * {
+	margin-top: 0.8em;
+}
+
+ol + *,
+p + *,
+ul + * {
+	margin-top: 0.8em;
+}
+
+ol + h1,
+ol + h2,
+ol + h3,
+ol + h4,
+ol + h5,
+ol + h6,
+p + h1,
+p + h2,
+p + h3,
+p + h4,
+p + h5,
+p + h6,
+ul + h1,
+ul + h2,
+ul + h3,
+ul + h4,
+ul + h5,
+ul + h6 {
+	margin-top: 1.6em;
+}
