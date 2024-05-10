@@ -1,0 +1,34 @@
+$justify-list: (
+	'start': flex-start,
+	'end': flex-end,
+	'center': center,
+	'space-between': space-between,
+	'space-around': space-around,
+	'space-evenly': space-evenly
+);
+
+@mixin justify($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:justify-#{$key} {
+			justify-content: #{$value};
+		}
+	} @else {
+		.justify-#{$key} {
+			justify-content: #{$value};
+		}
+	}
+}
+
+@each $breakpoint, $size in $breakpoints {
+	@if $breakpoint == 'default' {
+		@each $key, $value in $justify-list {
+			@include justify($key, $value, $breakpoint);
+		}
+	} @else {
+		@media screen and (min-width: $size) {
+			@each $key, $value in $justify-list {
+				@include justify($key, $value, $breakpoint);
+			}
+		}
+	}
+}

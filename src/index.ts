@@ -1,1 +1,4 @@
-// Reexport your entry components here
+// exports components
+export function helloWorld() {
+	console.log('manakit');
+}

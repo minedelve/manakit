@@ -1,0 +1,68 @@
+@mixin generate-root($data) {
+	@each $var, $list in $data {
+		@if ($var == 'default') {
+			$valuesMerged: map.merge($fonts-initial, $list);
+			:root {
+				@each $name, $color in $valuesMerged {
+					--#{$name}: #{$color};
+				}
+			}
+		} @else {
+			.#{$var} {
+				:root {
+					@each $name, $color in $list {
+						--#{$name}: #{$color};
+					}
+				}
+			}
+		}
+	}
+}
+
+@mixin generate-theme($data) {
+	@each $theme, $values in $data {
+		@each $nuance, $colors in $values {
+			@if ($theme == 'default') {
+				@if $nuance == 'light' {
+					$valuesMerged: map.merge($theme-light, $colors);
+					.light {
+						:root {
+							@each $name, $color in $valuesMerged {
+								--#{$name}: #{$color};
+							}
+						}
+					}
+				}
+				@if $nuance == 'dark' {
+					$valuesMerged: map.merge($theme-dark, $colors);
+					.dark {
+						:root {
+							@each $name, $color in $valuesMerged {
+								--#{$name}: #{$color};
+							}
+						}
+					}
+				}
+			} @else {
+				@if $nuance == 'light' {
+					.#{$theme}.light {
+						:root {
+							@each $name, $color in $colors {
+								--#{$name}: #{$color};
+							}
+						}
+					}
+				}
+				@if $nuance == 'dark' {
+					.#{$theme}.dark {
+						:root {
+							@each $name, $color in $colors {
+								--#{$name}: #{$color};
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}

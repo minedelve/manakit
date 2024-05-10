@@ -1,0 +1,35 @@
+$align-content-list: (
+	'start': flex-start,
+	'end': flex-end,
+	'center': center,
+	'space-between': space-between,
+	'space-around': space-around,
+	'space-evenly': space-evenly,
+	'stretch': stretch
+);
+
+@mixin align-content($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:align-content-#{$key} {
+			align-content: #{$value};
+		}
+	} @else {
+		.align-content-#{$key} {
+			align-content: #{$value};
+		}
+	}
+}
+
+@each $breakpoint, $size in $breakpoints {
+	@if $breakpoint == 'default' {
+		@each $key, $value in $align-content-list {
+			@include align-content($key, $value, $breakpoint);
+		}
+	} @else {
+		@media screen and (min-width: $size) {
+			@each $key, $value in $align-content-list {
+				@include align-content($key, $value, $breakpoint);
+			}
+		}
+	}
+}

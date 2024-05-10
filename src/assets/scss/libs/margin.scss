@@ -1,0 +1,146 @@
+$margin-list: (
+	'auto': auto,
+	'0': 0,
+	'px': 1px,
+	'0\\.5': 0.125rem,
+	'1': 0.25rem,
+	'1\\.5': 0.375rem,
+	'2': 0.5rem,
+	'2\\.5': 0.625rem,
+	'3': 0.75rem,
+	'3\\.5': 0.875rem,
+	'4': 1rem,
+	'5': 1.25rem,
+	'6': 1.5rem,
+	'7': 1.75rem,
+	'8': 2rem,
+	'9': 2.25rem,
+	'10': 2.5rem,
+	'11': 2.75rem,
+	'12': 3rem,
+	'14': 3.5rem,
+	'16': 4rem,
+	'20': 5rem,
+	'24': 6rem,
+	'28': 7rem,
+	'32': 8rem,
+	'36': 9rem,
+	'40': 10rem,
+	'44': 11rem,
+	'48': 12rem,
+	'52': 13rem,
+	'56': 14rem,
+	'60': 15rem,
+	'64': 16rem,
+	'72': 18rem,
+	'80': 20rem,
+	'96': 24rem
+);
+
+@mixin margin-top($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:mt-#{$key} {
+			margin-top: #{$value};
+		}
+	} @else {
+		.mt-#{$key} {
+			margin-top: #{$value};
+		}
+	}
+}
+@mixin margin-bottom($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:mb-#{$key} {
+			margin-bottom: #{$value};
+		}
+	} @else {
+		.mb-#{$key} {
+			margin-bottom: #{$value};
+		}
+	}
+}
+@mixin margin-left($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:ml-#{$key} {
+			margin-left: #{$value};
+		}
+	} @else {
+		.ml-#{$key} {
+			margin-left: #{$value};
+		}
+	}
+}
+@mixin margin-right($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:mr-#{$key} {
+			margin-right: #{$value};
+		}
+	} @else {
+		.mr-#{$key} {
+			margin-right: #{$value};
+		}
+	}
+}
+@mixin margin-x($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:mx-#{$key} {
+			margin-left: #{$value};
+			margin-right: #{$value};
+		}
+	} @else {
+		.mx-#{$key} {
+			margin-left: #{$value};
+			margin-right: #{$value};
+		}
+	}
+}
+@mixin margin-y($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:my-#{$key} {
+			margin-top: #{$value};
+			margin-bottom: #{$value};
+		}
+	} @else {
+		.my-#{$key} {
+			margin-top: #{$value};
+			margin-bottom: #{$value};
+		}
+	}
+}
+@mixin margin($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:m-#{$key} {
+			margin: #{$value};
+		}
+	} @else {
+		.m-#{$key} {
+			margin: #{$value};
+		}
+	}
+}
+
+@each $breakpoint, $size in $breakpoints {
+	@if $breakpoint == 'default' {
+		@each $key, $value in $margin-list {
+			@include margin($key, $value, $breakpoint);
+			@include margin-top($key, $value, $breakpoint);
+			@include margin-bottom($key, $value, $breakpoint);
+			@include margin-left($key, $value, $breakpoint);
+			@include margin-right($key, $value, $breakpoint);
+			@include margin-x($key, $value, $breakpoint);
+			@include margin-y($key, $value, $breakpoint);
+		}
+	} @else {
+		@media screen and (min-width: $size) {
+			@each $key, $value in $margin-list {
+				@include margin($key, $value, $breakpoint);
+				@include margin-top($key, $value, $breakpoint);
+				@include margin-bottom($key, $value, $breakpoint);
+				@include margin-left($key, $value, $breakpoint);
+				@include margin-right($key, $value, $breakpoint);
+				@include margin-x($key, $value, $breakpoint);
+				@include margin-y($key, $value, $breakpoint);
+			}
+		}
+	}
+}

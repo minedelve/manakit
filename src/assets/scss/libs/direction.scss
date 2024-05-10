@@ -1,0 +1,32 @@
+$flex-direction-list: (
+	'row': row,
+	'column': column,
+	'row-reverse': row-reverse,
+	'column-reverse': column-reverse
+);
+
+@mixin flex-direction($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:flex-#{$key} {
+			flex-direction: #{$value};
+		}
+	} @else {
+		.flex-#{$key} {
+			flex-direction: #{$value};
+		}
+	}
+}
+
+@each $breakpoint, $size in $breakpoints {
+	@if $breakpoint == 'default' {
+		@each $key, $value in $flex-direction-list {
+			@include flex-direction($key, $value, $breakpoint);
+		}
+	} @else {
+		@media screen and (min-width: $size) {
+			@each $key, $value in $flex-direction-list {
+				@include flex-direction($key, $value, $breakpoint);
+			}
+		}
+	}
+}

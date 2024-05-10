@@ -1,0 +1,92 @@
+$text-size-list: (
+	'xs': (
+		'size': 0.75rem,
+		'line': 1rem
+	),
+	'sm': (
+		'size': 0.875rem,
+		'line': 1.25rem
+	),
+	'md': (
+		'size': 1rem,
+		'line': 1.5rem
+	),
+	'lg': (
+		'size': 1.125rem,
+		'line': 1.75rem
+	),
+	'xl': (
+		'size': 1.25rem,
+		'line': 1.75rem
+	),
+	'2xl': (
+		'size': 1.5rem,
+		'line': 2rem
+	),
+	'3xl': (
+		'size': 1.875rem,
+		'line': 2.25rem
+	),
+	'4xl': (
+		'size': 2.25rem,
+		'line': 2.5rem
+	),
+	'5xl': (
+		'size': 3rem,
+		'line': 1
+	),
+	'6xl': (
+		'size': 3.75rem,
+		'line': 1
+	),
+	'7xl': (
+		'size': 4.5rem,
+		'line': 1
+	),
+	'8xl': (
+		'size': 6rem,
+		'line': 1
+	),
+	'9xl': (
+		'size': 8rem,
+		'line': 1
+	)
+);
+
+@mixin text-size($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:text-#{$key} {
+			@each $keyProperty, $valueProperty in $value {
+				@if $keyProperty == 'size' {
+					font-size: #{$valueProperty};
+				} @else {
+					line-height: #{$valueProperty};
+				}
+			}
+		}
+	} @else {
+		.text-#{$key} {
+			@each $keyProperty, $valueProperty in $value {
+				@if $keyProperty == 'size' {
+					font-size: #{$valueProperty};
+				} @else {
+					line-height: #{$valueProperty};
+				}
+			}
+		}
+	}
+}
+
+@each $breakpoint, $size in $breakpoints {
+	@if $breakpoint == 'default' {
+		@each $key, $value in $text-size-list {
+			@include text-size($key, $value, $breakpoint);
+		}
+	} @else {
+		@media screen and (min-width: $size) {
+			@each $key, $value in $text-size-list {
+				@include text-size($key, $value, $breakpoint);
+			}
+		}
+	}
+}

@@ -1,0 +1,31 @@
+$wrap-list: (
+	'nowrap': nowrap,
+	'wrap': wrap,
+	'wrap-reverse': wrap-reverse
+);
+
+@mixin wrap($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:flex-#{$key} {
+			flex-wrap: #{$value};
+		}
+	} @else {
+		.flex-#{$key} {
+			flex-wrap: #{$value};
+		}
+	}
+}
+
+@each $breakpoint, $size in $breakpoints {
+	@if $breakpoint == 'default' {
+		@each $key, $value in $wrap-list {
+			@include wrap($key, $value, $breakpoint);
+		}
+	} @else {
+		@media screen and (min-width: $size) {
+			@each $key, $value in $wrap-list {
+				@include wrap($key, $value, $breakpoint);
+			}
+		}
+	}
+}

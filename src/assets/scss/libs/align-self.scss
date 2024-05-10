@@ -1,0 +1,34 @@
+$align-self-list: (
+	'start': flex-start,
+	'end': flex-end,
+	'center': center,
+	'baseline': baseline,
+	'stretch': stretch,
+	'auto': auto
+);
+
+@mixin align-self($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:align-self-#{$key} {
+			align-self: #{$value};
+		}
+	} @else {
+		.align-self-#{$key} {
+			align-self: #{$value};
+		}
+	}
+}
+
+@each $breakpoint, $size in $breakpoints {
+	@if $breakpoint == 'default' {
+		@each $key, $value in $align-self-list {
+			@include align-self($key, $value, $breakpoint);
+		}
+	} @else {
+		@media screen and (min-width: $size) {
+			@each $key, $value in $align-self-list {
+				@include align-self($key, $value, $breakpoint);
+			}
+		}
+	}
+}

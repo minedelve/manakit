@@ -1,0 +1,167 @@
+:root {
+	/* Red */
+	--red-light: rgb(255, 59, 48);
+	--red-dark: rgb(255, 69, 58);
+	--red-accessible-light: rgb(215, 0, 21);
+	--red-accessible-dark: rgb(255, 105, 97);
+	--red-vibrant-light: rgb(255, 49, 38);
+	--red-vibrant-dark: rgb(255, 79, 68);
+	--red-vibrant-accessible-light: rgb(194, 6, 24);
+	--red-vibrant-accessible-dark: rgb(255, 65, 54);
+
+	/* Orange */
+	--orange-light: rgb(255, 149, 0);
+	--orange-dark: rgb(255, 159, 10);
+	--orange-accessible-light: rgb(201, 52, 0);
+	--orange-accessible-dark: rgb(255, 179, 64);
+	--orange-vibrant-light: rgb(245, 139, 0);
+	--orange-vibrant-dark: rgb(255, 169, 20);
+	--orange-vibrant-accessible-light: rgb(173, 58, 0);
+	--orange-vibrant-accessible-dark: rgb(255, 179, 64);
+
+	/* Yellow */
+	--yellow-light: rgb(255, 204, 0);
+	--yellow-dark: rgb(255, 214, 10);
+	--yellow-accessible-light: rgb(160, 90, 0);
+	--yellow-accessible-dark: rgb(255, 212, 38);
+	--yellow-vibrant-light: rgb(245, 194, 0);
+	--yellow-vibrant-dark: rgb(255, 224, 20);
+	--yellow-vibrant-accessible-light: rgb(146, 81, 0);
+	--yellow-vibrant-accessible-dark: rgb(255, 212, 38);
+
+	/* Green */
+	--green-light: rgb(40, 205, 65);
+	--green-dark: rgb(50, 215, 75);
+	--green-accessible-light: rgb(0, 125, 27);
+	--green-accessible-dark: rgb(49, 222, 75);
+	--green-vibrant-light: rgb(30, 195, 55);
+	--green-vibrant-dark: rgb(60, 225, 85);
+	--green-vibrant-accessible-light: rgb(0, 112, 24);
+	--green-vibrant-accessible-dark: rgb(49, 222, 75);
+
+	/* Mint */
+	--mint-light: rgb(0, 199, 190);
+	--mint-dark: rgb(102, 212, 207);
+	--mint-accessible-light: rgb(12, 129, 123);
+	--mint-accessible-dark: rgb(102, 212, 207);
+	--mint-vibrant-light: rgb(0, 189, 180);
+	--mint-vibrant-dark: rgb(108, 224, 219);
+	--mint-vibrant-accessible-light: rgb(11, 117, 112);
+	--mint-vibrant-accessible-dark: rgb(102, 212, 207);
+
+	/* Teal */
+	--teal-light: rgb(89, 173, 196);
+	--teal-dark: rgb(106, 196, 220);
+	--teal-accessible-light: rgb(0, 130, 153);
+	--teal-accessible-dark: rgb(93, 212, 207);
+	--teal-vibrant-light: rgb(46, 167, 189);
+	--teal-vibrant-dark: rgb(68, 212, 237);
+	--teal-vibrant-accessible-light: rgb(0, 103, 150);
+	--teal-vibrant-accessible-dark: rgb(112, 215, 255);
+
+	/* Cyan */
+	--cyan-light: rgb(85, 190, 240);
+	--cyan-dark: rgb(90, 200, 245);
+	--cyan-accessible-light: rgb(0, 113, 164);
+	--cyan-accessible-dark: rgb(112, 215, 255);
+	--cyan-vibrant-light: rgb(65, 175, 220);
+	--cyan-vibrant-dark: rgb(90, 205, 250);
+	--cyan-vibrant-accessible-light: rgb(0, 103, 150);
+	--cyan-vibrant-accessible-dark: rgb(112, 215, 255);
+
+	/* Blue */
+	--blue-light: rgb(0, 122, 255);
+	--blue-dark: rgb(10, 132, 255);
+	--blue-accessible-light: rgb(0, 64, 221);
+	--blue-accessible-dark: rgb(64, 156, 255);
+	--blue-vibrant-light: rgb(0, 122, 245);
+	--blue-vibrant-dark: rgb(20, 142, 255);
+	--blue-vibrant-accessible-light: rgb(0, 64, 221);
+	--blue-vibrant-accessible-dark: rgb(64, 156, 255);
+
+	/* Indigo */
+	--indigo-light: rgb(88, 86, 214);
+	--indigo-dark: rgb(94, 92, 230);
+	--indigo-accessible-light: rgb(54, 52, 163);
+	--indigo-accessible-dark: rgb(125, 122, 255);
+	--indigo-vibrant-light: rgb(84, 82, 204);
+	--indigo-vibrant-dark: rgb(99, 97, 242);
+	--indigo-vibrant-accessible-light: rgb(54, 52, 163);
+	--indigo-vibrant-accessible-dark: rgb(125, 122, 255);
+
+	/* Purple */
+	--purple-light: rgb(175, 82, 222);
+	--purple-dark: rgb(191, 90, 242);
+	--purple-accessible-light: rgb(173, 68, 171);
+	--purple-accessible-dark: rgb(218, 143, 255);
+	--purple-vibrant-light: rgb(159, 75, 201);
+	--purple-vibrant-dark: rgb(204, 101, 255);
+	--purple-vibrant-accessible-light: rgb(173, 68, 171);
+	--purple-vibrant-accessible-dark: rgb(218, 143, 255);
+
+	/* Pink */
+	--pink-light: rgb(255, 45, 85);
+	--pink-dark: rgb(255, 55, 95);
+	--pink-accessible-light: rgb(211, 15, 69);
+	--pink-accessible-dark: rgb(255, 100, 130);
+	--pink-vibrant-light: rgb(245, 35, 75);
+	--pink-vibrant-dark: rgb(255, 65, 105);
+	--pink-vibrant-accessible-light: rgb(193, 16, 50);
+	--pink-vibrant-accessible-dark: rgb(255, 58, 95);
+
+	/* Brown */
+	--brown-light: rgb(162, 132, 94);
+	--brown-dark: rgb(172, 142, 104);
+	--brown-accessible-light: rgb(127, 101, 69);
+	--brown-accessible-dark: rgb(181, 148, 105);
+	--brown-vibrant-light: rgb(152, 122, 84);
+	--brown-vibrant-dark: rgb(182, 152, 114);
+	--brown-vibrant-accessible-light: rgb(119, 93, 59);
+	--brown-vibrant-accessible-dark: rgb(181, 148, 105);
+
+	/* Gray */
+	--gray-light: rgb(142, 142, 147);
+	--gray-dark: rgb(152, 152, 157);
+	--gray-accessible-light: rgb(105, 105, 110);
+	--gray-accessible-dark: rgb(152, 152, 157);
+	--gray-vibrant-light: rgb(132, 132, 137);
+	--gray-vibrant-dark: rgb(162, 162, 167);
+	--gray-vibrant-accessible-light: rgb(97, 97, 101);
+	--gray-vibrant-accessible-dark: rgb(152, 152, 157);
+
+	/* systemGray */
+	--systemGray-light: rgb(142, 142, 147);
+	--systemGray-dark: rgb(142, 142, 147);
+	--systemGray-accessible-light: rgb(108, 108, 112);
+	--systemGray-accessible-dark: rgb(174, 174, 178);
+
+	/* systemGray2 */
+	--systemGray2-light: rgb(174, 174, 178);
+	--systemGray2-dark: rgb(99, 99, 102);
+	--systemGray2-accessible-light: rgb(142, 142, 147);
+	--systemGray2-accessible-dark: rgb(124, 124, 128);
+
+	/* systemGray3 */
+	--systemGray3-light: rgb(199, 199, 204);
+	--systemGray3-dark: rgb(72, 72, 74);
+	--systemGray3-accessible-light: rgb(174, 174, 178);
+	--systemGray3-accessible-dark: rgb(84, 84, 86);
+
+	/* systemGray4 */
+	--systemGray4-light: rgb(209, 209, 214);
+	--systemGray4-dark: rgb(58, 58, 60);
+	--systemGray4-accessible-light: rgb(188, 188, 192);
+	--systemGray4-accessible-dark: rgb(68, 68, 70);
+
+	/* systemGray5 */
+	--systemGray5-light: rgb(229, 229, 234);
+	--systemGray5-dark: rgb(44, 44, 46);
+	--systemGray5-accessible-light: rgb(216, 216, 220);
+	--systemGray5-accessible-dark: rgb(54, 54, 56);
+
+	/* systemGray6 */
+	--systemGray6-light: rgb(242, 242, 247);
+	--systemGray6-dark: rgb(28, 28, 30);
+	--systemGray6-accessible-light: rgb(235, 235, 240);
+	--systemGray6-accessible-dark: rgb(36, 36, 38);
+}

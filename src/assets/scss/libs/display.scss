@@ -1,0 +1,48 @@
+$display-list: (
+	'block': block,
+	'inline-block': inline-block,
+	'inline': inline,
+	'flex': flex,
+	'inline-flex': inline-flex,
+	'table': table,
+	'table-caption': table-caption,
+	'table-cell': table-cell,
+	'table-column': table-column,
+	'table-column-group': table-column-group,
+	'table-footer-group': table-footer-group,
+	'table-header-group': table-header-group,
+	'table-row-group': table-row-group,
+	'table-row': table-row,
+	'flow-root': flow-root,
+	'grid': grid,
+	'inline-grid': inline-grid,
+	'contents': contents,
+	'list-item': list-item,
+	'none': none
+);
+
+@mixin display($key, $value, $breakpoint) {
+	@if $breakpoint != 'default' {
+		.#{$breakpoint}\:#{$key} {
+			display: #{$value};
+		}
+	} @else {
+		.#{$key} {
+			display: #{$value};
+		}
+	}
+}
+
+@each $breakpoint, $size in $breakpoints {
+	@if $breakpoint == 'default' {
+		@each $key, $value in $display-list {
+			@include display($key, $value, $breakpoint);
+		}
+	} @else {
+		@media screen and (min-width: $size) {
+			@each $key, $value in $display-list {
+				@include display($key, $value, $breakpoint);
+			}
+		}
+	}
+}
