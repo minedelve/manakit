@@ -9,7 +9,7 @@
 			@if map.has-key($container-size, $breakpoint) {
 				@media screen and (min-width: $size) {
 					&.mk-container:not(.container-fluid) {
-						width: map.get($container-size, $breakpoint);
+						max-width: map.get($container-size, $breakpoint);
 					}
 				}
 			}
