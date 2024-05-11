@@ -59,5 +59,8 @@ export const modulesSCSS = [
 	path.resolve(`${nodePathModules}/footer`, 'footer.scss'),
 	path.resolve(`${nodePathModules}/divider`, 'divider.scss'),
 	path.resolve(`${nodePathModules}/drawer`, 'drawer.scss'),
-	path.resolve(`${nodePathModules}/modal`, 'modal.scss')
+	path.resolve(`${nodePathModules}/modal`, 'modal.scss'),
+	path.resolve(`${nodePathModules}/btn`, 'btn.scss'),
+	path.resolve(`${nodePathModules}/vstack`, 'vstack.scss'),
+	path.resolve(`${nodePathModules}/hstack`, 'hstack.scss')
 ];

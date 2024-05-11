@@ -1,51 +1,44 @@
 <script lang="ts">
 	import { className } from '../../utils/class-name.js';
+	import { eventNoScroll } from '$lib/utils/event-dom.js';
 
 	// props
 	let _class: string | false | undefined = undefined;
 	export { _class as class };
 	export let open: boolean = false;
 
-	// state
-	let modal: HTMLDialogElement;
-	let isModalOpen: boolean;
-	$: {
-		if (open) {
-			modal.showModal();
-			isModalOpen = modal?.getAttribute('open') !== null;
-		}
+	// states
+	let dialog: HTMLDialogElement;
 
-		if (isModalOpen && !open) {
-			modal.close();
-		}
+	$: {
+		if (dialog && open) dialog.showModal();
+		if (dialog && !open) dialog.close();
+		eventNoScroll(open ? 'active' : 'disable');
 	}
 
 	function handleKeyDown(event: any) {
 		if (event.key === 'Escape') {
 			if ($$props?.closewithEsc) {
-				modal.close();
+				dialog.close();
 				open = false;
 			} else {
 				event.preventDefault();
 			}
 		}
 	}
-
-	function handleClickOutside() {
-		modal.close();
-		open = false;
-	}
 </script>
 
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
-<dialog bind:this={modal} class={className('mk-modal', _class)} on:keydown={handleKeyDown}>
-	<div class="modal-container">
+<dialog
+	bind:this={dialog}
+	class={className('mk-modal', _class)}
+	on:close={() => (open = false)}
+	on:keydown={handleKeyDown}
+	on:click|self={() => dialog.close()}
+>
+	<!-- svelte-ignore a11y-click-events-have-key-events -->
+	<!-- svelte-ignore a11y-no-static-element-interactions -->
+	<div class="modal-container" on:click|stopPropagation>
 		<slot />
 	</div>
-	{#if $$props.clickOutside}
-		<!-- svelte-ignore a11y-click-events-have-key-events -->
-		<form method="dialog" class="modal-backdrop" on:click={() => handleClickOutside()}>
-			<button>close</button>
-		</form>
-	{/if}
 </dialog>

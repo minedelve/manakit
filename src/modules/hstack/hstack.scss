@@ -1,0 +1,24 @@
+.mk-hstack {
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-columns: 1fr;
+
+	> .scroll {
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
+		user-select: none;
+
+		> .scroll-content {
+			width: fit-content;
+			display: flex;
+		}
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		> * {
+			scroll-snap-align: start;
+		}
+	}
+}

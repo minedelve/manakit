@@ -12,6 +12,7 @@
 	export let top: boolean = false;
 	export let bottom: boolean = false;
 
+	// states
 	$: innerWidth = 0;
 
 	const handleClose = () => (open = false);
