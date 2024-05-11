@@ -50,4 +50,17 @@ export const contentSCSS = [
 	path.resolve(`${nodePathLibs}`, 'wrap.scss')
 ];
 
-export const modulesSCSS = [path.resolve(`${nodePathModules}/app`, 'app.scss')];
+export const modulesSCSS = [
+	path.resolve(`${nodePathModules}/app`, 'app.scss'),
+	path.resolve(`${nodePathModules}/spacer`, 'spacer.scss'),
+	path.resolve(`${nodePathModules}/toolbar`, 'toolbar.scss'),
+	path.resolve(`${nodePathModules}/container`, 'container.scss'),
+	path.resolve(`${nodePathModules}/card`, 'card.scss'),
+	path.resolve(`${nodePathModules}/footer`, 'footer.scss'),
+	path.resolve(`${nodePathModules}/divider`, 'divider.scss'),
+	path.resolve(`${nodePathModules}/drawer`, 'drawer.scss'),
+	path.resolve(`${nodePathModules}/modal`, 'modal.scss'),
+	path.resolve(`${nodePathModules}/btn`, 'btn.scss'),
+	path.resolve(`${nodePathModules}/vstack`, 'vstack.scss'),
+	path.resolve(`${nodePathModules}/hstack`, 'hstack.scss')
+];

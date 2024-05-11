@@ -1,0 +1,59 @@
+.mk-modal {
+	--modal-background: var(--scrim);
+	border: 0;
+	padding: 0;
+	width: 100%;
+	max-width: none;
+	background-color: transparent;
+	color: inherit;
+
+	&::backdrop {
+		background-color: color-mix(in oklab, var(--modal-background) 30%, transparent);
+		animation: fade 0.2s ease-out;
+	}
+	&[open]::backdrop {
+		animation: fade 0.2s ease-out;
+	}
+
+	&[open],
+	&.modal-open {
+		pointer-events: auto;
+		visibility: visible;
+		opacity: 1;
+	}
+
+	.modal-container {
+		transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+		transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+		transition-duration: 0.2s;
+	}
+
+	@each $breakpoint, $size in $breakpoints {
+		@if $breakpoint == 'default' {
+			&.modal-bottom {
+				margin-bottom: 0;
+			}
+			&.modal-top {
+				margin-top: 0;
+			}
+		} @else {
+			@media screen and (min-width: $size) {
+				&.#{$breakpoint}\:modal-bottom {
+					margin-bottom: 0;
+				}
+				&.#{$breakpoint}\:modal-top {
+					margin-top: 0;
+				}
+			}
+		}
+	}
+}
+
+@keyframes fade {
+	from {
+		opacity: 0;
+	}
+	to {
+		opacity: 1;
+	}
+}

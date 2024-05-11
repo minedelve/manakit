@@ -1,0 +1,25 @@
+.mk-vstack {
+	display: grid;
+	grid-auto-flow: row;
+	grid-template-rows: 1fr;
+
+	> .scroll {
+		overflow: scroll;
+		-webkit-overflow-scrolling: touch;
+		user-select: none;
+
+		> .scroll-content {
+			height: fit-content;
+			display: block;
+			width: fit-content;
+		}
+
+		&::-webkit-scrollbar {
+			display: none;
+		}
+
+		> * {
+			scroll-snap-align: start;
+		}
+	}
+}

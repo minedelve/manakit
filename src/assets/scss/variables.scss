@@ -78,3 +78,9 @@ $themes-custom: (
 		dark: $theme-dark
 	)
 ) !default;
+
+// container
+$container-size: (
+	sm: 900px,
+	md: 1200px
+);
