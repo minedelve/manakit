@@ -1,6 +1,6 @@
 .mk-btn {
-	--btn-color: var(--on-surface);
-	--btn-background: var(--surface);
+	--color: var(--on-surface);
+	--background-color: var(--surface);
 
 	display: inline-flex;
 	height: 3rem;
@@ -27,8 +27,8 @@
 	transition-duration: 0.2s;
 	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 	animation: button-effect 0.25s ease-out;
-	color: var(--btn-color);
-	background-color: var(--btn-background);
+	color: var(--color);
+	background-color: var(--background-color);
 
 	svg {
 		width: 1.5rem;
@@ -42,7 +42,7 @@
 	}
 
 	&:hover {
-		background: color-mix(in oklab, var(--btn-background) 90%, black);
+		background: color-mix(in oklab, var(--background-color) 90%, black);
 	}
 
 	&.btn-square {
@@ -60,17 +60,17 @@
 	}
 	&.btn-outline {
 		background-color: transparent;
-		border-color: var(--btn-color);
+		border-color: var(--color);
 
 		&:hover {
-			background-color: color-mix(in oklab, var(--btn-color) 20%, transparent);
+			background-color: color-mix(in oklab, var(--color) 20%, transparent);
 		}
 	}
 	&.btn-text {
 		background-color: transparent;
 
 		&:hover {
-			background-color: color-mix(in oklab, var(--btn-color) 20%, transparent);
+			background-color: color-mix(in oklab, var(--color) 20%, transparent);
 		}
 	}
 	&.btn-link {
@@ -131,49 +131,49 @@
 	}
 	&.mk-btn:is(input[type='checkbox']:checked),
 	&.mk-btn:is(input[type='radio']:checked) {
-		--btn-color: var(--on-primary);
-		--btn-background: var(--primary);
+		--color: var(--on-primary);
+		--background-color: var(--primary);
 	}
 
 	// colors
 	&.btn-info {
-		--btn-color: var(--on-info);
-		--btn-background: var(--info);
+		--color: var(--on-info);
+		--background-color: var(--info);
 
 		&.btn-outline,
 		&.btn-text,
 		&.btn-info {
-			--btn-color: var(--info);
+			--color: var(--info);
 		}
 	}
 	&.btn-success {
-		--btn-color: var(--on-success);
-		--btn-background: var(--success);
+		--color: var(--on-success);
+		--background-color: var(--success);
 
 		&.btn-outline,
 		&.btn-text,
 		&.btn-info {
-			--btn-color: var(--success);
+			--color: var(--success);
 		}
 	}
 	&.btn-warning {
-		--btn-color: var(--on-warning);
-		--btn-background: var(--warning);
+		--color: var(--on-warning);
+		--background-color: var(--warning);
 
 		&.btn-outline,
 		&.btn-text,
 		&.btn-info {
-			--btn-color: var(--warning);
+			--color: var(--warning);
 		}
 	}
 	&.btn-error {
-		--btn-color: var(--on-error);
-		--btn-background: var(--error);
+		--color: var(--on-error);
+		--background-color: var(--error);
 
 		&.btn-outline,
 		&.btn-text,
 		&.btn-info {
-			--btn-color: var(--error);
+			--color: var(--error);
 		}
 	}
 

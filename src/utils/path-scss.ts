@@ -47,7 +47,8 @@ export const contentSCSS = [
 	path.resolve(`${nodePathLibs}`, 'text-transform.scss'),
 	path.resolve(`${nodePathLibs}`, 'text-weight.scss'),
 	path.resolve(`${nodePathLibs}`, 'width.scss'),
-	path.resolve(`${nodePathLibs}`, 'wrap.scss')
+	path.resolve(`${nodePathLibs}`, 'wrap.scss'),
+	path.resolve(`${nodePathLibs}`, 'colors.scss')
 ];
 
 export const modulesSCSS = [
