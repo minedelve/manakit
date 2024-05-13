@@ -67,7 +67,11 @@ export function convertJStoSCSS(configuration: any) {
 						for (const [section, sectionData] of Object.entries(categoryData)) {
 							css += `${section}: (`;
 							for (const [key, value] of Object.entries(sectionData)) {
-								css += `${key}: ${value},`;
+								if (category === 'fonts') {
+									css += `${key}: "${value}",`;
+								} else {
+									css += `${key}: ${value},`;
+								}
 							}
 							css += '),';
 						}
