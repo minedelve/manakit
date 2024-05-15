@@ -41,8 +41,8 @@
 		transform: scale(0.97);
 	}
 
-	&:hover {
-		background: color-mix(in oklab, var(--background-color) 90%, black);
+	&:hover:not(.btn-outline):not(.btn-text):not(.btn-link) {
+		background-color: color-mix(in oklab, var(--background-color) 90%, black);
 	}
 
 	&.btn-square {
@@ -90,11 +90,11 @@
 	&.btn[disabled] {
 		pointer-events: none;
 		user-select: none;
-		color: color-mix(in oklab, var(--scrim) 40%, transparent);
-		background-color: color-mix(in oklab, var(--surface) 70%, transparent);
+		color: color-mix(in oklab, var(--color) 40%, transparent) !important;
+		background-color: color-mix(in oklab, var(--background-color) 70%, transparent) !important;
 
 		&.btn-outline {
-			border-color: color-mix(in oklab, var(--scrim) 40%, transparent);
+			border-color: color-mix(in oklab, var(--color) 40%, transparent) !important;
 		}
 
 		&.btn-outline,
@@ -142,7 +142,7 @@
 
 		&.btn-outline,
 		&.btn-text,
-		&.btn-info {
+		&.btn-link {
 			--color: var(--info);
 		}
 	}
@@ -152,7 +152,7 @@
 
 		&.btn-outline,
 		&.btn-text,
-		&.btn-info {
+		&.btn-link {
 			--color: var(--success);
 		}
 	}
@@ -162,7 +162,7 @@
 
 		&.btn-outline,
 		&.btn-text,
-		&.btn-info {
+		&.btn-link {
 			--color: var(--warning);
 		}
 	}
@@ -172,7 +172,7 @@
 
 		&.btn-outline,
 		&.btn-text,
-		&.btn-info {
+		&.btn-link {
 			--color: var(--error);
 		}
 	}
