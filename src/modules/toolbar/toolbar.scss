@@ -1,13 +1,13 @@
 .mk-toolbar {
-	--toolbar-background: var(--surface);
-	--toolbar-color: var(--on-surface);
+	--background-color: var(--surface);
+	--color: var(--on-surface);
 
 	display: flex;
 	align-items: center;
 	min-height: 4rem;
 	width: 100%;
-	background-color: var(--toolbar-background);
-	color: var(--toolbar-color);
+	background-color: var(--background-color);
+	color: var(--color);
 
 	&.toolbar-bottom {
 		height: 3.5rem;
