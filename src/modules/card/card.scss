@@ -4,7 +4,7 @@ a.mk-card {
 
 .mk-card {
 	--color: var(--on-surface);
-	--background-color: var(--surface);
+	--background-color-color: var(--surface);
 	--overlay: var(--scrim);
 	--border-radius: 1rem;
 
@@ -17,19 +17,19 @@ a.mk-card {
 	border-style: solid;
 	text-align: start;
 	color: var(--color);
-	background-color: var(--background);
+	background-color: var(--background-color);
 
 	&:hover:not(div) {
-		background-color: color-mix(in oklab, var(--background) 90%, black);
+		background-color: color-mix(in oklab, var(--background-color) 90%, black);
 	}
 
 	&:focus:not(div) {
-		background-color: color-mix(in oklab, var(--background) 95%, black);
+		background-color: color-mix(in oklab, var(--background-color) 95%, black);
 	}
 
 	&:active:not(div),
 	&.card-active {
-		background-color: color-mix(in oklab, var(--background) 95%, black);
+		background-color: color-mix(in oklab, var(--background-color) 95%, black);
 	}
 
 	&:not(div) {
