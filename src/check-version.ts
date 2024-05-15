@@ -32,6 +32,6 @@ export async function checkVersion() {
 			)
 		);
 
-		console.log(chalk.bold('Run ' + chalk.blue(`npm i --dev manakit@${lastestVersion}\n\n`)));
+		console.log(chalk.bold('Run ' + chalk.blue(`npm i --save-dev manakit@${lastestVersion}\n\n`)));
 	}
 }
