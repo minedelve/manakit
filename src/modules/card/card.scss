@@ -3,32 +3,33 @@ a.mk-card {
 }
 
 .mk-card {
-	--card-background: var(--surface);
-	--card-color: var(--on-surface);
-	--card-overlay: var(--scrim);
-	--card-border-radius: 1rem;
+	--color: var(--on-surface);
+	--background-color: var(--surface);
+	--overlay: var(--scrim);
+	--border-radius: 1rem;
 
 	position: relative;
 	display: flex;
 	flex-direction: column;
-	border-radius: var(--card-border-radius);
+	border-radius: var(--border-radius);
 	border-color: transparent;
 	border-width: 1px;
 	border-style: solid;
-	color: var(--card-color);
-	background-color: var(--card-background);
+	text-align: start;
+	color: var(--color);
+	background-color: var(--background);
 
 	&:hover:not(div) {
-		background-color: color-mix(in oklab, var(--card-background) 90%, black);
+		background-color: color-mix(in oklab, var(--background) 90%, black);
 	}
 
 	&:focus:not(div) {
-		background-color: color-mix(in oklab, var(--card-background) 95%, black);
+		background-color: color-mix(in oklab, var(--background) 95%, black);
 	}
 
 	&:active:not(div),
 	&.card-active {
-		background-color: color-mix(in oklab, var(--card-background) 95%, black);
+		background-color: color-mix(in oklab, var(--background) 95%, black);
 	}
 
 	&:not(div) {
@@ -36,12 +37,25 @@ a.mk-card {
 	}
 
 	&.card-outline {
-		background: transparent;
-		border-color: var(--card-color);
+		border-color: var(--color);
 	}
 
+	&.card-outline,
 	&.card-text {
-		background: transparent;
+		background-color: transparent;
+
+		&:hover:not(div) {
+			background-color: color-mix(in oklab, var(--color) 20%, transparent);
+		}
+
+		&:focus:not(div) {
+			background-color: color-mix(in oklab, var(--color) 25%, transparent);
+		}
+
+		&:active:not(div),
+		&.card-active {
+			background-color: color-mix(in oklab, var(--color) 25%, transparent);
+		}
 	}
 
 	&.card-disabled,
@@ -49,18 +63,24 @@ a.mk-card {
 	&:disabled {
 		pointer-events: none;
 		user-select: none;
-		color: color-mix(in oklab, var(--scrim) 25%, transparent);
+		color: color-mix(in oklab, var(--scrim) 25%, transparent) !important;
 
-		&::before {
-			content: '';
-			position: absolute;
-			top: 0;
-			left: 0;
-			width: 100%;
-			height: 100%;
-			background-color: color-mix(in oklab, var(--scrim) 8%, transparent);
-			z-index: 100;
-			border-radius: var(--card-border-radius);
+		&.card-outline {
+			border-color: color-mix(in oklab, var(--scrim) 25%, transparent) !important;
+		}
+
+		&:not(.card-text) {
+			&::before {
+				content: '';
+				position: absolute;
+				top: 0;
+				left: 0;
+				width: 100%;
+				height: 100%;
+				background-color: color-mix(in oklab, var(--scrim) 8%, transparent) !important;
+				z-index: 100;
+				border-radius: var(--border-radius);
+			}
 		}
 	}
 }
