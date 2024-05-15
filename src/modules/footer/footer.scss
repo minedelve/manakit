@@ -1,6 +1,6 @@
 .mk-footer {
-	--footer-background: var(--surface);
-	--footer-color: var(--on-surface);
+	--background-color: var(--surface);
+	--color: var(--on-surface);
 
 	display: grid;
 	width: 100%;
@@ -10,8 +10,8 @@
 	row-gap: 2.5rem;
 	font-size: 0.875rem;
 	line-height: 1.25rem;
-	background-color: var(--footer-background);
-	color: var(--footer-color);
+	background-color: var(--background-color);
+	color: var(--color);
 
 	&.footer-center {
 		place-items: center;

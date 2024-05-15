@@ -1,5 +1,5 @@
 .mk-modal {
-	--modal-background: var(--scrim);
+	--backdrop: var(--scrim);
 	border: 0;
 	padding: 0;
 	width: 100%;
@@ -8,7 +8,7 @@
 	color: inherit;
 
 	&::backdrop {
-		background-color: color-mix(in oklab, var(--modal-background) 30%, transparent);
+		background-color: color-mix(in oklab, var(--backdrop) 30%, transparent);
 		animation: fade 0.2s ease-out;
 	}
 	&[open]::backdrop {
