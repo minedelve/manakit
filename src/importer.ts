@@ -41,9 +41,9 @@ export async function makeManakitImporterConfig() {
 	}
 
 	css += convertJStoSCSS(config);
-	contentSCSS.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
-	modulesSCSS.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
 
+	modulesSCSS.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
+	contentSCSS.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
 	fsPromises.writeFile(
 		path.resolve(`node_modules/manakit/dist`, 'style.css'),
 		sass.compileString(css)?.css

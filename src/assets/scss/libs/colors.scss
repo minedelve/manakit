@@ -5,42 +5,104 @@
 				$valuesMerged: map.merge($theme-light, $colors);
 				@if $theme-mode == 'light' {
 					@each $name, $color in $valuesMerged {
+						@if str-index($name, 'on-') == null {
+							.#{$name} {
+								@each $moduleClass in $modules-bg-text-keys {
+									&:not(.#{$moduleClass}) {
+										--background-color: var(--#{$name});
+										--color: var(--on-#{$name});
+									}
+								}
+							}
+
+							.#{$name} {
+								@each $moduleClass in $modules-bg-text-keys {
+									&.#{$moduleClass} {
+										--color: var(--#{$name});
+									}
+								}
+							}
+						}
 						.bg\:#{$name} {
-							--background-color: var(--#{$name}) !important;
+							--background-color: var(--#{$name});
 							background-color: var(--#{$name});
 						}
 						.text\:#{$name} {
-							--color: var(--#{$name}) !important;
+							--color: var(--#{$name});
 							color: var(--#{$name});
 						}
 						.border\:#{$name} {
-							--border-color: var(--#{$name}) !important;
+							--border-color: var(--#{$name});
 							border-color: var(--#{$name});
 						}
 					}
 				} @else {
 					@media (prefers-color-scheme: light) {
 						@each $name, $color in $valuesMerged {
+							@if str-index($name, 'on-') == null {
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&:not(.#{$moduleClass}) {
+											--background-color: var(--#{$name});
+											--color: var(--on-#{$name});
+										}
+									}
+								}
+
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&.#{$moduleClass} {
+											--color: var(--#{$name});
+										}
+									}
+								}
+							}
+
 							.bg\:#{$name} {
+								--background-color: var(--#{$name});
 								background-color: var(--#{$name});
 							}
 							.text\:#{$name} {
+								--color: var(--#{$name});
 								color: var(--#{$name});
 							}
 							.border\:#{$name} {
+								--border-color: var(--#{$name});
 								border-color: var(--#{$name});
 							}
 						}
 					}
 					.light {
 						@each $name, $color in $valuesMerged {
+							@if str-index($name, 'on-') == null {
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&:not(.#{$moduleClass}) {
+											--background-color: var(--#{$name});
+											--color: var(--on-#{$name});
+										}
+									}
+								}
+
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&.#{$moduleClass} {
+											--color: var(--#{$name});
+										}
+									}
+								}
+							}
+
 							.bg\:#{$name} {
+								--background-color: var(--#{$name});
 								background-color: var(--#{$name});
 							}
 							.text\:#{$name} {
+								--color: var(--#{$name});
 								color: var(--#{$name});
 							}
 							.border\:#{$name} {
+								--border-color: var(--#{$name});
 								border-color: var(--#{$name});
 							}
 						}
@@ -51,39 +113,105 @@
 				$valuesMerged: map.merge($theme-dark, $colors);
 				@if $theme-mode == 'dark' {
 					@each $name, $color in $valuesMerged {
+						@if str-index($name, 'on-') == null {
+							.#{$name} {
+								@each $moduleClass in $modules-bg-text-keys {
+									&:not(.#{$moduleClass}) {
+										--background-color: var(--#{$name});
+										--color: var(--on-#{$name});
+									}
+								}
+							}
+
+							.#{$name} {
+								@each $moduleClass in $modules-bg-text-keys {
+									&.#{$moduleClass} {
+										--color: var(--#{$name});
+									}
+								}
+							}
+						}
+
 						.bg\:#{$name} {
+							--background-color: var(--#{$name});
 							background-color: var(--#{$name});
 						}
 						.text\:#{$name} {
+							--color: var(--#{$name});
 							color: var(--#{$name});
 						}
 						.border\:#{$name} {
+							--border-color: var(--#{$name});
 							border-color: var(--#{$name});
 						}
 					}
 				} @else {
 					@media (prefers-color-scheme: dark) {
 						@each $name, $color in $valuesMerged {
+							@if str-index($name, 'on-') == null {
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&:not(.#{$moduleClass}) {
+											--background-color: var(--#{$name});
+											--color: var(--on-#{$name});
+										}
+									}
+								}
+
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&.#{$moduleClass} {
+											--color: var(--#{$name});
+										}
+									}
+								}
+							}
+
 							.bg\:#{$name} {
+								--background-color: var(--#{$name});
 								background-color: var(--#{$name});
 							}
 							.text\:#{$name} {
+								--color: var(--#{$name});
 								color: var(--#{$name});
 							}
 							.border\:#{$name} {
+								--border-color: var(--#{$name});
 								border-color: var(--#{$name});
 							}
 						}
 					}
 					.dark {
 						@each $name, $color in $valuesMerged {
+							@if str-index($name, 'on-') == null {
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&:not(.#{$moduleClass}) {
+											--background-color: var(--#{$name});
+											--color: var(--on-#{$name});
+										}
+									}
+								}
+
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&.#{$moduleClass} {
+											--color: var(--#{$name});
+										}
+									}
+								}
+							}
+
 							.bg\:#{$name} {
+								--background-color: var(--#{$name});
 								background-color: var(--#{$name});
 							}
 							.text\:#{$name} {
+								--color: var(--#{$name});
 								color: var(--#{$name});
 							}
 							.border\:#{$name} {
+								--border-color: var(--#{$name});
 								border-color: var(--#{$name});
 							}
 						}
@@ -95,13 +223,35 @@
 				@if $theme-mode == 'light' {
 					.#{$theme} {
 						@each $name, $color in $valuesMerged {
+							@if str-index($name, 'on-') == null {
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&:not(.#{$moduleClass}) {
+											--background-color: var(--#{$name});
+											--color: var(--on-#{$name});
+										}
+									}
+								}
+
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&.#{$moduleClass} {
+											--color: var(--#{$name});
+										}
+									}
+								}
+							}
+
 							.bg\:#{$name} {
+								--background-color: var(--#{$name});
 								background-color: var(--#{$name});
 							}
 							.text\:#{$name} {
+								--color: var(--#{$name});
 								color: var(--#{$name});
 							}
 							.border\:#{$name} {
+								--border-color: var(--#{$name});
 								border-color: var(--#{$name});
 							}
 						}
@@ -109,26 +259,70 @@
 				} @else {
 					@media (prefers-color-scheme: light) {
 						@each $name, $color in $valuesMerged {
+							@if str-index($name, 'on-') == null {
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&:not(.#{$moduleClass}) {
+											--background-color: var(--#{$name});
+											--color: var(--on-#{$name});
+										}
+									}
+								}
+
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&.#{$moduleClass} {
+											--color: var(--#{$name});
+										}
+									}
+								}
+							}
+
 							.bg\:#{$name} {
+								--background-color: var(--#{$name});
 								background-color: var(--#{$name});
 							}
 							.text\:#{$name} {
+								--color: var(--#{$name});
 								color: var(--#{$name});
 							}
 							.border\:#{$name} {
+								--border-color: var(--#{$name});
 								border-color: var(--#{$name});
 							}
 						}
 					}
 					.#{$theme}.light {
 						@each $name, $color in $valuesMerged {
+							@if str-index($name, 'on-') == null {
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&:not(.#{$moduleClass}) {
+											--background-color: var(--#{$name});
+											--color: var(--on-#{$name});
+										}
+									}
+								}
+
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&.#{$moduleClass} {
+											--color: var(--#{$name});
+										}
+									}
+								}
+							}
+
 							.bg\:#{$name} {
+								--background-color: var(--#{$name});
 								background-color: var(--#{$name});
 							}
 							.text\:#{$name} {
+								--color: var(--#{$name});
 								color: var(--#{$name});
 							}
 							.border\:#{$name} {
+								--border-color: var(--#{$name});
 								border-color: var(--#{$name});
 							}
 						}
@@ -139,13 +333,35 @@
 				@if $theme-mode == 'dark' {
 					.#{$theme} {
 						@each $name, $color in $valuesMerged {
+							@if str-index($name, 'on-') == null {
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&:not(.#{$moduleClass}) {
+											--background-color: var(--#{$name});
+											--color: var(--on-#{$name});
+										}
+									}
+								}
+
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&.#{$moduleClass} {
+											--color: var(--#{$name});
+										}
+									}
+								}
+							}
+
 							.bg\:#{$name} {
+								--background-color: var(--#{$name});
 								background-color: var(--#{$name});
 							}
 							.text\:#{$name} {
+								--color: var(--#{$name});
 								color: var(--#{$name});
 							}
 							.border\:#{$name} {
+								--border-color: var(--#{$name});
 								border-color: var(--#{$name});
 							}
 						}
@@ -154,13 +370,35 @@
 					@media (prefers-color-scheme: dark) {
 						.#{$theme} {
 							@each $name, $color in $valuesMerged {
+								@if str-index($name, 'on-') == null {
+									.#{$name} {
+										@each $moduleClass in $modules-bg-text-keys {
+											&:not(.#{$moduleClass}) {
+												--background-color: var(--#{$name});
+												--color: var(--on-#{$name});
+											}
+										}
+									}
+
+									.#{$name} {
+										@each $moduleClass in $modules-bg-text-keys {
+											&.#{$moduleClass} {
+												--color: var(--#{$name});
+											}
+										}
+									}
+								}
+
 								.bg\:#{$name} {
+									--background-color: var(--#{$name});
 									background-color: var(--#{$name});
 								}
 								.text\:#{$name} {
+									--color: var(--#{$name});
 									color: var(--#{$name});
 								}
 								.border\:#{$name} {
+									--border-color: var(--#{$name});
 									border-color: var(--#{$name});
 								}
 							}
@@ -168,13 +406,35 @@
 					}
 					.#{$theme}.dark {
 						@each $name, $color in $valuesMerged {
+							@if str-index($name, 'on-') == null {
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&:not(.#{$moduleClass}) {
+											--background-color: var(--#{$name});
+											--color: var(--on-#{$name});
+										}
+									}
+								}
+
+								.#{$name} {
+									@each $moduleClass in $modules-bg-text-keys {
+										&.#{$moduleClass} {
+											--color: var(--#{$name});
+										}
+									}
+								}
+							}
+
 							.bg\:#{$name} {
+								--background-color: var(--#{$name});
 								background-color: var(--#{$name});
 							}
 							.text\:#{$name} {
+								--color: var(--#{$name});
 								color: var(--#{$name});
 							}
 							.border\:#{$name} {
+								--border-color: var(--#{$name});
 								border-color: var(--#{$name});
 							}
 						}
