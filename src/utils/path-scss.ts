@@ -17,7 +17,6 @@ export const paletteSCSS = {
 };
 
 export const contentSCSS = [
-	path.resolve(`${nodePath}`, 'main.scss'),
 	path.resolve(`${nodePathLibs}`, 'prose.scss'),
 	path.resolve(`${nodePathLibs}`, 'align-content.scss'),
 	path.resolve(`${nodePathLibs}`, 'align-item.scss'),
@@ -47,10 +46,12 @@ export const contentSCSS = [
 	path.resolve(`${nodePathLibs}`, 'text-transform.scss'),
 	path.resolve(`${nodePathLibs}`, 'text-weight.scss'),
 	path.resolve(`${nodePathLibs}`, 'width.scss'),
-	path.resolve(`${nodePathLibs}`, 'wrap.scss')
+	path.resolve(`${nodePathLibs}`, 'wrap.scss'),
+	path.resolve(`${nodePathLibs}`, 'colors.scss')
 ];
 
 export const modulesSCSS = [
+	path.resolve(`${nodePath}`, 'main.scss'),
 	path.resolve(`${nodePathModules}/app`, 'app.scss'),
 	path.resolve(`${nodePathModules}/spacer`, 'spacer.scss'),
 	path.resolve(`${nodePathModules}/toolbar`, 'toolbar.scss'),

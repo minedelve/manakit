@@ -1,5 +1,5 @@
 .mk-divider {
-	--divider-color: var(--color-on-surface);
+	--color: var(--on-surface);
 
 	display: flex;
 	flex-direction: row;
@@ -10,6 +10,15 @@
 	height: 1rem;
 	white-space: nowrap;
 
+	&:not(.divider-start)::before,
+	&:not(.divider-end)::after {
+		height: 0.125rem;
+		width: 100%;
+		flex-grow: 1;
+		content: '';
+		background-color: color-mix(in oklab, var(--color) 40%, transparent);
+	}
+
 	&:not(:empty) {
 		gap: 1rem;
 	}
@@ -19,17 +28,8 @@
 		margin: 0 auto;
 	}
 
-	&:not(.divider-start):before,
-	&:not(.divider-end):after {
-		height: 0.125rem;
-		width: 100%;
-		flex-grow: 1;
-		content: '';
-		background-color: color-mix(in oklab, var(--divider-color) 40%, transparent);
-	}
-
-	&.divider-vertical:not(.divider-start):before,
-	&.divider-vertical:not(.divider-end):after {
+	&.divider-vertical:not(.divider-start)::before,
+	&.divider-vertical:not(.divider-end)::after {
 		height: 100%;
 		width: 0.125rem;
 	}
