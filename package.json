@@ -1,6 +1,6 @@
 {
 	"name": "manakit",
-	"version": "0.6.7",
+	"version": "0.6.8",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
@@ -31,8 +31,8 @@
 		"LICENSE"
 	],
 	"peerDependencies": {
-		"svelte": "^4.0.0",
-		"sass": "^1.70.0"
+		"sass": "^1.70.0",
+		"svelte": "^4.0.0"
 	},
 	"devDependencies": {
 		"@sveltejs/adapter-auto": "^3.0.0",
