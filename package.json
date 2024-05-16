@@ -1,6 +1,6 @@
 {
 	"name": "manakit",
-	"version": "0.6.8",
+	"version": "0.6.9",
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
@@ -23,7 +23,8 @@
 			"types": "./dist/preprocess.d.ts",
 			"default": "./dist/preprocess.js"
 		},
-		"./style": "./dist/style.css"
+		"./style/css": "./dist/style.css",
+		"./style/variables": "./dist/_variables.scss"
 	},
 	"files": [
 		"dist",

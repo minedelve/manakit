@@ -3,7 +3,13 @@ import path from 'path';
 import fs from 'fs';
 import fsPromises from 'fs/promises';
 import chalk from 'chalk';
-import { contentSCSS, headSCSS, modulesSCSS, paletteSCSS } from './utils/path-scss.js';
+import {
+	globalSCSS,
+	headSCSS,
+	modulesSCSS,
+	paletteSCSS,
+	variablesSCSS
+} from './utils/path-scss.js';
 import { convertJStoSCSS } from './utils/convert-js-to-scss.js';
 
 const directory = process.cwd();
@@ -25,27 +31,31 @@ export async function makeManakitImporterConfig() {
 		console.log(chalk.red('manakit configuration file not found !'));
 	}
 
-	let css = '';
-	headSCSS.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
+	let variables = '';
+	let style = '';
 
+	headSCSS.map((pathFile) => (variables += fs.readFileSync(pathFile, 'utf-8')));
+	variables += convertJStoSCSS(config);
+	variablesSCSS.map((pathFile) => (variables += fs.readFileSync(pathFile, 'utf-8')));
+
+	style += variables;
 	if (config?.palette) {
 		for (const [palette, pathFile] of Object.entries(paletteSCSS)) {
 			if (typeof config?.palette === 'string' && palette === config?.palette) {
-				css += fs.readFileSync(pathFile, 'utf-8');
+				style += fs.readFileSync(pathFile, 'utf-8');
 			} else if (typeof config?.palette === 'object') {
 				config?.palette.map((params: string) => {
-					if (params === palette) css += fs.readFileSync(pathFile, 'utf-8');
+					if (params === palette) style += fs.readFileSync(pathFile, 'utf-8');
 				});
 			}
 		}
 	}
+	modulesSCSS.map((pathFile) => (style += fs.readFileSync(pathFile, 'utf-8')));
+	globalSCSS.map((pathFile) => (style += fs.readFileSync(pathFile, 'utf-8')));
 
-	css += convertJStoSCSS(config);
-
-	modulesSCSS.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
-	contentSCSS.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
+	fsPromises.writeFile(path.resolve(`node_modules/manakit/dist`, '_variables.scss'), variables);
 	fsPromises.writeFile(
 		path.resolve(`node_modules/manakit/dist`, 'style.css'),
-		sass.compileString(css)?.css
+		sass.compileString(style)?.css
 	);
 }
