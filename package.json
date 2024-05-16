@@ -62,5 +62,5 @@
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"type": "module",
-	"packageManager": "^yarn@1.22.22"
+	"packageManager": "yarn@1.22.22"
 }
