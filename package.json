@@ -23,7 +23,8 @@
 			"types": "./dist/preprocess.d.ts",
 			"default": "./dist/preprocess.js"
 		},
-		"./style": "./dist/style.css"
+		"./style/css": "./dist/style.css",
+		"./style/variables": "./dist/_variables.scss"
 	},
 	"files": [
 		"dist",

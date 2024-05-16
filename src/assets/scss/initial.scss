@@ -1,0 +1,96 @@
+@use 'sass:map';
+
+// modules colors theme global
+$modules-bg-text-keys: (
+	'btn-outline',
+	'btn-text',
+	'btn-link',
+	'card-outline',
+	'card-text',
+	'mk-divider'
+);
+
+// fonts
+$fonts-initial: (
+	title: "'Ubuntu', sans-serif",
+	body: "'Ubuntu', sans-serif",
+	code: "'monospace', sans-serif"
+);
+$fonts-custom: (
+	default: $fonts-initial
+) !default;
+
+// breakpoints
+$breakpoints-initial: (
+	default: 0,
+	sm: 640px,
+	md: 768px,
+	lg: 1024px,
+	xl: 1280px,
+	xxl: 1536px
+);
+$breakpoints-custom: () !default;
+
+// themes
+$theme-mode: 'light' !default;
+$theme-light: (
+	primary: var(--lime-500, #84cc16),
+	on-primary: var(--gray-800, #1f2937),
+	secondary: var(--indigo-500, #6366f1),
+	on-secondary: var(--neutral-50, #fafafa),
+	tertiary: var(--amber-900, #78350f),
+	on-tertiary: var(--neutral-50, #fafafa),
+	error: var(--red-500, #ef4444),
+	on-error: var(--neutral-50, #fafafa),
+	warning: var(--amber-500, #f59e0b),
+	on-warning: var(--gray-800, #1f2937),
+	success: var(--green-500, #22c55e),
+	on-success: var(--gray-800, #1f2937),
+	info: var(--blue-500, #3b82f6),
+	on-info: var(--gray-800, #1f2937),
+	surface: var(--stone-200, #e7e5e4),
+	on-surface: var(--gray-800, #1f2937),
+	outline: #79747e,
+	outline-variant: #cac4d0,
+	background: var(--slate-50, #f8fafc),
+	on-background: var(--gray-800, #1f2937),
+	scrim: var(--neutral-950, #0a0a0a),
+	shadow: var(--neutral-950, #0a0a0a)
+);
+
+$theme-dark: (
+	primary: var(--lime-400, #a3e635),
+	on-primary: var(--gray-800, #1f2937),
+	secondary: var(--indigo-400, #818cf8),
+	on-secondary: var(--neutral-50, #fafafa),
+	tertiary: var(--amber-800, #92400e),
+	on-tertiary: var(--neutral-50, #fafafa),
+	error: var(--red-400, #f87171),
+	on-error: var(--neutral-50, #fafafa),
+	warning: var(--amber-400, #fbbf24),
+	on-warning: var(--gray-800, #1f2937),
+	success: var(--green-400, #4ade80),
+	on-success: var(--gray-800, #1f2937),
+	info: var(--blue-400, #60a5fa),
+	on-info: var(--gray-800, #1f2937),
+	surface: var(--slate-800, #1e293b),
+	on-surface: var(--gray-100, #f3f4f6),
+	outline: #938f99,
+	outline-variant: #49454f,
+	background: var(--slate-900, #0f172a),
+	on-background: var(--gray-100, #f3f4f6),
+	scrim: var(--neutral-950, #0a0a0a),
+	shadow: var(--neutral-950, #0a0a0a)
+);
+$themes-custom: (
+	default: (
+		light: $theme-light,
+		dark: $theme-dark
+	)
+) !default;
+
+// container
+$container-size: (
+	sm: 900px,
+	md: 1200px
+);
