@@ -9,6 +9,7 @@
 	export let square: boolean = false;
 	export let circle: boolean = false;
 	export let outline: boolean = false;
+	export let rounded: boolean = false;
 	export let text: boolean = false;
 	export let link: boolean = false;
 	export let info: boolean = false;
@@ -35,6 +36,7 @@
 		class:btn-active={active}
 		class:btn-square={square}
 		class:btn-outline={outline}
+		class:btn-rounded={rounded}
 		class:btn-circle={circle}
 		class:btn-text={text}
 		class:btn-link={link}

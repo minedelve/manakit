@@ -45,6 +45,10 @@
 		background-color: color-mix(in oklab, var(--background-color) 90%, black);
 	}
 
+	&.btn-rounded {
+		border-radius: 9999px;
+	}
+
 	&.btn-square {
 		height: 3rem;
 		width: 3rem;
