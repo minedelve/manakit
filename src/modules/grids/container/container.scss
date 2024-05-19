@@ -1,7 +1,18 @@
 .mk-container {
+	width: 100%;
 	padding: 1rem;
 	margin-right: auto;
 	margin-left: auto;
+
+	&.container-fill-height {
+		align-items: center;
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	&.container-fluid {
+		max-width: 100%;
+	}
 
 	@each $breakpoint, $size in $breakpoints {
 		@if $breakpoint != 'default' {

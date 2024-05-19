@@ -4,12 +4,13 @@
 	// props
 	let _class: string | false | undefined = undefined;
 	export { _class as class };
+	export let tag: 'main' | 'div' = 'main';
 </script>
 
-<div class={className('mk-app', _class)} {...$$restProps}>
-	<div class="mk-app--wrapper">
+<svelte:element this={tag} class={className('mk-main', _class)} {...$$restProps}>
+	<div class="mk-main--wrapper">
 		<!-- slot: default -->
 		<slot />
 		<!-- /slot: default -->
 	</div>
-</div>
+</svelte:element>

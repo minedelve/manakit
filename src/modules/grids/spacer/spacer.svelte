@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { className } from '../../utils/class-name.js';
+	import { className } from '../../../utils/class-name.js';
 
 	// props
 	let _class: string | false | undefined = undefined;
