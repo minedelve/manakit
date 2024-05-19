@@ -26,9 +26,12 @@ export const globalSCSS = [
 
 export const modulesSCSS = [
 	path.resolve(`${nodePathModules}/app`, 'app.scss'),
-	path.resolve(`${nodePathModules}/spacer`, 'spacer.scss'),
+
 	path.resolve(`${nodePathModules}/toolbar`, 'toolbar.scss'),
-	path.resolve(`${nodePathModules}/container`, 'container.scss'),
+	path.resolve(`${nodePathModules}/grids/spacer`, 'spacer.scss'),
+	path.resolve(`${nodePathModules}/grids/container`, 'container.scss'),
+	path.resolve(`${nodePathModules}/grids/row`, 'row.scss'),
+	path.resolve(`${nodePathModules}/grids/col`, 'col.scss'),
 	path.resolve(`${nodePathModules}/card`, 'card.scss'),
 	path.resolve(`${nodePathModules}/footer`, 'footer.scss'),
 	path.resolve(`${nodePathModules}/divider`, 'divider.scss'),
@@ -36,5 +39,6 @@ export const modulesSCSS = [
 	path.resolve(`${nodePathModules}/modal`, 'modal.scss'),
 	path.resolve(`${nodePathModules}/btn`, 'btn.scss'),
 	path.resolve(`${nodePathModules}/vstack`, 'vstack.scss'),
-	path.resolve(`${nodePathModules}/hstack`, 'hstack.scss')
+	path.resolve(`${nodePathModules}/hstack`, 'hstack.scss'),
+	path.resolve(`${nodePathModules}/main`, 'main.scss')
 ];

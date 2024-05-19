@@ -3,6 +3,7 @@ html {
 	--html-text: var(--on-background);
 	color: var(--html-text);
 	background-color: var(--html-background);
+	box-sizing: border-box;
 }
 
 body {
@@ -13,6 +14,19 @@ body {
 	letter-spacing: -0.022em;
 	font-style: normal;
 	word-wrap: break-word;
+}
+
+*,
+::before,
+::after {
+	background-repeat: no-repeat;
+	box-sizing: inherit;
+}
+
+::before,
+::after {
+	text-decoration: inherit;
+	vertical-align: inherit;
 }
 
 .no-scroll {
