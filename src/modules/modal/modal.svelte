@@ -37,6 +37,7 @@
 	on:close={() => (!persistent ? (open = false) : '')}
 	on:keydown={handleKeyDown}
 	on:click|self={() => (!persistent ? dialog.close() : '')}
+	{...$$restProps}
 >
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
