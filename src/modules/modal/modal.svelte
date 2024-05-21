@@ -6,6 +6,7 @@
 	let _class: string | false | undefined = undefined;
 	export { _class as class };
 	export let open: boolean = false;
+	export let persistent: boolean = false;
 
 	// states
 	let dialog: HTMLDialogElement;
@@ -17,7 +18,7 @@
 	}
 
 	function handleKeyDown(event: any) {
-		if (event.key === 'Escape') {
+		if (!persistent && event.key === 'Escape') {
 			if ($$props?.closewithEsc) {
 				dialog.close();
 				open = false;
@@ -32,9 +33,10 @@
 <dialog
 	bind:this={dialog}
 	class={className('mk-modal', _class)}
-	on:close={() => (open = false)}
+	class:modal-persistent={persistent}
+	on:close={() => (!persistent ? (open = false) : '')}
 	on:keydown={handleKeyDown}
-	on:click|self={() => dialog.close()}
+	on:click|self={() => (!persistent ? dialog.close() : '')}
 >
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->

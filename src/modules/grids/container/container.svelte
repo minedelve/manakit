@@ -4,7 +4,7 @@
 	// props
 	let _class: string | false | undefined = undefined;
 	export { _class as class };
-	export let tag: 'div' | 'section' = 'div';
+	export let tag: 'div' | 'section' | 'header' = 'div';
 	export let fluid: boolean = false;
 	export let fillHeight: boolean = false;
 </script>
