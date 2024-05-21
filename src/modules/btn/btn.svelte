@@ -48,6 +48,8 @@
 		class:btn-wide={wide}
 		class:btn-block={block}
 		disabled={$$props.disabled}
+		on:click
+		on:dblclick
 		{...$$restProps}
 	>
 		<!-- slot: default -->
