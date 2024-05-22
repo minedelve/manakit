@@ -6,7 +6,6 @@ $list-key-all-theme: () !default;
 }
 
 $list-key-all-theme: map.merge($list-key-all-theme, $theme-light);
-@debug $list-key-all-theme;
 
 @each $key, $value in $list-key-all-theme {
 	.#{$key} {
