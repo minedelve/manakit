@@ -4,7 +4,7 @@ export function convertJStoSCSS(configuration: any) {
 
 	if (configuration) {
 		for (const [category, categoryData] of Object.entries(configuration)) {
-			if (categoryData && typeof categoryData === 'string' && typeof categoryData === 'number') {
+			if (categoryData && (typeof categoryData === 'string' || typeof categoryData === 'number')) {
 				if (category === 'mode') {
 					css += `$theme-mode: ${categoryData};`;
 				} else {

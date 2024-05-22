@@ -20,6 +20,7 @@ export const paletteSCSS = {
 export const globalSCSS = [
 	path.resolve(`${nodePathLibs}`, 'global.scss'),
 	path.resolve(`${nodePathLibs}`, 'normalize.scss'),
+	path.resolve(`${nodePathLibs}`, 'themes.scss'),
 	path.resolve(`${nodePathLibs}`, 'colors.scss'),
 	path.resolve(`${nodePathLibs}`, 'prose.scss')
 ];
