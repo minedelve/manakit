@@ -5,6 +5,8 @@
 	// props
 	let _class: string | false | undefined = undefined;
 	export { _class as class };
+	export let dark: boolean = false;
+	export let light: boolean = false;
 	export let open: boolean = false;
 	export let persistent: boolean = false;
 
@@ -34,6 +36,8 @@
 	bind:this={dialog}
 	class={className('mk-modal', _class)}
 	class:modal-persistent={persistent}
+	class:light
+	class:dark
 	on:close={() => (!persistent ? (open = false) : '')}
 	on:keydown={handleKeyDown}
 	on:click|self={() => (!persistent ? dialog.close() : '')}

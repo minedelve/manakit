@@ -4,6 +4,8 @@
 	// props
 	let _class: string | false | undefined = undefined;
 	export { _class as class };
+	export let dark: boolean = false;
+	export let light: boolean = false;
 	export let inset: boolean = false;
 	export let start: boolean = false;
 	export let end: boolean = false;
@@ -14,6 +16,8 @@
 	class:divider-inset={inset}
 	class:divider-start={start}
 	class:divider-end={end}
+	class:light
+	class:dark
 	{...$$restProps}
 >
 	<slot />

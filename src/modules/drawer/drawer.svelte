@@ -5,6 +5,8 @@
 	// props
 	let _class: string | false | undefined = undefined;
 	export { _class as class };
+	export let dark: boolean = false;
+	export let light: boolean = false;
 	export let open: boolean = false;
 	export let width: number | string = 0;
 	export let fixed: boolean = false;
@@ -45,7 +47,7 @@
 			on:click={handleClose}
 			on:keydown={handleKeyDown}
 		/>
-		<aside>
+		<aside class:light class:dark>
 			<!-- slot: aside -->
 			<slot name="aside" />
 			<!-- /slot: aside -->
