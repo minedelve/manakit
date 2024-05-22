@@ -5,6 +5,8 @@
 	let _class: string | false | undefined = undefined;
 	export { _class as class };
 	export let tag: 'button' | 'a' | 'input' = 'button';
+	export let dark: boolean = false;
+	export let light: boolean = false;
 	export let disabled: boolean = false;
 	export let square: boolean = false;
 	export let circle: boolean = false;
@@ -47,6 +49,8 @@
 		class:btn-error={error}
 		class:btn-wide={wide}
 		class:btn-block={block}
+		class:light
+		class:dark
 		disabled={$$props.disabled}
 		on:click
 		on:dblclick

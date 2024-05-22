@@ -5,6 +5,8 @@
 	let _class: string | false | undefined = undefined;
 	export { _class as class };
 	export let tag: 'a' | 'button' | 'div' = 'div';
+	export let dark: boolean = false;
+	export let light: boolean = false;
 	export let active: boolean = false;
 	export let outline: boolean = false;
 	export let text: boolean = false;
@@ -23,6 +25,8 @@
 	class:card-outline={outline}
 	class:card-text={text}
 	class:card-disabled={disabled}
+	class:light
+	class:dark
 	on:change
 	on:click
 	disabled={$$props.disabled}
