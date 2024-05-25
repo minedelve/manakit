@@ -58,9 +58,7 @@
 		"typescript": "^5.0.0",
 		"vite": "^5.0.11"
 	},
-	"dependencies": {
-		"pkg-versions": "^4.0.0"
-	},
+	"dependencies": {},
 	"svelte": "./dist/index.js",
 	"types": "./dist/index.d.ts",
 	"type": "module",

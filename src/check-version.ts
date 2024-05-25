@@ -1,37 +1,37 @@
 import chalk from 'chalk';
-import packageVersions from 'pkg-versions';
 import pkg from '../package.json' assert { type: 'json' };
 
 export async function checkVersion() {
-	let lastestVersion;
+	const url = `https://registry.npmjs.org/${pkg.name}`;
+	let latestVersion;
+
 	try {
-		const versions = await packageVersions('manakit');
-		const format = new Set(versions);
-		const list = Array.from(format);
-		lastestVersion = list[list.length - 1];
+		const response = await fetch(url);
+		if (!response.ok) {
+			throw new Error(`Network response was not ok: ${response.statusText}`);
+		}
+		const data = await response.json();
+		latestVersion = data['dist-tags'].latest;
 	} catch (error) {
-		console.log(
-			chalk.red(
-				`The manakit version check with the remote server failed, check your internet connection or your proxy configuration`
-			)
-		);
-		console.log(
-			chalk.red(
-				`(verification is not mandatory, you can desactivate it in the manakit configuration)`
-			)
-		);
+		console.error(`Error fetching the latest version of ${pkg.name}:`, error);
+		throw error;
 	}
 
-	if (lastestVersion && pkg.version !== lastestVersion) {
+	if (latestVersion && pkg.version !== latestVersion) {
+		const msg = `${chalk.bold('manakit')} ${chalk.cyan('notice')}`;
+		console.log(`${msg}`);
 		console.log(
-			chalk.bold(
-				`\n\nManakit update available ` +
-					chalk.red(`${pkg.version}`) +
-					' -> ' +
-					chalk.green(`${lastestVersion}`)
-			)
+			`${msg} New version of manakit available! ${chalk.red(pkg.version)} -> ${chalk.green(latestVersion)}`
 		);
-
-		console.log(chalk.bold('Run ' + chalk.blue(`npm i --save-dev manakit@${lastestVersion}\n\n`)));
+		console.log(
+			`${msg} Changelog: ${chalk.blue('https://github.com/minedelve/manakit/releases/tag/manakit@' + latestVersion)}`
+		);
+		console.log(
+			`${msg} [npm] To update run: ${chalk.underline('npm install --save-dev ' + pkg.name + '@' + latestVersion)}`
+		);
+		console.log(
+			`${msg} [yarn] To update run: ${chalk.underline('yarn add -D ' + pkg.name + '@' + latestVersion)}`
+		);
+		console.log(`${msg}`);
 	}
 }
