@@ -2,7 +2,6 @@ import * as sass from 'sass';
 import path from 'path';
 import fs from 'fs';
 import fsPromises from 'fs/promises';
-import chalk from 'chalk';
 import {
 	globalSCSS,
 	headSCSS,
@@ -27,9 +26,8 @@ export async function makeManakitImporterConfig() {
 			const code = `return ${file.match(/export\s+default\s+(\{[^]*?\});/)![1]}`;
 			config = await new Function(code)();
 		}
-	} catch (err) {
-		console.log(chalk.red('manakit configuration file not found !'));
-	}
+		// eslint-disable-next-line no-empty
+	} catch (err) {}
 
 	let variables = '';
 	let style = '';
