@@ -1,15 +1,5 @@
 @use 'sass:map';
 
-// modules colors theme global
-$modules-bg-text-keys: (
-	'btn-outline',
-	'btn-text',
-	'btn-link',
-	'card-outline',
-	'card-text',
-	'mk-divider'
-);
-
 // fonts
 $fonts-initial: (
 	title: "'Ubuntu', sans-serif",
