@@ -27,7 +27,6 @@ export const globalSCSS = [
 
 export const modulesSCSS = [
 	path.resolve(`${nodePathModules}/app`, 'app.scss'),
-
 	path.resolve(`${nodePathModules}/toolbar`, 'toolbar.scss'),
 	path.resolve(`${nodePathModules}/grids/spacer`, 'spacer.scss'),
 	path.resolve(`${nodePathModules}/grids/container`, 'container.scss'),
