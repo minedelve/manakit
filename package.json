@@ -1,6 +1,36 @@
 {
 	"name": "manakit",
 	"version": "0.6.16",
+	"description": "Manakit - Svelte library Components",
+	"author": "Nycolaide (laurent.grimaldi@minedelve.com)",
+	"license": "MIT",
+	"homepage": "https://minedelve.com",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/minedelve/manakit.git"
+	},
+	"funding": {
+		"type": "buymeacoffee",
+		"url": "https://buymeacoffee.com/nycolaide"
+	},
+	"bugs": {
+		"url": "https://github.com/minedelve/manakit/issues"
+	},
+	"keywords": [
+		"svelte",
+		"sveltekit",
+		"components",
+		"ui-library",
+		"component-library",
+		"component",
+		"manakit",
+		"minedelve",
+		"sass",
+		"scss",
+		"design",
+		"css",
+		"ui"
+	],
 	"scripts": {
 		"dev": "vite dev",
 		"build": "vite build && npm run package",
@@ -32,7 +62,7 @@
 		"LICENSE"
 	],
 	"peerDependencies": {
-		"sass": "^1.70.0",
+		"sass": "^1.50.0",
 		"svelte": "^4.0.0"
 	},
 	"devDependencies": {
