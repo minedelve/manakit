@@ -16,3 +16,4 @@ vite.config.ts.timestamp-*
 docs/yarn.lock
 docs/node_modules
 docs/.svelte-kit
+docs/.idea
