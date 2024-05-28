@@ -1,5 +1,5 @@
 export default {
-	mode: 'light',
+	mode: 'mixed',
 	palette: 'manakit',
 	fonts: {},
 	themes: {},

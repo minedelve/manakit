@@ -1,0 +1,15 @@
+@use 'manakit/style/variables' as manakit;
+@use 'sass:map';
+
+#btn-drawer {
+	display: none;
+}
+
+@media screen and (min-width: map.get(manakit.$breakpoints, 'md')) {
+	#btn-drawer-mobile {
+		display: none;
+	}
+	#btn-drawer {
+		display: initial;
+	}
+}

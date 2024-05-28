@@ -3,6 +3,10 @@ import remarkHeadingID from 'remark-heading-id';
 import { vitePreprocess } from '@sveltejs/vite-plugin-svelte';
 import { mdsvex } from 'mdsvex';
 
+// node
+import { fileURLToPath } from 'node:url';
+import { dirname } from 'node:path';
+
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
 	extensions: ['.svelte', '.svelte.md'],
@@ -12,7 +16,10 @@ const config = {
 	preprocess: [
 		mdsvex({
 			remarkPlugins: [remarkHeadingID],
-			extensions: ['.svelte.md']
+			extensions: ['.svelte.md'],
+			layout: {
+				docs: dirname(fileURLToPath(import.meta.url)) + '/src/lib/mdsvex/template-docs.svelte'
+			}
 		}),
 		vitePreprocess()
 	],
