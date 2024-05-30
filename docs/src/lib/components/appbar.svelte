@@ -11,7 +11,7 @@
 	export let handleOpenDrawer: any = undefined;
 </script>
 
-<Toolbar>
+<Toolbar class={`appbar position-fixed`}>
 	{#if isDocs}
 		<Btn id="btn-drawer-mobile" square on:click={() => handleOpenDrawer('mobile')}>
 			<Icon icon="material-symbols:menu" />
@@ -44,6 +44,11 @@
 </Toolbar>
 
 <style lang="scss">
+	:global(.position-fixed) {
+		position: fixed;
+		z-index: 1;
+	}
+
 	.logo-docs {
 		display: grid;
 		grid-template-columns: 1fr auto;

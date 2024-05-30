@@ -28,7 +28,6 @@
 				{/if}
 			</svelte:fragment>
 		</Appbar>
-		{openDrawer}
 		<slot />
 	</svelte:fragment>
 </Drawer>

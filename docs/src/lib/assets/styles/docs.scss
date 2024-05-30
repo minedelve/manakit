@@ -1,5 +1,6 @@
 @use 'manakit/style/variables' as manakit;
 @use 'sass:map';
+@use './code.scss';
 
 #btn-drawer {
 	display: none;
@@ -11,5 +12,9 @@
 	}
 	#btn-drawer {
 		display: initial;
+	}
+
+	.appbar {
+		max-width: calc(100% - 320px);
 	}
 }
