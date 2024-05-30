@@ -1,9 +1,12 @@
 <script lang="ts">
+	import { page } from '$app/stores';
 	import { t } from '$lib/i18n';
 	import { Btn, Toolbar } from 'manakit';
 
 	import logo from '$lib/assets/images/manakit.png';
 	import { pages } from '$lib/data/pages';
+
+	$: pathname = $page.url.pathname;
 </script>
 
 <Toolbar>
@@ -18,13 +21,18 @@
 {#each pages as section}
 	{section.name}
 	{#each section.items as page}
-		<li>
-			<a href={page.href}>{page.name}</a>
-		</li>
+		<div class="navbar-docs-items">
+			<Btn class="btn-sm" href={page.href} text wide active={page.href === pathname}>
+				{page.name}
+			</Btn>
+		</div>
 	{/each}
 {/each}
 
 <style lang="scss">
+	.navbar-docs-items {
+		display: flex;
+	}
 	.logo-docs {
 		display: grid;
 		grid-template-columns: 1fr auto;

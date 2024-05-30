@@ -13,6 +13,6 @@
 
 <Seo {title} {desc} />
 
-<Container style="margin-top: 4rem">
+<Container>
 	<slot />
 </Container>

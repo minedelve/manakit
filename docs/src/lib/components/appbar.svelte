@@ -11,7 +11,7 @@
 	export let handleOpenDrawer: any = undefined;
 </script>
 
-<Toolbar class={`appbar position-fixed`}>
+<Toolbar class={`appbar position-sticky`}>
 	{#if isDocs}
 		<Btn id="btn-drawer-mobile" square on:click={() => handleOpenDrawer('mobile')}>
 			<Icon icon="material-symbols:menu" />
@@ -44,9 +44,10 @@
 </Toolbar>
 
 <style lang="scss">
-	:global(.position-fixed) {
-		position: fixed;
-		z-index: 1;
+	:global(.position-sticky) {
+		top: 0;
+		position: sticky;
+		z-index: 10;
 	}
 
 	.logo-docs {
