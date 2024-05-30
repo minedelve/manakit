@@ -1,0 +1,91 @@
+.mk-card {
+	--color: var(--on-surface);
+	--background-color: var(--surface);
+	--overlay: var(--scrim);
+	--border-radius: 1rem;
+
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	border-radius: var(--border-radius);
+	border-color: transparent;
+	border-width: 1px;
+	border-style: solid;
+	text-align: start;
+	color: var(--color);
+	background-color: var(--background-color);
+}
+
+a.mk-card {
+	text-decoration: none;
+}
+
+.mk-card:hover:not(div) {
+	background-color: color-mix(in oklab, var(--background-color) 90%, black);
+}
+
+.mk-card:focus:not(div) {
+	background-color: color-mix(in oklab, var(--background-color) 95%, black);
+}
+
+.mk-card:active:not(div),
+.mk-card.card-active {
+	background-color: color-mix(in oklab, var(--background-color) 95%, black);
+}
+
+.mk-card:not(div) {
+	cursor: pointer;
+}
+
+.mk-card.card-outline {
+	border-color: var(--color);
+}
+
+.mk-card.card-outline,
+.mk-card.card-text {
+	background-color: transparent;
+}
+
+.mk-card.card-outline:hover:not(div),
+.mk-card.card-text:hover:not(div) {
+	background-color: color-mix(in oklab, var(--color) 20%, transparent);
+}
+
+.mk-card.card-outline:focus:not(div),
+.mk-card.card-text:focus:not(div) {
+	background-color: color-mix(in oklab, var(--color) 25%, transparent);
+}
+
+.mk-card.card-outline:active:not(div),
+.mk-card.card-outline.card-active,
+.mk-card.card-text:active:not(div),
+.mk-card.card-text.card-active {
+	background-color: color-mix(in oklab, var(--color) 25%, transparent);
+}
+
+.mk-card.card-disabled,
+.mk-card[disabled],
+.mk-card:disabled {
+	pointer-events: none;
+	user-select: none;
+	color: color-mix(in oklab, var(--scrim) 25%, transparent) !important;
+}
+.mk-card.card-disabled.card-outline,
+.mk-card[disabled].card-outline,
+.mk-card:disabled.card-outline {
+	border-color: color-mix(in oklab, var(--scrim) 25%, transparent) !important;
+}
+
+.mk-card.card-disabled:not(.card-text)::before,
+.mk-card[disabled]:not(.card-text)::before,
+.mk-card:disabled:not(.card-text)::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: color-mix(in oklab, var(--scrim) 8%, transparent) !important;
+	z-index: 100;
+	border-radius: var(--border-radius);
+}

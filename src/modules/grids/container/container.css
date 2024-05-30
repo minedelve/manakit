@@ -1,0 +1,16 @@
+.mk-container {
+	width: 100%;
+	padding: 1rem;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.mk-container.container-fill-height {
+	align-items: center;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.mk-container.container-fluid {
+	max-width: 100%;
+}

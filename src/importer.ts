@@ -10,6 +10,7 @@ import {
 	variablesSCSS
 } from './utils/path-scss.js';
 import { convertJStoSCSS } from './utils/convert-js-to-scss.js';
+import { convertJStoCSS } from './utils/convert-js-to-css.js';
 
 const directory = process.cwd();
 
@@ -56,4 +57,5 @@ export async function makeManakitImporterConfig() {
 		path.resolve(`node_modules/manakit/dist`, 'style.css'),
 		sass.compileString(style)?.css
 	);
+	fsPromises.writeFile(path.resolve(`node_modules/manakit/dist`, 'stylev2.css'), convertJStoCSS());
 }
