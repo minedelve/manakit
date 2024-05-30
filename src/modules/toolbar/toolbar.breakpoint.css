@@ -1,0 +1,24 @@
+/* @size */
+.mk-toolbar[breakpoint]toolbar-xs {
+	height: 2rem;
+}
+.mk-toolbar[breakpoint]toolbar-sm {
+	height: 3rem;
+}
+.mk-toolbar[breakpoint]toolbar-lg {
+	height: 5rem;
+}
+
+/* @align-content */
+
+.mk-toolbar [breakpoint]toolbar-start {
+	width: 50%;
+	justify-content: flex-start;
+}
+.mk-toolbar [breakpoint]toolbar-center {
+	flex-shrink: 0;
+}
+.mk-toolbar [breakpoint]toolbar-end {
+	width: 50%;
+	justify-content: flex-end;
+}

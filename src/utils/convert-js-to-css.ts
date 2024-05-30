@@ -25,7 +25,15 @@ function load() {
 			path.resolve(`${nodePath}/modules/toolbar`, 'toolbar.css'),
 			path.resolve(`${nodePath}/modules/vstack`, 'vstack.css')
 		],
-		breakpoint: [path.resolve(`${nodePath}/modules/divider`, 'divider.breakpoint.css')]
+		breakpoint: [
+			path.resolve(`${nodePath}/modules/divider`, 'divider.breakpoint.css'),
+			path.resolve(`${nodePath}/modules/btn`, 'btn.breakpoint.css'),
+			path.resolve(`${nodePath}/modules/drawer`, 'drawer.breakpoint.css'),
+			path.resolve(`${nodePath}/modules/footer`, 'footer.breakpoint.css'),
+			path.resolve(`${nodePath}/modules/grids/col`, 'col.breakpoint.css'),
+			path.resolve(`${nodePath}/modules/modal`, 'modal.breakpoint.css'),
+			path.resolve(`${nodePath}/modules/toolbar`, 'toolbar.breakpoint.css')
+		]
 	};
 }
 
@@ -33,7 +41,7 @@ export function convertJStoCSS() {
 	let css = '';
 	const files = load();
 
-	//files?.modules.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
+	files?.modules.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
 
 	const brk: any = {
 		default: '0',
