@@ -26,4 +26,4 @@ yarn.lock
 docs/yarn.lock
 
 # seo
-/static/robots.txt
+docs/static/robots.txt
