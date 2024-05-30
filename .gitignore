@@ -13,7 +13,17 @@ vite.config.ts.timestamp-*
 
 
 # docs
-docs/yarn.lock
 docs/node_modules
 docs/.svelte-kit
 docs/.idea
+
+# docker
+docs/Dockerfile
+docs/docker-compose.yml
+
+# package manager
+yarn.lock
+docs/yarn.lock
+
+# seo
+/static/robots.txt
