@@ -101,3 +101,72 @@
 	grid-column-start: 2;
 	justify-items: end;
 }
+
+/* @manakit-breakpoint */
+.mk-drawer[breakpoint]drawer-open > .drawer-aside {
+	pointer-events: auto;
+	visibility: visible;
+	position: sticky;
+	display: block;
+	width: auto;
+	overscroll-behavior: auto;
+}
+.mk-drawer[breakpoint]drawer-open > .drawer-aside > *:not(.drawer-overlay) {
+	transform: translate(0);
+}
+
+/* @position */
+.mk-drawer[breakpoint]drawer-left {
+	grid-auto-columns: max-content auto;
+}
+.mk-drawer[breakpoint]drawer-left > input ~ .drawer-content {
+	grid-column-start: 2;
+}
+.mk-drawer[breakpoint]drawer-left > input ~ .drawer-aside {
+	grid-column-start: 1;
+	justify-items: start;
+}
+.mk-drawer[breakpoint]drawer-left > input ~ .drawer-aside > *:not(.drawer-overlay) {
+	transform: translate(0);
+}
+
+.mk-drawer[breakpoint]drawer-right {
+	grid-auto-columns: auto max-content;
+}
+.mk-drawer[breakpoint]drawer-right > input ~ .drawer-content {
+	grid-column-start: 1;
+}
+.mk-drawer[breakpoint]drawer-right > input ~ .drawer-aside {
+	grid-column-start: 2;
+	justify-items: end;
+}
+.mk-drawer[breakpoint]drawer-right > input ~ .drawer-aside > *:not(.drawer-overlay) {
+	transform: translate(0);
+}
+
+.mk-drawer[breakpoint]drawer-top .drawer-aside > aside {
+	min-width: 100%;
+	min-height: initial;
+}
+.mk-drawer[breakpoint]drawer-top .drawer-aside > *:not(.drawer-overlay) {
+	transform: translateY(-100%);
+}
+.mk-drawer[breakpoint]drawer-top > input:checked > *:not(.drawer-overlay) {
+	transform: translateY(0%);
+}
+
+.mk-drawer[breakpoint]drawer-bottom .drawer-aside > * {
+	grid-column-start: initial;
+	grid-row-start: initial;
+}
+.mk-drawer[breakpoint]drawer-bottom .drawer-aside > aside {
+	min-width: 100%;
+	min-height: initial;
+}
+.mk-drawer[breakpoint]drawer-bottom .drawer-aside *:not(.drawer-overlay) {
+	transform: translateY(100%);
+}
+.mk-drawer[breakpoint]drawer-bottom > input:checked > *:not(.drawer-overlay) {
+	transform: translateY(0%);
+}
+/* !@manakit-breakpoint */

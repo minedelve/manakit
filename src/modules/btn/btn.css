@@ -184,3 +184,105 @@
 		transform: scale(1);
 	}
 }
+
+/* @manakit-breakpoint */
+/* @svg size */
+.mk-btn[breakpoint]btn-xs svg {
+	width: 1.15rem;
+	height: 1.15rem;
+}
+.mk-btn[breakpoint]btn-sm svg {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+.mk-btn[breakpoint]btn-md svg {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+.mk-btn[breakpoint]btn-lg svg {
+	width: 1.75rem;
+	height: 1.75rem;
+}
+
+/* @initial */
+.mk-btn[breakpoint]btn-xs:not(.btn-square):not(.btn-circle) {
+	height: 1.5rem;
+	min-height: 1.5rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	font-size: 0.75rem;
+}
+.mk-btn[breakpoint]btn-sm:not(.btn-square):not(.btn-circle) {
+	height: 2rem;
+	min-height: 2rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	font-size: 0.875rem;
+}
+.mk-btn[breakpoint]btn-md:not(.btn-square):not(.btn-circle) {
+	height: 3rem;
+	min-height: 3rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	font-size: 0.875rem;
+}
+.mk-btn[breakpoint]btn-lg:not(.btn-square):not(.btn-circle) {
+	height: 4rem;
+	min-height: 4rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	font-size: 1.125rem;
+}
+
+/* @square */
+.mk-btn[breakpoint]btn-xs:not(.btn-square):not(.btn-circle) {
+	height: 1.5rem;
+	min-height: 1.5rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	font-size: 0.75rem;
+}
+.mk-btn[breakpoint]btn-sm:not(.btn-square):not(.btn-circle) {
+	height: 2rem;
+	min-height: 2rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	font-size: 0.875rem;
+}
+.mk-btn[breakpoint]btn-md:not(.btn-square):not(.btn-circle) {
+	height: 3rem;
+	min-height: 3rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	font-size: 0.875rem;
+}
+.mk-btn[breakpoint]btn-lg:not(.btn-square):not(.btn-circle) {
+	height: 4rem;
+	min-height: 4rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	font-size: 1.125rem;
+}
+
+/* @circle */
+.mk-btn[breakpoint]btn-xs.btn-circle {
+	height: 1.5rem;
+	width: 1.5rem;
+	min-height: 1.5rem;
+}
+.mk-btn[breakpoint]btn-sm.btn-circle {
+	height: 2rem;
+	width: 2rem;
+	min-height: 2rem;
+}
+.mk-btn[breakpoint]btn-md.btn-circle {
+	height: 3rem;
+	width: 3rem;
+	min-height: 3rem;
+}
+.mk-btn[breakpoint]btn-lg.btn-circle {
+	height: 4rem;
+	width: 4rem;
+	min-height: 4rem;
+}
+/* !@manakit-breakpoint */

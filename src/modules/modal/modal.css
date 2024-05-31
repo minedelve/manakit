@@ -42,3 +42,15 @@
 		opacity: 1;
 	}
 }
+
+/* @manakit-breakpoint */
+.mk-modal[breakpoint]modal-bottom {
+	margin-bottom: 0;
+}
+.mk-modal[breakpoint]modal-top {
+	margin-top: 0;
+}
+.mk-modal[breakpoint]modal-center {
+	margin: auto;
+}
+/* !@manakit-breakpoint */

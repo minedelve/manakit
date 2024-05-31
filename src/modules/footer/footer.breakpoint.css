@@ -1,6 +1,0 @@
-.mk-footer[breakpoint]footer-column {
-	grid-auto-flow: column;
-}
-.mk-footer[breakpoint]footer-center {
-	grid-auto-flow: row dense;
-}

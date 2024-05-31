@@ -1,77 +1,189 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
 import path from 'path';
 import fs from 'fs';
+import fsPromises from 'fs/promises';
+import { loadCss } from './load-files.js';
 
-// node
-const nodePath = 'node_modules/manakit/dist';
+import type { ConvertJSToCSSProps } from '../assets/types/config.js';
 
-function load() {
-	return {
-		global: undefined,
-		modules: [
-			path.resolve(`${nodePath}/modules/app`, 'app.css'),
-			path.resolve(`${nodePath}/modules/btn`, 'btn.css'),
-			path.resolve(`${nodePath}/modules/card`, 'card.css'),
-			path.resolve(`${nodePath}/modules/divider`, 'divider.css'),
-			path.resolve(`${nodePath}/modules/drawer`, 'drawer.css'),
-			path.resolve(`${nodePath}/modules/footer`, 'footer.css'),
-			path.resolve(`${nodePath}/modules/grids/col`, 'col.css'),
-			path.resolve(`${nodePath}/modules/grids/container`, 'container.css'),
-			path.resolve(`${nodePath}/modules/grids/row`, 'row.css'),
-			path.resolve(`${nodePath}/modules/grids/spacer`, 'spacer.css'),
-			path.resolve(`${nodePath}/modules/hstack`, 'hstack.css'),
-			path.resolve(`${nodePath}/modules/main`, 'main.css'),
-			path.resolve(`${nodePath}/modules/modal`, 'modal.css'),
-			path.resolve(`${nodePath}/modules/toolbar`, 'toolbar.css'),
-			path.resolve(`${nodePath}/modules/vstack`, 'vstack.css')
-		],
-		breakpoint: [
-			path.resolve(`${nodePath}/modules/divider`, 'divider.breakpoint.css'),
-			path.resolve(`${nodePath}/modules/btn`, 'btn.breakpoint.css'),
-			path.resolve(`${nodePath}/modules/drawer`, 'drawer.breakpoint.css'),
-			path.resolve(`${nodePath}/modules/footer`, 'footer.breakpoint.css'),
-			path.resolve(`${nodePath}/modules/grids/col`, 'col.breakpoint.css'),
-			path.resolve(`${nodePath}/modules/modal`, 'modal.breakpoint.css'),
-			path.resolve(`${nodePath}/modules/toolbar`, 'toolbar.breakpoint.css')
-		]
-	};
-}
+export function convertJStoCSS(params: ConvertJSToCSSProps) {
+	let _class: string[] = [];
+	let cssFiles: string = '';
+	let css: string = '';
+	const files = loadCss();
 
-export function convertJStoCSS() {
-	let css = '';
-	const files = load();
-
-	files?.modules.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
-
-	const brk: any = {
-		default: '0',
-		md: '1200px',
-		xl: '2785px'
-	};
-
-	let cssBreakpoint = '';
-	files?.breakpoint.map((pathFile) => (cssBreakpoint += fs.readFileSync(pathFile, 'utf-8')));
-	for (const property in brk) {
-		if (property !== 'default') {
-			css += `@media screen and (min-width: ${brk[property]}) {`;
-			css += cssBreakpoint.replaceAll('[breakpoint]', `.${property}\\:`);
-			css += `}`;
-		} else {
-			css += cssBreakpoint.replaceAll('[breakpoint]', `.`);
+	// PALETTE
+	if (params.palette) {
+		for (const [palette, pathFile] of Object.entries(files?.palette)) {
+			if (typeof params.palette === 'string' && palette === params.palette) {
+				css += fs.readFileSync(pathFile, 'utf-8');
+			} else if (typeof params.palette === 'object') {
+				params.palette.map((params: string) => {
+					if (params === palette) css += fs.readFileSync(pathFile, 'utf-8');
+				});
+			}
 		}
 	}
 
-	console.log('CSS convert', minimifyCSS(css));
-	return css;
+	files?.global.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
+
+	// THEMES
+	for (const style in params.fonts) {
+		css += style !== 'default' ? `.mk-fonts-${style} {` : ':root {';
+		for (const [name, font] of Object.entries(params.fonts[style])) {
+			css += `--font-${name}: ${font};\n`;
+		}
+		css += '}\n';
+	}
+
+	for (const theme in params.themes) {
+		const light: { [key: string]: string } = {};
+		const dark: { [key: string]: string } = {};
+
+		for (const [name, colors] of Object.entries(params.themes[theme])) {
+			if (typeof colors === 'string') {
+				light[name] = colors;
+				if (dark) dark[name] = colors;
+			} else {
+				if (colors && (('light' in colors) as unknown)) light[name] = colors.light!;
+				if (colors && (('dark' in colors) as unknown)) dark[name] = colors.dark!;
+			}
+
+			_class = _class.concat([name]);
+		}
+
+		if (params.mode === 'light') css += theme !== 'default' ? `.mk-theme-${theme} {` : `:root {`;
+		else css += theme !== 'default' ? `.mk-theme-${theme}.light {` : `.light {`;
+		for (const [name, color] of Object.entries(light)) {
+			css += `--${name}: ${color};\n`;
+		}
+		css += '}\n';
+
+		if (params.mode === 'dark') css += theme !== 'default' ? `.mk-theme-${theme} {` : `:root {`;
+		else css += theme !== 'default' ? `.mk-theme-${theme}.dark {` : `.dark {`;
+		for (const [name, color] of Object.entries(dark)) {
+			css += `--${name}: ${color};\n`;
+		}
+		css += '}\n';
+
+		if (params.mode === 'mixed') {
+			css += `@media (prefers-color-scheme: light) {`;
+			css += theme !== 'default' ? `.mk-theme-${theme} {` : `:root {`;
+			css += `color-scheme: light;`;
+			for (const [name, color] of Object.entries(light)) {
+				css += `--${name}: ${color};\n`;
+			}
+			css += '}}\n';
+
+			css += `@media (prefers-color-scheme: dark) {`;
+			css += theme !== 'default' ? `.mk-theme-${theme} {` : `:root {`;
+			css += `color-scheme: dark;`;
+			for (const [name, color] of Object.entries(dark)) {
+				css += `--${name}: ${color};\n`;
+			}
+			css += '}}\n';
+		}
+	}
+
+	if (_class && _class.length > 0) {
+		_class.map((key: string) => {
+			css += `.${key} {\n`;
+			if (!key.includes('on-')) {
+				if (_class.includes(`on-${key}`)) {
+					css += `--background-color: var(--${key});`;
+					css += `--color: var(--on-${key});`;
+				} else {
+					css += `--background-color: var(--${key});`;
+				}
+			} else {
+				css += `--color: var(--${key});`;
+			}
+			css += `}\n`;
+
+			css += `.${key}[class*='-outline'],\n .${key}[class*='-text'],\n .${key}[class*='-link'] {\n`;
+			css += `--color: var(--${key});`;
+			css += `}\n`;
+
+			css += `.bg\\:${key} {\n`;
+			css += `--background-color: var(--${key});`;
+			css += `background-color: var(--${key});`;
+			css += `}\n`;
+
+			css += `.text\\:${key} {\n`;
+			css += `--color: var(--${key});`;
+			css += `color: var(--${key});`;
+			css += `}\n`;
+
+			css += `.border\\:${key} {\n`;
+			css += `--border-color: var(--${key});`;
+			css += `border-color: var(--${key});`;
+			css += `}\n`;
+		});
+	}
+
+	// MODULES
+	files?.modules.map((pathFile) => (cssFiles += fs.readFileSync(pathFile, 'utf-8')));
+
+	const extract = extractAndRemoveContentBetweenMarkers(
+		cssFiles,
+		'/* @manakit-breakpoint */',
+		'/* !@manakit-breakpoint */'
+	);
+
+	css += extract.cleaned;
+
+	for (const property in params.breakpoints) {
+		if (property !== 'default') {
+			css += `@media screen and (min-width: ${params.breakpoints[property]}) {`;
+			css += extract.extracted.replaceAll('[breakpoint]', `.${property}\\:`);
+			css += `}`;
+		} else {
+			css += extract.extracted.replaceAll('[breakpoint]', `.`);
+		}
+	}
+
+	fsPromises.writeFile(
+		path.resolve(`node_modules/manakit/dist`, 'style.css'),
+		params.minimify ? minimifyCSS(css) : css
+	);
 }
 
 function minimifyCSS(css: string) {
-	// delete comment
 	css = css.replace(/\/\*[\s\S]*?\*\//g, '');
-	// delete space on { ; : ,
 	css = css.replace(/\s*([{};:,\s])\s*/g, '$1');
-	// delete return line
 	css = css.replace(/\n/g, '');
 	css = css.trim();
 	return css;
+}
+
+function extractAndRemoveContentBetweenMarkers(
+	css: string,
+	startMarker: string,
+	endMarker: string
+): { extracted: string; cleaned: string } {
+	const startMarkerLength = startMarker.length;
+	const endMarkerLength = endMarker.length;
+
+	let startIndex = 0;
+	let endIndex = 0;
+	let extractedContent = '';
+	let cleanedCSS = '';
+	let lastEndIndex = 0;
+
+	while ((startIndex = css.indexOf(startMarker, endIndex)) !== -1) {
+		endIndex = css.indexOf(endMarker, startIndex + startMarkerLength);
+		if (endIndex !== -1) {
+			extractedContent += css.substring(startIndex + startMarkerLength, endIndex).trim() + '\n';
+			cleanedCSS += css.substring(lastEndIndex, startIndex);
+			lastEndIndex = endIndex + endMarkerLength;
+		} else {
+			break;
+		}
+	}
+
+	cleanedCSS += css.substring(lastEndIndex); // Append any remaining CSS after the last marker
+
+	return {
+		extracted: extractedContent.trim(),
+		cleaned: cleanedCSS.trim()
+	};
 }

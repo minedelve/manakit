@@ -14,3 +14,15 @@
 .mk-container.container-fluid {
 	max-width: 100%;
 }
+
+@media screen and (min-width: 1024px) {
+	.mk-container:not(.container-fluid) {
+		max-width: 900px;
+	}
+}
+
+@media screen and (min-width: 1280px) {
+	.mk-container:not(.container-fluid) {
+		max-width: 1185px;
+	}
+}
