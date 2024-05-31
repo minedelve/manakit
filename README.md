@@ -25,14 +25,13 @@
 ### Require
 
 - Svelte _^4.0.0_
-- Sass _^1.50.0_
 
 ```cmd
-npm install --save-dev manakit sass
+npm install --save-dev manakit
 ```
 
 ```cmd
-yarn add -D manakit sass
+yarn add -D manakit
 ```
 
 Connect Manakit on yout project with **vite.config.ts** or **vite.config.js**

@@ -1,0 +1,293 @@
+.mk-btn {
+	--color: var(--on-surface);
+	--background-color: var(--surface);
+
+	display: inline-flex;
+	height: 3rem;
+	min-height: 3rem;
+	flex-shrink: 0;
+	cursor: pointer;
+	-webkit-user-select: none;
+	user-select: none;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	border-radius: 0.5rem;
+	border-color: transparent;
+	border-style: solid;
+	border-width: 1px;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	text-align: center;
+	font-size: 0.875rem;
+	line-height: 1em;
+	gap: 0.5rem;
+	font-weight: 600;
+	text-decoration-line: none;
+	transition-duration: 0.2s;
+	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+	animation: button-effect 0.25s ease-out;
+	color: var(--color);
+	background-color: var(--background-color);
+}
+
+.mk-btn.btn-wide {
+	width: 16rem;
+}
+.mk-btn.btn-block {
+	width: 100%;
+}
+
+.mk-btn svg {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+
+.mk-btn:active:hover,
+.mk-btn:active:focus {
+	animation: button-effect 0s ease-out;
+	transform: scale(0.97);
+}
+
+.mk-btn.btn-active:not(.btn-outline):not(.btn-text):not(.btn-link) {
+	background-color: color-mix(in oklab, var(--background-color) 85%, black);
+}
+.mk-btn:hover:not(.btn-outline):not(.btn-text):not(.btn-link) {
+	background-color: color-mix(in oklab, var(--background-color) 90%, black);
+}
+
+.mk-btn.btn-rounded {
+	border-radius: 9999px;
+}
+
+.mk-btn.btn-square {
+	height: 3rem;
+	width: 3rem;
+	min-height: 3rem;
+	padding: 0;
+}
+
+.mk-btn.btn-circle {
+	height: 3rem;
+	width: 3rem;
+	min-height: 3rem;
+	padding: 0;
+	border-radius: 9999px;
+}
+
+.mk-btn.btn-outline {
+	background-color: transparent;
+	border-color: var(--color);
+}
+.mk-btn.btn-text {
+	background-color: transparent;
+}
+
+.mk-btn.btn-outline.btn-active,
+.mk-btn.btn-text.btn-active {
+	background-color: color-mix(in oklab, var(--color) 15%, transparent);
+}
+.mk-btn.btn-outline:hover,
+.mk-btn.btn-text:hover {
+	background-color: color-mix(in oklab, var(--color) 20%, transparent);
+}
+
+.mk-btn.btn-link {
+	background-color: transparent;
+	text-decoration-line: underline;
+}
+
+.mk-btn.btn-disabled,
+.mk-btn.btn[disabled] {
+	pointer-events: none;
+	user-select: none;
+	color: color-mix(in oklab, var(--color) 40%, transparent) !important;
+	background-color: color-mix(in oklab, var(--background-color) 70%, transparent) !important;
+}
+.mk-btn.btn-disabled.btn-outline,
+.mk-btn.btn[disabled].btn-outline {
+	border-color: color-mix(in oklab, var(--color) 40%, transparent) !important;
+}
+
+.mk-btn.btn-disabled.btn-outline,
+.mk-btn.btn[disabled].btn-outline,
+.mk-btn.btn-disabled.btn-text,
+.mk-btn.btn[disabled].btn-text,
+.mk-btn.btn-disabled.btn-link,
+.mk-btn.btn[disabled].btn-link {
+	background-color: transparent;
+}
+
+.mk-btn:where(.mk-btn:is(input[type='checkbox'])),
+.mk-btn:where(.mk-btn:is(input[type='radio'])) {
+	width: auto;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+}
+.mk-btn.mk-btn:is(input[type='checkbox']):after,
+.mk-btn.mk-btn:is(input[type='radio']):after {
+	--manakit-content: attr(aria-label);
+	content: var(--manakit-content);
+}
+.mk-btn.mk-btn:is(input[type='checkbox']:checked),
+.mk-btn.mk-btn:is(input[type='radio']:checked) {
+	--color: var(--on-primary);
+	--background-color: var(--primary);
+}
+
+/* @themes */
+.mk-btn.btn-info {
+	--color: var(--on-info);
+	--background-color: var(--info);
+}
+.mk-btn.btn-info.btn-outline,
+.mk-btn.btn-info.btn-text,
+.mk-btn.btn-info.btn-link {
+	--color: var(--info);
+}
+
+.mk-btn.btn-success {
+	--color: var(--on-success);
+	--background-color: var(--success);
+}
+.mk-btn.btn-success.btn-outline,
+.mk-btn.btn-success.btn-text,
+.mk-btn.btn-success.btn-link {
+	--color: var(--success);
+}
+
+.mk-btn.btn-warning {
+	--color: var(--on-warning);
+	--background-color: var(--warning);
+}
+.mk-btn.btn-warning.btn-outline,
+.mk-btn.btn-warning.btn-text,
+.mk-btn.btn-warning.btn-link {
+	--color: var(--warning);
+}
+
+.mk-btn.btn-error {
+	--color: var(--on-error);
+	--background-color: var(--error);
+}
+.mk-btn.btn-error.btn-outline,
+.mk-btn.btn-error.btn-text,
+.mk-btn.btn-error.btn-link {
+	--color: var(--error);
+}
+
+/* @keyframes */
+@keyframes button-effect {
+	0% {
+		transform: scale(0.98);
+	}
+	40% {
+		transform: scale(1.02);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
+
+/* @manakit-breakpoint */
+/* @svg size */
+.mk-btn[breakpoint]btn-xs svg {
+	width: 1.15rem;
+	height: 1.15rem;
+}
+.mk-btn[breakpoint]btn-sm svg {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+.mk-btn[breakpoint]btn-md svg {
+	width: 1.5rem;
+	height: 1.5rem;
+}
+.mk-btn[breakpoint]btn-lg svg {
+	width: 1.75rem;
+	height: 1.75rem;
+}
+
+/* @initial */
+.mk-btn[breakpoint]btn-xs:not(.btn-square):not(.btn-circle) {
+	height: 1.5rem;
+	min-height: 1.5rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	font-size: 0.75rem;
+}
+.mk-btn[breakpoint]btn-sm:not(.btn-square):not(.btn-circle) {
+	height: 2rem;
+	min-height: 2rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	font-size: 0.875rem;
+}
+.mk-btn[breakpoint]btn-md:not(.btn-square):not(.btn-circle) {
+	height: 3rem;
+	min-height: 3rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	font-size: 0.875rem;
+}
+.mk-btn[breakpoint]btn-lg:not(.btn-square):not(.btn-circle) {
+	height: 4rem;
+	min-height: 4rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	font-size: 1.125rem;
+}
+
+/* @square */
+.mk-btn[breakpoint]btn-xs:not(.btn-square):not(.btn-circle) {
+	height: 1.5rem;
+	min-height: 1.5rem;
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+	font-size: 0.75rem;
+}
+.mk-btn[breakpoint]btn-sm:not(.btn-square):not(.btn-circle) {
+	height: 2rem;
+	min-height: 2rem;
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+	font-size: 0.875rem;
+}
+.mk-btn[breakpoint]btn-md:not(.btn-square):not(.btn-circle) {
+	height: 3rem;
+	min-height: 3rem;
+	padding-left: 1rem;
+	padding-right: 1rem;
+	font-size: 0.875rem;
+}
+.mk-btn[breakpoint]btn-lg:not(.btn-square):not(.btn-circle) {
+	height: 4rem;
+	min-height: 4rem;
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+	font-size: 1.125rem;
+}
+
+/* @circle */
+.mk-btn[breakpoint]btn-xs.btn-circle {
+	height: 1.5rem;
+	width: 1.5rem;
+	min-height: 1.5rem;
+}
+.mk-btn[breakpoint]btn-sm.btn-circle {
+	height: 2rem;
+	width: 2rem;
+	min-height: 2rem;
+}
+.mk-btn[breakpoint]btn-md.btn-circle {
+	height: 3rem;
+	width: 3rem;
+	min-height: 3rem;
+}
+.mk-btn[breakpoint]btn-lg.btn-circle {
+	height: 4rem;
+	width: 4rem;
+	min-height: 4rem;
+}
+/* !@manakit-breakpoint */
