@@ -1,0 +1,172 @@
+.mk-drawer {
+	--background-color: var(--surface);
+	--color: var(--on-surface);
+	--overlay: var(--scrim);
+
+	position: relative;
+	display: grid;
+	grid-auto-columns: max-content auto;
+	width: 100%;
+}
+
+.mk-drawer > input {
+	position: fixed;
+	height: 0;
+	width: 0;
+	appearance: none;
+	opacity: 0;
+}
+.mk-drawer > input:checked ~ .drawer-aside {
+	pointer-events: auto;
+	visibility: visible;
+	overflow-y: auto;
+}
+.mk-drawer > input:checked ~ .drawer-aside > .drawer-overlay {
+	background-color: color-mix(in oklab, var(--overlay) 30%, transparent);
+}
+.mk-drawer > input:checked ~ .drawer-aside > *:not(.drawer-overlay) {
+	transform: translate(0);
+}
+
+.mk-drawer .drawer-aside {
+	pointer-events: none;
+	position: fixed;
+	inset-inline-start: 0;
+	top: 0;
+	grid-column-start: 1;
+	grid-row-start: 1;
+	display: grid;
+	width: 100%;
+	grid-template-columns: repeat(1, minmax(0, 1fr));
+	grid-template-rows: repeat(1, minmax(0, 1fr));
+	align-items: flex-start;
+	justify-items: start;
+	overflow-y: auto;
+	overscroll-behavior: contain;
+	height: 100vh;
+	z-index: 999;
+	scroll-behavior: smooth;
+	scroll-padding-top: 5rem;
+}
+.mk-drawer .drawer-aside > * {
+	grid-column-start: 1;
+	grid-row-start: 1;
+}
+.mk-drawer .drawer-aside > aside {
+	min-height: 100%;
+	background-color: var(--background-color);
+	color: var(--color);
+	overflow: auto;
+}
+.mk-drawer .drawer-aside > .drawer-overlay {
+	position: sticky;
+	top: 0;
+	place-self: stretch;
+	cursor: pointer;
+	background-color: transparent;
+	transition-property: color, background-color, border-color, opacity, text-decoration-color, fill,
+		stroke;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+	transition-duration: 0.2s;
+}
+.mk-drawer .drawer-aside > *:not(.drawer-overlay) {
+	transition-property: transform;
+	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+	transition-duration: 0.3s;
+	will-change: transform;
+	transform: translate(-100%);
+}
+
+.mk-drawer .drawer-content {
+	grid-column-start: 2;
+	grid-row-start: 1;
+	min-width: 0;
+}
+
+/* @position */
+.mk-drawer.drawer-right {
+	grid-auto-columns: auto max-content;
+}
+.mk-drawer.drawer-right .drawer-aside > *:not(.drawer-overlay) {
+	transform: translate(100%);
+}
+
+.mk-drawer.drawer-right > input ~ .drawer-content {
+	grid-column-start: 1;
+}
+
+.mk-drawer.drawer-right > input ~ .drawer-aside {
+	grid-column-start: 2;
+	justify-items: end;
+}
+
+/* @manakit-breakpoint */
+.mk-drawer[breakpoint]drawer-open > .drawer-aside {
+	pointer-events: auto;
+	visibility: visible;
+	position: sticky;
+	display: block;
+	width: auto;
+	overscroll-behavior: auto;
+}
+.mk-drawer[breakpoint]drawer-open > .drawer-aside > *:not(.drawer-overlay) {
+	transform: translate(0);
+}
+
+/* @position */
+.mk-drawer[breakpoint]drawer-left {
+	grid-auto-columns: max-content auto;
+}
+.mk-drawer[breakpoint]drawer-left > input ~ .drawer-content {
+	grid-column-start: 2;
+}
+.mk-drawer[breakpoint]drawer-left > input ~ .drawer-aside {
+	grid-column-start: 1;
+	justify-items: start;
+}
+.mk-drawer[breakpoint]drawer-left > input ~ .drawer-aside > *:not(.drawer-overlay) {
+	transform: translate(0);
+}
+
+.mk-drawer[breakpoint]drawer-right {
+	grid-auto-columns: auto max-content;
+}
+.mk-drawer[breakpoint]drawer-right > input ~ .drawer-content {
+	grid-column-start: 1;
+}
+.mk-drawer[breakpoint]drawer-right > input ~ .drawer-aside {
+	grid-column-start: 2;
+	justify-items: end;
+}
+.mk-drawer[breakpoint]drawer-right > input ~ .drawer-aside > *:not(.drawer-overlay) {
+	transform: translate(0);
+}
+
+.mk-drawer[breakpoint]drawer-top .drawer-aside > aside {
+	min-width: 100%;
+	min-height: initial;
+}
+.mk-drawer[breakpoint]drawer-top .drawer-aside > *:not(.drawer-overlay) {
+	transform: translateY(-100%);
+}
+.mk-drawer[breakpoint]drawer-top > input:checked > *:not(.drawer-overlay) {
+	transform: translateY(0%);
+}
+
+.mk-drawer[breakpoint]drawer-bottom .drawer-aside > * {
+	grid-column-start: initial;
+	grid-row-start: initial;
+}
+.mk-drawer[breakpoint]drawer-bottom .drawer-aside > aside {
+	min-width: 100%;
+	min-height: initial;
+}
+.mk-drawer[breakpoint]drawer-bottom .drawer-aside *:not(.drawer-overlay) {
+	transform: translateY(100%);
+}
+.mk-drawer[breakpoint]drawer-bottom > input:checked > *:not(.drawer-overlay) {
+	transform: translateY(0%);
+}
+/* !@manakit-breakpoint */
