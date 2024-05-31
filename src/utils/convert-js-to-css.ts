@@ -4,6 +4,8 @@ import fsPromises from 'fs/promises';
 import { loadCss } from './load-files.js';
 
 import type { ConvertJSToCSSProps } from '../assets/types/config.js';
+import { formatCSSMarkers } from './marker-css.js';
+import { minimifyCSS } from './minimify-css.js';
 
 export function convertJStoCSS(params: ConvertJSToCSSProps) {
 	let _class: string[] = [];
@@ -25,6 +27,27 @@ export function convertJStoCSS(params: ConvertJSToCSSProps) {
 	}
 
 	files?.global.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
+
+	// MODULES
+	files?.modules.map((pathFile) => (cssFiles += fs.readFileSync(pathFile, 'utf-8')));
+
+	const extract = formatCSSMarkers(
+		cssFiles,
+		'/* @manakit-breakpoint */',
+		'/* !@manakit-breakpoint */'
+	);
+
+	css += extract.cleaned;
+
+	for (const property in params.breakpoints) {
+		if (property !== 'default') {
+			css += `@media screen and (min-width: ${params.breakpoints[property]}) {`;
+			css += extract.extracted.replaceAll('[breakpoint]', `.${property}\\:`);
+			css += `}`;
+		} else {
+			css += extract.extracted.replaceAll('[breakpoint]', `.`);
+		}
+	}
 
 	// THEMES
 	for (const style in params.fonts) {
@@ -120,70 +143,8 @@ export function convertJStoCSS(params: ConvertJSToCSSProps) {
 		});
 	}
 
-	// MODULES
-	files?.modules.map((pathFile) => (cssFiles += fs.readFileSync(pathFile, 'utf-8')));
-
-	const extract = extractAndRemoveContentBetweenMarkers(
-		cssFiles,
-		'/* @manakit-breakpoint */',
-		'/* !@manakit-breakpoint */'
-	);
-
-	css += extract.cleaned;
-
-	for (const property in params.breakpoints) {
-		if (property !== 'default') {
-			css += `@media screen and (min-width: ${params.breakpoints[property]}) {`;
-			css += extract.extracted.replaceAll('[breakpoint]', `.${property}\\:`);
-			css += `}`;
-		} else {
-			css += extract.extracted.replaceAll('[breakpoint]', `.`);
-		}
-	}
-
 	fsPromises.writeFile(
 		path.resolve(`node_modules/manakit/dist`, 'style.css'),
 		params.minimify ? minimifyCSS(css) : css
 	);
-}
-
-function minimifyCSS(css: string) {
-	css = css.replace(/\/\*[\s\S]*?\*\//g, '');
-	css = css.replace(/\s*([{};:,\s])\s*/g, '$1');
-	css = css.replace(/\n/g, '');
-	css = css.trim();
-	return css;
-}
-
-function extractAndRemoveContentBetweenMarkers(
-	css: string,
-	startMarker: string,
-	endMarker: string
-): { extracted: string; cleaned: string } {
-	const startMarkerLength = startMarker.length;
-	const endMarkerLength = endMarker.length;
-
-	let startIndex = 0;
-	let endIndex = 0;
-	let extractedContent = '';
-	let cleanedCSS = '';
-	let lastEndIndex = 0;
-
-	while ((startIndex = css.indexOf(startMarker, endIndex)) !== -1) {
-		endIndex = css.indexOf(endMarker, startIndex + startMarkerLength);
-		if (endIndex !== -1) {
-			extractedContent += css.substring(startIndex + startMarkerLength, endIndex).trim() + '\n';
-			cleanedCSS += css.substring(lastEndIndex, startIndex);
-			lastEndIndex = endIndex + endMarkerLength;
-		} else {
-			break;
-		}
-	}
-
-	cleanedCSS += css.substring(lastEndIndex); // Append any remaining CSS after the last marker
-
-	return {
-		extracted: extractedContent.trim(),
-		cleaned: cleanedCSS.trim()
-	};
 }
