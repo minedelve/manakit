@@ -49,6 +49,9 @@
 	transform: scale(0.97);
 }
 
+.mk-btn.btn-active:not(.btn-outline):not(.btn-text):not(.btn-link) {
+	background-color: color-mix(in oklab, var(--background-color) 85%, black);
+}
 .mk-btn:hover:not(.btn-outline):not(.btn-text):not(.btn-link) {
 	background-color: color-mix(in oklab, var(--background-color) 90%, black);
 }
@@ -76,13 +79,15 @@
 	background-color: transparent;
 	border-color: var(--color);
 }
-.mk-btn.btn-outline:hover {
-	background-color: color-mix(in oklab, var(--color) 20%, transparent);
-}
-
 .mk-btn.btn-text {
 	background-color: transparent;
 }
+
+.mk-btn.btn-outline.btn-active,
+.mk-btn.btn-text.btn-active {
+	background-color: color-mix(in oklab, var(--color) 15%, transparent);
+}
+.mk-btn.btn-outline:hover,
 .mk-btn.btn-text:hover {
 	background-color: color-mix(in oklab, var(--color) 20%, transparent);
 }
