@@ -159,6 +159,78 @@ The `Btn` component remplaces the standard html `button` , `anchor` and `input t
 
 </Component>
 
+### Rounded buttons {#buttons-rounded}
+
+<Component>
+
+```svelte
+<script>
+	import { Btn } from 'manakit';
+</script>
+
+<Btn rounded>Default</Btn>
+<Btn class="primary" rounded>Primary</Btn>
+<Btn class="secondary" rounded>Secondary</Btn>
+<Btn class="tertiary" rounded>Tertiary</Btn>
+```
+
+<svelte:fragment slot="preview">
+<Btn rounded>Default</Btn>
+<Btn class="primary" rounded>Primary</Btn>
+<Btn class="secondary" rounded>Secondary</Btn>
+<Btn class="tertiary" rounded>Tertiary</Btn>
+</svelte:fragment>
+
+</Component>
+
+### Text buttons {#buttons-text}
+
+<Component>
+
+```svelte
+<script>
+	import { Btn } from 'manakit';
+</script>
+
+<Btn text>Default</Btn>
+<Btn class="primary" text>Primary</Btn>
+<Btn class="secondary" text>Secondary</Btn>
+<Btn class="tertiary" text>Tertiary</Btn>
+```
+
+<svelte:fragment slot="preview">
+<Btn text>Default</Btn>
+<Btn class="primary" text>Primary</Btn>
+<Btn class="secondary" text>Secondary</Btn>
+<Btn class="tertiary" text>Tertiary</Btn>
+</svelte:fragment>
+
+</Component>
+
+### link buttons {#buttons-link}
+
+<Component>
+
+```svelte
+<script>
+	import { Btn } from 'manakit';
+</script>
+
+<Btn link>Default</Btn>
+<Btn class="primary" link>Primary</Btn>
+<Btn class="secondary" link>Secondary</Btn>
+<Btn class="tertiary" link>Tertiary</Btn>
+```
+
+<svelte:fragment slot="preview">
+<Btn link>Default</Btn>
+<Btn class="primary" link>Primary</Btn>
+<Btn class="secondary" link>Secondary</Btn>
+<Btn class="tertiary" link>Tertiary</Btn>
+</svelte:fragment>
+
+</Component>
+
 ### Buttons Sizes {#buttons-sizes}
 
 <Component>
