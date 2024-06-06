@@ -13,5 +13,20 @@ export const pages = [
 				href: '/docs/preprocessor'
 			}
 		]
+	},
+	{
+		name: 'Components',
+		items: [
+			{
+				name: 'App',
+				tags: 'app',
+				href: '/docs/components/app'
+			},
+			{
+				name: 'Btn',
+				tags: 'btn',
+				href: '/docs/components/btn'
+			}
+		]
 	}
 ];

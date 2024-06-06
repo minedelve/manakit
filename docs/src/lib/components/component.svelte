@@ -2,6 +2,8 @@
 	import Icon from '@iconify/svelte';
 	import { Toolbar, Btn, Spacer } from 'manakit';
 
+	export let onlyCode: boolean = false;
+	export let onlyPreview: boolean = false;
 	export let changeTheme: boolean = true;
 	export let github: undefined | string = undefined;
 
@@ -45,20 +47,30 @@
 			}
 		}
 	}
+
+	$: {
+		if (onlyCode) screen = 'code';
+		else if (onlyPreview) screen = 'preview';
+	}
 </script>
 
 <div class="manakit-preview">
 	<Toolbar class="toolbar-sm">
-		<Btn square on:click={() => (screen = 'preview')} active={screen === 'preview'}>
-			<Icon icon="material-symbols:preview" />
-		</Btn>
-		<Btn square on:click={() => (screen = 'code')} active={screen === 'code'}>
-			<Icon icon="material-symbols:code" />
-		</Btn>
+		{#if (onlyPreview && !onlyCode) || (!onlyPreview && !onlyCode)}
+			<Btn square on:click={() => (screen = 'preview')} active={screen === 'preview'}>
+				<Icon icon="material-symbols:preview" />
+			</Btn>
+		{/if}
+
+		{#if (onlyCode && !onlyPreview) || (!onlyCode && !onlyPreview)}
+			<Btn square on:click={() => (screen = 'code')} active={screen === 'code'}>
+				<Icon icon="material-symbols:code" />
+			</Btn>
+		{/if}
 
 		<Spacer />
 
-		{#if changeTheme === true}
+		{#if changeTheme === true && !onlyCode}
 			<Btn square on:click={() => handleTheme()}>
 				<Icon icon="fluent:dark-theme-20-filled" />
 			</Btn>
