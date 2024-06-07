@@ -4,11 +4,27 @@ desc: Component Button
 ---
 
 <script>
+	import AdvancedComponent from "$lib/components/advanced-component.svelte";
 	import Component from "$lib/components/component.svelte";
     import Datatable from "$lib/components/datatable.svelte";
 
     import {Btn} from "manakit";
     import {dataSlot, dataProps} from "./props";
+
+	let typeBtn = "";
+
+	let size = "";
+	let icon = "";
+	let square = false;
+	let circle = false;
+	let rounded = false;
+	let outline = false;
+	let text = false;
+	let link = false;
+
+
+	const handleSize = state => size = state;
+	const handleIcon = state => icon = state;
 </script>
 
 # Btn {#btn}
@@ -17,21 +33,60 @@ The `Btn` component remplaces the standard html `button` , `anchor` and `input t
 
 ## Usage {#usage}
 
-<Component>
+<AdvancedComponent>
+	<svelte:fragment slot="toolbar">
+		<Btn on:click={() => (outline = false, text = false, link = false)} active={!outline && !text && !link}>Default</Btn>
+		<Btn on:click={() => (outline = true, text = false, link = false)} active={outline}>Outline</Btn>
+		<Btn on:click={() => (outline = false, text = true, link = false)} active={text}>Text</Btn>
+		<Btn on:click={() => (outline = false, text = false, link = true)} active={link}>Link</Btn>
+	</svelte:fragment>
+	<svelte:fragment slot="aside">
+		<p>Sizing</p>
+		<div>
+			<Btn class="btn-sm" on:click={() => handleSize("btn-xs")}  active={size === "btn-xs"} square>xs</Btn>
+			<Btn class="btn-sm" on:click={() => (size = "btn-sm")}  active={size === "btn-sm"} square>sm</Btn>
+			<Btn class="btn-sm" on:click={() => size = "btn-md"}  active={size === "btn-md" || size === ""} square>md</Btn>
+			<Btn class="btn-sm" on:click={() => size = "btn-lg"}  active={size === "btn-lg"} square>lg</Btn>
+		</div>
+		<p>Icon</p>
+		<div>
+			<Btn class="btn-sm" on:click={() => handleIcon("")}  active={icon === ""} >Default</Btn>
+			<Btn class="btn-sm" on:click={() => handleIcon("left")}  active={icon === "left"}>Icon Left</Btn>
+			<Btn class="btn-sm" on:click={() => handleIcon("right")}  active={icon === "right"}>Icon Right</Btn>
+			<Btn class="btn-sm" on:click={() => handleIcon("icon")}  active={icon === "icon"}>Icon</Btn>
+		</div>
+		<p>Form</p>
+		<div>
+			<Btn class="btn-sm" on:click={() => (square = false, circle = false, rounded = false)}  active={!square && !circle && !rounded}>Default</Btn>
+			<Btn class="btn-sm" on:click={() => (square = true, circle = false, rounded = false)}  active={square}>Square</Btn>
+			<Btn class="btn-sm" on:click={() => (square = false, circle = true, rounded = false)}  active={circle}>Circle</Btn>
+			<Btn class="btn-sm" on:click={() => (square = false, circle = false, rounded = true)}  active={rounded}>Rounded</Btn>
+		</div>
+		
+	</svelte:fragment>
+	<svelte:fragment slot="preview">
+    	<Btn class={size} {outline} {text} {link} {circle} {square} {rounded}>
+			{#if icon === "left"}
+				<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...$$props}>
+					<path fill="currentColor" d="M4 21V9l8-6l8 6v12h-6v-7h-4v7z" />
+				</svg>
+			{/if}
+			{#if icon === "icon"}
+				<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...$$props}>
+					<path fill="currentColor" d="M4 21V9l8-6l8 6v12h-6v-7h-4v7z" />
+				</svg>
+			{:else}
+    		Button
+			{/if}
+			{#if icon === "right"}
+				<svg xmlns="http://www.w3.org/2000/svg" width="1em" height="1em" viewBox="0 0 24 24" {...$$props}>
+					<path fill="currentColor" d="M4 21V9l8-6l8 6v12h-6v-7h-4v7z" />
+				</svg>
+			{/if}
+    	</Btn>
+    </svelte:fragment>
 
-```svelte
-<script>
-	import { Btn } from 'manakit';
-</script>
-
-<Btn>Button</Btn>
-```
-
-<svelte:fragment slot="preview">
-<Btn>Button</Btn>
-</svelte:fragment>
-
-</Component>
+</AdvancedComponent>
 
 ## Examples {#examples}
 

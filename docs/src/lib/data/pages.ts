@@ -26,6 +26,11 @@ export const pages = [
 				name: 'Btn',
 				tags: 'btn',
 				href: '/docs/components/btn'
+			},
+			{
+				name: 'Card',
+				tags: 'card',
+				href: '/docs/components/card'
 			}
 		]
 	}
