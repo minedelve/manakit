@@ -9,10 +9,12 @@
 	export let light: boolean = false;
 	export let open: boolean = false;
 	export let width: number | string = 0;
-	export let fixed: boolean = false;
+	export let permament: boolean = false;
+	export let left: boolean = false;
 	export let right: boolean = false;
 	export let top: boolean = false;
 	export let bottom: boolean = false;
+	export let absolute: boolean = false;
 
 	// states
 	$: innerWidth = 0;
@@ -22,23 +24,22 @@
 
 	$: {
 		if (innerWidth !== width && width !== 0) handleClose();
-		if (fixed) eventNoScroll(open ? 'active' : 'disable');
+		if (permament) eventNoScroll(open ? 'active' : 'disable');
 		width = innerWidth;
 	}
 </script>
 
 <svelte:window bind:innerWidth />
-
 <div
 	class={className('mk-drawer', _class)}
-	class:drawer-open={open}
+	class:drawer-left={left}
 	class:drawer-right={right}
 	class:drawer-top={top}
 	class:drawer-bottom={bottom}
 >
-	<input type="checkbox" checked={open} tabindex="-1" />
+	<input type="checkbox" bind:checked={open} tabindex="-1" />
 
-	<div class="drawer-aside">
+	<div class="drawer-aside" class:drawer-absolute={absolute}>
 		<div
 			role="button"
 			tabindex="-1"
