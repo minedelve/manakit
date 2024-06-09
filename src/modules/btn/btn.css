@@ -269,6 +269,28 @@
 	font-size: 1.125rem;
 }
 
+/* @square */
+.mk-btn[breakpoint]btn-xs.btn-square {
+	height: 1.5rem;
+	width: 1.5rem;
+	min-height: 1.5rem;
+}
+.mk-btn[breakpoint]btn-sm.btn-square {
+	height: 2rem;
+	width: 2rem;
+	min-height: 2rem;
+}
+.mk-btn[breakpoint]btn-md.btn-square {
+	height: 3rem;
+	width: 3rem;
+	min-height: 3rem;
+}
+.mk-btn[breakpoint]btn-lg.btn-square {
+	height: 4rem;
+	width: 4rem;
+	min-height: 4rem;
+}
+
 /* @circle */
 .mk-btn[breakpoint]btn-xs.btn-circle {
 	height: 1.5rem;
