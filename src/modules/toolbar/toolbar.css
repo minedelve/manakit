@@ -8,6 +8,7 @@
 	width: 100%;
 	background-color: var(--background-color);
 	color: var(--color);
+	overflow-x: hidden;
 }
 
 .mk-toolbar.toolbar-bottom {
