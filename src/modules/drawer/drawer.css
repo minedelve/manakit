@@ -157,6 +157,9 @@
 .mk-drawer[breakpoint]drawer-left > .drawer-aside > aside,
 .mk-drawer[breakpoint]drawer-right > .drawer-aside > aside {
 	min-height: 100%;
+	min-width: 100%;
+	bottom: initial;
+	position: initial;
 }
 
 /** top **/
