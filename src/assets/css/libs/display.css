@@ -1,0 +1,26 @@
+/* @manakit-breakpoint */
+[breakpoint]d-none {
+	display: none;
+}
+[breakpoint]d-flex {
+	display: flex;
+}
+[breakpoint]d-inline {
+	display: inline;
+}
+[breakpoint]d-inline-block {
+	display: inline-block;
+}
+[breakpoint]d-table {
+	display: table;
+}
+[breakpoint]d-table-cell {
+	display: table-cell;
+}
+[breakpoint]d-table-row {
+	display: table-row;
+}
+[breakpoint]d-inline-flex {
+	display: inline-flex;
+}
+/* !@manakit-breakpoint */

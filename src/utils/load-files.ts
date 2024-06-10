@@ -34,6 +34,18 @@ export function loadCss() {
 			manakit: path.resolve(`${nodePath}/assets/css/colors`, 'manakit.css'),
 			webkit: path.resolve(`${nodePath}/assets/css/colors`, 'webkit.css')
 		},
+		styles: [
+			path.resolve(`${nodePath}/assets/css/libs`, 'typography.css'),
+			path.resolve(`${nodePath}/assets/css/libs`, 'display.css'),
+			path.resolve(`${nodePath}/assets/css/libs`, 'elevation.css'),
+			path.resolve(`${nodePath}/assets/css/libs`, 'gap.css'),
+			path.resolve(`${nodePath}/assets/css/libs`, 'height.css'),
+			path.resolve(`${nodePath}/assets/css/libs`, 'margin.css'),
+			path.resolve(`${nodePath}/assets/css/libs`, 'padding.css'),
+			path.resolve(`${nodePath}/assets/css/libs`, 'position.css'),
+			path.resolve(`${nodePath}/assets/css/libs`, 'rounded.css'),
+			path.resolve(`${nodePath}/assets/css/libs`, 'width.css')
+		],
 		modules: [
 			path.resolve(`${nodePath}/modules/app`, 'app.css'),
 			path.resolve(`${nodePath}/modules/btn`, 'btn.css'),

@@ -14,6 +14,7 @@
 	text-align: start;
 	color: var(--color);
 	background-color: var(--background-color);
+	overflow: hidden;
 }
 
 a.mk-card {
