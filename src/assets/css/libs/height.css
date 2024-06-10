@@ -1,0 +1,23 @@
+/* @manakit-breakpoint */
+[breakpoint]h-auto {
+	height: auto;
+}
+[breakpoint]h-screen {
+	height: 100dvh;
+}
+[breakpoint]h-0 {
+	height: 0;
+}
+[breakpoint]h-25 {
+	height: 25%;
+}
+[breakpoint]h-50 {
+	height: 50%;
+}
+[breakpoint]h-75 {
+	height: 75%;
+}
+[breakpoint]h-100 {
+	height: 100%;
+}
+/* !@manakit-breakpoint */

@@ -1,0 +1,20 @@
+/* @manakit-breakpoint */
+[breakpoint]w-auto {
+	width: auto;
+}
+[breakpoint]w-0 {
+	width: 0;
+}
+[breakpoint]w-25 {
+	width: 25%;
+}
+[breakpoint]w-50 {
+	width: 50%;
+}
+[breakpoint]w-75 {
+	width: 75%;
+}
+[breakpoint]w-100 {
+	width: 100%;
+}
+/* !@manakit-breakpoint */

@@ -1,0 +1,426 @@
+/* @manakit-breakpoint */
+/* 0 */
+[breakpoint]pt-0 {
+	padding-top: 0;
+}
+[breakpoint]pb-0 {
+	padding-bottom: 0;
+}
+[breakpoint]pl-0 {
+	padding-left: 0;
+}
+[breakpoint]pr-0 {
+	padding-right: 0;
+}
+[breakpoint]px-0 {
+	padding-left: 0;
+	padding-right: 0;
+}
+[breakpoint]py-0 {
+	padding-top: 0;
+	padding-bottom: 0;
+}
+[breakpoint]pa-0 {
+	padding: 0;
+}
+
+/* 1 */
+[breakpoint]pt-1 {
+	padding-top: 0.25rem;
+}
+[breakpoint]pb-1 {
+	padding-bottom: 0.25rem;
+}
+[breakpoint]pl-1 {
+	padding-left: 0.25rem;
+}
+[breakpoint]pr-1 {
+	padding-right: 0.25rem;
+}
+[breakpoint]px-1 {
+	padding-left: 0.25rem;
+	padding-right: 0.25rem;
+}
+[breakpoint]py-1 {
+	padding-top: 0.25rem;
+	padding-bottom: 0.25rem;
+}
+[breakpoint]pa-1 {
+	padding: 0.25rem;
+}
+
+/* 2 */
+[breakpoint]pt-2 {
+	padding-top: 0.5rem;
+}
+[breakpoint]pb-2 {
+	padding-bottom: 0.5rem;
+}
+[breakpoint]pl-2 {
+	padding-left: 0.5rem;
+}
+[breakpoint]pr-2 {
+	padding-right: 0.5rem;
+}
+[breakpoint]px-2 {
+	padding-left: 0.5rem;
+	padding-right: 0.5rem;
+}
+[breakpoint]py-2 {
+	padding-top: 0.5rem;
+	padding-bottom: 0.5rem;
+}
+[breakpoint]pa-2 {
+	padding: 0.5rem;
+}
+
+/* 3 */
+[breakpoint]pt-3 {
+	padding-top: 0.75rem;
+}
+[breakpoint]pb-3 {
+	padding-bottom: 0.75rem;
+}
+[breakpoint]pl-3 {
+	padding-left: 0.75rem;
+}
+[breakpoint]pr-3 {
+	padding-right: 0.75rem;
+}
+[breakpoint]px-3 {
+	padding-left: 0.75rem;
+	padding-right: 0.75rem;
+}
+[breakpoint]py-3 {
+	padding-top: 0.75rem;
+	padding-bottom: 0.75rem;
+}
+[breakpoint]pa-3 {
+	padding: 0.75rem;
+}
+
+/* 4 */
+[breakpoint]pt-4 {
+	padding-top: 1rem;
+}
+[breakpoint]pb-4 {
+	padding-bottom: 1rem;
+}
+[breakpoint]pl-4 {
+	padding-left: 1rem;
+}
+[breakpoint]pr-4 {
+	padding-right: 1rem;
+}
+[breakpoint]px-4 {
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+[breakpoint]py-4 {
+	padding-top: 1rem;
+	padding-bottom: 1rem;
+}
+[breakpoint]pa-4 {
+	padding: 1rem;
+}
+
+/* 5 */
+[breakpoint]pt-5 {
+	padding-top: 1.25rem;
+}
+[breakpoint]pb-5 {
+	padding-bottom: 1.25rem;
+}
+[breakpoint]pl-5 {
+	padding-left: 1.25rem;
+}
+[breakpoint]pr-5 {
+	padding-right: 1.25rem;
+}
+[breakpoint]px-5 {
+	padding-left: 1.25rem;
+	padding-right: 1.25rem;
+}
+[breakpoint]py-5 {
+	padding-top: 1.25rem;
+	padding-bottom: 1.25rem;
+}
+[breakpoint]pa-5 {
+	padding: 1.25rem;
+}
+
+/* 6 */
+[breakpoint]pt-6 {
+	padding-top: 1.5rem;
+}
+[breakpoint]pb-6 {
+	padding-bottom: 1.5rem;
+}
+[breakpoint]pl-6 {
+	padding-left: 1.5rem;
+}
+[breakpoint]pr-6 {
+	padding-right: 1.5rem;
+}
+[breakpoint]px-6 {
+	padding-left: 1.5rem;
+	padding-right: 1.5rem;
+}
+[breakpoint]py-6 {
+	padding-top: 1.5rem;
+	padding-bottom: 1.5rem;
+}
+[breakpoint]pa-6 {
+	padding: 1.5rem;
+}
+
+/* 7 */
+[breakpoint]pt-7 {
+	padding-top: 1.75rem;
+}
+[breakpoint]pb-7 {
+	padding-bottom: 1.75rem;
+}
+[breakpoint]pl-7 {
+	padding-left: 1.75rem;
+}
+[breakpoint]pr-7 {
+	padding-right: 1.75rem;
+}
+[breakpoint]px-7 {
+	padding-left: 1.75rem;
+	padding-right: 1.75rem;
+}
+[breakpoint]py-7 {
+	padding-top: 1.75rem;
+	padding-bottom: 1.75rem;
+}
+[breakpoint]pa-7 {
+	padding: 1.75rem;
+}
+
+/* 8 */
+[breakpoint]pt-8 {
+	padding-top: 2rem;
+}
+[breakpoint]pb-8 {
+	padding-bottom: 2rem;
+}
+[breakpoint]pl-8 {
+	padding-left: 2rem;
+}
+[breakpoint]pr-8 {
+	padding-right: 2rem;
+}
+[breakpoint]px-8 {
+	padding-left: 2rem;
+	padding-right: 2rem;
+}
+[breakpoint]py-8 {
+	padding-top: 2rem;
+	padding-bottom: 2rem;
+}
+[breakpoint]pa-8 {
+	padding: 2rem;
+}
+
+/* 9 */
+[breakpoint]pt-9 {
+	padding-top: 2.25rem;
+}
+[breakpoint]pb-9 {
+	padding-bottom: 2.25rem;
+}
+[breakpoint]pl-9 {
+	padding-left: 2.25rem;
+}
+[breakpoint]pr-9 {
+	padding-right: 2.25rem;
+}
+[breakpoint]px-9 {
+	padding-left: 2.25rem;
+	padding-right: 2.25rem;
+}
+[breakpoint]py-9 {
+	padding-top: 2.25rem;
+	padding-bottom: 2.25rem;
+}
+[breakpoint]pa-9 {
+	padding: 2.25rem;
+}
+
+/* 10 */
+[breakpoint]pt-10 {
+	padding-top: 2.5rem;
+}
+[breakpoint]pb-10 {
+	padding-bottom: 2.5rem;
+}
+[breakpoint]pl-10 {
+	padding-left: 2.5rem;
+}
+[breakpoint]pr-10 {
+	padding-right: 2.5rem;
+}
+[breakpoint]px-10 {
+	padding-left: 2.5rem;
+	padding-right: 2.5rem;
+}
+[breakpoint]py-10 {
+	padding-top: 2.5rem;
+	padding-bottom: 2.5rem;
+}
+[breakpoint]pa-10 {
+	padding: 2.5rem;
+}
+
+/* 11 */
+[breakpoint]pt-11 {
+	padding-top: 2.75rem;
+}
+[breakpoint]pb-11 {
+	padding-bottom: 2.75rem;
+}
+[breakpoint]pl-11 {
+	padding-left: 2.75rem;
+}
+[breakpoint]pr-11 {
+	padding-right: 2.75rem;
+}
+[breakpoint]px-11 {
+	padding-left: 2.75rem;
+	padding-right: 2.75rem;
+}
+[breakpoint]py-11 {
+	padding-top: 2.75rem;
+	padding-bottom: 2.75rem;
+}
+[breakpoint]pa-11 {
+	padding: 2.75rem;
+}
+
+/* 12 */
+[breakpoint]pt-12 {
+	padding-top: 3rem;
+}
+[breakpoint]pb-12 {
+	padding-bottom: 3rem;
+}
+[breakpoint]pl-12 {
+	padding-left: 3rem;
+}
+[breakpoint]pr-12 {
+	padding-right: 3rem;
+}
+[breakpoint]px-12 {
+	padding-left: 3rem;
+	padding-right: 3rem;
+}
+[breakpoint]py-12 {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+}
+[breakpoint]pa-12 {
+	padding: 3rem;
+}
+
+/* 13 */
+[breakpoint]pt-13 {
+	padding-top: 3.25rem;
+}
+[breakpoint]pb-13 {
+	padding-bottom: 3.25rem;
+}
+[breakpoint]pl-13 {
+	padding-left: 3.25rem;
+}
+[breakpoint]pr-13 {
+	padding-right: 3.25rem;
+}
+[breakpoint]px-13 {
+	padding-left: 3.25rem;
+	padding-right: 3.25rem;
+}
+[breakpoint]py-13 {
+	padding-top: 3.25rem;
+	padding-bottom: 3.25rem;
+}
+[breakpoint]pa-13 {
+	padding: 3.25rem;
+}
+
+/* 14 */
+[breakpoint]pt-14 {
+	padding-top: 3.5rem;
+}
+[breakpoint]pb-14 {
+	padding-bottom: 3.5rem;
+}
+[breakpoint]pl-14 {
+	padding-left: 3.5rem;
+}
+[breakpoint]pr-14 {
+	padding-right: 3.5rem;
+}
+[breakpoint]px-14 {
+	padding-left: 3.5rem;
+	padding-right: 3.5rem;
+}
+[breakpoint]py-14 {
+	padding-top: 3.5rem;
+	padding-bottom: 3.5rem;
+}
+[breakpoint]pa-14 {
+	padding: 3.5rem;
+}
+
+/* 15 */
+[breakpoint]pt-15 {
+	padding-top: 3.75rem;
+}
+[breakpoint]pb-15 {
+	padding-bottom: 3.75rem;
+}
+[breakpoint]pl-15 {
+	padding-left: 3.75rem;
+}
+[breakpoint]pr-15 {
+	padding-right: 3.75rem;
+}
+[breakpoint]px-15 {
+	padding-left: 3.75rem;
+	padding-right: 3.75rem;
+}
+[breakpoint]py-15 {
+	padding-top: 3.75rem;
+	padding-bottom: 3.75rem;
+}
+[breakpoint]pa-15 {
+	padding: 3.75rem;
+}
+
+/* 16 */
+[breakpoint]pt-16 {
+	padding-top: 4rem;
+}
+[breakpoint]pb-16 {
+	padding-bottom: 4rem;
+}
+[breakpoint]pl-16 {
+	padding-left: 4rem;
+}
+[breakpoint]pr-16 {
+	padding-right: 4rem;
+}
+[breakpoint]px-16 {
+	padding-left: 4rem;
+	padding-right: 4rem;
+}
+[breakpoint]py-16 {
+	padding-top: 4rem;
+	padding-bottom: 4rem;
+}
+[breakpoint]pa-16 {
+	padding: 4rem;
+}
+/* !@manakit-breakpoint */
