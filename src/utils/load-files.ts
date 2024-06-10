@@ -34,6 +34,7 @@ export function loadCss() {
 			manakit: path.resolve(`${nodePath}/assets/css/colors`, 'manakit.css'),
 			webkit: path.resolve(`${nodePath}/assets/css/colors`, 'webkit.css')
 		},
+		styles: [path.resolve(`${nodePath}/assets/css/libs`, 'typography.css')],
 		modules: [
 			path.resolve(`${nodePath}/modules/app`, 'app.css'),
 			path.resolve(`${nodePath}/modules/btn`, 'btn.css'),

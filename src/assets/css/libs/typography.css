@@ -1,0 +1,52 @@
+/* @manakit-breakpoint */
+[breakpoint]text-6xl {
+	font-size: 6rem;
+	line-height: 1;
+	letter-spacing: -0.015em;
+}
+[breakpoint]text-5xl {
+	font-size: 3.75rem;
+	line-height: 1;
+	letter-spacing: -0.008em;
+}
+[breakpoint]text-4xl {
+	font-size: 3rem;
+	line-height: 1.05;
+	letter-spacing: normal;
+}
+[breakpoint]text-3xl {
+	font-size: 2.125rem;
+	line-height: 1.175;
+	letter-spacing: 0.01em;
+}
+[breakpoint]text-2xl {
+	font-size: 1.5rem;
+	line-height: 1.333;
+	line-height: normal;
+}
+[breakpoint]text-xl {
+	font-size: 1.25rem;
+	line-height: 1.6;
+	letter-spacing: 0.01em;
+}
+[breakpoint]text-lg {
+	font-size: 1rem;
+	line-height: 1.75;
+	letter-spacing: 0.01em;
+}
+[breakpoint]text-md {
+	font-size: 1rem;
+	line-height: 1.5;
+	letter-spacing: 0.03em;
+}
+[breakpoint]text-sm {
+	font-size: 0.875rem;
+	line-height: 1.425;
+	letter-spacing: 0.02em;
+}
+[breakpoint]text-xs {
+	font-size: 0.75rem;
+	line-height: 1.667;
+	letter-spacing: 0.033em;
+}
+/* !@manakit-breakpoint */

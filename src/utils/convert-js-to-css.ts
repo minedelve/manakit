@@ -28,7 +28,8 @@ export function convertJStoCSS(params: ConvertJSToCSSProps) {
 
 	files?.global.map((pathFile) => (css += fs.readFileSync(pathFile, 'utf-8')));
 
-	// MODULES
+	// MODULES & STYLES
+	files?.styles.map((pathFile) => (cssFiles += fs.readFileSync(pathFile, 'utf-8')));
 	files?.modules.map((pathFile) => (cssFiles += fs.readFileSync(pathFile, 'utf-8')));
 
 	const extract = formatCSSMarkers(
