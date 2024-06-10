@@ -16,9 +16,30 @@
 .font-thin {
 	font-weight: 100;
 }
-
 .font-italic {
 	font-style: italic;
+}
+
+.text-truncate {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.text-no-wrap {
+	white-space: nowrap;
+}
+.text-break {
+	overflow-wrap: break-word;
+}
+
+.text-uppercase {
+	text-transform: uppercase;
+}
+.text-lowercase {
+	text-transform: lowercase;
+}
+.text-capitalize {
+	text-transform: capitalize;
 }
 
 /* @manakit-breakpoint */
@@ -71,5 +92,24 @@
 	font-size: 0.75rem;
 	line-height: 1.667;
 	letter-spacing: 0.033em;
+}
+
+[breakpoint]text-start {
+	text-align: start;
+}
+[breakpoint]text-center {
+	text-align: center;
+}
+[breakpoint]text-end {
+	text-align: end;
+}
+[breakpoint]text-justify {
+	text-align: justify;
+}
+[breakpoint]text-left {
+	text-align: left;
+}
+[breakpoint]text-right {
+	text-align: right;
 }
 /* !@manakit-breakpoint */
