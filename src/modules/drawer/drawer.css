@@ -8,7 +8,6 @@
 	grid-auto-columns: max-content auto;
 	width: 100%;
 	height: 100%;
-	overflow: hidden;
 }
 
 .mk-drawer > input {
@@ -30,7 +29,11 @@
 	transform: translate(0) !important;
 }
 
-.mk-drawer > .drawer-aside.drawer-absolute {
+.mk-drawer.drawer-absolute {
+	overflow: hidden;
+}
+
+.mk-drawer > .drawer-aside.aside-absolute {
 	position: absolute;
 	height: 100%;
 }
@@ -138,7 +141,7 @@
 .mk-drawer[breakpoint]drawer-right > input ~ .drawer-aside > *:not(.drawer-overlay) {
 	transform: translate(100%);
 }
-.mk-drawer[breakpoint]drawer-right > input:checked ~ .drawer-aside.drawer-absolute {
+.mk-drawer[breakpoint]drawer-right > input:checked ~ .drawer-aside.aside-absolute {
 	margin-inline-start: -100vw;
 	width: -webkit-fill-available;
 	width: -moz-available;
@@ -168,7 +171,8 @@
 /** bottom **/
 .mk-drawer[breakpoint]drawer-bottom > .drawer-aside > aside {
 	min-width: 100%;
-	min-height: min-content;
+	height: 100%;
+	max-height: max-content;
 	bottom: 0;
 	position: absolute;
 }

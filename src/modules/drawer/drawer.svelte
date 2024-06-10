@@ -36,10 +36,11 @@
 	class:drawer-right={right}
 	class:drawer-top={top}
 	class:drawer-bottom={bottom}
+	class:drawer-absolute={absolute}
 >
 	<input type="checkbox" bind:checked={open} tabindex="-1" />
 
-	<div class="drawer-aside" class:drawer-absolute={absolute}>
+	<div class="drawer-aside" class:aside-absolute={absolute}>
 		<div
 			role="button"
 			tabindex="-1"
