@@ -1,3 +1,26 @@
+.font-black {
+	font-weight: 900;
+}
+.font-bold {
+	font-weight: 700;
+}
+.font-medium {
+	font-weight: 500;
+}
+.font-regular {
+	font-weight: 400;
+}
+.font-light {
+	font-weight: 300;
+}
+.font-thin {
+	font-weight: 100;
+}
+
+.font-italic {
+	font-style: italic;
+}
+
 /* @manakit-breakpoint */
 [breakpoint]text-6xl {
 	font-size: 6rem;
