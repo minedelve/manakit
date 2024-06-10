@@ -7,7 +7,7 @@
 	let container: HTMLDivElement | null = null;
 
 	// states
-	$: openDrawer = true;
+	$: openDrawer = false;
 
 	function handleTheme() {
 		const colorScheme = localStorage.getItem('color-scheme');
@@ -30,10 +30,6 @@
 				}
 			}
 		}
-	}
-
-	$: {
-		if (!$$slots.aside) openDrawer = false;
 	}
 </script>
 
@@ -65,7 +61,7 @@
 	{/if}
 
 	<div class="wrapper">
-		<Drawer bind:open={openDrawer} right>
+		<Drawer bind:open={openDrawer} class="sm:drawer-open" right absolute>
 			<svelte:fragment slot="aside">
 				{#if $$slots.aside}
 					<slot name="aside" />
@@ -94,27 +90,6 @@
 
 		.wrapper {
 			border-radius: 0 0 1rem 1rem;
-
-			:global(.mk-drawer > input:not(:checked) ~ .drawer-aside) {
-				visibility: hidden;
-				display: none;
-			}
-
-			:global(.drawer-aside),
-			:global(.drawer-aside aside) {
-				height: 100%;
-			}
-
-			:global(.drawer-aside aside) {
-				width: 228px;
-				border-bottom-right-radius: 1rem;
-				padding: 0.25rem;
-			}
-
-			:global(.drawer-aside aside > p) {
-				font-size: 0.875rem;
-				opacity: 0.7;
-			}
 
 			.wrapper-drawer-content,
 			.wrapper-preview {
