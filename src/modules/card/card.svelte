@@ -20,7 +20,7 @@
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 <svelte:element
 	this={tag}
-	class={className('mk-card', _class)}
+	class={className('kit-card', _class)}
 	class:card-active={active}
 	class:card-outline={outline}
 	class:card-text={text}
