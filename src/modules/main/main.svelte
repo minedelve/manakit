@@ -7,8 +7,8 @@
 	export let tag: 'main' | 'div' = 'main';
 </script>
 
-<svelte:element this={tag} class={className('mk-main', _class)} {...$$restProps}>
-	<div class="mk-main--wrapper">
+<svelte:element this={tag} class={className('kit-main', _class)} {...$$restProps}>
+	<div class="kit-main--wrapper">
 		<!-- slot: default -->
 		<slot />
 		<!-- /slot: default -->

@@ -31,7 +31,7 @@
 
 <svelte:window bind:innerWidth />
 <div
-	class={className('mk-drawer', _class)}
+	class={className('kit-drawer', _class)}
 	class:drawer-left={left}
 	class:drawer-right={right}
 	class:drawer-top={top}

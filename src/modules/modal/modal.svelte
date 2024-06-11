@@ -34,7 +34,7 @@
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <dialog
 	bind:this={dialog}
-	class={className('mk-modal', _class)}
+	class={className('kit-modal', _class)}
 	class:modal-persistent={persistent}
 	class:light
 	class:dark

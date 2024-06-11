@@ -1,28 +1,28 @@
-.mk-container {
+.kit-container {
 	width: 100%;
 	padding: 1rem;
 	margin-right: auto;
 	margin-left: auto;
 }
 
-.mk-container.container-fill-height {
+.kit-container.container-fill-height {
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.mk-container.container-fluid {
+.kit-container.container-fluid {
 	max-width: 100%;
 }
 
 @media screen and (min-width: 1024px) {
-	.mk-container:not(.container-fluid) {
+	.kit-container:not(.container-fluid) {
 		max-width: 900px;
 	}
 }
 
 @media screen and (min-width: 1280px) {
-	.mk-container:not(.container-fluid) {
+	.kit-container:not(.container-fluid) {
 		max-width: 1185px;
 	}
 }

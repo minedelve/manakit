@@ -8,8 +8,8 @@
 	export let light: boolean = false;
 </script>
 
-<div class={className('mk-app', _class)} class:light class:dark {...$$restProps}>
-	<div class="mk-app--wrapper">
+<div class={className('kit-app', _class)} class:light class:dark {...$$restProps}>
+	<div class="kit-app--wrapper">
 		<!-- slot: default -->
 		<slot />
 		<!-- /slot: default -->

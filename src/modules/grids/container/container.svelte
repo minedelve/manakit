@@ -11,7 +11,7 @@
 
 <svelte:element
 	this={tag}
-	class={className('mk-container', _class)}
+	class={className('kit-container', _class)}
 	class:container-fluid={fluid}
 	class:container-fill-height={fillHeight}
 	{...$$restProps}
