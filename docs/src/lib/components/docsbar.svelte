@@ -24,6 +24,12 @@
 		<div class="navbar-docs-items">
 			<Btn class="btn-sm" href={page.href} text wide active={page.href === pathname}>
 				{page.name}
+				{#if page.isUpdated}
+					<span class="badge-update" />
+				{/if}
+				{#if page.isNew}
+					<span class="badge-new" />
+				{/if}
 			</Btn>
 		</div>
 	{/each}
@@ -43,5 +49,18 @@
 		> img {
 			width: 44px;
 		}
+	}
+
+	.badge-new {
+		background-color: var(--success);
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
+	}
+	.badge-update {
+		background-color: var(--warning);
+		width: 10px;
+		height: 10px;
+		border-radius: 50%;
 	}
 </style>
