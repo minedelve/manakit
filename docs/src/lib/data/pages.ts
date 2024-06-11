@@ -1,16 +1,81 @@
 export const pages = [
 	{
-		name: 'Docs',
+		name: 'Configuration',
 		items: [
 			{
 				name: 'Installation',
 				tags: 'installation',
-				href: '/docs/installation'
+				href: '/docs/configurations/installation'
 			},
 			{
-				name: 'Preprocessor',
-				tags: 'vite preprocessor',
-				href: '/docs/preprocessor'
+				name: 'Preprocess',
+				tags: 'preprocess, vite, vite.js',
+				href: '/docs/configurations/preprocess'
+			},
+			{
+				name: 'Themes',
+				tags: 'themes, manakit-theme, webkit',
+				href: '/docs/configurations/themes'
+			},
+			{
+				name: 'Breakpoints',
+				tags: 'breakpoints, media queries',
+				href: '/docs/configurations/breakpoints'
+			},
+			{
+				name: 'Fonts',
+				tags: 'fonts',
+				href: '/docs/configurations/fonts'
+			}
+		]
+	},
+	{
+		name: 'Styles',
+		items: [
+			{
+				name: 'Display',
+				tags: 'display',
+				href: '/docs/styles/display'
+			},
+			{
+				name: 'Elevation',
+				tags: 'elevation',
+				href: '/docs/styles/elevation'
+			},
+			{
+				name: 'Margin',
+				tags: 'margin',
+				href: '/docs/styles/margin'
+			},
+			{
+				name: 'Padding',
+				tags: 'padding',
+				href: '/docs/styles/padding'
+			},
+			{
+				name: 'Gap',
+				tags: 'gap',
+				href: '/docs/styles/gap'
+			},
+			{
+				name: 'Sizing',
+				tags: 'sizing',
+				href: '/docs/styles/sizing'
+			},
+			{
+				name: 'Position',
+				tags: 'position',
+				href: '/docs/styles/position'
+			},
+			{
+				name: 'Border radius',
+				tags: 'rounded, border-radius',
+				href: '/docs/styles/rounded'
+			},
+			{
+				name: 'Typography',
+				tags: 'text, typography',
+				href: '/docs/styles/typography'
 			}
 		]
 	},

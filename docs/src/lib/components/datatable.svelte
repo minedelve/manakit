@@ -23,7 +23,7 @@
 			{#each data as item, index}
 				<tr>
 					{#each keys as key}
-						<td>{item[key]}</td>
+						<td>{@html item[key]}</td>
 					{/each}
 				</tr>
 			{/each}
