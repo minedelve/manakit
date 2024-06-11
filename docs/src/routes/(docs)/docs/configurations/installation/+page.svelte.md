@@ -6,7 +6,7 @@ desc: install manakit on svelte
 <script>
 	import Component from "$lib/components/component.svelte";
     import Datatable from "$lib/components/datatable.svelte";
-    import {Btn, Row, Col, Card} from "manakit";
+    import {Btn, Row, Col, Card, CardText, CardTitle} from "manakit";
 
     let terminal = "yarn"
 </script>
@@ -64,14 +64,14 @@ bun add -d manakit
 <Row noGutters>
     <Col class="col-12 sm:col-6">
         <Card href="https://svelte.dev/" target="_blank" class="ma-1">
-            <h3>Svelte</h3>
-            <p>See official documentation svelte</p>
+            <CardTitle>Svelte</CardTitle>
+            <CardText>See official documentation svelte</CardText>
         </Card> 
     </Col>
     <Col class="col-12 sm:col-6">
         <Card href="https://kit.svelte.dev/" target="_blank" class="ma-1">
-            <h3>Sveltekit</h3>
-            <p>See official documentation sveltekit</p>
+            <CardTitle>Sveltekit</CardTitle>
+            <CardText>See official documentation sveltekit</CardText>
         </Card> 
     </Col>
 </Row>
