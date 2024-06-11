@@ -5,11 +5,11 @@ import { makeManakitImporter } from './importer.js';
 import type { ManakitVite } from './assets/types/preprocess.js';
 
 export function manakit(params?: ManakitVite) {
-	const _verifVersion = params?.verif?.version ? params?.verif?.version : true;
-	const _verifInstall = params?.verif?.install ? params?.verif?.install : true;
+	const _verifVersion = params?.verif?.version !== undefined ? params?.verif?.version : true;
+	const _verifInstall = params?.verif?.install !== undefined ? params?.verif?.install : true;
 	const _stylePreprocessor = params?.style?.preprocessor ? params?.style?.preprocessor : undefined;
 	const _styleColorPalette = params?.style?.colorPalette ? params?.style?.colorPalette : 'manakit';
-	const _styleMinimify = params?.style?.minimify ? params?.style?.minimify : false;
+	const _styleMinimify = params?.style?.minimify !== undefined ? params?.style?.minimify : false;
 
 	const context = {
 		preprocessor: _stylePreprocessor,
