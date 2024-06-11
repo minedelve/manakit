@@ -1,4 +1,4 @@
-.mk-drawer {
+.kit-drawer {
 	--background-color: var(--surface);
 	--color: var(--on-surface);
 	--overlay: var(--scrim);
@@ -10,35 +10,36 @@
 	height: 100%;
 }
 
-.mk-drawer > input {
+.kit-drawer > input {
 	position: fixed;
 	height: 0;
 	width: 0;
 	appearance: none;
 	opacity: 0;
 }
-.mk-drawer > input:checked ~ .drawer-aside {
+.kit-drawer > input:checked ~ .drawer-aside {
 	pointer-events: auto;
 	visibility: visible;
 	overflow-y: auto;
 }
-.mk-drawer > input:checked ~ .drawer-aside > .drawer-overlay {
+.kit-drawer > input:checked ~ .drawer-aside > .drawer-overlay {
 	background-color: color-mix(in oklab, var(--overlay) 30%, transparent);
 }
-.mk-drawer > input:checked ~ .drawer-aside > *:not(.drawer-overlay) {
+.kit-drawer > input:checked ~ .drawer-aside > *:not(.drawer-overlay) {
 	transform: translate(0) !important;
 }
 
-.mk-drawer.drawer-absolute {
+.kit-drawer.drawer-absolute {
 	overflow: hidden;
 }
 
-.mk-drawer > .drawer-aside.aside-absolute {
+.kit-drawer > .drawer-aside.aside-absolute {
 	position: absolute;
 	height: 100%;
+	z-index: 900;
 }
 
-.mk-drawer > .drawer-aside {
+.kit-drawer > .drawer-aside {
 	pointer-events: none;
 	position: fixed;
 	inset-inline-start: 0;
@@ -58,17 +59,17 @@
 	scroll-behavior: smooth;
 	scroll-padding-top: 5rem;
 }
-.mk-drawer > .drawer-aside > * {
+.kit-drawer > .drawer-aside > * {
 	grid-column-start: 1;
 	grid-row-start: 1;
 }
-.mk-drawer > .drawer-aside > aside {
+.kit-drawer > .drawer-aside > aside {
 	min-height: 100%;
 	background-color: var(--background-color);
 	color: var(--color);
 	overflow: auto;
 }
-.mk-drawer > .drawer-aside > .drawer-overlay {
+.kit-drawer > .drawer-aside > .drawer-overlay {
 	position: sticky;
 	top: 0;
 	place-self: stretch;
@@ -79,7 +80,7 @@
 	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 	transition-duration: 0.2s;
 }
-.mk-drawer > .drawer-aside > *:not(.drawer-overlay) {
+.kit-drawer > .drawer-aside > *:not(.drawer-overlay) {
 	transition-property: transform;
 	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 	transition-duration: 0.3s;
@@ -87,14 +88,14 @@
 	transform: translate(-100%);
 }
 
-.mk-drawer > .drawer-content {
+.kit-drawer > .drawer-content {
 	grid-column-start: 2;
 	grid-row-start: 1;
 	min-width: 0;
 }
 
 /* @manakit-breakpoint */
-.mk-drawer[breakpoint]drawer-open > .drawer-aside {
+.kit-drawer[breakpoint]drawer-open > .drawer-aside {
 	pointer-events: auto;
 	visibility: visible;
 	position: sticky;
@@ -102,46 +103,46 @@
 	width: auto;
 	overscroll-behavior: auto;
 }
-.mk-drawer[breakpoint]drawer-open > .drawer-aside > *:not(.drawer-overlay) {
+.kit-drawer[breakpoint]drawer-open > .drawer-aside > *:not(.drawer-overlay) {
 	transform: translate(0) !important;
 }
 
 /** left **/
-.mk-drawer[breakpoint]drawer-left {
+.kit-drawer[breakpoint]drawer-left {
 	grid-auto-columns: max-content auto;
 }
-.mk-drawer[breakpoint]drawer-left > .drawer-aside {
+.kit-drawer[breakpoint]drawer-left > .drawer-aside {
 	grid-column-start: 1;
 	grid-row-start: 1;
 	justify-items: start;
 }
-.mk-drawer[breakpoint]drawer-left > .drawer-content {
+.kit-drawer[breakpoint]drawer-left > .drawer-content {
 	grid-column-start: 2;
 	grid-row-start: 1;
 	min-width: 0;
 }
-.mk-drawer[breakpoint]drawer-left > input ~ .drawer-aside > *:not(.drawer-overlay) {
+.kit-drawer[breakpoint]drawer-left > input ~ .drawer-aside > *:not(.drawer-overlay) {
 	transform: translate(-100%);
 }
 
 /** right **/
-.mk-drawer[breakpoint]drawer-right {
+.kit-drawer[breakpoint]drawer-right {
 	grid-auto-columns: auto max-content;
 }
-.mk-drawer[breakpoint]drawer-right > .drawer-aside {
+.kit-drawer[breakpoint]drawer-right > .drawer-aside {
 	grid-column-start: 2;
 	grid-row-start: 1;
 	justify-items: end;
 }
-.mk-drawer[breakpoint]drawer-right > .drawer-content {
+.kit-drawer[breakpoint]drawer-right > .drawer-content {
 	grid-column-start: 1;
 	grid-row-start: 1;
 	min-width: 0;
 }
-.mk-drawer[breakpoint]drawer-right > input ~ .drawer-aside > *:not(.drawer-overlay) {
+.kit-drawer[breakpoint]drawer-right > input ~ .drawer-aside > *:not(.drawer-overlay) {
 	transform: translate(100%);
 }
-.mk-drawer[breakpoint]drawer-right > input:checked ~ .drawer-aside.aside-absolute {
+.kit-drawer[breakpoint]drawer-right > input:checked ~ .drawer-aside.aside-absolute {
 	margin-inline-start: -100vw;
 	width: -webkit-fill-available;
 	width: -moz-available;
@@ -149,13 +150,13 @@
 }
 
 /* left and right */
-.mk-drawer[breakpoint]drawer-left > .drawer-aside > *,
-.mk-drawer[breakpoint]drawer-right > .drawer-aside > * {
+.kit-drawer[breakpoint]drawer-left > .drawer-aside > *,
+.kit-drawer[breakpoint]drawer-right > .drawer-aside > * {
 	grid-column-start: 1;
 	grid-row-start: 1;
 }
-.mk-drawer[breakpoint]drawer-left > .drawer-aside > aside,
-.mk-drawer[breakpoint]drawer-right > .drawer-aside > aside {
+.kit-drawer[breakpoint]drawer-left > .drawer-aside > aside,
+.kit-drawer[breakpoint]drawer-right > .drawer-aside > aside {
 	min-height: 100%;
 	min-width: 100%;
 	bottom: initial;
@@ -163,41 +164,41 @@
 }
 
 /** top **/
-.mk-drawer[breakpoint]drawer-top > .drawer-aside > aside {
+.kit-drawer[breakpoint]drawer-top > .drawer-aside > aside {
 	min-width: 100%;
 	min-height: initial;
 }
-.mk-drawer[breakpoint]drawer-top > input ~ .drawer-aside > *:not(.drawer-overlay) {
+.kit-drawer[breakpoint]drawer-top > input ~ .drawer-aside > *:not(.drawer-overlay) {
 	transform: translateY(-100%);
 }
 
 /** bottom **/
-.mk-drawer[breakpoint]drawer-bottom > .drawer-aside > aside {
+.kit-drawer[breakpoint]drawer-bottom > .drawer-aside > aside {
 	min-width: 100%;
 	min-height: max-content;
 	bottom: 0;
 	position: absolute;
 }
-.mk-drawer[breakpoint]drawer-bottom > input ~ .drawer-aside > *:not(.drawer-overlay) {
+.kit-drawer[breakpoint]drawer-bottom > input ~ .drawer-aside > *:not(.drawer-overlay) {
 	transform: translateY(100%);
 }
 
 /* top and bottom */
-.mk-drawer[breakpoint]drawer-top,
-.mk-drawer[breakpoint]drawer-bottom {
+.kit-drawer[breakpoint]drawer-top,
+.kit-drawer[breakpoint]drawer-bottom {
 	grid-auto-columns: 0 auto;
 }
-.mk-drawer[breakpoint]drawer-top > input:checked ~ .drawer-aside > *:not(.drawer-overlay),
-.mk-drawer[breakpoint]drawer-bottom > input:checked ~ .drawer-aside > *:not(.drawer-overlay) {
+.kit-drawer[breakpoint]drawer-top > input:checked ~ .drawer-aside > *:not(.drawer-overlay),
+.kit-drawer[breakpoint]drawer-bottom > input:checked ~ .drawer-aside > *:not(.drawer-overlay) {
 	transform: translateY(0);
 }
-.mk-drawer[breakpoint]drawer-top > .drawer-aside > *,
-.mk-drawer[breakpoint]drawer-bottom > .drawer-aside > * {
+.kit-drawer[breakpoint]drawer-top > .drawer-aside > *,
+.kit-drawer[breakpoint]drawer-bottom > .drawer-aside > * {
 	grid-column-start: 1;
 	grid-row-start: 1;
 }
-.mk-drawer[breakpoint]drawer-top > .drawer-content,
-.mk-drawer[breakpoint]drawer-bottom > .drawer-content {
+.kit-drawer[breakpoint]drawer-top > .drawer-content,
+.kit-drawer[breakpoint]drawer-bottom > .drawer-content {
 	grid-column-start: 2;
 	grid-row-start: 1;
 	min-width: 0;

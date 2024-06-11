@@ -1,5 +1,5 @@
 <script lang="ts">
-	import { className } from '../../../utils/class-name.js';
+	import { className } from '../../utils/class-name.js';
 
 	// props
 	let _class: string | false | undefined = undefined;
@@ -7,7 +7,8 @@
 	export let tag: 'div' = 'div';
 </script>
 
-<svelte:element this={tag} class={className('kit-col', _class)} {...$$restProps}>
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<svelte:element this={tag} class={className('kit-card--actions', _class)} {...$$restProps}>
 	<!-- slot: default -->
 	<slot />
 	<!-- /slot: default -->

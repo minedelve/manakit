@@ -1,4 +1,4 @@
-.mk-modal {
+.kit-modal {
 	--backdrop: var(--scrim);
 	border: 0;
 	padding: 0;
@@ -8,27 +8,27 @@
 	color: inherit;
 }
 
-.mk-modal::backdrop {
+.kit-modal::backdrop {
 	background-color: color-mix(in oklab, var(--backdrop) 30%, transparent);
 	animation: fade 0.2s ease-out;
 }
-.mk-modal[open]::backdrop {
+.kit-modal[open]::backdrop {
 	animation: fade 0.2s ease-out;
 }
-.mk-modal[open],
-.mk-modal.modal-open {
+.kit-modal[open],
+.kit-modal.modal-open {
 	pointer-events: auto;
 	visibility: visible;
 	opacity: 1;
 }
 
-.mk-modal .modal-container {
+.kit-modal .modal-container {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 	transition-duration: 0.2s;
 }
 
-.mk-modal .modal-container > * {
+.kit-modal .modal-container > * {
 	max-height: calc(100% - 3rem);
 	margin: 0 auto;
 }
@@ -44,13 +44,13 @@
 }
 
 /* @manakit-breakpoint */
-.mk-modal[breakpoint]modal-bottom {
+.kit-modal[breakpoint]modal-bottom {
 	margin-bottom: 0;
 }
-.mk-modal[breakpoint]modal-top {
+.kit-modal[breakpoint]modal-top {
 	margin-top: 0;
 }
-.mk-modal[breakpoint]modal-center {
+.kit-modal[breakpoint]modal-center {
 	margin: auto;
 }
 /* !@manakit-breakpoint */

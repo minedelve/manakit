@@ -4,18 +4,11 @@
 	// props
 	let _class: string | false | undefined = undefined;
 	export { _class as class };
-	export let tag: 'footer' | 'div' = 'footer';
-	export let dark: boolean = false;
-	export let light: boolean = false;
+	export let tag: 'p' | 'div' = 'div';
 </script>
 
-<svelte:element
-	this={tag}
-	class={className('kit-footer', _class)}
-	class:light
-	class:dark
-	{...$$restProps}
->
+<!-- svelte-ignore a11y-no-static-element-interactions -->
+<svelte:element this={tag} class={className('kit-card--text', _class)} {...$$restProps}>
 	<!-- slot: default -->
 	<slot />
 	<!-- /slot: default -->

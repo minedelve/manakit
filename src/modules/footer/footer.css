@@ -1,4 +1,4 @@
-.mk-footer {
+.kit-footer {
 	--background-color: var(--surface);
 	--color: var(--on-surface);
 
@@ -14,16 +14,16 @@
 	color: var(--color);
 }
 
-.mk-footer.footer-center {
+.kit-footer.footer-center {
 	place-items: center;
 	text-align: center;
 }
 
 /* @manakit-breakpoint */
-.mk-footer[breakpoint]footer-column {
+.kit-footer[breakpoint]footer-column {
 	grid-auto-flow: column;
 }
-.mk-footer[breakpoint]footer-center {
+.kit-footer[breakpoint]footer-center {
 	grid-auto-flow: row dense;
 }
 /* !@manakit-breakpoint */

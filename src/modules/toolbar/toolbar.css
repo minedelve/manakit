@@ -1,4 +1,4 @@
-.mk-toolbar {
+.kit-toolbar {
 	--background-color: var(--surface);
 	--color: var(--on-surface);
 
@@ -11,7 +11,7 @@
 	overflow-x: hidden;
 }
 
-.mk-toolbar.toolbar-bottom {
+.kit-toolbar.toolbar-bottom {
 	min-height: 3.5rem;
 	padding: 0;
 	position: absolute;
@@ -19,32 +19,32 @@
 	overflow: hidden;
 }
 
-:where(.mk-toolbar > *:not(script, style)) {
+:where(.kit-toolbar > *:not(script, style)) {
 	display: inline-flex;
 	align-items: center;
 }
 
 /* @manakit-breakpoint */
 /* @size */
-.mk-toolbar[breakpoint]toolbar-xs {
+.kit-toolbar[breakpoint]toolbar-xs {
 	min-height: 2rem;
 }
-.mk-toolbar[breakpoint]toolbar-sm {
+.kit-toolbar[breakpoint]toolbar-sm {
 	min-height: 3rem;
 }
-.mk-toolbar[breakpoint]toolbar-lg {
+.kit-toolbar[breakpoint]toolbar-lg {
 	min-height: 5rem;
 }
 
 /* @align-content */
-.mk-toolbar [breakpoint]toolbar-start {
+.kit-toolbar [breakpoint]toolbar-start {
 	width: 50%;
 	justify-content: flex-start;
 }
-.mk-toolbar [breakpoint]toolbar-center {
+.kit-toolbar [breakpoint]toolbar-center {
 	flex-shrink: 0;
 }
-.mk-toolbar [breakpoint]toolbar-end {
+.kit-toolbar [breakpoint]toolbar-end {
 	width: 50%;
 	justify-content: flex-end;
 }

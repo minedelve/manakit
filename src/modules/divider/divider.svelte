@@ -12,7 +12,7 @@
 </script>
 
 <div
-	class={className('mk-divider', _class)}
+	class={className('kit-divider', _class)}
 	class:divider-inset={inset}
 	class:divider-start={start}
 	class:divider-end={end}
