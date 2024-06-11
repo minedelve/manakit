@@ -1,6 +1,6 @@
 {
 	"name": "manakit",
-	"version": "0.7.1",
+	"version": "0.7.2",
 	"description": "Manakit - Svelte library components",
 	"author": "Nycolaide (laurent.grimaldi@minedelve.com)",
 	"license": "MIT",
