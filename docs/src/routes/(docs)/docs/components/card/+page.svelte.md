@@ -8,7 +8,7 @@ desc: Component Card
 	import Component from "$lib/components/component.svelte";
     import Datatable from "$lib/components/datatable.svelte";
 
-    import {Btn, Card, Toolbar} from "manakit";
+    import {Btn, Card, Toolbar, CardTitle, CardText, CardActions, CardSubtitle} from "manakit";
     import {dataSlot, dataProps} from "./props";
 
     let outline = false;
@@ -25,17 +25,13 @@ desc: Component Card
 	</svelte:fragment>
 	<svelte:fragment slot="preview">
     	<Card {outline} {text} style="max-width: 300px; width: 100%;">
-            <div style="padding: 0.25rem">
-                <h2>Card title</h2>
-                <p>Subtitle text</p>
-
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae enim vel tellus ultrices suscipit. Vestibulum rutrum lacus sed ultricies aliquet.</p>
-
-                <Toolbar style="background: transparent">
+            <CardTitle>Card title</CardTitle>
+            <CardSubtitle>Subtitle text</CardSubtitle>
+            <CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec vitae enim vel tellus ultrices suscipit. Vestibulum rutrum lacus sed ultricies aliquet.</CardText>
+            <CardActions>
                     <Btn text>Action 1</Btn>
                     <Btn>Action 2</Btn>
-                </Toolbar>
-            </div>
+            </CardActions>
     	</Card>
     </svelte:fragment>
 
@@ -52,21 +48,49 @@ desc: Component Card
 	import { Card } from 'manakit';
 </script>
 
-<Card>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
-<Card class="primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
-<Card class="secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
-<Card class="tertiary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
-<Card class="bg:secondary text:primary"
-	>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card
->
+<Card>
+	<CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
+</Card>
+<Card class="primary">
+	<CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
+</Card>
+<Card class="secondary">
+	<CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
+</Card>
+<Card class="tertiary">
+	<CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
+</Card>
+<Card class="bg:secondary text:primary">
+	<CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
+</Card>
 ```
 
 <svelte:fragment slot="preview">
-<Card>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
-<Card class="primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
-<Card class="secondary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
-<Card class="tertiary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
-<Card class="bg:secondary text:primary">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
+<Card>
+<CardText>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</CardText>
+</Card>
+<Card class="primary">
+<CardText>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</CardText>
+</Card>
+<Card class="secondary">
+<CardText>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</CardText>
+</Card>
+<Card class="tertiary">
+<CardText>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</CardText>
+</Card>
+<Card class="bg:secondary text:primary">
+<CardText>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</CardText>
+</Card>
 </svelte:fragment>
 
 </Component>
@@ -80,13 +104,25 @@ desc: Component Card
 	import { Card } from 'manakit';
 </script>
 
-<Card tag="a" active>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
-<Card tag="button" active>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
+<Card tag="a" active>
+	<CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
+</Card>
+<Card tag="button" active>
+	<CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
+</Card>
 ```
 
 <svelte:fragment slot="preview">
-<Card tag="a" active>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
-<Card tag="button" active>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
+<Card tag="a" active>
+<CardText>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</CardText>
+</Card>
+<Card tag="button" active>
+<CardText>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</CardText>
+</Card>
 </svelte:fragment>
 
 </Component>
@@ -100,13 +136,25 @@ desc: Component Card
 	import { Card } from 'manakit';
 </script>
 
-<Card tag="a" disabled>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
-<Card tag="button" disabled>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
+<Card tag="a" disabled>
+	<CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
+</Card>
+<Card tag="button" disabled>
+	<CardText>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</CardText>
+</Card>
 ```
 
 <svelte:fragment slot="preview">
-<Card tag="a" disabled>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
-<Card tag="button" disabled>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</Card>
+<Card tag="a" disabled>
+<CardText>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</CardText>
+</Card>
+<Card tag="button" disabled>
+<CardText>
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+</CardText>
+</Card>
 </svelte:fragment>
 
 </Component>

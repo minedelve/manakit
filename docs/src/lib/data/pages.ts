@@ -90,6 +90,12 @@ export const pages = [
 				tags: 'text, typography',
 				href: '/docs/styles/typography',
 				isNew: true
+			},
+			{
+				name: 'Colors',
+				tags: 'colors, manakit, themes, color, material design, webkit colors',
+				href: '/docs/colors',
+				isNew: true
 			}
 		]
 	},
