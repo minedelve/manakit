@@ -449,6 +449,206 @@
 	margin: 4rem;
 }
 
+/* 17 */
+[breakpoint]mt-17 {
+	margin-top: 4.25rem;
+}
+[breakpoint]mb-17 {
+	margin-bottom: 4.25rem;
+}
+[breakpoint]ml-17 {
+	margin-left: 4.25rem;
+}
+[breakpoint]mr-17 {
+	margin-right: 4.25rem;
+}
+[breakpoint]mx-17 {
+	margin-left: 4.25rem;
+	margin-right: 4.25rem;
+}
+[breakpoint]my-17 {
+	margin-top: 4.25rem;
+	margin-bottom: 4.25rem;
+}
+[breakpoint]ma-17 {
+	margin: 4.25rem;
+}
+
+/* 18 */
+[breakpoint]mt-18 {
+	margin-top: 4.5rem;
+}
+[breakpoint]mb-18 {
+	margin-bottom: 4.5rem;
+}
+[breakpoint]ml-18 {
+	margin-left: 4.5rem;
+}
+[breakpoint]mr-18 {
+	margin-right: 4.5rem;
+}
+[breakpoint]mx-18 {
+	margin-left: 4.5rem;
+	margin-right: 4.5rem;
+}
+[breakpoint]my-18 {
+	margin-top: 4.5rem;
+	margin-bottom: 4.5rem;
+}
+[breakpoint]ma-18 {
+	margin: 4.5rem;
+}
+
+/* 19 */
+[breakpoint]mt-19 {
+	margin-top: 4.75rem;
+}
+[breakpoint]mb-19 {
+	margin-bottom: 4.75rem;
+}
+[breakpoint]ml-19 {
+	margin-left: 4.75rem;
+}
+[breakpoint]mr-19 {
+	margin-right: 4.75rem;
+}
+[breakpoint]mx-19 {
+	margin-left: 4.75rem;
+	margin-right: 4.75rem;
+}
+[breakpoint]my-19 {
+	margin-top: 4.75rem;
+	margin-bottom: 4.75rem;
+}
+[breakpoint]ma-19 {
+	margin: 4.75rem;
+}
+
+/* 20 */
+[breakpoint]mt-20 {
+	margin-top: 5rem;
+}
+[breakpoint]mb-20 {
+	margin-bottom: 5rem;
+}
+[breakpoint]ml-20 {
+	margin-left: 5rem;
+}
+[breakpoint]mr-20 {
+	margin-right: 5rem;
+}
+[breakpoint]mx-20 {
+	margin-left: 5rem;
+	margin-right: 5rem;
+}
+[breakpoint]my-20 {
+	margin-top: 5rem;
+	margin-bottom: 5rem;
+}
+[breakpoint]ma-20 {
+	margin: 5rem;
+}
+
+/* 21 */
+[breakpoint]mt-21 {
+	margin-top: 5.25rem;
+}
+[breakpoint]mb-21 {
+	margin-bottom: 5.25rem;
+}
+[breakpoint]ml-21 {
+	margin-left: 5.25rem;
+}
+[breakpoint]mr-21 {
+	margin-right: 5.25rem;
+}
+[breakpoint]mx-21 {
+	margin-left: 5.25rem;
+	margin-right: 5.25rem;
+}
+[breakpoint]my-21 {
+	margin-top: 5.25rem;
+	margin-bottom: 5.25rem;
+}
+[breakpoint]ma-21 {
+	margin: 5.25rem;
+}
+
+/* 22 */
+[breakpoint]mt-22 {
+	margin-top: 5.5rem;
+}
+[breakpoint]mb-22 {
+	margin-bottom: 5.5rem;
+}
+[breakpoint]ml-22 {
+	margin-left: 5.5rem;
+}
+[breakpoint]mr-22 {
+	margin-right: 5.5rem;
+}
+[breakpoint]mx-22 {
+	margin-left: 5.5rem;
+	margin-right: 5.5rem;
+}
+[breakpoint]my-22 {
+	margin-top: 5.5rem;
+	margin-bottom: 5.5rem;
+}
+[breakpoint]ma-22 {
+	margin: 5.5rem;
+}
+
+/* 23 */
+[breakpoint]mt-23 {
+	margin-top: 5.75rem;
+}
+[breakpoint]mb-23 {
+	margin-bottom: 5.75rem;
+}
+[breakpoint]ml-23 {
+	margin-left: 5.75rem;
+}
+[breakpoint]mr-23 {
+	margin-right: 5.75rem;
+}
+[breakpoint]mx-23 {
+	margin-left: 5.75rem;
+	margin-right: 5.75rem;
+}
+[breakpoint]my-23 {
+	margin-top: 5.75rem;
+	margin-bottom: 5.75rem;
+}
+[breakpoint]ma-23 {
+	margin: 5.75rem;
+}
+
+/* 24 */
+[breakpoint]mt-24 {
+	margin-top: 6rem;
+}
+[breakpoint]mb-24 {
+	margin-bottom: 6rem;
+}
+[breakpoint]ml-24 {
+	margin-left: 6rem;
+}
+[breakpoint]mr-24 {
+	margin-right: 6rem;
+}
+[breakpoint]mx-24 {
+	margin-left: 6rem;
+	margin-right: 6rem;
+}
+[breakpoint]my-24 {
+	margin-top: 6rem;
+	margin-bottom: 6rem;
+}
+[breakpoint]ma-24 {
+	margin: 6rem;
+}
+
 /* n1 */
 [breakpoint]mt-n1 {
 	margin-top: -0.25rem;
@@ -847,5 +1047,205 @@
 }
 [breakpoint]ma-n16 {
 	margin: -4rem;
+}
+
+/* n17 */
+[breakpoint]mt-n17 {
+	margin-top: -4.25rem;
+}
+[breakpoint]mb-n17 {
+	margin-bottom: -4.25rem;
+}
+[breakpoint]ml-n17 {
+	margin-left: -4.25rem;
+}
+[breakpoint]mr-n17 {
+	margin-right: -4.25rem;
+}
+[breakpoint]mx-n17 {
+	margin-left: -4.25rem;
+	margin-right: -4.25rem;
+}
+[breakpoint]my-n17 {
+	margin-top: -4.25rem;
+	margin-bottom: -4.25rem;
+}
+[breakpoint]ma-n17 {
+	margin: -4.25rem;
+}
+
+/* n18 */
+[breakpoint]mt-n18 {
+	margin-top: -4.5rem;
+}
+[breakpoint]mb-n18 {
+	margin-bottom: -4.5rem;
+}
+[breakpoint]ml-n18 {
+	margin-left: -4.5rem;
+}
+[breakpoint]mr-n18 {
+	margin-right: -4.5rem;
+}
+[breakpoint]mx-n18 {
+	margin-left: -4.5rem;
+	margin-right: -4.5rem;
+}
+[breakpoint]my-n18 {
+	margin-top: -4.5rem;
+	margin-bottom: -4.5rem;
+}
+[breakpoint]ma-n18 {
+	margin: -4.5rem;
+}
+
+/* n19 */
+[breakpoint]mt-n19 {
+	margin-top: -4.75rem;
+}
+[breakpoint]mb-n19 {
+	margin-bottom: -4.75rem;
+}
+[breakpoint]ml-n19 {
+	margin-left: -4.75rem;
+}
+[breakpoint]mr-n19 {
+	margin-right: -4.75rem;
+}
+[breakpoint]mx-n19 {
+	margin-left: -4.75rem;
+	margin-right: -4.75rem;
+}
+[breakpoint]my-n19 {
+	margin-top: -4.75rem;
+	margin-bottom: -4.75rem;
+}
+[breakpoint]ma-n19 {
+	margin: -4.75rem;
+}
+
+/* n20 */
+[breakpoint]mt-n20 {
+	margin-top: -5rem;
+}
+[breakpoint]mb-n20 {
+	margin-bottom: -5rem;
+}
+[breakpoint]ml-n20 {
+	margin-left: -5rem;
+}
+[breakpoint]mr-n20 {
+	margin-right: -5rem;
+}
+[breakpoint]mx-n20 {
+	margin-left: -5rem;
+	margin-right: -5rem;
+}
+[breakpoint]my-n20 {
+	margin-top: -5rem;
+	margin-bottom: -5rem;
+}
+[breakpoint]ma-n20 {
+	margin: -5rem;
+}
+
+/* n21 */
+[breakpoint]mt-n21 {
+	margin-top: -5.25rem;
+}
+[breakpoint]mb-n21 {
+	margin-bottom: -5.25rem;
+}
+[breakpoint]ml-n21 {
+	margin-left: -5.25rem;
+}
+[breakpoint]mr-n21 {
+	margin-right: -5.25rem;
+}
+[breakpoint]mx-n21 {
+	margin-left: -5.25rem;
+	margin-right: -5.25rem;
+}
+[breakpoint]my-n21 {
+	margin-top: -5.25rem;
+	margin-bottom: -5.25rem;
+}
+[breakpoint]ma-n21 {
+	margin: -5.25rem;
+}
+
+/* n22 */
+[breakpoint]mt-n22 {
+	margin-top: -5.5rem;
+}
+[breakpoint]mb-n22 {
+	margin-bottom: -5.5rem;
+}
+[breakpoint]ml-n22 {
+	margin-left: -5.5rem;
+}
+[breakpoint]mr-n22 {
+	margin-right: -5.5rem;
+}
+[breakpoint]mx-n22 {
+	margin-left: -5.5rem;
+	margin-right: -5.5rem;
+}
+[breakpoint]my-n22 {
+	margin-top: -5.5rem;
+	margin-bottom: -5.5rem;
+}
+[breakpoint]ma-n22 {
+	margin: -5.5rem;
+}
+
+/* n23 */
+[breakpoint]mt-n23 {
+	margin-top: -5.75rem;
+}
+[breakpoint]mb-n23 {
+	margin-bottom: -5.75rem;
+}
+[breakpoint]ml-n23 {
+	margin-left: -5.75rem;
+}
+[breakpoint]mr-n23 {
+	margin-right: -5.75rem;
+}
+[breakpoint]mx-n23 {
+	margin-left: -5.75rem;
+	margin-right: -5.75rem;
+}
+[breakpoint]my-n23 {
+	margin-top: -5.75rem;
+	margin-bottom: -5.75rem;
+}
+[breakpoint]ma-n23 {
+	margin: -5.75rem;
+}
+
+/* n24 */
+[breakpoint]mt-n24 {
+	margin-top: -6rem;
+}
+[breakpoint]mb-n24 {
+	margin-bottom: -6rem;
+}
+[breakpoint]ml-n24 {
+	margin-left: -6rem;
+}
+[breakpoint]mr-n24 {
+	margin-right: -6rem;
+}
+[breakpoint]mx-n24 {
+	margin-left: -6rem;
+	margin-right: -6rem;
+}
+[breakpoint]my-n24 {
+	margin-top: -6rem;
+	margin-bottom: -6rem;
+}
+[breakpoint]ma-n24 {
+	margin: -6rem;
 }
 /* !@manakit-breakpoint */
