@@ -4,7 +4,7 @@
 	// props
 	let _class: string | false | undefined = undefined;
 	export { _class as class };
-	export let tag: 'header' | 'div' = 'header';
+	export let tag: 'header' | 'div' = 'div';
 	export let dark: boolean = false;
 	export let light: boolean = false;
 	export let bottom: boolean = false;
