@@ -1,5 +1,4 @@
 // exports components
-export { default as App } from './modules/app/app.svelte';
 export { default as Toolbar } from './modules/toolbar/toolbar.svelte';
 export { default as Footer } from './modules/footer/footer.svelte';
 export { default as Divider } from './modules/divider/divider.svelte';
@@ -8,7 +7,6 @@ export { default as Modal } from './modules/modal/modal.svelte';
 export { default as Btn } from './modules/btn/btn.svelte';
 export { default as Vstack } from './modules/vstack/vstack.svelte';
 export { default as Hstack } from './modules/hstack/hstack.svelte';
-export { default as Main } from './modules/main/main.svelte';
 
 // cards
 export { default as Card } from './modules/card/card.svelte';
