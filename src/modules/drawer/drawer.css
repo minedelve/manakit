@@ -89,6 +89,9 @@
 }
 
 .kit-drawer > .drawer-content {
+	--background-color: initial;
+	--color: initial;
+
 	grid-column-start: 2;
 	grid-row-start: 1;
 	min-width: 0;
