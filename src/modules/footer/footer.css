@@ -2,28 +2,16 @@
 	--background-color: var(--surface);
 	--color: var(--on-surface);
 
-	display: grid;
-	width: 100%;
-	grid-auto-flow: row;
-	place-items: start;
-	column-gap: 1rem;
-	row-gap: 2.5rem;
-	font-size: 0.875rem;
-	line-height: 1.25rem;
+	align-items: center;
+	display: flex;
+	flex: 1 1 auto;
+	padding: 8px 16px;
+	position: relative;
+	transition: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+	transition-property: height, width, transform, max-width, left, right, top, bottom;
+	border-style: solid;
+	border-width: 0;
+	border-radius: 0;
 	background-color: var(--background-color);
 	color: var(--color);
 }
-
-.kit-footer.footer-center {
-	place-items: center;
-	text-align: center;
-}
-
-/* @manakit-breakpoint */
-.kit-footer[breakpoint]footer-column {
-	grid-auto-flow: column;
-}
-.kit-footer[breakpoint]footer-center {
-	grid-auto-flow: row dense;
-}
-/* !@manakit-breakpoint */
