@@ -3,7 +3,7 @@ export { default as Toolbar } from './modules/toolbar/toolbar.svelte';
 export { default as Footer } from './modules/footer/footer.svelte';
 export { default as Divider } from './modules/divider/divider.svelte';
 export { default as Drawer } from './modules/drawer/drawer.svelte';
-export { default as Modal } from './modules/modal/modal.svelte';
+export { default as Dialog } from './modules/dialog/dialog.svelte';
 export { default as Btn } from './modules/btn/btn.svelte';
 export { default as Vstack } from './modules/vstack/vstack.svelte';
 export { default as Hstack } from './modules/hstack/hstack.svelte';

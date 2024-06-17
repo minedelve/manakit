@@ -1,4 +1,4 @@
-.kit-modal {
+.kit-dialog {
 	--backdrop: var(--scrim);
 	border: 0;
 	padding: 0;
@@ -8,27 +8,27 @@
 	color: inherit;
 }
 
-.kit-modal::backdrop {
+.kit-dialog::backdrop {
 	background-color: color-mix(in oklab, var(--backdrop) 30%, transparent);
 	animation: fade 0.2s ease-out;
 }
-.kit-modal[open]::backdrop {
+.kit-dialog[open]::backdrop {
 	animation: fade 0.2s ease-out;
 }
-.kit-modal[open],
-.kit-modal.modal-open {
+.kit-dialog[open],
+.kit-dialog.dialog-open {
 	pointer-events: auto;
 	visibility: visible;
 	opacity: 1;
 }
 
-.kit-modal .modal-container {
+.kit-dialog .dialog-container {
 	transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 	transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
 	transition-duration: 0.2s;
 }
 
-.kit-modal .modal-container > * {
+.kit-dialog .dialog-container > * {
 	max-height: calc(100% - 3rem);
 	margin: 0 auto;
 }
@@ -44,13 +44,13 @@
 }
 
 /* @manakit-breakpoint */
-.kit-modal[breakpoint]modal-bottom {
+.kit-dialog[breakpoint]dialog-bottom {
 	margin-bottom: 0;
 }
-.kit-modal[breakpoint]modal-top {
+.kit-dialog[breakpoint]dialog-top {
 	margin-top: 0;
 }
-.kit-modal[breakpoint]modal-center {
+.kit-dialog[breakpoint]dialog-center {
 	margin: auto;
 }
 /* !@manakit-breakpoint */

@@ -57,7 +57,7 @@ export function loadCss() {
 			path.resolve(`${nodePath}/modules/grids/row`, 'row.css'),
 			path.resolve(`${nodePath}/modules/grids/spacer`, 'spacer.css'),
 			path.resolve(`${nodePath}/modules/hstack`, 'hstack.css'),
-			path.resolve(`${nodePath}/modules/modal`, 'modal.css'),
+			path.resolve(`${nodePath}/modules/dialog`, 'dialog.css'),
 			path.resolve(`${nodePath}/modules/toolbar`, 'toolbar.css'),
 			path.resolve(`${nodePath}/modules/vstack`, 'vstack.css')
 		]

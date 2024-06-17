@@ -34,8 +34,8 @@
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <dialog
 	bind:this={dialog}
-	class={className('kit-modal', _class)}
-	class:modal-persistent={persistent}
+	class={className('kit-dialog', _class)}
+	class:dialog-persistent={persistent}
 	class:light
 	class:dark
 	on:close={() => (!persistent ? (open = false) : '')}
@@ -45,7 +45,7 @@
 >
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div class="modal-container" on:click|stopPropagation>
+	<div class="dialog-container" on:click|stopPropagation>
 		<slot />
 	</div>
 </dialog>
