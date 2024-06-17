@@ -106,10 +106,6 @@ a.kit-card {
 	color: color-mix(in oklab, var(--on-surface) 80%, black);
 }
 
-.kit-card--text {
-	width: 100%;
-}
-
 .kit-card--title,
 .kit-card--subtitle,
 .kit-card--text {
