@@ -3,8 +3,8 @@
 	--background-color: var(--surface);
 
 	display: inline-flex;
-	height: 3rem;
-	min-height: 3rem;
+	height: 2.5rem;
+	min-height: 2.5rem;
 	flex-shrink: 0;
 	cursor: pointer;
 	-webkit-user-select: none;
@@ -61,16 +61,16 @@
 }
 
 .kit-btn.btn-square {
-	height: 3rem;
-	width: 3rem;
-	min-height: 3rem;
+	height: 2.5rem;
+	width: 2.5rem;
+	min-height: 2.5rem;
 	padding: 0;
 }
 
 .kit-btn.btn-circle {
-	height: 3rem;
-	width: 3rem;
-	min-height: 3rem;
+	height: 2.5rem;
+	width: 2.5rem;
+	min-height: 2.5rem;
 	padding: 0;
 	border-radius: 9999px;
 }
@@ -201,15 +201,19 @@
 	height: 1.25rem;
 }
 .kit-btn[breakpoint]btn-md svg {
+	width: 1.25rem;
+	height: 1.25rem;
+}
+.kit-btn[breakpoint]btn-lg svg {
 	width: 1.5rem;
 	height: 1.5rem;
 }
-.kit-btn[breakpoint]btn-lg svg {
+.kit-btn[breakpoint]btn-xl svg {
 	width: 1.75rem;
 	height: 1.75rem;
 }
 
-/* @initial */
+/* @default */
 .kit-btn[breakpoint]btn-xs:not(.btn-square):not(.btn-circle) {
 	height: 1.5rem;
 	min-height: 1.5rem;
@@ -225,45 +229,22 @@
 	font-size: 0.875rem;
 }
 .kit-btn[breakpoint]btn-md:not(.btn-square):not(.btn-circle) {
-	height: 3rem;
-	min-height: 3rem;
+	height: 2.5rem;
+	min-height: 2.5rem;
 	padding-left: 1rem;
 	padding-right: 1rem;
 	font-size: 0.875rem;
 }
 .kit-btn[breakpoint]btn-lg:not(.btn-square):not(.btn-circle) {
-	height: 4rem;
-	min-height: 4rem;
+	height: 3rem;
+	min-height: 3rem;
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
-	font-size: 1.125rem;
+	font-size: 1rem;
 }
-
-/* @square */
-.kit-btn[breakpoint]btn-xs:not(.btn-square):not(.btn-circle) {
-	height: 1.5rem;
-	min-height: 1.5rem;
-	padding-left: 0.5rem;
-	padding-right: 0.5rem;
-	font-size: 0.75rem;
-}
-.kit-btn[breakpoint]btn-sm:not(.btn-square):not(.btn-circle) {
-	height: 2rem;
-	min-height: 2rem;
-	padding-left: 0.75rem;
-	padding-right: 0.75rem;
-	font-size: 0.875rem;
-}
-.kit-btn[breakpoint]btn-md:not(.btn-square):not(.btn-circle) {
-	height: 3rem;
-	min-height: 3rem;
-	padding-left: 1rem;
-	padding-right: 1rem;
-	font-size: 0.875rem;
-}
-.kit-btn[breakpoint]btn-lg:not(.btn-square):not(.btn-circle) {
-	height: 4rem;
-	min-height: 4rem;
+.kit-btn[breakpoint]btn-xl:not(.btn-square):not(.btn-circle) {
+	height: 3.5rem;
+	min-height: 3.5rem;
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
 	font-size: 1.125rem;
@@ -281,14 +262,19 @@
 	min-height: 2rem;
 }
 .kit-btn[breakpoint]btn-md.btn-square {
+	height: 2.5rem;
+	width: 2.5rem;
+	min-height: 2.5rem;
+}
+.kit-btn[breakpoint]btn-lg.btn-square {
 	height: 3rem;
 	width: 3rem;
 	min-height: 3rem;
 }
-.kit-btn[breakpoint]btn-lg.btn-square {
-	height: 4rem;
-	width: 4rem;
-	min-height: 4rem;
+.kit-btn[breakpoint]btn-xl.btn-square {
+	height: 3.5rem;
+	width: 3.5rem;
+	min-height: 3.5rem;
 }
 
 /* @circle */
@@ -303,13 +289,18 @@
 	min-height: 2rem;
 }
 .kit-btn[breakpoint]btn-md.btn-circle {
+	height: 2.5rem;
+	width: 2.5rem;
+	min-height: 2.5rem;
+}
+.kit-btn[breakpoint]btn-lg.btn-circle {
 	height: 3rem;
 	width: 3rem;
 	min-height: 3rem;
 }
-.kit-btn[breakpoint]btn-lg.btn-circle {
-	height: 4rem;
-	width: 4rem;
-	min-height: 4rem;
+.kit-btn[breakpoint]btn-xl.btn-circle {
+	height: 3.5rem;
+	width: 3.5rem;
+	min-height: 3.5rem;
 }
 /* !@manakit-breakpoint */
