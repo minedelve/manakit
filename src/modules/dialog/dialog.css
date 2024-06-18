@@ -2,6 +2,7 @@
 	--backdrop: var(--scrim);
 	border: 0;
 	padding: 0;
+	margin: auto;
 	width: 100%;
 	max-width: none;
 	background-color: transparent;
@@ -33,6 +34,21 @@
 	margin: 0 auto;
 }
 
+.kit-dialog.dialog-fullscreen {
+	height: 100%;
+	max-height: 100%;
+}
+
+.kit-dialog.dialog-fullscreen .dialog-container {
+	height: 100%;
+}
+
+.kit-dialog.dialog-fullscreen .dialog-container > * {
+	height: 100%;
+	max-height: 100%;
+	border-radius: 0;
+}
+
 /* @keyframes */
 @keyframes fade {
 	from {
@@ -46,10 +62,14 @@
 /* @manakit-breakpoint */
 .kit-dialog[breakpoint]dialog-bottom {
 	margin-bottom: 0;
+	margin-top: auto;
 }
+
 .kit-dialog[breakpoint]dialog-top {
 	margin-top: 0;
+	margin-bottom: auto;
 }
+
 .kit-dialog[breakpoint]dialog-center {
 	margin: auto;
 }

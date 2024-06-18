@@ -9,6 +9,7 @@
 	export let light: boolean = false;
 	export let open: boolean = false;
 	export let persistent: boolean = false;
+	export let fullscreen: boolean = false;
 
 	// states
 	let dialog: HTMLDialogElement;
@@ -36,6 +37,7 @@
 	bind:this={dialog}
 	class={className('kit-dialog', _class)}
 	class:dialog-persistent={persistent}
+	class:dialog-fullscreen={fullscreen}
 	class:light
 	class:dark
 	on:close={() => (!persistent ? (open = false) : '')}
