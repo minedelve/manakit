@@ -10,6 +10,14 @@ html {
 	box-sizing: border-box;
 }
 
+*:not(body) {
+	outline: none !important;
+}
+
+*:not(body):focus-visible {
+	box-shadow: 0px 0px 0px 3px var(--outline);
+}
+
 * {
 	padding: 0;
 	margin: 0;
@@ -40,8 +48,28 @@ a:active {
 
 a:focus-visible,
 .kit-btn:focus-visible {
-	outline: 2px solid var(--blue-300, #93c5fd);
+	/* outline: 0px solid var(--blue-300, #93c5fd); */
+	/* remove default focus style */
+	/* outline: none; */
+	/* custom focus styles */
+	/* box-shadow: 0 0 2px 2px #51a7e8;
+	color: lime; */
 }
+
+a:focus,
+.kit-btn:focus {
+	/* outline: 0px solid var(--blue-300, #93c5fd); */
+	/* remove default focus style */
+	/* outline: none; */
+	/* custom focus styles */
+	/* box-shadow: 0 0 2px 2px #51a7e8;
+	color: lime; */
+}
+
+/* a:focus-visible,
+.kit-btn:focus-visible {
+	outline: 2px solid var(--blue-300, #93c5fd);
+} */
 
 .no-scroll {
 	overflow: hidden !important;

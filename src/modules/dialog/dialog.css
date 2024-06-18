@@ -49,6 +49,13 @@
 	border-radius: 0;
 }
 
+.kit-dialog .close-dialog {
+	opacity: 0;
+	position: fixed;
+	top: 0;
+	z-index: -1;
+}
+
 /* @keyframes */
 @keyframes fade {
 	from {

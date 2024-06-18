@@ -45,6 +45,8 @@
 	on:click|self={() => (!persistent ? dialog.close() : '')}
 	{...$$restProps}
 >
+	<!-- surcharge-dialog autofocus-action-element -->
+	<button type="button" class="close-dialog">close</button>
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
 	<div class="dialog-container" on:click|stopPropagation>
