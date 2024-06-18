@@ -7,6 +7,7 @@ export { default as Dialog } from './modules/dialog/dialog.svelte';
 export { default as Btn } from './modules/btn/btn.svelte';
 export { default as Vstack } from './modules/vstack/vstack.svelte';
 export { default as Hstack } from './modules/hstack/hstack.svelte';
+export { default as Toggle } from './modules/toggle/toggle.svelte';
 
 // cards
 export { default as Card } from './modules/card/card.svelte';
