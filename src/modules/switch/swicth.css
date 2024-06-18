@@ -1,4 +1,4 @@
-.kit-toggle {
+.kit-switch {
 	--background-color: var(--on-surface);
 	--color-inactive: var(--on-surface);
 	--background-color-inactive: var(--surface);
@@ -30,26 +30,26 @@
 		var(--togglehandleborder);
 }
 
-.kit-toggle:checked,
-.kit-toggle[checked='true'],
-.kit-toggle[aria-checked='true'] {
+.kit-switch:checked,
+.kit-switch[checked='true'],
+.kit-switch[aria-checked='true'] {
 	background-image: none;
 	color: var(--background-color);
 	--handleoffsetcalculator: var(--handleoffset);
 }
 
-.kit-toggle:disabled {
+.kit-switch:disabled {
 	cursor: default;
 	color: color-mix(in oklab, var(--color-inactive) 30%, white);
 }
 
-.kit-toggle-area {
+.kit-switch-area {
 	display: flex;
 	flex-direction: column;
 	cursor: pointer;
 }
 
-.kit-toggle-area > .label {
+.kit-switch-area > .label {
 	display: flex;
 	-webkit-user-select: none;
 	user-select: none;
@@ -58,46 +58,46 @@
 	padding: 0.5rem 0.25rem;
 }
 
-.kit-toggle.toggle-info {
+.kit-switch.switch-info {
 	--background-color: var(--info);
 }
-.kit-toggle.toggle-success {
+.kit-switch.switch-success {
 	--background-color: var(--success);
 }
-.kit-toggle.toggle-error {
+.kit-switch.switch-error {
 	--background-color: var(--error);
 }
-.kit-toggle.toggle-warning {
+.kit-switch.switch-warning {
 	--background-color: var(--warning);
 }
 
 /* @manakit-breakpoint */
 /* @size */
-.kit-toggle[breakpoint]toggle-xl {
+.kit-switch[breakpoint]switch-xl {
 	--handleoffset: 2rem;
 	height: 2rem;
 	width: 4rem;
 }
 
-.kit-toggle[breakpoint]toggle-lg {
+.kit-switch[breakpoint]switch-lg {
 	--handleoffset: 1.75rem;
 	height: 1.75rem;
 	width: 4rem;
 }
 
-.kit-toggle[breakpoint]toggle-md {
+.kit-switch[breakpoint]switch-md {
 	--handleoffset: 1.5rem;
 	height: 1.5rem;
 	width: 3rem;
 }
 
-.kit-toggle[breakpoint]toggle-sm {
+.kit-switch[breakpoint]switch-sm {
 	--handleoffset: 0.75rem;
 	height: 1.25rem;
 	width: 2rem;
 }
 
-.kit-toggle[breakpoint]toggle-xs {
+.kit-switch[breakpoint]switch-xs {
 	--handleoffset: 0.5rem;
 	height: 1rem;
 	width: 1.5rem;

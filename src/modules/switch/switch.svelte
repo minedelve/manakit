@@ -16,7 +16,7 @@
 </script>
 
 {#if _slots.default || _slots.before || _slots.after}
-	<div class="kit-toggle-area">
+	<div class="kit-switch-area">
 		<label class="label">
 			{#if (_slots.before || _slots.after) && _slots.before}
 				<slot name="before" />
@@ -25,12 +25,12 @@
 			{/if}
 
 			<input
-				class={className('kit-toggle', _class)}
+				class={className('kit-switch', _class)}
 				type="checkbox"
-				class:toggle-info={info}
-				class:toggle-success={success}
-				class:toggle-warning={warning}
-				class:toggle-error={error}
+				class:switch-info={info}
+				class:switch-success={success}
+				class:switch-warning={warning}
+				class:switch-error={error}
 				checked={value}
 				on:change={(e) => handleChange(e)}
 				{...$$restProps}
@@ -45,12 +45,12 @@
 	</div>
 {:else}
 	<input
-		class={className('kit-toggle', _class)}
+		class={className('kit-switch', _class)}
 		type="checkbox"
-		class:toggle-info={info}
-		class:toggle-success={success}
-		class:toggle-warning={warning}
-		class:toggle-error={error}
+		class:switch-info={info}
+		class:switch-success={success}
+		class:switch-warning={warning}
+		class:switch-error={error}
 		checked={value}
 		on:change={(e) => handleChange(e)}
 		{...$$restProps}
