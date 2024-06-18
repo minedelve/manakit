@@ -1,8 +1,8 @@
 .kit-container {
+	width: 100%;
+	padding: 16px;
 	margin-right: auto;
 	margin-left: auto;
-	padding-right: 2rem;
-	padding-left: 2rem;
 	color: var(--color);
 	background-color: var(--background-color);
 }
@@ -17,7 +17,7 @@
 	max-width: 100%;
 }
 
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 960px) {
 	.kit-container:not(.container-fluid) {
 		max-width: 900px;
 	}
@@ -25,6 +25,12 @@
 
 @media screen and (min-width: 1280px) {
 	.kit-container:not(.container-fluid) {
-		max-width: 1185px;
+		max-width: 1200px;
+	}
+}
+
+@media screen and (min-width: 1920px) {
+	.kit-container:not(.container-fluid) {
+		max-width: 1800px;
 	}
 }

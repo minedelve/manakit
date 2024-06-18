@@ -4,10 +4,15 @@
 	max-width: 100%;
 }
 
-.kit-col.col-auto {
+.kit-col {
 	width: 100%;
 	padding: 12px;
 }
+
+.kit-col.col-auto {
+	width: 100%;
+}
+
 /* @manakit-breakpoint */
 .kit-col[breakpoint]col-auto {
 	flex: 0 0 auto;
