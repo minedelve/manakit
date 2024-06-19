@@ -8,6 +8,7 @@ export { default as Btn } from './modules/btn/btn.svelte';
 export { default as Vstack } from './modules/vstack/vstack.svelte';
 export { default as Hstack } from './modules/hstack/hstack.svelte';
 export { default as Switch } from './modules/switch/switch.svelte';
+export { default as Field } from './modules/field/field.svelte';
 
 // cards
 export { default as Card } from './modules/card/card.svelte';

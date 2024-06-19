@@ -1,0 +1,38 @@
+label.kit-field {
+	--background-color: var(--on-surface);
+
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	height: 2.5rem;
+	padding: 0.5rem 0.75rem;
+	border: 1px solid var(--background-color);
+	background-color: color-mix(in oklab, var(--surface) 90%, white);
+	border-radius: 10px;
+}
+
+label.kit-field input {
+	width: 100%;
+	border: 0;
+	box-shadow: none;
+	color: var(--background-color);
+	background-color: color-mix(in oklab, var(--surface) 90%, white);
+}
+
+label.kit-field svg {
+	width: 1rem;
+	height: 1rem;
+}
+
+label.kit-field:focus-within {
+	box-shadow: 0px 0px 0px 3px var(--outline);
+}
+
+input.kit-field {
+	height: 2.5rem;
+	padding: 0.5rem 0.75rem;
+	color: var(--background-color);
+	border: 1px solid var(--background-color);
+	background-color: color-mix(in oklab, var(--background-color) 90%, white);
+	border-radius: 10px;
+}
