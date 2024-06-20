@@ -3,8 +3,9 @@
 
 	// props
 	let _class: string | false | undefined = undefined;
-	// let _slots = $$slots as unknown as { default?: any; before?: any; after?: any };
 	export { _class as class };
+	export let dark: boolean = false;
+	export let light: boolean = false;
 	export let value: boolean = false;
 	export let right: boolean = false;
 	export let error: boolean = false;
@@ -27,6 +28,8 @@
 			<input
 				class={className('kit-switch', _class)}
 				type="checkbox"
+				class:light
+				class:dark
 				class:switch-info={info}
 				class:switch-success={success}
 				class:switch-warning={warning}
@@ -47,6 +50,8 @@
 	<input
 		class={className('kit-switch', _class)}
 		type="checkbox"
+		class:light
+		class:dark
 		class:switch-info={info}
 		class:switch-success={success}
 		class:switch-warning={warning}
