@@ -35,7 +35,7 @@
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <dialog
 	bind:this={dialog}
-	class={className('kit-dialog', _class)}
+	class={className('mk-dialog', _class)}
 	class:dialog-persistent={persistent}
 	class:dialog-fullscreen={fullscreen}
 	class:light

@@ -17,7 +17,7 @@
 </script>
 
 {#if $$slots.default || $$slots.before || $$slots.after}
-	<div class="kit-switch-area">
+	<div class="mk-switch-area">
 		<label class="label">
 			{#if ($$slots.before || $$slots.after) && $$slots.before}
 				<slot name="before" />
@@ -26,7 +26,7 @@
 			{/if}
 
 			<input
-				class={className('kit-switch', _class)}
+				class={className('mk-switch', _class)}
 				type="checkbox"
 				class:light
 				class:dark
@@ -48,7 +48,7 @@
 	</div>
 {:else}
 	<input
-		class={className('kit-switch', _class)}
+		class={className('mk-switch', _class)}
 		type="checkbox"
 		class:light
 		class:dark

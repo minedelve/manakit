@@ -38,7 +38,7 @@
 
 {#if $$slots.after || $$slots.before}
 	<label
-		class={className('kit-field', _class)}
+		class={className('mk-field', _class)}
 		class:field-info={info}
 		class:field-success={success}
 		class:field-warning={warning}
@@ -79,7 +79,7 @@
 {:else}
 	<input
 		{name}
-		class={className('kit-field', _class)}
+		class={className('mk-field', _class)}
 		class:field-info={info}
 		class:field-success={success}
 		class:field-warning={warning}

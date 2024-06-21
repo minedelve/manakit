@@ -1,10 +1,10 @@
-.kit-field {
+.mk-field {
 	--color: var(--on-surface);
 	--background-color: var(--surface);
 }
 
-.kit-field.field-disabled,
-.kit-field.field[disabled] {
+.mk-field.field-disabled,
+.mk-field.field[disabled] {
 	pointer-events: none;
 	user-select: none;
 	border-color: color-mix(in oklab, var(--color) 40%, transparent) !important;
@@ -12,13 +12,13 @@
 	background-color: color-mix(in oklab, var(--background-color) 70%, transparent) !important;
 }
 
-label.kit-field {
+label.mk-field {
 	display: flex;
 	align-items: center;
 	gap: 0.5rem;
 }
 
-label.kit-field input {
+label.mk-field input {
 	width: 100%;
 	border: 0;
 	box-shadow: none;
@@ -26,17 +26,17 @@ label.kit-field input {
 	background-color: color-mix(in oklab, var(--background-color) 90%, white);
 }
 
-label.kit-field svg {
+label.mk-field svg {
 	width: 1.25rem;
 	height: 1.25rem;
 }
 
-label.kit-field:focus-within {
+label.mk-field:focus-within {
 	box-shadow: 0px 0px 0px 3px var(--outline);
 }
 
-input.kit-field,
-label.kit-field {
+input.mk-field,
+label.mk-field {
 	height: 2.5rem;
 	padding: 0.5rem 0.75rem;
 	color: var(--color);
@@ -45,68 +45,68 @@ label.kit-field {
 	border-radius: 0.5rem;
 }
 
-.kit-field.field-info {
+.mk-field.field-info {
 	--color: var(--info);
 }
-.kit-field.field-success {
+.mk-field.field-success {
 	--color: var(--success);
 }
-.kit-field.field-warning {
+.mk-field.field-warning {
 	--color: var(--warning);
 }
-.kit-field.field-error {
+.mk-field.field-error {
 	--color: var(--error);
 }
 
 /* @manakit-breakpoint */
 /* @svg */
-.kit-field[breakpoint]field-xs svg {
+.mk-field[breakpoint]field-xs svg {
 	width: 1rem;
 	height: 1rem;
 }
-.kit-field[breakpoint]field-sm svg {
+.mk-field[breakpoint]field-sm svg {
 	width: 1.15rem;
 	height: 1.15rem;
 }
-.kit-field[breakpoint]field-md svg {
+.mk-field[breakpoint]field-md svg {
 	width: 1.25rem;
 	height: 1.25rem;
 }
-.kit-field[breakpoint]field-lg svg {
+.mk-field[breakpoint]field-lg svg {
 	width: 1.5rem;
 	height: 1.5rem;
 }
-.kit-field[breakpoint]field-xl svg {
+.mk-field[breakpoint]field-xl svg {
 	width: 1.75rem;
 	height: 1.75rem;
 }
 
 /* @input */
-.kit-field[breakpoint]field-xs {
+.mk-field[breakpoint]field-xs {
 	height: 1.5rem;
 	padding: 0.25rem 0.5rem;
 	font-size: 0.75rem;
 	line-height: 1.625;
 }
-.kit-field[breakpoint]field-sm {
+.mk-field[breakpoint]field-sm {
 	height: 2rem;
 	padding: 0.5rem 0.75rem;
 	font-size: 0.875rem;
 	line-height: 2;
 }
-.kit-field[breakpoint]field-md {
+.mk-field[breakpoint]field-md {
 	height: 2.5rem;
 	padding: 0.5rem 0.75rem;
 	font-size: 0.875rem;
 	line-height: 2;
 }
-.kit-field[breakpoint]field-lg {
+.mk-field[breakpoint]field-lg {
 	height: 3rem;
 	padding: 0.75rem 1rem;
 	font-size: 0.875rem;
 	line-height: 2;
 }
-.kit-field[breakpoint]field-xl {
+.mk-field[breakpoint]field-xl {
 	height: 4rem;
 	padding: 1rem 1.5rem;
 	font-size: 1.125rem;

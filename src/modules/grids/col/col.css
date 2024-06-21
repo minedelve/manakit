@@ -1,119 +1,119 @@
-.kit-col {
+.mk-col {
 	flex-basis: 0;
 	flex-grow: 1;
 	max-width: 100%;
 }
 
-.kit-col {
+.mk-col {
 	width: 100%;
 	padding: 12px;
 }
 
-.kit-col.col-auto {
+.mk-col.col-auto {
 	width: 100%;
 }
 
 /* @manakit-breakpoint */
-.kit-col[breakpoint]col-auto {
+.mk-col[breakpoint]col-auto {
 	flex: 0 0 auto;
 	width: auto;
 	max-width: 100%;
 }
 
-.kit-col[breakpoint]col-1 {
+.mk-col[breakpoint]col-1 {
 	flex: 0 0 8.3333333333%;
 	max-width: 8.3333333333%;
 }
 
-.kit-col[breakpoint]col-2 {
+.mk-col[breakpoint]col-2 {
 	flex: 0 0 16.6666666667%;
 	max-width: 16.6666666667%;
 }
 
-.kit-col[breakpoint]col-3 {
+.mk-col[breakpoint]col-3 {
 	flex: 0 0 25%;
 	max-width: 25%;
 }
 
-.kit-col[breakpoint]col-4 {
+.mk-col[breakpoint]col-4 {
 	flex: 0 0 33.3333333333%;
 	max-width: 33.3333333333%;
 }
 
-.kit-col[breakpoint]col-5 {
+.mk-col[breakpoint]col-5 {
 	flex: 0 0 41.6666666667%;
 	max-width: 41.6666666667%;
 }
 
-.kit-col[breakpoint]col-6 {
+.mk-col[breakpoint]col-6 {
 	flex: 0 0 50%;
 	max-width: 50%;
 }
 
-.kit-col[breakpoint]col-7 {
+.mk-col[breakpoint]col-7 {
 	flex: 0 0 58.3333333333%;
 	max-width: 58.3333333333%;
 }
 
-.kit-col[breakpoint]col-8 {
+.mk-col[breakpoint]col-8 {
 	flex: 0 0 66.6666666667%;
 	max-width: 66.6666666667%;
 }
 
-.kit-col[breakpoint]col-9 {
+.mk-col[breakpoint]col-9 {
 	flex: 0 0 75%;
 	max-width: 75%;
 }
 
-.kit-col[breakpoint]col-10 {
+.mk-col[breakpoint]col-10 {
 	flex: 0 0 83.3333333333%;
 	max-width: 83.3333333333%;
 }
 
-.kit-col[breakpoint]col-11 {
+.mk-col[breakpoint]col-11 {
 	flex: 0 0 91.6666666667%;
 	max-width: 91.6666666667%;
 }
 
-.kit-col[breakpoint]col-12 {
+.mk-col[breakpoint]col-12 {
 	flex: 0 0 100%;
 	max-width: 100%;
 }
 
-.kit-col[breakpoint]offset-0 {
+.mk-col[breakpoint]offset-0 {
 	margin-inline-start: 0;
 }
-.kit-col[breakpoint]offset-1 {
+.mk-col[breakpoint]offset-1 {
 	margin-inline-start: 8.3333333333%;
 }
-.kit-col[breakpoint]offset-2 {
+.mk-col[breakpoint]offset-2 {
 	margin-inline-start: 16.6666666667%;
 }
-.kit-col[breakpoint]offset-3 {
+.mk-col[breakpoint]offset-3 {
 	margin-inline-start: 25%;
 }
-.kit-col[breakpoint]offset-4 {
+.mk-col[breakpoint]offset-4 {
 	margin-inline-start: 33.3333333333%;
 }
-.kit-col[breakpoint]offset-5 {
+.mk-col[breakpoint]offset-5 {
 	margin-inline-start: 41.6666666667%;
 }
-.kit-col[breakpoint]offset-6 {
+.mk-col[breakpoint]offset-6 {
 	margin-inline-start: 50%;
 }
-.kit-col[breakpoint]offset-7 {
+.mk-col[breakpoint]offset-7 {
 	margin-inline-start: 58.3333333333%;
 }
-.kit-col[breakpoint]offset-8 {
+.mk-col[breakpoint]offset-8 {
 	margin-inline-start: 66.6666666667%;
 }
-.kit-col[breakpoint]offset-9 {
+.mk-col[breakpoint]offset-9 {
 	margin-inline-start: 75%;
 }
-.kit-col[breakpoint]offset-10 {
+.mk-col[breakpoint]offset-10 {
 	margin-inline-start: 83.3333333333%;
 }
-.kit-col[breakpoint]offset-11 {
+.mk-col[breakpoint]offset-11 {
 	margin-inline-start: 91.6666666667%;
 }
 /* !@manakit-breakpoint */

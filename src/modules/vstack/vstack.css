@@ -1,23 +1,23 @@
-.kit-vstack {
+.mk-vstack {
 	display: grid;
 	grid-auto-flow: row;
 	grid-template-rows: 1fr;
 }
 
-.kit-vstack > .scroll {
+.mk-vstack > .scroll {
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
 	user-select: none;
 }
-.kit-vstack > .scroll > .scroll-content {
+.mk-vstack > .scroll > .scroll-content {
 	height: fit-content;
 	display: block;
 	width: fit-content;
 }
 
-.kit-vstack > .scroll::-webkit-scrollbar {
+.mk-vstack > .scroll::-webkit-scrollbar {
 	display: none;
 }
-.kit-vstack > .scroll > * {
+.mk-vstack > .scroll > * {
 	scroll-snap-align: start;
 }

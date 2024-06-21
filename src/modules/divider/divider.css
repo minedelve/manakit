@@ -1,4 +1,4 @@
-.kit-divider {
+.mk-divider {
 	--color: var(--on-surface);
 
 	display: flex;
@@ -11,8 +11,8 @@
 	white-space: nowrap;
 }
 
-.kit-divider:not(.divider-start)::before,
-.kit-divider:not(.divider-end)::after {
+.mk-divider:not(.divider-start)::before,
+.mk-divider:not(.divider-end)::after {
 	height: 0.125rem;
 	width: 100%;
 	flex-grow: 1;
@@ -20,23 +20,23 @@
 	background-color: color-mix(in oklab, var(--color) 40%, transparent);
 }
 
-.kit-divider:not(:empty) {
+.mk-divider:not(:empty) {
 	gap: 1rem;
 }
 
-.kit-divider.divider-inset:not(.divider-vertical) {
+.mk-divider.divider-inset:not(.divider-vertical) {
 	width: 80%;
 	margin: 0 auto;
 }
 
-.kit-divider.divider-vertical:not(.divider-start)::before,
-.kit-divider.divider-vertical:not(.divider-end)::after {
+.mk-divider.divider-vertical:not(.divider-start)::before,
+.mk-divider.divider-vertical:not(.divider-end)::after {
 	height: 100%;
 	width: 0.125rem;
 }
 
 /* @manakit-breakpoint */
-.kit-divider[breakpoint]divider-vertical {
+.mk-divider[breakpoint]divider-vertical {
 	margin-left: 0.5rem;
 	margin-right: 0.5rem;
 	margin-top: 0;

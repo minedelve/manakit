@@ -12,7 +12,7 @@
 
 <svelte:element
 	this={tag}
-	class={className('kit-toolbar', _class)}
+	class={className('mk-toolbar', _class)}
 	class:toolbar-bottom={bottom}
 	class:light
 	class:dark

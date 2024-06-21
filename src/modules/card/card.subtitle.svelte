@@ -8,7 +8,7 @@
 </script>
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
-<svelte:element this={tag} class={className('kit-card--subtitle', _class)} {...$$restProps}>
+<svelte:element this={tag} class={className('mk-card--subtitle', _class)} {...$$restProps}>
 	<!-- slot: default -->
 	<slot />
 	<!-- /slot: default -->

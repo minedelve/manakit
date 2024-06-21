@@ -7,7 +7,7 @@
 	export let tag: 'div' = 'div';
 </script>
 
-<svelte:element this={tag} class={className('kit-col', _class)} {...$$restProps}>
+<svelte:element this={tag} class={className('mk-col', _class)} {...$$restProps}>
 	<!-- slot: default -->
 	<slot />
 	<!-- /slot: default -->

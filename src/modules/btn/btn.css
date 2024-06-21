@@ -1,4 +1,4 @@
-.kit-btn {
+.mk-btn {
 	--color: var(--on-surface);
 	--background-color: var(--surface);
 
@@ -31,43 +31,43 @@
 	background-color: var(--background-color);
 }
 
-.kit-btn.btn-wide {
+.mk-btn.btn-wide {
 	width: 16rem;
 }
-.kit-btn.btn-block {
+.mk-btn.btn-block {
 	width: 100%;
 }
 
-.kit-btn svg {
+.mk-btn svg {
 	width: 1.5rem;
 	height: 1.5rem;
 }
 
-.kit-btn:active:hover,
-.kit-btn:active:focus {
+.mk-btn:active:hover,
+.mk-btn:active:focus {
 	animation: button-effect 0s ease-out;
 	transform: scale(0.97);
 }
 
-.kit-btn.btn-active:not(.btn-outline):not(.btn-text):not(.btn-link) {
+.mk-btn.btn-active:not(.btn-outline):not(.btn-text):not(.btn-link) {
 	background-color: color-mix(in oklab, var(--background-color) 85%, black);
 }
-.kit-btn:hover:not(.btn-outline):not(.btn-text):not(.btn-link) {
+.mk-btn:hover:not(.btn-outline):not(.btn-text):not(.btn-link) {
 	background-color: color-mix(in oklab, var(--background-color) 90%, black);
 }
 
-.kit-btn.btn-rounded {
+.mk-btn.btn-rounded {
 	border-radius: 9999px;
 }
 
-.kit-btn.btn-square {
+.mk-btn.btn-square {
 	height: 2.5rem;
 	width: 2.5rem;
 	min-height: 2.5rem;
 	padding: 0;
 }
 
-.kit-btn.btn-circle {
+.mk-btn.btn-circle {
 	height: 2.5rem;
 	width: 2.5rem;
 	min-height: 2.5rem;
@@ -75,105 +75,105 @@
 	border-radius: 9999px;
 }
 
-.kit-btn.btn-outline {
+.mk-btn.btn-outline {
 	background-color: transparent;
 	border-color: var(--color);
 }
-.kit-btn.btn-text {
+.mk-btn.btn-text {
 	background-color: transparent;
 }
 
-.kit-btn.btn-outline.btn-active,
-.kit-btn.btn-text.btn-active {
+.mk-btn.btn-outline.btn-active,
+.mk-btn.btn-text.btn-active {
 	background-color: color-mix(in oklab, var(--color) 15%, transparent);
 }
-.kit-btn.btn-outline:hover,
-.kit-btn.btn-text:hover {
+.mk-btn.btn-outline:hover,
+.mk-btn.btn-text:hover {
 	background-color: color-mix(in oklab, var(--color) 20%, transparent);
 }
 
-.kit-btn.btn-link {
+.mk-btn.btn-link {
 	background-color: transparent;
 	text-decoration-line: underline;
 }
 
-.kit-btn.btn-disabled,
-.kit-btn.btn[disabled] {
+.mk-btn.btn-disabled,
+.mk-btn.btn[disabled] {
 	pointer-events: none;
 	user-select: none;
 	color: color-mix(in oklab, var(--color) 40%, transparent) !important;
 	background-color: color-mix(in oklab, var(--background-color) 70%, transparent) !important;
 }
-.kit-btn.btn-disabled.btn-outline,
-.kit-btn.btn[disabled].btn-outline {
+.mk-btn.btn-disabled.btn-outline,
+.mk-btn.btn[disabled].btn-outline {
 	border-color: color-mix(in oklab, var(--color) 40%, transparent) !important;
 }
 
-.kit-btn.btn-disabled.btn-outline,
-.kit-btn.btn[disabled].btn-outline,
-.kit-btn.btn-disabled.btn-text,
-.kit-btn.btn[disabled].btn-text,
-.kit-btn.btn-disabled.btn-link,
-.kit-btn.btn[disabled].btn-link {
+.mk-btn.btn-disabled.btn-outline,
+.mk-btn.btn[disabled].btn-outline,
+.mk-btn.btn-disabled.btn-text,
+.mk-btn.btn[disabled].btn-text,
+.mk-btn.btn-disabled.btn-link,
+.mk-btn.btn[disabled].btn-link {
 	background-color: transparent;
 }
 
-.kit-btn:where(.kit-btn:is(input[type='checkbox'])),
-.kit-btn:where(.kit-btn:is(input[type='radio'])) {
+.mk-btn:where(.mk-btn:is(input[type='checkbox'])),
+.mk-btn:where(.mk-btn:is(input[type='radio'])) {
 	width: auto;
 	-webkit-appearance: none;
 	-moz-appearance: none;
 	appearance: none;
 }
-.kit-btn.kit-btn:is(input[type='checkbox']):after,
-.kit-btn.kit-btn:is(input[type='radio']):after {
+.mk-btn.mk-btn:is(input[type='checkbox']):after,
+.mk-btn.mk-btn:is(input[type='radio']):after {
 	--manakit-content: attr(aria-label);
 	content: var(--manakit-content);
 }
-.kit-btn.kit-btn:is(input[type='checkbox']:checked),
-.kit-btn.kit-btn:is(input[type='radio']:checked) {
+.mk-btn.mk-btn:is(input[type='checkbox']:checked),
+.mk-btn.mk-btn:is(input[type='radio']:checked) {
 	--color: var(--on-primary);
 	--background-color: var(--primary);
 }
 
 /* @themes */
-.kit-btn.btn-info {
+.mk-btn.btn-info {
 	--color: var(--on-info);
 	--background-color: var(--info);
 }
-.kit-btn.btn-info.btn-outline,
-.kit-btn.btn-info.btn-text,
-.kit-btn.btn-info.btn-link {
+.mk-btn.btn-info.btn-outline,
+.mk-btn.btn-info.btn-text,
+.mk-btn.btn-info.btn-link {
 	--color: var(--info);
 }
 
-.kit-btn.btn-success {
+.mk-btn.btn-success {
 	--color: var(--on-success);
 	--background-color: var(--success);
 }
-.kit-btn.btn-success.btn-outline,
-.kit-btn.btn-success.btn-text,
-.kit-btn.btn-success.btn-link {
+.mk-btn.btn-success.btn-outline,
+.mk-btn.btn-success.btn-text,
+.mk-btn.btn-success.btn-link {
 	--color: var(--success);
 }
 
-.kit-btn.btn-warning {
+.mk-btn.btn-warning {
 	--color: var(--on-warning);
 	--background-color: var(--warning);
 }
-.kit-btn.btn-warning.btn-outline,
-.kit-btn.btn-warning.btn-text,
-.kit-btn.btn-warning.btn-link {
+.mk-btn.btn-warning.btn-outline,
+.mk-btn.btn-warning.btn-text,
+.mk-btn.btn-warning.btn-link {
 	--color: var(--warning);
 }
 
-.kit-btn.btn-error {
+.mk-btn.btn-error {
 	--color: var(--on-error);
 	--background-color: var(--error);
 }
-.kit-btn.btn-error.btn-outline,
-.kit-btn.btn-error.btn-text,
-.kit-btn.btn-error.btn-link {
+.mk-btn.btn-error.btn-outline,
+.mk-btn.btn-error.btn-text,
+.mk-btn.btn-error.btn-link {
 	--color: var(--error);
 }
 
@@ -192,57 +192,57 @@
 
 /* @manakit-breakpoint */
 /* @svg size */
-.kit-btn[breakpoint]btn-xs svg {
+.mk-btn[breakpoint]btn-xs svg {
 	width: 1.15rem;
 	height: 1.15rem;
 }
-.kit-btn[breakpoint]btn-sm svg {
+.mk-btn[breakpoint]btn-sm svg {
 	width: 1.25rem;
 	height: 1.25rem;
 }
-.kit-btn[breakpoint]btn-md svg {
+.mk-btn[breakpoint]btn-md svg {
 	width: 1.25rem;
 	height: 1.25rem;
 }
-.kit-btn[breakpoint]btn-lg svg {
+.mk-btn[breakpoint]btn-lg svg {
 	width: 1.5rem;
 	height: 1.5rem;
 }
-.kit-btn[breakpoint]btn-xl svg {
+.mk-btn[breakpoint]btn-xl svg {
 	width: 1.75rem;
 	height: 1.75rem;
 }
 
 /* @default */
-.kit-btn[breakpoint]btn-xs:not(.btn-square):not(.btn-circle) {
+.mk-btn[breakpoint]btn-xs:not(.btn-square):not(.btn-circle) {
 	height: 1.5rem;
 	min-height: 1.5rem;
 	padding-left: 0.5rem;
 	padding-right: 0.5rem;
 	font-size: 0.75rem;
 }
-.kit-btn[breakpoint]btn-sm:not(.btn-square):not(.btn-circle) {
+.mk-btn[breakpoint]btn-sm:not(.btn-square):not(.btn-circle) {
 	height: 2rem;
 	min-height: 2rem;
 	padding-left: 0.75rem;
 	padding-right: 0.75rem;
 	font-size: 0.875rem;
 }
-.kit-btn[breakpoint]btn-md:not(.btn-square):not(.btn-circle) {
+.mk-btn[breakpoint]btn-md:not(.btn-square):not(.btn-circle) {
 	height: 2.5rem;
 	min-height: 2.5rem;
 	padding-left: 1rem;
 	padding-right: 1rem;
 	font-size: 0.875rem;
 }
-.kit-btn[breakpoint]btn-lg:not(.btn-square):not(.btn-circle) {
+.mk-btn[breakpoint]btn-lg:not(.btn-square):not(.btn-circle) {
 	height: 3rem;
 	min-height: 3rem;
 	padding-left: 1.5rem;
 	padding-right: 1.5rem;
 	font-size: 1rem;
 }
-.kit-btn[breakpoint]btn-xl:not(.btn-square):not(.btn-circle) {
+.mk-btn[breakpoint]btn-xl:not(.btn-square):not(.btn-circle) {
 	height: 3.5rem;
 	min-height: 3.5rem;
 	padding-left: 1.5rem;
@@ -251,54 +251,54 @@
 }
 
 /* @square */
-.kit-btn[breakpoint]btn-xs.btn-square {
+.mk-btn[breakpoint]btn-xs.btn-square {
 	height: 1.5rem;
 	width: 1.5rem;
 	min-height: 1.5rem;
 }
-.kit-btn[breakpoint]btn-sm.btn-square {
+.mk-btn[breakpoint]btn-sm.btn-square {
 	height: 2rem;
 	width: 2rem;
 	min-height: 2rem;
 }
-.kit-btn[breakpoint]btn-md.btn-square {
+.mk-btn[breakpoint]btn-md.btn-square {
 	height: 2.5rem;
 	width: 2.5rem;
 	min-height: 2.5rem;
 }
-.kit-btn[breakpoint]btn-lg.btn-square {
+.mk-btn[breakpoint]btn-lg.btn-square {
 	height: 3rem;
 	width: 3rem;
 	min-height: 3rem;
 }
-.kit-btn[breakpoint]btn-xl.btn-square {
+.mk-btn[breakpoint]btn-xl.btn-square {
 	height: 3.5rem;
 	width: 3.5rem;
 	min-height: 3.5rem;
 }
 
 /* @circle */
-.kit-btn[breakpoint]btn-xs.btn-circle {
+.mk-btn[breakpoint]btn-xs.btn-circle {
 	height: 1.5rem;
 	width: 1.5rem;
 	min-height: 1.5rem;
 }
-.kit-btn[breakpoint]btn-sm.btn-circle {
+.mk-btn[breakpoint]btn-sm.btn-circle {
 	height: 2rem;
 	width: 2rem;
 	min-height: 2rem;
 }
-.kit-btn[breakpoint]btn-md.btn-circle {
+.mk-btn[breakpoint]btn-md.btn-circle {
 	height: 2.5rem;
 	width: 2.5rem;
 	min-height: 2.5rem;
 }
-.kit-btn[breakpoint]btn-lg.btn-circle {
+.mk-btn[breakpoint]btn-lg.btn-circle {
 	height: 3rem;
 	width: 3rem;
 	min-height: 3rem;
 }
-.kit-btn[breakpoint]btn-xl.btn-circle {
+.mk-btn[breakpoint]btn-xl.btn-circle {
 	height: 3.5rem;
 	width: 3.5rem;
 	min-height: 3.5rem;

@@ -11,7 +11,7 @@
 
 <svelte:element
 	this={tag}
-	class={className('kit-footer', _class)}
+	class={className('mk-footer', _class)}
 	class:light
 	class:dark
 	{...$$restProps}

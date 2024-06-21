@@ -1,4 +1,4 @@
-.kit-container {
+.mk-container {
 	width: 100%;
 	padding: 16px;
 	margin-right: auto;
@@ -7,30 +7,30 @@
 	background-color: var(--background-color);
 }
 
-.kit-container.container-fill-height {
+.mk-container.container-fill-height {
 	align-items: center;
 	display: flex;
 	flex-wrap: wrap;
 }
 
-.kit-container.container-fluid {
+.mk-container.container-fluid {
 	max-width: 100%;
 }
 
 @media screen and (min-width: 960px) {
-	.kit-container:not(.container-fluid) {
+	.mk-container:not(.container-fluid) {
 		max-width: 900px;
 	}
 }
 
 @media screen and (min-width: 1280px) {
-	.kit-container:not(.container-fluid) {
+	.mk-container:not(.container-fluid) {
 		max-width: 1200px;
 	}
 }
 
 @media screen and (min-width: 1920px) {
-	.kit-container:not(.container-fluid) {
+	.mk-container:not(.container-fluid) {
 		max-width: 1800px;
 	}
 }
