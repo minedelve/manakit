@@ -80,10 +80,10 @@ git checkout develop
 git pull upstream develop
 ```
 
-1. Install dependencies with [bun](https://bun.sh/):
+1. Install dependencies with [yarn](https://yarnpkg.com/):
 
 ```sh
-bun
+yarn
 ```
 
 1. Create a new branch related to your PR:
@@ -110,15 +110,15 @@ git push -u origin HEAD
 
 ```bash
 # install dependencies
-bun
+yarn
 
 # start docs page and see examples in the browser
-bun dev
+yarn dev
 ```
 
 Make your changes and check that they resolve the problem with an example in the local docs. We also
-suggest adding tests to support your change, and then run `bun run test` to make sure nothing is
+suggest adding tests to support your change, and then run `yarn run test` to make sure nothing is
 broken.
 
-Lastly, run `bun run lint` && `bun run check` to ensure that everything is in order before
+Lastly, run `yarn run lint` && `yarn run check` to ensure that everything is in order before
 submitting the pull request.
