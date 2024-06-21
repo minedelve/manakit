@@ -1,9 +1,41 @@
+## manakit@0.7.4
+
+### What's Changed
+
+**Module App, Main has been delete to Manakit**
+**Manakit module prefix has been changed, `kit` to `mk`**
+
+- [new] module `Switch`.
+- [new] module `Label`.
+- [new] module `List`.
+- [new] module `ListItem`.
+- [update] class `grid` add new class `d-grid`.
+- [update] module `container` add new size display container, and delete props fill-height.
+- [update] module `Modal` has changed to `Dialog`.
+- [update] module `Btn` has all size class.
+- [update] module `Footer` new css for area.
+- [update] module `Dialog` new props fullscreen.
+- [update] css `outline` has been updated.
+
+### Patch Changes
+
+- [bugfix] fix tag default module `footer` to div.
+- [bugfix] fix color var on balise `html`.
+- [bugfix] fix module `toolbar` bad display on container.
+- [bugfix] fix css global and prose for assure not end to container all modules Manakit.
+- [bugfix] fix css `margin` size 6 not working.
+- [bugfix] fix module `Card` props text not working on container.
+- [bugfix] fix module `Drawer` area content heritage color class.
+- [bugfix] fix module `Col` grids to bad display container.
+- [bugfix] fix module `Dialog` autofocus input and button by default.
+- [bugfix] fix css theme `.dark` and `.light` on mixed.
+
 ## manakit@0.7.3
 
 ### What's Changed
 
 - [update] add new class for margin (16 to 24)
-- [update] add new class for padding (16 to 24) 
+- [update] add new class for padding (16 to 24)
 
 ### Patch Changes
 
@@ -50,11 +82,11 @@
 
 ### Patch Changes
 
-- [bugfix] fix module `btn` css square size #49 
-- [bugfix] fix module `drawer` fix position absolute position #50 
-- [bugfix] fix module `drawer` fix crash display right position #48 
-- [bugfix] fix module `drawer` fix conflic mutli drawer in page #50 
-- [bugfix] fix module `toolbar` fix display overflow-x content #51 
+- [bugfix] fix module `btn` css square size #49
+- [bugfix] fix module `drawer` fix position absolute position #50
+- [bugfix] fix module `drawer` fix crash display right position #48
+- [bugfix] fix module `drawer` fix conflic mutli drawer in page #50
+- [bugfix] fix module `toolbar` fix display overflow-x content #51
 
 ## manakit@0.6.18
 
@@ -69,16 +101,16 @@
 ### Patch Changes
 
 - [bugfix] fix crash with css not generated
-- [bugfix] fix size toolbar not working #42 
-- [bugfix] fix btn-active status not display on render #43 
-- [bugfix] crash on start if verify version manakit not working #40 
-- [bugfix] crash on install manakit if sass is not install on your project ! 
+- [bugfix] fix size toolbar not working #42
+- [bugfix] fix btn-active status not display on render #43
+- [bugfix] crash on start if verify version manakit not working #40
+- [bugfix] crash on install manakit if sass is not install on your project !
 
 ## manakit@0.6.17
 
 ### What's Changed
 
-- [new] **License  MIT** set !
+- [new] **License MIT** set !
 - [update] Readme with introduction and basic install configuration.
 - [update] package informations
 
@@ -86,20 +118,20 @@
 
 ### Patch Changes
 
-- [bugfix] clear dependencie with  Package-version. **Manakit not require PackageVersion for work !**
+- [bugfix] clear dependencie with Package-version. **Manakit not require PackageVersion for work !**
 - [bugfix] standardise console message for run / install and error
 
 ## manakit@0.6.15
 
 ### Patch Changes
 
-- [bugfix] #35  fix modal container no display on all mobile device.
+- [bugfix] #35 fix modal container no display on all mobile device.
 
 ## manakit@0.6.14
 
 ### What's Changed
 
-- [new] add new features for color-scheme in manakit #33 
+- [new] add new features for color-scheme in manakit #33
 - [update] module `App` add new props dark and light for forced theme use in this module.
 - [update] module `Btn` add new props dark and light for forced theme use in this module.
 - [update] module `Card` add new props dark and light for forced theme use in this module.
@@ -112,14 +144,14 @@
 ### Patch Changes
 
 - [bugfix] fix error unit on module `Row` margin
-- [bugfix] color sheme system is not automatically activate #33 
+- [bugfix] color sheme system is not automatically activate #33
 - [bugfix] if call variables SCSS in your style component svelte, you have message (.dark not used) #25
 
 ## manakit@0.6.13
 
 ### Patch Changes
 
-- [bugfix] #28  add `restProps` on module `Modal`
+- [bugfix] #28 add `restProps` on module `Modal`
 - [bugfix] #29 add params on:click and on:dbclick for module `Btn`
 
 ## manakit@0.6.12
@@ -131,7 +163,7 @@
 
 ### Patch Changes
 
-- [bugfix] fix module `Modal` for center content Card and add new class for top,  bottom, and center position 
+- [bugfix] fix module `Modal` for center content Card and add new class for top, bottom, and center position
 
 ## manakit@0.6.11
 
@@ -147,7 +179,7 @@
 
 - [bugfix] fix container size width media queries
 - [bugfix] add new css for fix overflow y with padding and margin associate to width: 100%
-  
+
 ## manakit@0.6.10
 
 ### What's Changed
@@ -171,7 +203,7 @@
 
 ### Patch Changes
 
-- [bugfix] #7  - Error message to start project
+- [bugfix] #7 - Error message to start project
 
 ## manakit@0.6.7
 
@@ -228,7 +260,6 @@
 - [new] module `Vstack`
 - [new] module `Hstack`
 
-
 ### Patch Changes
 
 - [bugFix] `fluid` props for module Container not working
@@ -266,13 +297,12 @@
 
 **Add scss themes**
 
-Creane vite.js process for generate styles and scss compilator for generate css files with multi variables js. 
+Creane vite.js process for generate styles and scss compilator for generate css files with multi variables js.
 
 **Add 2 palettes colors**
 
 - Webkit based on Apple Humans colors
 - Manakit based on Tailwind colors
-
 
 **2 new path Manakit**
 
