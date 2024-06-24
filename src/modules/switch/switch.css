@@ -1,0 +1,106 @@
+.mk-switch {
+	--background-color: var(--on-surface);
+	--color-inactive: var(--on-surface);
+	--background-color-inactive: var(--surface);
+
+	--handleoffset: 1.5rem;
+	--handleoffsetcalculator: calc(var(--handleoffset) * -1);
+	--togglehandleborder: 0 0;
+
+	flex-shrink: 0;
+	height: 1.5rem;
+	width: 3rem;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 1.9rem;
+	border-width: 1px;
+	border-color: currentColor;
+	border-style: solid;
+	background-color: currentColor;
+	color: color-mix(in oklab, var(--color-inactive) 50%, white);
+	transition:
+		background,
+		box-shadow 0.2s ease-out;
+	box-shadow:
+		var(--handleoffsetcalculator) 0 0 2px
+			color-mix(in oklab, var(--background-color-inactive) 90%, white) inset,
+		0 0 0 2px color-mix(in oklab, var(--background-color-inactive) 90%, white) inset,
+		var(--togglehandleborder);
+}
+
+.mk-switch:checked,
+.mk-switch[checked='true'],
+.mk-switch[aria-checked='true'] {
+	background-image: none;
+	color: var(--background-color);
+	--handleoffsetcalculator: var(--handleoffset);
+}
+
+.mk-switch:disabled {
+	cursor: default;
+	color: color-mix(in oklab, var(--color-inactive) 30%, white);
+}
+
+.mk-switch-area {
+	display: flex;
+	flex-direction: column;
+	cursor: pointer;
+}
+
+.mk-switch-area > .label {
+	display: flex;
+	-webkit-user-select: none;
+	user-select: none;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5rem 0.25rem;
+}
+
+.mk-switch.switch-info {
+	--background-color: var(--info);
+}
+.mk-switch.switch-success {
+	--background-color: var(--success);
+}
+.mk-switch.switch-error {
+	--background-color: var(--error);
+}
+.mk-switch.switch-warning {
+	--background-color: var(--warning);
+}
+
+/* @manakit-breakpoint */
+/* @size */
+.mk-switch[breakpoint]switch-xl {
+	--handleoffset: 2rem;
+	height: 2rem;
+	width: 4rem;
+}
+
+.mk-switch[breakpoint]switch-lg {
+	--handleoffset: 1.75rem;
+	height: 1.75rem;
+	width: 4rem;
+}
+
+.mk-switch[breakpoint]switch-md {
+	--handleoffset: 1.5rem;
+	height: 1.5rem;
+	width: 3rem;
+}
+
+.mk-switch[breakpoint]switch-sm {
+	--handleoffset: 0.75rem;
+	height: 1.25rem;
+	width: 2rem;
+}
+
+.mk-switch[breakpoint]switch-xs {
+	--handleoffset: 0.5rem;
+	height: 1rem;
+	width: 1.5rem;
+}
+
+/* !@manakit-breakpoint */

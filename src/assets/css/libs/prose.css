@@ -120,19 +120,13 @@ pre {
 	word-wrap: normal;
 }
 
-a {
-	color: var(--blue-500, #2563eb);
-	text-decoration: underline;
-	text-underline-position: under;
-
-	&:focus {
-		outline: 4px solid var(--blue-300, #93c5fd);
-		outline-offset: 1px;
-	}
-
-	&:active {
-		text-decoration: none;
-	}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: var(--font-title);
 }
 
 h1 + *,

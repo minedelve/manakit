@@ -1,19 +1,26 @@
 html {
-	--html-background: var(--background);
-	--html-text: var(--on-background);
-	color: var(--html-text);
-	background-color: var(--html-background);
+	line-height: 1.5;
+	tab-size: 4;
+	background-color: var(--background);
+	color: var(--on-background);
+	font-family: var(--font-body);
+}
+
+html {
 	box-sizing: border-box;
 }
 
-body {
-	font-family: var(--font-body);
-	font-size: 1rem;
-	line-height: 1.4705882353;
-	font-weight: 400;
-	letter-spacing: -0.022em;
-	font-style: normal;
-	word-wrap: break-word;
+*:not(body) {
+	outline: none !important;
+}
+
+*:not(body):focus-visible {
+	box-shadow: 0px 0px 0px 3px var(--outline);
+}
+
+* {
+	padding: 0;
+	margin: 0;
 }
 
 *,
@@ -29,15 +36,30 @@ body {
 	vertical-align: inherit;
 }
 
-.no-scroll {
-	overflow: hidden !important;
+a {
+	color: var(--blue-500, #2563eb);
+	text-decoration: underline;
+	text-underline-position: under;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: var(--font-title);
+a:active {
+	text-decoration: none;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover,
+textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+	border: 1px solid transparent !important;
+	-webkit-box-shadow: 0 0 0px 1000px transparent inset !important;
+	transition: background-color 5000s ease-in-out 0s !important;
+}
+
+.no-scroll {
+	overflow: hidden !important;
 }

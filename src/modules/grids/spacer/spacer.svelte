@@ -6,4 +6,4 @@
 	export { _class as class };
 </script>
 
-<div class={className('kit-spacer', _class)} {...$$restProps} />
+<div class={className('mk-spacer', _class)} {...$$restProps} />

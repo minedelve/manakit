@@ -47,7 +47,6 @@ export function loadCss() {
 			path.resolve(`${nodePath}/assets/css/libs`, 'width.css')
 		],
 		modules: [
-			path.resolve(`${nodePath}/modules/app`, 'app.css'),
 			path.resolve(`${nodePath}/modules/btn`, 'btn.css'),
 			path.resolve(`${nodePath}/modules/card`, 'card.css'),
 			path.resolve(`${nodePath}/modules/divider`, 'divider.css'),
@@ -58,10 +57,13 @@ export function loadCss() {
 			path.resolve(`${nodePath}/modules/grids/row`, 'row.css'),
 			path.resolve(`${nodePath}/modules/grids/spacer`, 'spacer.css'),
 			path.resolve(`${nodePath}/modules/hstack`, 'hstack.css'),
-			path.resolve(`${nodePath}/modules/main`, 'main.css'),
-			path.resolve(`${nodePath}/modules/modal`, 'modal.css'),
+			path.resolve(`${nodePath}/modules/dialog`, 'dialog.css'),
 			path.resolve(`${nodePath}/modules/toolbar`, 'toolbar.css'),
-			path.resolve(`${nodePath}/modules/vstack`, 'vstack.css')
+			path.resolve(`${nodePath}/modules/vstack`, 'vstack.css'),
+			path.resolve(`${nodePath}/modules/switch`, 'switch.css'),
+			path.resolve(`${nodePath}/modules/field`, 'field.css'),
+			path.resolve(`${nodePath}/modules/list`, 'list.css'),
+			path.resolve(`${nodePath}/modules/label`, 'label.css')
 		]
 	};
 }

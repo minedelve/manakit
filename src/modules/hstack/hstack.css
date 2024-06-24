@@ -1,23 +1,23 @@
-.kit-hstack {
+.mk-hstack {
 	display: grid;
 	grid-auto-flow: column;
 	grid-template-columns: 1fr;
 }
-.kit-hstack > .scroll {
+.mk-hstack > .scroll {
 	overflow: scroll;
 	-webkit-overflow-scrolling: touch;
 	user-select: none;
 }
 
-.kit-hstack > .scroll > .scroll-content {
+.mk-hstack > .scroll > .scroll-content {
 	width: fit-content;
 	display: flex;
 }
 
-.kit-hstack > .scroll::-webkit-scrollbar {
+.mk-hstack > .scroll::-webkit-scrollbar {
 	display: none;
 }
 
-.kit-hstack > .scroll > * {
+.mk-hstack > .scroll > * {
 	scroll-snap-align: start;
 }

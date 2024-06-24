@@ -1,0 +1,78 @@
+.mk-list {
+	display: flex;
+	flex-direction: column;
+	flex-wrap: wrap;
+	padding: 0.5rem;
+	margin: 0;
+}
+
+.mk-list.list-dense .mk-list--item {
+	gap: 0.5rem;
+}
+
+.mk-list.list-no-gutters .mk-list--item {
+	gap: 0;
+}
+
+.mk-list--item {
+	align-items: center;
+	display: grid;
+	gap: 1rem;
+	flex: none;
+	grid-template-areas: 'content';
+	grid-template-columns: 1fr;
+	outline: none;
+	max-width: 100%;
+	padding: 4px 16px;
+	position: relative;
+	text-decoration: none;
+}
+
+.mk-list--item .mk-btn {
+	justify-content: start;
+}
+
+.mk-list--item.item-on-start {
+	grid-template-areas: 'before content';
+	grid-template-columns: max-content 1fr;
+}
+
+.mk-list--item.item-on-end {
+	grid-template-areas: 'content after';
+	grid-template-columns: 1fr max-content;
+}
+
+.mk-list--item.item-start-end {
+	grid-template-areas: 'before content after';
+	grid-template-columns: max-content 1fr auto;
+}
+
+.mk-list--item_before,
+.mk-list--item_after {
+	align-items: center;
+	align-self: center;
+	display: flex;
+}
+
+.mk-list--item_before {
+	grid-area: before;
+}
+
+.mk-list--item_after {
+	grid-area: after;
+}
+
+/* @manakit-breakpoint */
+.mk-list[breakpoint]list-vertical {
+	display: flex;
+	flex-direction: column;
+}
+
+.mk-list[breakpoint]list-horizontal {
+	display: inline-flex;
+	flex-direction: row;
+}
+.mk-list[breakpoint]list-horizontal .mk-list--item {
+	margin: 0;
+}
+/* !@manakit-breakpoint */

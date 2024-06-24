@@ -96,7 +96,13 @@ export function convertJStoCSS(params: ConvertJSToCSSProps) {
 			for (const [name, color] of Object.entries(light)) {
 				css += `--${name}: ${color};\n`;
 			}
-			css += '}}\n';
+			css += '}\n';
+			css += theme !== 'default' ? `.mk-theme-${theme}.dark {` : `.dark {`;
+			for (const [name, color] of Object.entries(dark)) {
+				css += `--${name}: ${color};\n`;
+			}
+			css += '}\n';
+			css += '}\n';
 
 			css += `@media (prefers-color-scheme: dark) {`;
 			css += theme !== 'default' ? `.mk-theme-${theme} {` : `:root {`;
@@ -104,7 +110,14 @@ export function convertJStoCSS(params: ConvertJSToCSSProps) {
 			for (const [name, color] of Object.entries(dark)) {
 				css += `--${name}: ${color};\n`;
 			}
-			css += '}}\n';
+			css += '}\n';
+			css += theme !== 'default' ? `.mk-theme-${theme}.light {` : `.light {`;
+			for (const [name, color] of Object.entries(light)) {
+				css += `--${name}: ${color};\n`;
+			}
+			css += '}\n';
+
+			css += '}\n';
 		}
 	}
 

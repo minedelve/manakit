@@ -9,6 +9,7 @@
 	export let light: boolean = false;
 	export let open: boolean = false;
 	export let persistent: boolean = false;
+	export let fullscreen: boolean = false;
 
 	// states
 	let dialog: HTMLDialogElement;
@@ -34,8 +35,9 @@
 <!-- svelte-ignore a11y-no-noninteractive-element-interactions -->
 <dialog
 	bind:this={dialog}
-	class={className('kit-modal', _class)}
-	class:modal-persistent={persistent}
+	class={className('mk-dialog', _class)}
+	class:dialog-persistent={persistent}
+	class:dialog-fullscreen={fullscreen}
 	class:light
 	class:dark
 	on:close={() => (!persistent ? (open = false) : '')}
@@ -43,9 +45,11 @@
 	on:click|self={() => (!persistent ? dialog.close() : '')}
 	{...$$restProps}
 >
+	<!-- surcharge-dialog autofocus-action-element -->
+	<button type="button" class="close-dialog">close</button>
 	<!-- svelte-ignore a11y-click-events-have-key-events -->
 	<!-- svelte-ignore a11y-no-static-element-interactions -->
-	<div class="modal-container" on:click|stopPropagation>
+	<div class="dialog-container" on:click|stopPropagation>
 		<slot />
 	</div>
 </dialog>

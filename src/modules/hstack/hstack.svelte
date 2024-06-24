@@ -110,7 +110,7 @@
 	}
 </script>
 
-<div class={className('kit-hstack', _class)} {...$$restProps}>
+<div class={className('mk-hstack', _class)} {...$$restProps}>
 	<div class="scroll" bind:this={container}>
 		<div class="scroll-content">
 			<!-- slot: default -->

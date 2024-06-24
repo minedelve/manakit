@@ -30,11 +30,11 @@
 
 <!-- svelte-ignore a11y-no-static-element-interactions -->
 {#if tag === 'input'}
-	<input class={className('kit-btn', _class)} {...$$restProps} aria-label={$$props.ariaLabel} />
+	<input class={className('mk-btn', _class)} {...$$restProps} aria-label={$$props.ariaLabel} />
 {:else}
 	<svelte:element
 		this={tag}
-		class={className('kit-btn', _class)}
+		class={className('mk-btn', _class)}
 		class:btn-active={active}
 		class:btn-square={square}
 		class:btn-outline={outline}

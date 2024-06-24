@@ -23,4 +23,7 @@
 [breakpoint]d-inline-flex {
 	display: inline-flex;
 }
+[breakpoint]d-grid {
+	display: grid;
+}
 /* !@manakit-breakpoint */

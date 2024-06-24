@@ -1,6 +1,6 @@
 <div align="center">
 
-![manakit-logo](https://github.com/minedelve/manakit/blob/main/static/manakit.png)
+![manakit-logo](https://github.com/minedelve/manakit/blob/main/static/manakit-library.png)
 
 # Manakit for Svelte
 
@@ -21,10 +21,6 @@
 | --------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 
 ## Install
-
-### Require
-
-- Svelte _^4.0.0_
 
 ```cmd
 npm install --save-dev manakit
@@ -50,20 +46,18 @@ export default defineConfig({
 
 Add global and components css manakit on your project directly on your start page
 
-```javascript
-//+(layout|page).svelte / app.svelte
-import 'manakit/style/css';
-```
-
-And call your first compopent
-
 ```svelte
 <script>
-	import { App } from 'manakit';
+	//+(layout|page).svelte / app.svelte
+	import 'manakit/style/css';
+	import { Btn } from 'manakit';
+
+	const handle = () => {
+		alert('Hello you use Manakit!');
+	};
 </script>
 
-//+(layout|page).svelte / app.svelte
-<App>//your content</App>
+<Btn on:click={() => handle()}>Click on me</Btn>
 ```
 
 ## License

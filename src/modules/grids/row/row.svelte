@@ -11,7 +11,7 @@
 
 <svelte:element
 	this={tag}
-	class={className('kit-row', _class)}
+	class={className('mk-row', _class)}
 	class:row-no-gutters={noGutters}
 	class:row-dense={dense}
 	{...$$restProps}
