@@ -1,6 +1,6 @@
 <div align="center">
 
-![manakit-logo](https://github.com/minedelve/manakit/blob/main/static/manakit.png)
+![manakit-logo](https://github.com/minedelve/manakit/blob/main/static/manakit-library.png)
 
 # Manakit for Svelte
 
@@ -21,10 +21,6 @@
 | --------- | :------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------- |
 
 ## Install
-
-### Require
-
-- Svelte _^4.0.0_
 
 ```cmd
 npm install --save-dev manakit
