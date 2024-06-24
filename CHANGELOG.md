@@ -1,9 +1,10 @@
-## manakit@0.7.4
+## manakit@0.8.0
 
 ### What's Changed
 
 **Module App, Main has been delete to Manakit**
 **Manakit module prefix has been changed, `kit` to `mk`**
+**Manakit have new logo !!!**
 
 - [new] module `Switch`.
 - [new] module `Label`.
