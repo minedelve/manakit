@@ -63,7 +63,8 @@ export function loadCss() {
 			path.resolve(`${nodePath}/modules/switch`, 'switch.css'),
 			path.resolve(`${nodePath}/modules/field`, 'field.css'),
 			path.resolve(`${nodePath}/modules/list`, 'list.css'),
-			path.resolve(`${nodePath}/modules/label`, 'label.css')
+			path.resolve(`${nodePath}/modules/label`, 'label.css'),
+			path.resolve(`${nodePath}/modules/menu`, 'menu.css')
 		]
 	};
 }

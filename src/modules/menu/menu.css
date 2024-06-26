@@ -1,0 +1,64 @@
+.mk-menu {
+	position: relative;
+	display: inline-block;
+}
+
+.mk-menu .mk-menu-content {
+	--color: var(--on-surface);
+	--background-color: var(--surface);
+
+	position: absolute;
+	visibility: hidden;
+	opacity: 0;
+	display: initial;
+	transform-origin: top;
+	border-radius: 0.5rem;
+	color: var(--color);
+	background-color: var(--background-color);
+	width: max-content;
+	height: max-content;
+}
+
+.mk-menu.menu-open .mk-menu-content {
+	visibility: visible;
+	opacity: 1;
+	display: block;
+}
+
+/* @manakit-breakpoint */
+.mk-menu .mk-menu-content[breakpoint]menu-right,
+.mk-menu .mk-menu-content[breakpoint]menu-left {
+	bottom: 0;
+	top: auto;
+}
+
+.mk-menu .mk-menu-content[breakpoint]menu-left {
+	bottom: auto;
+	inset-inline-end: 100%;
+	top: 0;
+	transform-origin: right;
+}
+
+.mk-menu .mk-menu-content[breakpoint]menu-right {
+	bottom: auto;
+	inset-inline-start: 100%;
+	top: 0;
+	transform-origin: left;
+}
+
+.mk-menu .mk-menu-content[breakpoint]menu-top {
+	bottom: 100%;
+	top: auto;
+	transform-origin: bottom;
+}
+
+.mk-menu .mk-menu-content[breakpoint]menu-bottom {
+	bottom: auto;
+	top: 100%;
+	transform-origin: top;
+}
+
+.mk-menu .mk-menu-content[breakpoint]menu-end:not(.menu-left) {
+	inset-inline-end: 0;
+}
+/* !@manakit-breakpoint */

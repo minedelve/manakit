@@ -1,3 +1,10 @@
+## manakit@0.8.1
+
+### What's Changed
+
+- [new] module `Menu`.
+- [update] logo librairy manakit.
+
 ## manakit@0.8.0
 
 ### What's Changed
