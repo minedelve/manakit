@@ -1,0 +1,71 @@
+.mk-alert {
+	--color: var(--on-surface);
+	--background-color: var(--surface);
+
+	display: grid;
+	width: 100%;
+	grid-auto-flow: row;
+	align-content: flex-start;
+	align-items: center;
+	justify-items: center;
+	gap: 1rem;
+	text-align: center;
+	border-radius: 1rem;
+	border-width: 1px;
+	border-color: transparent;
+	border-style: solid;
+	padding: 1rem;
+	color: var(--color);
+	background-color: var(--background-color);
+}
+
+.mk-alert.alert-outline {
+	background-color: transparent;
+	border-color: var(--color);
+}
+
+.mk-alert.alert-info {
+	--color: var(--on-info);
+	--background-color: var(--info);
+}
+.mk-alert.alert-info.alert-outline {
+	--color: var(--info);
+}
+.mk-alert.alert-success {
+	--color: var(--on-success);
+	--background-color: var(--success);
+}
+.mk-alert.alert-success.alert-outline {
+	--color: var(--success);
+}
+.mk-alert.alert-error {
+	--color: var(--on-error);
+	--background-color: var(--error);
+}
+.mk-alert.alert-error.alert-outline {
+	--color: var(--error);
+}
+.mk-alert.alert-warning {
+	--color: var(--on-warning);
+	--background-color: var(--warning);
+}
+.mk-alert.alert-warning.alert-outline {
+	--color: var(--warning);
+}
+
+/* @manakit-breakpoint */
+/* @size */
+.mk-alert[breakpoint]alert-row {
+	grid-auto-flow: column;
+	grid-template-columns: auto minmax(auto, 1fr);
+	justify-items: start;
+	text-align: start;
+}
+
+.mk-alert[breakpoint]alert-col {
+	grid-auto-flow: row;
+	grid-template-columns: auto;
+	justify-items: center;
+	text-align: center;
+}
+/* !@manakit-breakpoint */

@@ -65,7 +65,8 @@ export function loadCss() {
 			path.resolve(`${nodePath}/modules/list`, 'list.css'),
 			path.resolve(`${nodePath}/modules/label`, 'label.css'),
 			path.resolve(`${nodePath}/modules/menu`, 'menu.css'),
-			path.resolve(`${nodePath}/modules/checkbox`, 'checkbox.css')
+			path.resolve(`${nodePath}/modules/checkbox`, 'checkbox.css'),
+			path.resolve(`${nodePath}/modules/alert`, 'alert.css')
 		]
 	};
 }
