@@ -1,0 +1,194 @@
+label.mk-checkbox {
+	display: flex;
+	user-select: none;
+	align-items: center;
+	justify-content: space-between;
+	padding: 0.5rem 0.25rem;
+	cursor: pointer;
+}
+
+label.mk-checkbox > span {
+	font-size: 0.875rem;
+	line-height: 1.25rem;
+	color: var(--color);
+}
+
+input.mk-checkbox,
+label.mk-checkbox input {
+	--color: var(--on-surface);
+	--background-color: var(--surface);
+	--color-inactive: var(--on-surface);
+
+	flex-shrink: 0;
+	height: 1.5rem;
+	width: 1.5rem;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	border-radius: 0.5rem;
+	border-width: 1px;
+	border-style: solid;
+	border-color: color-mix(in oklab, var(--background-color) 75%, var(--color));
+}
+
+.checkbox-indeterminate {
+	background-color: var(--background-color);
+	background-repeat: no-repeat;
+	animation: checkmark 0.2s ease-out;
+	background-image: linear-gradient(90deg, transparent 80%, var(--background-color) 80%),
+		linear-gradient(-90deg, transparent 80%, var(--background-color) 80%),
+		linear-gradient(
+			0deg,
+			var(--background-color) 43%,
+			var(--color) 43%,
+			var(--color) 57%,
+			var(--background-color) 57%
+		);
+}
+
+input.mk-checkbox:checked,
+input.mk-checkbox[aria-checked='true'],
+input.mk-checkbox[checked='true'],
+label.mk-checkbox input:checked,
+label.mk-checkbox input[aria-checked='true'],
+label.mk-checkbox input[checked='true'] {
+	background-repeat: no-repeat;
+	animation: checkmark 0.2s ease-out;
+	background-color: var(--background-color);
+	background-image: linear-gradient(-45deg, transparent 65%, var(--background-color) 65.99%),
+		linear-gradient(45deg, transparent 75%, var(--background-color) 75.99%),
+		linear-gradient(-45deg, var(--background-color) 40%, transparent 40.99%),
+		linear-gradient(
+			45deg,
+			var(--background-color) 30%,
+			var(--color) 30.99%,
+			var(--color) 40%,
+			transparent 40.99%
+		),
+		linear-gradient(-45deg, var(--color) 50%, var(--background-color) 50.99%);
+}
+
+input.mk-checkbox:disabled,
+label.mk-checkbox input:disabled {
+	cursor: default;
+	border-color: color-mix(in oklab, var(--color-inactive) 50%, white);
+	background-color: color-mix(in oklab, var(--color-inactive) 10%, white);
+}
+
+input.mk-checkbox:checked:disabled,
+input.mk-checkbox[aria-checked='true']:disabled,
+input.mk-checkbox[checked='true']:disabled,
+label.mk-checkbox input:checked:disabled,
+label.mk-checkbox input[aria-checked='true']:disabled,
+label.mk-checkbox input[checked='true']:disabled {
+	background-repeat: no-repeat;
+	animation: checkmark 0.2s ease-out;
+	background-color: color-mix(in oklab, var(--color-inactive) 10%, white);
+	background-image: linear-gradient(
+			-45deg,
+			transparent 65%,
+			color-mix(in oklab, var(--color-inactive) 10%, white) 65.99%
+		),
+		linear-gradient(
+			45deg,
+			transparent 75%,
+			color-mix(in oklab, var(--color-inactive) 10%, white) 75.99%
+		),
+		linear-gradient(
+			-45deg,
+			color-mix(in oklab, var(--color-inactive) 10%, white) 40%,
+			transparent 40.99%
+		),
+		linear-gradient(
+			45deg,
+			color-mix(in oklab, var(--color-inactive) 10%, white) 30%,
+			color-mix(in oklab, var(--color-inactive) 50%, white) 30.99%,
+			color-mix(in oklab, var(--color-inactive) 50%, white) 40%,
+			transparent 40.99%
+		),
+		linear-gradient(
+			-45deg,
+			color-mix(in oklab, var(--color-inactive) 50%, white) 50%,
+			color-mix(in oklab, var(--color-inactive) 10%, white) 50.99%
+		);
+}
+
+.checkbox-indeterminate:disabled {
+	background-color: color-mix(in oklab, var(--color-inactive) 10%, white);
+	background-repeat: no-repeat;
+	animation: checkmark 0.2s ease-out;
+	background-image: linear-gradient(
+			90deg,
+			transparent 80%,
+			color-mix(in oklab, var(--color-inactive) 10%, white) 80%
+		),
+		linear-gradient(
+			-90deg,
+			transparent 80%,
+			color-mix(in oklab, var(--color-inactive) 10%, white) 80%
+		),
+		linear-gradient(
+			0deg,
+			color-mix(in oklab, var(--color-inactive) 10%, white) 43%,
+			color-mix(in oklab, var(--color-inactive) 50%, white) 43%,
+			color-mix(in oklab, var(--color-inactive) 50%, white) 57%,
+			color-mix(in oklab, var(--color-inactive) 10%, white) 57%
+		);
+}
+
+/* @themes */
+input.mk-checkbox.checkbox-info,
+label.mk-checkbox input.checkbox-info {
+	--color: var(--on-info);
+	--background-color: var(--info);
+}
+input.mk-checkbox.checkbox-success,
+label.mk-checkbox input.checkbox-success {
+	--color: var(--on-success);
+	--background-color: var(--success);
+}
+input.mk-checkbox.checkbox-warning,
+label.mk-checkbox input.checkbox-warning {
+	--color: var(--on-warning);
+	--background-color: var(--warning);
+}
+input.mk-checkbox.checkbox-error,
+label.mk-checkbox input.checkbox-error {
+	--color: var(--on-error);
+	--background-color: var(--error);
+}
+
+/* @manakit-breakpoint */
+/* @size */
+input.mk-checkbox[breakpoint]checkbox-xl,
+label.mk-checkbox[breakpoint]checkbox-xl input {
+	height: 2rem;
+	width: 2rem;
+}
+
+input.mk-checkbox[breakpoint]checkbox-lg,
+label.mk-checkbox[breakpoint]checkbox-lg input {
+	height: 1.75rem;
+	width: 1.75rem;
+}
+
+input.mk-checkbox[breakpoint]checkbox-md,
+label.mk-checkbox[breakpoint]checkbox-md input {
+	height: 1.5rem;
+	width: 1.5rem;
+}
+
+input.mk-checkbox[breakpoint]checkbox-sm,
+label.mk-checkbox[breakpoint]checkbox-sm input {
+	height: 1.25rem;
+	width: 1.25rem;
+}
+
+input.mk-checkbox[breakpoint]checkbox-xs,
+label.mk-checkbox[breakpoint]checkbox-xs input {
+	height: 1rem;
+	width: 1rem;
+}
+
+/* !@manakit-breakpoint */

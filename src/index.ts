@@ -13,6 +13,7 @@ export { default as List } from './modules/list/list.svelte';
 export { default as ListItem } from './modules/list/list.item.svelte';
 export { default as Label } from './modules/label/label.svelte';
 export { default as Menu } from './modules/menu/menu.svelte';
+export { default as Checkbox } from './modules/checkbox/checkbox.svelte';
 
 // cards
 export { default as Card } from './modules/card/card.svelte';
